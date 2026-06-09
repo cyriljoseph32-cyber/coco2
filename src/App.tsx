@@ -139,20 +139,20 @@ type TDict = typeof T.fr;
 
 /* ─── UTILS ────────────────────────────────────────────────────────────── */
 function useInView(threshold = 0.15) {
-const ref = useRef(null);
+const ref = useRef<HTMLDivElement>(null);
 const [visible, setVisible] = useState(false);
 useEffect(() => {
 const obs = new IntersectionObserver(([e]) => e.isIntersecting && setVisible(true), { threshold });
 if (ref.current) obs.observe(ref.current);
 return () => obs.disconnect();
 }, [threshold]);
-return [ref, visible];
+return [ref, visible] as const;
 }
 
 function FadeIn({ children, delay = 0, className = "" }: { children: React.ReactNode; delay?: number; className?: string }) {
 const [ref, visible] = useInView();
 return (
-<div ref={ref as React.RefObject<HTMLDivElement>} className={className} style={{
+<div ref={ref} className={className} style={{
 opacity: visible ? 1 : 0, transform: visible ? "translateY(0)" : "translateY(28px)",
 transition: `opacity 0.6s ease ${delay}ms, transform 0.6s ease ${delay}ms`,
 }}>{children}</div>
