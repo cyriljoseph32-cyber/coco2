@@ -387,7 +387,7 @@ const data = await res.json();
 if (!res.ok) throw new Error(data.error || "Error");
 const reply = data?.content?.[0]?.text || "...";
 setMessages(m => [...m, { role: "assistant", content: reply }]);
-} catch (e) {
+} catch {
 setError("Service momentanément indisponible. Réessayez dans quelques secondes.");
 } finally {
 setLoading(false);
