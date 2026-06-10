@@ -18,6 +18,34 @@ Cette famille de stratégies vise historiquement ~65–75 % de trades gagnants s
 
 > ⚠️ **Avertissement** : outil d'aide à la décision, pas un conseil en investissement. Les performances passées ne préjugent pas des performances futures. Aucun taux de réussite n'est garanti.
 
+## ✉️ Alertes email & 🤖 trading automatique
+
+Un cron Vercel (`vercel.json`) appelle `/api/cron` chaque jour de bourse à 21h35 UTC (~30 min après la clôture de Wall Street). Il analyse la watchlist, **envoie un email récapitulatif des signaux** et, si activé, **passe les ordres automatiquement** chez le courtier Alpaca.
+
+### Variables d'environnement (Vercel → Settings → Environment Variables)
+
+| Variable | Rôle |
+|---|---|
+| `RESEND_API_KEY` | Clé API [resend.com](https://resend.com) (gratuit) — active les emails |
+| `ALERT_EMAIL` | Adresse qui reçoit les alertes |
+| `EMAIL_FROM` | Expéditeur (optionnel, défaut `onboarding@resend.dev`) |
+| `ALERT_ALWAYS` | `true` = email quotidien même sans signal (optionnel) |
+| `ALPACA_KEY_ID` / `ALPACA_SECRET_KEY` | Clés API [alpaca.markets](https://alpaca.markets) — active le suivi des positions |
+| `AUTOTRADE` | `true` = le bot passe les ordres lui-même (achat au marché + stop attaché, sortie automatique) |
+| `ALPACA_LIVE` | `true` = compte **réel**. Sans cette variable : **paper trading (argent fictif)** — le défaut |
+| `RISK_PCT` | Risque par trade en % du compte (défaut `1`) |
+| `DEFAULT_CAPITAL` | Capital de référence pour les emails sans Alpaca (défaut `10000`) |
+| `CRON_SECRET` | Secret protégeant `/api/cron` (recommandé — Vercel l'envoie automatiquement au cron) |
+| `APP_URL` | URL du site, pour le lien « Ouvrir le dashboard » dans l'email (optionnel) |
+
+### Mise en route conseillée
+
+1. Activez d'abord **uniquement les emails** (`RESEND_API_KEY` + `ALERT_EMAIL`) et suivez les signaux à la main.
+2. Ajoutez ensuite les clés Alpaca **paper trading** + `AUTOTRADE=true` : le bot trade en argent fictif, suivez ses résultats dans la section « 📒 Suivi des positions » du dashboard pendant plusieurs semaines.
+3. Ne passez en réel (`ALPACA_LIVE=true`) que si le paper trading confirme la stratégie — et commencez petit.
+
+Le bot ne double jamais une position existante, place un **stop de protection sur chaque achat**, et liquide les positions quand le signal de sortie tombe.
+
 ## Lancer en local
 
 ```bash

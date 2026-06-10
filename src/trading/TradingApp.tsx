@@ -1,4 +1,5 @@
 import React, { useCallback, useEffect, useMemo, useState } from "react";
+import Portfolio from "./Portfolio";
 import { fetchCandles, INDEX_ETFS, NAMES, WATCHLIST } from "./data";
 import {
   PARAMS,
@@ -277,6 +278,9 @@ export default function TradingApp() {
             Erreurs : {errors.join(" · ")}
           </div>
         )}
+
+        {/* ── Suivi courtier ── */}
+        <Portfolio />
 
         {/* ── Méthode ── */}
         <div style={{ marginTop: 28, background: C.panel, border: `1px solid ${C.border}`, borderRadius: 12, padding: 18, fontSize: 13, color: C.textMid, lineHeight: 1.7 }}>
