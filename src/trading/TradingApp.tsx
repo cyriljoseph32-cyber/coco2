@@ -100,13 +100,13 @@ export default function TradingApp() {
   const bullish = rows.filter((r) => r.result.trend === "haussier").length;
 
   return (
-    <div style={{ minHeight: "100vh", background: C.bg, color: C.text, fontFamily: "'Segoe UI', system-ui, sans-serif", padding: "0 16px 48px" }}>
-      <div style={{ maxWidth: 1100, margin: "0 auto" }}>
+    <div style={{ minHeight: "100vh", background: `radial-gradient(1200px 600px at 80% -10%, #16335E 0%, transparent 60%), radial-gradient(900px 500px at 0% 0%, #11324A 0%, transparent 55%), ${C.bg}`, color: C.text, fontFamily: "'Segoe UI', system-ui, sans-serif", padding: "0 16px 48px" }}>
+      <div style={{ maxWidth: 1180, margin: "0 auto" }}>
 
         {/* ── En-tête ── */}
-        <header style={{ display: "flex", flexWrap: "wrap", alignItems: "center", gap: 16, padding: "24px 0 16px" }}>
+        <header style={{ position: "sticky", top: 0, zIndex: 10, display: "flex", flexWrap: "wrap", alignItems: "center", gap: 16, padding: "18px 16px", margin: "0 -16px 20px", background: "rgba(11,18,32,0.72)", backdropFilter: "blur(12px)", borderBottom: `1px solid ${C.border}` }}>
           <div style={{ flex: "1 1 320px" }}>
-            <h1 style={{ margin: 0, fontSize: 26 }}>📈 Signal Bot — Actifs US</h1>
+            <h1 style={{ margin: 0, fontSize: "clamp(22px, 3.2vw, 32px)", fontWeight: 800, background: `linear-gradient(90deg, ${C.text}, ${C.blue})`, WebkitBackgroundClip: "text", backgroundClip: "text", WebkitTextFillColor: "transparent", letterSpacing: -0.5 }}>📈 Signal Bot — Actifs US</h1>
             <div style={{ color: C.textMid, fontSize: 13, marginTop: 4 }}>
               Stratégie retour à la moyenne RSI(2) · bougies journalières · long uniquement
             </div>
@@ -141,6 +141,23 @@ export default function TradingApp() {
         {updatedAt && (
           <div style={{ fontSize: 12, color: C.textDim, marginBottom: 12 }}>
             Dernière mise à jour : {updatedAt.toLocaleTimeString("fr-FR")} · actualisation auto toutes les 5 min · données Yahoo Finance (clôtures journalières, différé possible)
+          </div>
+        )}
+
+        {/* ── Bandeau KPI ── */}
+        {rows.length > 0 && (
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(150px, 1fr))", gap: 12, marginBottom: 18 }}>
+            {[
+              { l: "Actifs suivis", v: String(rows.length), c: C.text },
+              { l: "Tendance haussière", v: `${bullish}/${rows.length}`, c: bullish >= rows.length / 2 ? C.green : C.amber },
+              { l: "Signaux d'achat", v: String(buys), c: C.green },
+              { l: "Signaux de sortie", v: String(sells), c: C.red },
+            ].map((k) => (
+              <div key={k.l} style={{ background: "linear-gradient(160deg, #16233B, #111B2E)", border: `1px solid ${C.border}`, borderRadius: 14, padding: "14px 16px" }}>
+                <div style={{ fontSize: 12, color: C.textDim }}>{k.l}</div>
+                <div style={{ fontSize: 28, fontWeight: 800, color: k.c, marginTop: 2 }}>{k.v}</div>
+              </div>
+            ))}
           </div>
         )}
 
