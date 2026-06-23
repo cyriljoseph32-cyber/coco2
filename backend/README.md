@@ -1,6 +1,8 @@
 # Trading Platform — Backend (Python / FastAPI)
 
-Backend professionnel de la plateforme de trading multi-actifs. **Module 1 livré : Risk Management + Journal de trades** — la fondation indispensable avant toute exécution en argent réel.
+Backend professionnel de la plateforme de trading multi-actifs US (actions, ETF, secteurs, matières premières, obligations, crypto activable).
+
+**Modules livrés :** Risk Management · Journal de trades · Indicateurs · Scoring 0-100 · Scanner multi-actifs.
 
 ## Pourquoi ce module en premier
 
@@ -16,6 +18,25 @@ Avant de scanner des milliers d'actifs ou de scorer des opportunités, il faut u
 
 La logique critique (risque + stats) est **isolée du framework et de la base** : elle se teste avec `python3` seul, sans rien installer (voir `tests/`).
 
+**🔍 Scanner + Scoring 0-100** (`app/scoring.py`, `app/scanner.py`, `app/universe.py`) :
+- note chaque actif sur 100 (tendance, repli RSI, régime RSI14, volume, volatilité), avec explications lisibles et catégorie (≥90 très forte · 70-89 intéressante · 50-69 surveillance · <50 ignorer) ;
+- scanne l'univers en parallèle, trié par score ;
+- source de données **pluggable** : Yahoo par défaut (sans clé), remplaçable par Polygon/Alpaca en gardant la signature de `fetch_candles`.
+
+### Endpoints
+
+| Méthode | Route | Rôle |
+|---|---|---|
+| GET | `/health` | sonde |
+| GET | `/risk/config` | paramètres de risque actifs |
+| POST | `/risk/check?equity=` | valide un trade candidat |
+| POST | `/trades?equity=` | ouvre une position (refusée si risque violé) |
+| POST | `/trades/{id}/close` | clôture (calcule le P&L) |
+| GET | `/trades` | journal (filtre `?status=open\|closed`) |
+| GET | `/stats?starting_equity=` | métriques de performance |
+| GET | `/scan?include_crypto=&min_score=` | scanne l'univers, opportunités notées |
+| GET | `/scan/{symbol}` | analyse un actif (ex. `/scan/TSLA`) |
+
 ## Lancer
 
 ```bash
@@ -30,8 +51,9 @@ uvicorn app.main:app --reload
 
 ```bash
 cd backend
-python3 -m tests.test_risk
-python3 -m tests.test_stats
+python3 -m tests.test_risk      # 9 tests : risk manager
+python3 -m tests.test_stats     # 7 tests : métriques de performance
+python3 -m tests.test_scoring   # 10 tests : indicateurs + scoring
 ```
 
 ## Arborescence
@@ -45,16 +67,24 @@ backend/
     schemas.py    # contrats Pydantic (API)
     risk.py       # ⭐ risk manager — logique pure
     stats.py      # ⭐ métriques de performance — logique pure
+    indicators.py # SMA, RSI, ATR, volume moyen — logique pure
+    scoring.py    # ⭐ moteur de scoring 0-100 — logique pure
+    universe.py   # univers d'actifs (extensible)
+    scanner.py    # récupération données (pluggable) + scan parallèle
     journal.py    # service journal (écrit/lit les trades, calcule les stats)
     main.py       # API FastAPI
   tests/
-    test_risk.py  # exécutable avec python3 seul
-    test_stats.py # exécutable avec python3 seul
+    test_risk.py     # exécutable avec python3 seul
+    test_stats.py    # exécutable avec python3 seul
+    test_scoring.py  # exécutable avec python3 seul
   requirements.txt
 ```
 
-## Prochains modules (roadmap)
+## Roadmap restante
 
-2. Scanner multi-actifs / multi-timeframes · 3. Scoring IA 0-100 · 4. Backtesting Sharpe (vectorbt) · 5. Assistant conversationnel (Claude) · 6. Exécution réelle (après validation manuelle).
+- Backtesting avancé (vectorbt) : comparaison de stratégies, walk-forward anti-overfitting.
+- Assistant conversationnel (Claude) : « pourquoi ce trade », « analyse Tesla ».
+- Exécution réelle multi-broker : **après** validation manuelle + paper trading prolongé.
+- Source de données pro (Polygon/Alpaca) + timeframes intraday + TimescaleDB hypertable.
 
 > ⚠️ Outil d'aide à la décision. Aucune performance n'est garantie. Paper trading prolongé et limites de risque strictes obligatoires avant l'argent réel.

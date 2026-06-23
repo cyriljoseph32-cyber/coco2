@@ -72,3 +72,16 @@ class StatsResponse(BaseModel):
     max_drawdown_pct: float
     sharpe: float
     equity_curve: list[float]
+
+
+class ScoreOut(BaseModel):
+    symbol: str
+    name: str | None = None
+    score: int
+    label: str
+    last_close: float
+    trend: str
+    rsi2: float | None
+    rsi14: float | None
+    components: dict[str, float]
+    reasons: list[str]

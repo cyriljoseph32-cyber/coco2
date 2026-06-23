@@ -11,14 +11,18 @@ from .config import risk_config_from_env
 from .db import engine, get_session
 from .models import Base, TradeStatus
 from .risk import TradeProposal
+from .scanner import scan_symbol, scan_universe
 from .schemas import (
     RiskCheckRequest,
     RiskCheckResponse,
+    ScoreOut,
     StatsResponse,
     TradeClose,
     TradeOpen,
     TradeOut,
 )
+from .scoring import ScoreResult
+from .universe import NAMES, resolve_universe
 
 Base.metadata.create_all(bind=engine)
 
@@ -112,6 +116,30 @@ def list_trades(
 ) -> list[TradeOut]:
     st = TradeStatus(status) if status else None
     return [TradeOut.model_validate(t) for t in journal.list_trades(session, st)]
+
+
+def _score_to_out(r: ScoreResult) -> ScoreOut:
+    return ScoreOut(
+        symbol=r.symbol, name=NAMES.get(r.symbol), score=r.score, label=r.label,
+        last_close=r.last_close, trend=r.trend, rsi2=r.rsi2, rsi14=r.rsi14,
+        components=r.components, reasons=r.reasons,
+    )
+
+
+@app.get("/scan", response_model=list[ScoreOut])
+def scan(include_crypto: bool = False, min_score: int = 0) -> list[ScoreOut]:
+    """Scanne l'univers et renvoie les opportunités notées 0-100, triées."""
+    results = scan_universe(resolve_universe(include_crypto))
+    return [_score_to_out(r) for r in results if r.score >= min_score]
+
+
+@app.get("/scan/{symbol}", response_model=ScoreOut)
+def scan_one(symbol: str) -> ScoreOut:
+    """Analyse un actif précis (ex. /scan/TSLA)."""
+    r = scan_symbol(symbol.upper())
+    if r is None:
+        raise HTTPException(status_code=404, detail=f"Données insuffisantes pour {symbol}")
+    return _score_to_out(r)
 
 
 @app.get("/stats", response_model=StatsResponse)

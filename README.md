@@ -1,6 +1,17 @@
-# 📈 Signal Bot — Actifs US
+# 📈 Plateforme de trading IA — Actifs US
 
-Bot de signaux de trading sur les actifs américains (S&P 500, Nasdaq, grandes capitalisations), accessible sur **`/trading.html`**.
+Plateforme d'analyse et de trading multi-actifs US, en deux parties :
+
+- **Frontend** (React/Vite, déployé sur Vercel) — dashboard de signaux temps réel sur **`/trading.html`** + fonctions serverless (`api/`) : lecture de marché, alertes email, suivi des positions et trading automatique paper/réel via Alpaca.
+- **Backend** (Python/FastAPI, dossier [`backend/`](backend/README.md)) — moteur professionnel : **risk management**, **journal de trades + statistiques** (taux de réussite, profit factor, drawdown, Sharpe), **scoring d'opportunités 0-100** et **scanner multi-actifs** (actions, ETF, secteurs, matières premières, obligations, crypto activable).
+
+> Architecture choisie : backend Python (écosystème quant) pour le scan/scoring/risque, frontend TS/Vercel pour l'UI et l'exécution. La logique critique (risque, stats, scoring) est en **logique pure testable** (26 tests, exécutables sans dépendance).
+
+---
+
+## Frontend — Signal Bot (`/trading.html`)
+
+Bot de signaux de trading sur les actifs américains (S&P 500, Nasdaq, grandes capitalisations).
 
 ## Ce que fait le bot
 
