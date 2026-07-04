@@ -1,0 +1,11 @@
+{
+  "mcpServers": {
+    "samui-concierge": {
+      "command": "node",
+      "args": [
+        "--env-file-if-exists=C:\\Users\\Cyril\\Claude\\Projects\\Coco Samui\\samui-concierge-mcp\\.env",
+        "C:\\Users\\Cyril\\Claude\\Projects\\Coco Samui\\samui-concierge-mcp\\dist\\index.js"
+      ]
+    }
+  }
+}

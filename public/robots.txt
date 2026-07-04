@@ -1,0 +1,30 @@
+# Coco — Samui AI Concierge
+# Allow all crawlers, including AI/GEO bots (ChatGPT, Claude, Perplexity, Google AI)
+User-agent: *
+Allow: /
+
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+Sitemap: https://coco-samui-ai.com/sitemap.xml
+
+# Curated context for AI assistants
+# https://coco-samui-ai.com/llms.txt

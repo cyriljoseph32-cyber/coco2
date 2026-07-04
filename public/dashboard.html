@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="robots" content="noindex, nofollow" />
+<title>Coco · Hotel Dashboard 🥥</title>
+<style>
+  :root{ --ink:#1d2b2b; --bg:#fdf8f0; --card:#fff; --orange:#ff7a3c; --teal:#0e8f8f; --muted:#7a8a8a; --line:#ece4d8; }
+  *{box-sizing:border-box}
+  body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;background:var(--bg);color:var(--ink)}
+  header{background:linear-gradient(120deg,var(--teal),#0bb);color:#fff;padding:18px 22px;display:flex;align-items:center;gap:10px}
+  header h1{font-size:18px;margin:0;font-weight:700}
+  .wrap{max-width:980px;margin:0 auto;padding:22px}
+  .login{max-width:380px;margin:8vh auto;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:26px;box-shadow:0 8px 30px rgba(0,0,0,.06)}
+  .login h2{margin:0 0 4px;font-size:20px}
+  .login p{margin:0 0 18px;color:var(--muted);font-size:13px}
+  label{display:block;font-size:12px;color:var(--muted);margin:12px 0 4px;font-weight:600;text-transform:uppercase;letter-spacing:.04em}
+  input{width:100%;padding:11px 12px;border:1px solid var(--line);border-radius:10px;font-size:15px}
+  button{margin-top:18px;width:100%;background:var(--orange);color:#fff;border:0;border-radius:10px;padding:12px;font-size:15px;font-weight:700;cursor:pointer}
+  button:hover{filter:brightness(1.05)}
+  .row{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:14px;margin:18px 0}
+  .kpi{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px}
+  .kpi .n{font-size:30px;font-weight:800;color:var(--teal)}
+  .kpi .l{font-size:12px;color:var(--muted);margin-top:4px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px;margin:14px 0}
+  .card h3{margin:0 0 14px;font-size:15px}
+  .bar{display:flex;align-items:center;gap:10px;margin:7px 0;font-size:14px}
+  .bar .lab{width:120px;flex:0 0 120px;color:var(--ink)}
+  .bar .track{flex:1;background:#f1ece2;border-radius:6px;overflow:hidden;height:18px}
+  .bar .fill{height:100%;background:var(--orange);border-radius:6px}
+  .bar .v{width:42px;text-align:right;color:var(--muted);font-variant-numeric:tabular-nums}
+  .q{display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid var(--line);font-size:14px}
+  .q:last-child{border-bottom:0}
+  .q .c{color:var(--orange);font-weight:700}
+  .topbar{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px}
+  .muted{color:var(--muted);font-size:13px}
+  .pill{background:#eef7f7;color:var(--teal);border-radius:999px;padding:4px 10px;font-size:12px;font-weight:700}
+  .warn{background:#fff4e8;border:1px solid #ffd9b8;color:#a5571f;border-radius:10px;padding:12px;font-size:13px;margin:12px 0}
+  .empty{text-align:center;color:var(--muted);padding:26px;font-size:14px}
+  select,input.month{padding:8px 10px;border:1px solid var(--line);border-radius:8px;font-size:13px}
+  a.logout{color:#fff;text-decoration:underline;font-size:13px;margin-left:auto;cursor:pointer}
+</style>
+</head>
+<body>
+
+<!-- LOGIN -->
+<div id="login" class="login">
+  <h2>🥥 Coco Dashboard</h2>
+  <p>Sign in to see how your guests use Coco.</p>
+  <label>Hotel ID</label>
+  <input id="hotel" placeholder="e.g. anantara-bophut" autocomplete="off" />
+  <label>Access code</label>
+  <input id="code" type="password" placeholder="Your code" autocomplete="off" />
+  <button onclick="login()">View dashboard →</button>
+  <p id="err" class="muted" style="color:#c0392b;margin-top:12px"></p>
+</div>
+
+<!-- DASHBOARD -->
+<div id="app" style="display:none">
+  <header>
+    <span style="font-size:20px">🥥</span>
+    <h1>Coco · Concierge Dashboard</h1>
+    <a class="logout" onclick="logout()">Sign out</a>
+  </header>
+  <div class="wrap">
+    <div class="topbar">
+      <div><span class="pill" id="hotelName">—</span></div>
+      <div class="muted">Month: <input class="month" type="month" id="monthPick" onchange="reload()"></div>
+    </div>
+
+    <div id="storeWarn" class="warn" style="display:none">
+      ⚠️ No data store connected yet. Enable Vercel KV (free) so Coco can record conversations — until then this shows zeros.
+    </div>
+
+    <div class="row">
+      <div class="kpi"><div class="n" id="kConv">0</div><div class="l">Conversations</div></div>
+      <div class="kpi"><div class="n" id="kHouse">0</div><div class="l">Your services recommended</div></div>
+      <div class="kpi"><div class="n" id="kBook">0</div><div class="l">Booking links shown</div></div>
+      <div class="kpi"><div class="n" id="kLang">0</div><div class="l">Languages used</div></div>
+    </div>
+
+    <div class="card">
+      <h3>Languages</h3>
+      <div id="langs"></div>
+    </div>
+
+    <div class="card">
+      <h3>Top guest questions</h3>
+      <div id="questions"></div>
+    </div>
+
+    <p class="muted">Coco · Samui AI Concierge · data updates in real time.</p>
+  </div>
+</div>
+
+<script>
+const LANG_NAMES = { en:"English", fr:"Français", de:"Deutsch", sv:"Svenska", th:"ไทย", zh:"中文" };
+
+function ymNow(){ const d=new Date(); return d.getUTCFullYear()+"-"+String(d.getUTCMonth()+1).padStart(2,"0"); }
+
+function login(){
+  const hotel=document.getElementById('hotel').value.trim();
+  const code=document.getElementById('code').value.trim();
+  if(!hotel||!code){ document.getElementById('err').textContent="Enter both fields."; return; }
+  localStorage.setItem('coco_hotel',hotel);
+  localStorage.setItem('coco_code',code);
+  start();
+}
+function logout(){ localStorage.removeItem('coco_hotel'); localStorage.removeItem('coco_code'); location.reload(); }
+
+function start(){
+  const hotel=localStorage.getItem('coco_hotel'), code=localStorage.getItem('coco_code');
+  if(!hotel||!code) return;
+  document.getElementById('login').style.display='none';
+  document.getElementById('app').style.display='block';
+  document.getElementById('hotelName').textContent=hotel;
+  if(!document.getElementById('monthPick').value) document.getElementById('monthPick').value=ymNow();
+  reload();
+}
+
+async function reload(){
+  const hotel=localStorage.getItem('coco_hotel'), code=localStorage.getItem('coco_code');
+  const monthVal=(document.getElementById('monthPick').value||ymNow()).replace('-','');
+  try{
+    const r=await fetch(`/api/stats?hotel=${encodeURIComponent(hotel)}&code=${encodeURIComponent(code)}&month=${monthVal}`);
+    if(r.status===403||r.status===401){ logout(); document.getElementById('err').textContent="Invalid code."; document.getElementById('login').style.display='block'; document.getElementById('app').style.display='none'; return; }
+    const d=await r.json();
+    render(d);
+  }catch(e){ console.error(e); }
+}
+
+function render(d){
+  document.getElementById('storeWarn').style.display = d.configured ? 'none' : 'block';
+  document.getElementById('kConv').textContent=d.conversations||0;
+  document.getElementById('kHouse').textContent=d.houseRecos||0;
+  document.getElementById('kBook').textContent=d.bookingShown||0;
+  const langs=d.languages||{};
+  document.getElementById('kLang').textContent=Object.keys(langs).length;
+
+  // language bars
+  const total=Object.values(langs).reduce((a,b)=>a+b,0)||1;
+  const lc=document.getElementById('langs');
+  const entries=Object.entries(langs).sort((a,b)=>b[1]-a[1]);
+  lc.innerHTML = entries.length ? entries.map(([k,v])=>{
+    const pct=Math.round(v/total*100);
+    return `<div class="bar"><div class="lab">${LANG_NAMES[k]||k}</div><div class="track"><div class="fill" style="width:${pct}%"></div></div><div class="v">${v}</div></div>`;
+  }).join('') : '<div class="empty">No data yet this month.</div>';
+
+  // questions
+  const qc=document.getElementById('questions');
+  qc.innerHTML = (d.topQuestions&&d.topQuestions.length)
+    ? d.topQuestions.map(x=>`<div class="q"><span>${escapeHtml(x.q)}</span><span class="c">${x.n}×</span></div>`).join('')
+    : '<div class="empty">No questions recorded yet this month.</div>';
+}
+
+function escapeHtml(s){ return String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c])); }
+
+// auto-login if remembered
+if(localStorage.getItem('coco_hotel')&&localStorage.getItem('coco_code')) start();
+</script>
+</body>
+</html>

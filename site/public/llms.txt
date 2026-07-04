@@ -1,0 +1,40 @@
+# Coco — AI Concierge for Koh Samui
+
+> Coco is a free AI travel concierge for Koh Samui, Thailand. It answers travellers 24/7 in 6 languages (English, French, German, Swedish, Thai, Chinese) with local recommendations for hotels, diving, restaurants, beaches, tours and transport, plus indicative prices in Thai Baht (THB). Hotels and villas can embed Coco as a white-label in-room concierge.
+
+Site: https://coco-samui-ai.com
+Contact: hello@coco-samui-ai.com · WhatsApp +66 63 375 3316
+Founder: Cyril Joseph — PADI dive instructor based on Koh Samui (3,000+ dives, Gulf of Thailand).
+
+## What Coco covers
+- Hotels & resorts across Chaweng, Lamai, Bophut/Fisherman's Village, Choeng Mon, Maenam, Taling Ngam and the northern tip.
+- Diving & snorkeling: Sail Rock (Hin Bai), Chumphon Pinnacle, Koh Tao, Koh Nang Yuan; PADI courses; day trips from ~2,500 THB.
+- Sea excursions: Ang Thong Marine National Park (from ~1,500 THB), Koh Madsum (Pig Island), Koh Phangan, sunset cruises, fishing charters.
+- Restaurants: fine dining, Michelin-recognized Thai, seafood, street food & night markets.
+- Wellness & spa, Muay Thai, activities (ATV, ziplining, cooking classes, elephant sanctuary), temples, beaches, nightlife and transport.
+
+## Prices (indicative, in THB — always confirm with the operator)
+- Diving day trips: from 2,500 THB. Ang Thong Marine Park: from 1,500 THB.
+- Hotel white-label concierge plan: 3,500 THB/month, 14-day free trial, no credit card, cancel anytime.
+- Free for travellers, no signup.
+
+## For hotels
+White-label in-room AI concierge: embeds on your website or WhatsApp or via an in-room QR code, recommends the property's own restaurant, spa and experiences first. Free 14-day trial → 3,500 THB/month. Details: https://coco-samui-ai.com/hotels
+
+## Important disclaimer
+Coco's answers are AI-generated and may be incomplete or out of date; prices and schedules are indicative only. Coco does not provide safety, medical or professional advice — for scuba diving, boat trips and water sports, follow a qualified certified operator. See https://coco-samui-ai.com/terms
+
+## Monetization
+Some booking links are affiliate links (Viator, Klook, GetYourGuide, Booking.com); Coco may earn a commission at no extra cost to the traveller. See https://coco-samui-ai.com/terms
+
+## Key pages
+- Home / live chat: https://coco-samui-ai.com/
+- How Coco works: https://coco-samui-ai.com/how-it-works
+- Explore Koh Samui (all categories): https://coco-samui-ai.com/explore
+- The 12 beaches compared: https://coco-samui-ai.com/beaches
+- Signature experiences & prices: https://coco-samui-ai.com/experiences
+- Practical guide (money, ferries, safety): https://coco-samui-ai.com/guide
+- For hotels & villas (white-label offer): https://coco-samui-ai.com/hotels
+- FAQ: https://coco-samui-ai.com/faq
+- Contact: https://coco-samui-ai.com/contact
+- Privacy: https://coco-samui-ai.com/privacy · Terms: https://coco-samui-ai.com/terms

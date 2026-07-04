@@ -1,0 +1,71 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>Coco · Per-hotel QR card generator</title>
+<style>
+  :root{ --teal:#0E7C5A; --dark:#0B3D2E; --sand:#F5EFE0; }
+  *{ box-sizing:border-box; margin:0; padding:0; }
+  body{ font-family:'Segoe UI',Arial,sans-serif; background:#e9e6df; padding:24px; display:flex; flex-direction:column; align-items:center; gap:18px; }
+  .panel{ width:380px; background:#fff; border-radius:14px; padding:18px; box-shadow:0 6px 20px rgba(0,0,0,.1); }
+  .panel h2{ font-size:15px; color:var(--dark); margin-bottom:10px; }
+  label{ font-size:12px; color:#555; display:block; margin:8px 0 3px; }
+  input{ width:100%; padding:9px 11px; border:1px solid #cfc9ba; border-radius:8px; font-size:14px; }
+  .row{ display:flex; gap:10px; margin-top:14px; }
+  button{ flex:1; background:var(--teal); color:#fff; border:0; padding:10px; border-radius:8px; cursor:pointer; font-size:13px; }
+  button.alt{ background:#fff; color:var(--teal); border:1px solid var(--teal); }
+  .urlout{ font-size:11px; color:#888; margin-top:10px; word-break:break-all; }
+
+  .card{ width:360px; background:#fff; border-radius:22px; overflow:hidden; box-shadow:0 10px 30px rgba(0,0,0,.15); border:1px solid #e3ddcf; }
+  .top{ background:linear-gradient(135deg,var(--teal),var(--dark)); color:#fff; padding:24px; text-align:center; }
+  .logo{ font-size:28px; font-weight:800; }
+  .hotel{ font-size:13px; opacity:.95; margin-top:4px; letter-spacing:.3px; }
+  .cbody{ padding:20px; text-align:center; }
+  .scanline{ font-size:16px; font-weight:700; color:var(--dark); }
+  #qr{ display:flex; justify-content:center; margin:14px 0; }
+  #qr img,#qr canvas{ border:10px solid #fff; border-radius:12px; box-shadow:0 0 0 1px #e3ddcf; }
+  .langs{ font-size:12px; color:#444; line-height:1.7; padding:12px 18px; border-top:1px dashed #e0d9c8; text-align:center; }
+  .footer{ background:var(--sand); color:var(--dark); font-size:11px; text-align:center; padding:11px; }
+  @media print{ .panel,.toolbar{ display:none; } body{ background:#fff; padding:0; } .card{ box-shadow:none; border:none; } }
+</style>
+
+<div class="panel">
+  <h2>🥥 Générateur de carte par hôtel</h2>
+  <label>Nom de l'hôtel (affiché sur la carte)</label>
+  <input id="name" placeholder="ex: Anantara Bophut" value="">
+  <label>Identifiant de suivi (slug) — auto si vide</label>
+  <input id="slug" placeholder="ex: anantara-bophut">
+  <div class="row">
+    <button onclick="build()">Générer</button>
+    <button class="alt" onclick="window.print()">Imprimer / PDF</button>
+  </div>
+  <div class="urlout" id="urlout"></div>
+</div>
+
+<div class="card">
+  <div class="top">
+    <div class="logo">Coco 🥥</div>
+    <div class="hotel" id="hotelName">Your local AI concierge · Koh Samui</div>
+  </div>
+  <div class="cbody">
+    <div class="scanline">Scan me to plan your stay</div>
+    <div id="qr"></div>
+  </div>
+  <div class="langs">🇬🇧 Ask me anything · 🇫🇷 Posez vos questions · 🇩🇪 · 🇷🇺 · 🇸🇪 · 🇨🇳<br>6 languages · 24/7</div>
+  <div class="footer">Beaches · Restaurants · Diving · Tours · Wellness</div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+<script>
+  const BASE="https://coco-samui-ai.com/";
+  function slugify(s){return s.toLowerCase().trim().replace(/[^a-z0-9]+/g,"-").replace(/^-|-$/g,"");}
+  function build(){
+    const name=document.getElementById("name").value.trim();
+    let slug=document.getElementById("slug").value.trim();
+    if(!slug && name) slug=slugify(name);
+    const url= slug ? BASE+"?hotel="+encodeURIComponent(slug)+"&utm_source=inroom&utm_medium=qr" : BASE;
+    document.getElementById("hotelName").textContent = name ? name : "Your local AI concierge · Koh Samui";
+    document.getElementById("urlout").textContent = "URL trackée : "+url;
+    document.getElementById("qr").innerHTML="";
+    new QRCode(document.getElementById("qr"),{text:url,width:200,height:200,colorDark:"#0B3D2E",colorLight:"#ffffff",correctLevel:QRCode.CorrectLevel.H});
+  }
+  build();
+</script>

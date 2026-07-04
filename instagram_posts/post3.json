@@ -1,0 +1,18 @@
+{
+  "date": "2026-06-25T12:00:00Z",
+  "integrations": ["cmqgigpl301iio80yfzquv1sf"],
+  "posts": [
+    {
+      "provider": "instagram-standalone",
+      "post": [
+        {
+          "content": "Stop eating where the tour buses stop. 🛑\n\nAsk Coco where the locals actually go — real spots, real prices in THB, no tourist traps.\n\n🥥 Free to try, no signup: link in bio.\n\n#kohsamui #samuifood #kohsamuifood #thaifood #lamai #chaweng #localfood #traveltips #travelthailand #islandlife",
+          "image": ["https://uploads.postiz.com/vzLjIE2CH7.jpg"]
+        }
+      ],
+      "settings": {
+        "post_type": "post"
+      }
+    }
+  ]
+}

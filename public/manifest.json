@@ -1,0 +1,46 @@
+{
+  "name": "Coco — AI Concierge Koh Samui",
+  "short_name": "Coco",
+  "description": "Your AI travel concierge for Koh Samui — hotels, diving, restaurants, tours, beaches and more. Personalized recommendations in 6 languages, 24/7.",
+  "start_url": "/?source=pwa",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#023047",
+  "theme_color": "#023047",
+  "lang": "en",
+  "categories": ["travel", "lifestyle", "navigation"],
+  "icons": [
+    {
+      "src": "/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icon-maskable-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Ask Coco",
+      "short_name": "Chat",
+      "url": "/?source=pwa#chat",
+      "icons": [{ "src": "/icon-192.png", "sizes": "192x192" }]
+    },
+    {
+      "name": "WhatsApp Cyril",
+      "short_name": "WhatsApp",
+      "url": "https://wa.me/66633753316"
+    }
+  ]
+}

@@ -1,30 +1,18 @@
 {
-  "name": "vite-react-typescript-starter",
+  "name": "coco-samui-concierge",
+  "version": "1.0.0",
+  "description": "Coco — AI Travel Concierge for Koh Samui",
   "private": true,
-  "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "tsc -b && vite build",
-    "lint": "eslint .",
-    "preview": "vite preview"
+    "dev": "vercel dev",
+    "deploy": "vercel --prod",
+    "smoke": "node --env-file=samui-concierge-mcp/.env scripts/smoke-test.mjs"
   },
   "dependencies": {
-    "react": "^19.2.7",
-    "react-dom": "^19.2.7"
+    "@anthropic-ai/sdk": "^0.39.0"
   },
   "devDependencies": {
-    "@eslint/js": "^10.0.1",
-    "@types/node": "^24.13.1",
-    "@types/react": "^19.2.17",
-    "@types/react-dom": "^19.2.3",
-    "@vitejs/plugin-react": "^6.0.2",
-    "eslint": "^10.4.1",
-    "eslint-plugin-react-hooks": "^7.1.1",
-    "eslint-plugin-react-refresh": "^0.5.2",
-    "globals": "^17.6.0",
-    "typescript": "~6.0.2",
-    "typescript-eslint": "^8.60.1",
-    "vite": "^8.0.16"
+    "vercel": "^41.0.0"
   }
 }

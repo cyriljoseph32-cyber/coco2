@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Coco Samui AI — Hotel Partner Setup</title>
+  <meta name="description" content="Add Coco AI Concierge to your hotel website in minutes. Boost guest satisfaction and earn commissions on every booking.">
+  <meta name="robots" content="noindex"><!-- partner page, not for public SEO -->
+
+  <!-- Favicon -->
+  <link rel="icon" href="/icon-192.png" type="image/png">
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --green:  #00b894;
+      --green2: #00997c;
+      --dark:   #1a2a2a;
+      --mid:    #2d4040;
+      --light:  #f0faf7;
+      --text:   #2d3436;
+      --muted:  #636e72;
+      --border: #d8eee9;
+      --radius: 12px;
+      --shadow: 0 2px 16px rgba(0,0,0,.08);
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: var(--light);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    /* ── Header ─────────────────────────────────────────────────── */
+    .top-bar {
+      background: var(--dark);
+      padding: 14px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .logo { color: #fff; font-size: 18px; font-weight: 700; text-decoration: none; }
+    .logo span { color: var(--green); }
+    .top-bar nav a {
+      color: rgba(255,255,255,.7);
+      text-decoration: none;
+      font-size: 14px;
+      margin-left: 20px;
+      transition: color .15s;
+    }
+    .top-bar nav a:hover { color: #fff; }
+
+    /* ── Hero ───────────────────────────────────────────────────── */
+    .hero {
+      background: linear-gradient(135deg, var(--dark) 0%, var(--mid) 100%);
+      color: #fff;
+      text-align: center;
+      padding: 70px 24px 60px;
+    }
+    .hero-badge {
+      display: inline-block;
+      background: var(--green);
+      color: #fff;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      padding: 5px 14px;
+      border-radius: 999px;
+      margin-bottom: 20px;
+    }
+    .hero h1 { font-size: clamp(26px, 5vw, 44px); font-weight: 800; line-height: 1.2; margin-bottom: 16px; }
+    .hero h1 span { color: var(--green); }
+    .hero p { font-size: 17px; color: rgba(255,255,255,.8); max-width: 560px; margin: 0 auto 32px; }
+    .hero-stats {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      flex-wrap: wrap;
+    }
+    .hero-stats .stat { text-align: center; }
+    .hero-stats .stat strong { display: block; font-size: 28px; font-weight: 800; color: var(--green); }
+    .hero-stats .stat span { font-size: 13px; color: rgba(255,255,255,.65); }
+
+    /* ── Layout ─────────────────────────────────────────────────── */
+    .wrap { max-width: 1040px; margin: 0 auto; padding: 0 20px; }
+    .section { padding: 60px 0; }
+    .section-title { font-size: 26px; font-weight: 800; margin-bottom: 8px; }
+    .section-sub { color: var(--muted); font-size: 15px; margin-bottom: 36px; }
+
+    /* ── Features grid ──────────────────────────────────────────── */
+    .features { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px; }
+    .feature-card {
+      background: #fff;
+      border-radius: var(--radius);
+      padding: 24px;
+      box-shadow: var(--shadow);
+      border: 1px solid var(--border);
+    }
+    .feature-card .icon { font-size: 32px; margin-bottom: 12px; }
+    .feature-card h3 { font-size: 16px; font-weight: 700; margin-bottom: 6px; }
+    .feature-card p { font-size: 14px; color: var(--muted); }
+
+    /* ── How it works ───────────────────────────────────────────── */
+    .steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 24px; }
+    .step { text-align: center; }
+    .step-num {
+      width: 48px; height: 48px; border-radius: 50%;
+      background: var(--green); color: #fff;
+      font-size: 20px; font-weight: 800;
+      display: inline-flex; align-items: center; justify-content: center;
+      margin-bottom: 14px;
+    }
+    .step h3 { font-size: 15px; font-weight: 700; margin-bottom: 6px; }
+    .step p  { font-size: 13px; color: var(--muted); }
+
+    /* ── Embed configurator ─────────────────────────────────────── */
+    .configurator {
+      background: #fff;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      border: 1px solid var(--border);
+      overflow: hidden;
+    }
+    .config-header {
+      background: var(--dark);
+      color: #fff;
+      padding: 18px 24px;
+      font-size: 15px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .config-body { padding: 28px 24px; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 16px; }
+    @media (max-width: 600px) { .form-row { grid-template-columns: 1fr; } }
+    label { display: block; font-size: 13px; font-weight: 600; margin-bottom: 5px; color: var(--text); }
+    select, input[type="text"], input[type="color"] {
+      width: 100%; padding: 10px 12px;
+      border: 1.5px solid var(--border);
+      border-radius: 8px;
+      font-size: 14px;
+      color: var(--text);
+      background: #fafffe;
+      transition: border-color .15s;
+      outline: none;
+    }
+    select:focus, input:focus { border-color: var(--green); }
+    input[type="color"] { padding: 4px; height: 42px; cursor: pointer; }
+
+    /* Code output */
+    .code-block {
+      background: #1a2a2a;
+      border-radius: 10px;
+      padding: 18px 20px;
+      margin-top: 20px;
+      position: relative;
+    }
+    .code-block pre {
+      color: #a8e6cf;
+      font-family: 'Menlo', 'Courier New', monospace;
+      font-size: 13px;
+      line-height: 1.6;
+      white-space: pre-wrap;
+      word-break: break-all;
+      margin: 0;
+    }
+    .copy-btn {
+      position: absolute;
+      top: 12px; right: 12px;
+      background: rgba(255,255,255,.1);
+      color: #fff;
+      border: none;
+      padding: 6px 14px;
+      border-radius: 6px;
+      font-size: 12px;
+      cursor: pointer;
+      transition: background .15s;
+    }
+    .copy-btn:hover { background: var(--green); }
+    .copy-btn.copied { background: var(--green); }
+
+    /* ── QR Code block ──────────────────────────────────────────── */
+    .qr-wrap {
+      margin-top: 20px;
+      padding: 20px;
+      background: var(--light);
+      border-radius: 10px;
+      border: 1px dashed var(--border);
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+    #qr-canvas { border-radius: 8px; }
+    .qr-info h4 { font-size: 14px; font-weight: 700; margin-bottom: 4px; }
+    .qr-info p  { font-size: 13px; color: var(--muted); }
+    .dl-btn {
+      display: inline-flex; align-items: center; gap: 7px;
+      margin-top: 10px; padding: 9px 16px;
+      background: var(--green); color: #fff;
+      border: none; border-radius: 8px;
+      font-size: 13px; font-weight: 700;
+      cursor: pointer; text-decoration: none;
+      transition: background .15s;
+    }
+    .dl-btn:hover { background: var(--green2); }
+
+    /* ── Pricing ────────────────────────────────────────────────── */
+    .pricing-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; }
+    .pricing-card {
+      background: #fff;
+      border-radius: var(--radius);
+      padding: 30px 24px;
+      box-shadow: var(--shadow);
+      border: 2px solid var(--border);
+      text-align: center;
+    }
+    .pricing-card.featured { border-color: var(--green); }
+    .pricing-card .badge {
+      display: inline-block;
+      background: var(--green);
+      color: #fff;
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      padding: 3px 12px;
+      border-radius: 999px;
+      margin-bottom: 14px;
+    }
+    .pricing-card .price { font-size: 36px; font-weight: 800; line-height: 1; }
+    .pricing-card .price span { font-size: 16px; font-weight: 400; color: var(--muted); }
+    .pricing-card .price small { font-size: 13px; color: var(--muted); display: block; margin-top: 4px; }
+    .pricing-card ul { list-style: none; text-align: left; margin: 20px 0; font-size: 14px; }
+    .pricing-card ul li { padding: 5px 0; display: flex; align-items: center; gap: 8px; }
+    .pricing-card ul li::before { content: '✓'; color: var(--green); font-weight: 800; }
+
+    /* ── Sign-up form ───────────────────────────────────────────── */
+    .signup-form {
+      background: #fff;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      border: 1px solid var(--border);
+      padding: 36px 32px;
+    }
+    @media (max-width: 600px) { .signup-form { padding: 24px 16px; } }
+    .form-full { margin-bottom: 16px; }
+    .form-full label { margin-bottom: 5px; }
+    .form-full input,
+    .form-full textarea,
+    .form-full select {
+      width: 100%; padding: 10px 12px;
+      border: 1.5px solid var(--border);
+      border-radius: 8px;
+      font-size: 14px;
+      color: var(--text);
+      background: #fafffe;
+      outline: none;
+      transition: border-color .15s;
+      font-family: inherit;
+    }
+    .form-full input:focus,
+    .form-full textarea:focus,
+    .form-full select:focus { border-color: var(--green); }
+    textarea { resize: vertical; min-height: 90px; }
+    .submit-btn {
+      width: 100%;
+      padding: 14px;
+      background: var(--green);
+      color: #fff;
+      border: none;
+      border-radius: 10px;
+      font-size: 16px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: background .15s, transform .1s;
+      display: flex; align-items: center; justify-content: center; gap: 8px;
+    }
+    .submit-btn:hover { background: var(--green2); }
+    .submit-btn:active { transform: scale(.98); }
+    .submit-btn:disabled { background: #aaa; cursor: not-allowed; }
+    .form-note { font-size: 12px; color: var(--muted); text-align: center; margin-top: 12px; }
+
+    /* Success state */
+    #form-success {
+      display: none;
+      text-align: center;
+      padding: 40px 20px;
+    }
+    #form-success .big { font-size: 56px; }
+    #form-success h3  { font-size: 20px; font-weight: 800; margin: 12px 0 6px; }
+    #form-success p   { color: var(--muted); font-size: 14px; }
+
+    /* ── Footer ─────────────────────────────────────────────────── */
+    footer {
+      background: var(--dark);
+      color: rgba(255,255,255,.5);
+      text-align: center;
+      padding: 24px;
+      font-size: 13px;
+    }
+    footer a { color: var(--green); text-decoration: none; }
+
+    /* ── Utility ─────────────────────────────────────────────────── */
+    .text-center { text-align: center; }
+    .mt8 { margin-top: 8px; }
+    .bg-white { background: #fff; }
+    .section-alt { background: #fff; }
+  </style>
+</head>
+<body>
+
+<!-- Top bar -->
+<div class="top-bar">
+  <a href="/" class="logo">🌴 Coco <span>Samui AI</span></a>
+  <nav>
+    <a href="/">Live Demo</a>
+    <a href="#pricing">Pricing</a>
+    <a href="#signup">Get Started</a>
+  </nav>
+</div>
+
+<!-- Hero -->
+<section class="hero">
+  <div class="hero-badge">🏨 Hotel Partner Program</div>
+  <h1>Give Every Guest a<br><span>Personal Koh Samui Guide</span></h1>
+  <p>Add Coco AI Concierge to your hotel website in under 5 minutes. Boost guest satisfaction, earn affiliate commissions on every booking.</p>
+  <div class="hero-stats">
+    <div class="stat"><strong>6</strong><span>Languages</span></div>
+    <div class="stat"><strong>24/7</strong><span>Available</span></div>
+    <div class="stat"><strong>&lt;5 min</strong><span>Setup</span></div>
+    <div class="stat"><strong>Free</strong><span>14-day trial</span></div>
+  </div>
+</section>
+
+<!-- Features -->
+<section class="section">
+  <div class="wrap">
+    <div class="text-center" style="margin-bottom:40px">
+      <div class="section-title">Everything your guests need, instantly</div>
+      <div class="section-sub">Coco answers in the guest's language — no staff effort required</div>
+    </div>
+    <div class="features">
+      <div class="feature-card">
+        <div class="icon">🍽️</div>
+        <h3>Restaurant Recommendations</h3>
+        <p>Live data from Google Places + TripAdvisor. Thai food, seafood, romantic dinners, family spots — all Koh Samui.</p>
+      </div>
+      <div class="feature-card">
+        <div class="icon">🤿</div>
+        <h3>Diving & Activities</h3>
+        <p>Sail Rock, Ang Thong, snorkeling, kayaking. Coco knows every activity with real prices in THB.</p>
+      </div>
+      <div class="feature-card">
+        <div class="icon">🚢</div>
+        <h3>Transport & Ferries</h3>
+        <p>Airport, Lomprayah, Seatran schedules. Taxi to Chaweng, songthaew tips — real local knowledge.</p>
+      </div>
+      <div class="feature-card">
+        <div class="icon">🌐</div>
+        <h3>6 Languages</h3>
+        <p>English, French, German, Swedish, Chinese, Thai. Coco detects the guest's language automatically.</p>
+      </div>
+      <div class="feature-card">
+        <div class="icon">💰</div>
+        <h3>Affiliate Revenue</h3>
+        <p>Every Klook, GetYourGuide, and Viator booking earns you a commission. Passive income from every guest interaction.</p>
+      </div>
+      <div class="feature-card">
+        <div class="icon">🎯</div>
+        <h3>Hotel-Specific Mode</h3>
+        <p>Coco always promotes your hotel's own spa, restaurant, and services first before recommending competitors.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- How it works -->
+<section class="section section-alt" style="padding:60px 0">
+  <div class="wrap">
+    <div class="text-center" style="margin-bottom:40px">
+      <div class="section-title">Set up in 3 steps</div>
+      <div class="section-sub">No developer needed</div>
+    </div>
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <h3>Sign up below</h3>
+        <p>Tell us your hotel name. We create your personalized Coco profile in 24 hours.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <h3>Paste one line of code</h3>
+        <p>Copy the embed snippet from the configurator below. Paste before <code>&lt;/body&gt;</code> on your website.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <h3>Print your QR code</h3>
+        <p>Download the QR code and place it in rooms, the lobby, or on your menu cards.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Embed Configurator -->
+<section class="section" id="configurator">
+  <div class="wrap">
+    <div class="section-title">Preview your embed code</div>
+    <div class="section-sub">Customize the widget to match your brand — then copy and paste</div>
+
+    <div class="configurator">
+      <div class="config-header">⚙️ Widget Configurator</div>
+      <div class="config-body">
+        <div class="form-row">
+          <div>
+            <label for="cfg-hotel">Hotel slug (lowercase, no spaces)</label>
+            <input type="text" id="cfg-hotel" placeholder="my-hotel-samui" oninput="updateCode()">
+          </div>
+          <div>
+            <label for="cfg-lang">Default language</label>
+            <select id="cfg-lang" onchange="updateCode()">
+              <option value="en">English</option>
+              <option value="fr">Français</option>
+              <option value="de">Deutsch</option>
+              <option value="sv">Svenska</option>
+              <option value="zh">中文</option>
+              <option value="th">ไทย</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-row">
+          <div>
+            <label for="cfg-pos">Widget position</label>
+            <select id="cfg-pos" onchange="updateCode()">
+              <option value="right">Bottom right</option>
+              <option value="left">Bottom left</option>
+            </select>
+          </div>
+          <div>
+            <label for="cfg-color">Brand color</label>
+            <input type="color" id="cfg-color" value="#00b894" oninput="updateCode()">
+          </div>
+        </div>
+
+        <div class="code-block">
+          <pre id="code-output"></pre>
+          <button class="copy-btn" id="copy-btn" onclick="copyCode()">Copy</button>
+        </div>
+
+        <!-- QR Code -->
+        <div class="qr-wrap">
+          <canvas id="qr-canvas" width="120" height="120"></canvas>
+          <div class="qr-info">
+            <h4>In-room QR Code</h4>
+            <p>Print and place in rooms, lobby, or restaurant tables.<br>Guests scan to open Coco on their phone.</p>
+            <button class="dl-btn" onclick="downloadQR()">⬇ Download QR</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Pricing -->
+<section class="section section-alt" id="pricing">
+  <div class="wrap">
+    <div class="text-center" style="margin-bottom:40px">
+      <div class="section-title">Simple, transparent pricing</div>
+      <div class="section-sub">No setup fees. No contracts. Cancel anytime.</div>
+    </div>
+    <div class="pricing-cards">
+      <div class="pricing-card">
+        <div class="price">Free<small>14-day trial</small></div>
+        <ul>
+          <li>Full AI concierge</li>
+          <li>6 languages</li>
+          <li>Widget embed</li>
+          <li>QR code</li>
+          <li>Hotel profile setup</li>
+        </ul>
+        <a href="#signup" class="dl-btn" style="width:100%;justify-content:center">Start Free Trial</a>
+      </div>
+      <div class="pricing-card featured">
+        <div class="badge">Most Popular</div>
+        <div class="price">3,500 <span>THB</span><small>/month per property</small></div>
+        <ul>
+          <li>Everything in trial</li>
+          <li>Hotel-priority mode</li>
+          <li>Affiliate commissions</li>
+          <li>Monthly usage report</li>
+          <li>WhatsApp support</li>
+        </ul>
+        <a href="#signup" class="dl-btn" style="width:100%;justify-content:center">Get Started</a>
+      </div>
+      <div class="pricing-card">
+        <div class="price" style="font-size:24px">Custom<small>Multi-property / resort chains</small></div>
+        <ul>
+          <li>Volume discount</li>
+          <li>Custom branding</li>
+          <li>API access</li>
+          <li>Dedicated support</li>
+          <li>Staff training</li>
+        </ul>
+        <a href="https://wa.me/66633753316" target="_blank" rel="noopener" class="dl-btn" style="width:100%;justify-content:center;background:#25D366">💬 WhatsApp Us</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Sign-up form -->
+<section class="section" id="signup">
+  <div class="wrap" style="max-width:640px">
+    <div class="text-center" style="margin-bottom:32px">
+      <div class="section-title">Start your free 14-day trial</div>
+      <div class="section-sub">We'll contact you within 24 hours to activate your hotel profile</div>
+    </div>
+
+    <div class="signup-form">
+      <!-- Success state -->
+      <div id="form-success">
+        <div class="big">🌴</div>
+        <h3>You're in!</h3>
+        <p>Thanks — we'll be in touch within 24 hours to set up your Coco profile.<br>
+           Questions? <a href="https://wa.me/66633753316" style="color:var(--green)">WhatsApp us</a>.</p>
+      </div>
+
+      <!-- Form -->
+      <form id="lead-form" onsubmit="submitLead(event)">
+        <div class="form-row">
+          <div class="form-full">
+            <label for="f-name">Your name *</label>
+            <input type="text" id="f-name" placeholder="Alex Dupont" required>
+          </div>
+          <div class="form-full">
+            <label for="f-hotel">Hotel / property name *</label>
+            <input type="text" id="f-hotel" placeholder="The Samui Retreat" required>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-full">
+            <label for="f-email">Email address *</label>
+            <input type="email" id="f-email" placeholder="you@yourhotel.com" required>
+          </div>
+          <div class="form-full">
+            <label for="f-phone">WhatsApp / phone</label>
+            <input type="text" id="f-phone" placeholder="+66 81 234 5678">
+          </div>
+        </div>
+        <div class="form-full">
+          <label for="f-msg">Anything to add? (optional)</label>
+          <textarea id="f-msg" placeholder="e.g. We have 2 properties, prefer Thai + English…"></textarea>
+        </div>
+        <div class="form-full" style="margin-bottom:20px">
+          <label for="f-lang">Preferred language for setup</label>
+          <select id="f-lang">
+            <option value="en">English</option>
+            <option value="fr">Français</option>
+            <option value="de">Deutsch</option>
+            <option value="sv">Svenska</option>
+          </select>
+        </div>
+
+        <label class="form-full" style="display:flex;align-items:flex-start;gap:9px;font-size:12.5px;color:#5a6b7a;line-height:1.5;margin-bottom:18px;cursor:pointer">
+          <input type="checkbox" id="f-consent" required style="margin-top:2px;flex-shrink:0">
+          <span>I agree that my name, email and phone will be stored to respond to this enquiry, as described in the <a href="/privacy" target="_blank">Privacy Policy</a>, and I accept the <a href="/terms" target="_blank">Terms</a>.</span>
+        </label>
+
+        <button class="submit-btn" type="submit" id="submit-btn">
+          🌴 Start Free Trial
+        </button>
+        <div id="form-error" style="color:#e74c3c;font-size:13px;text-align:center;margin-top:10px;display:none"></div>
+        <p class="form-note">No credit card required · Cancel anytime · We reply within 24 hours</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <p>© 2026 Coco Samui AI · <a href="/">coco-samui-ai.com</a> · Built with ❤️ on Koh Samui · <a href="https://wa.me/66633753316">WhatsApp</a> · <a href="/privacy">Privacy</a> · <a href="/terms">Terms</a></p>
+</footer>
+
+<!-- ─── QR Code library (self-contained, no external CDN) ─────────────────── -->
+<!-- Simple QR generation via public API fallback -->
+<script>
+  // ─── Embed Code Generator ─────────────────────────────────────────────────
+  function updateCode() {
+    const hotel = document.getElementById('cfg-hotel').value.trim().toLowerCase().replace(/\s+/g, '-') || 'your-hotel-slug';
+    const lang  = document.getElementById('cfg-lang').value;
+    const pos   = document.getElementById('cfg-pos').value;
+    const color = document.getElementById('cfg-color').value;
+
+    const attrs = [`data-hotel="${hotel}"`];
+    if (lang  !== 'en')      attrs.push(`data-lang="${lang}"`);
+    if (pos   !== 'right')   attrs.push(`data-position="${pos}"`);
+    if (color !== '#00b894') attrs.push(`data-color="${color}"`);
+
+    const code = `<!-- Coco Samui AI Concierge -->\n<script src="https://coco-samui-ai.com/widget.js"\n  ${attrs.join('\n  ')}>\n<\/script>`;
+    document.getElementById('code-output').textContent = code;
+    updateQR(hotel);
+  }
+
+  function copyCode() {
+    const text = document.getElementById('code-output').textContent;
+    navigator.clipboard.writeText(text).then(() => {
+      const btn = document.getElementById('copy-btn');
+      btn.textContent = '✓ Copied!';
+      btn.classList.add('copied');
+      setTimeout(() => { btn.textContent = 'Copy'; btn.classList.remove('copied'); }, 2000);
+    });
+  }
+
+  // ─── QR Code (via Google Charts API — no canvas complexity) ──────────────
+  let currentQrUrl = '';
+
+  function updateQR(hotel) {
+    const url = `https://coco-samui-ai.com/?hotel=${encodeURIComponent(hotel || 'your-hotel')}`;
+    currentQrUrl = url;
+    const canvas = document.getElementById('qr-canvas');
+    const ctx = canvas.getContext('2d');
+    const img = new Image();
+    img.crossOrigin = 'anonymous';
+    img.onload = () => {
+      ctx.clearRect(0, 0, 120, 120);
+      ctx.drawImage(img, 0, 0, 120, 120);
+    };
+    img.onerror = () => {
+      // fallback: draw placeholder
+      ctx.fillStyle = '#f0faf7';
+      ctx.fillRect(0, 0, 120, 120);
+      ctx.fillStyle = '#00b894';
+      ctx.font = '12px sans-serif';
+      ctx.textAlign = 'center';
+      ctx.fillText('QR Code', 60, 55);
+      ctx.fillText('(preview)', 60, 72);
+    };
+    img.src = `https://api.qrserver.com/v1/create-qr-code/?size=120x120&data=${encodeURIComponent(url)}&color=1a2a2a&bgcolor=ffffff&ecc=M`;
+  }
+
+  function downloadQR() {
+    const hotel = document.getElementById('cfg-hotel').value.trim() || 'coco-samui';
+    const url = `https://api.qrserver.com/v1/create-qr-code/?size=800x800&data=${encodeURIComponent(currentQrUrl)}&color=1a2a2a&bgcolor=ffffff&ecc=H`;
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = `coco-qr-${hotel}.png`;
+    a.target = '_blank';
+    a.click();
+  }
+
+  // ─── Lead Form Submission ─────────────────────────────────────────────────
+  async function submitLead(e) {
+    e.preventDefault();
+    const btn = document.getElementById('submit-btn');
+    const err = document.getElementById('form-error');
+    err.style.display = 'none';
+    btn.disabled = true;
+    btn.textContent = 'Sending…';
+
+    if (!document.getElementById('f-consent').checked) {
+      err.textContent = 'Please agree to the Privacy Policy and Terms to continue.';
+      err.style.display = 'block';
+      btn.disabled = false;
+      btn.textContent = '🌴 Start Free Trial';
+      return;
+    }
+
+    const payload = {
+      name:    document.getElementById('f-name').value.trim(),
+      hotel:   document.getElementById('f-hotel').value.trim(),
+      email:   document.getElementById('f-email').value.trim(),
+      phone:   document.getElementById('f-phone').value.trim(),
+      message: document.getElementById('f-msg').value.trim(),
+      lang:    document.getElementById('f-lang').value,
+      consent: true,
+    };
+
+    try {
+      const res = await fetch('/api/lead', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload),
+      });
+      const data = await res.json();
+
+      if (res.ok && data.ok) {
+        document.getElementById('lead-form').style.display = 'none';
+        document.getElementById('form-success').style.display = 'block';
+      } else {
+        throw new Error(data.error || 'Something went wrong. Please try again.');
+      }
+    } catch (ex) {
+      err.textContent = ex.message;
+      err.style.display = 'block';
+      btn.disabled = false;
+      btn.innerHTML = '🌴 Start Free Trial';
+    }
+  }
+
+  // ─── Init ─────────────────────────────────────────────────────────────────
+  updateCode();
+</script>
+</body>
+</html>

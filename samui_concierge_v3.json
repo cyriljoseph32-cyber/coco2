@@ -1,0 +1,1364 @@
+{
+  "meta": {
+    "version": "3.2",
+    "last_updated": "2026-06-13",
+    "author": "Samui AI Concierge – Cyril / Coconut Projects",
+    "coverage": "Koh Samui, Thaïlande",
+    "languages_supported": ["fr", "en", "ru", "de", "sv", "zh"],
+    "total_entries": {
+      "hotels": 42,
+      "restaurants": 48,
+      "activities": 38,
+      "spas": 18,
+      "beaches": 12,
+      "temples": 9,
+      "markets": 8,
+      "shopping": 10,
+      "nightlife": 10,
+      "water_sports": 10,
+      "day_trips": 6,
+      "sports_fitness": 1
+    }
+  },
+
+  "assistant": {
+    "name": "Samui AI Concierge",
+    "emoji": "🌴",
+    "description": "Ton assistant de voyage local à Koh Samui. Je connais l'île comme ma poche.",
+    "persona": "Tu es Samui AI Concierge 🌴, un assistant de voyage local expert sur Koh Samui. Tu parles comme un ami qui vit sur l'île depuis des années : chaleureux, précis, et honnête. Tu connais les bons coins, les vrais prix, les pièges à touristes et les secrets locaux. Tu adaptes chaque réponse au profil du voyageur. Tu réponds toujours avec : description courte + prix en THB + lien ou contact + astuce locale. Tu bases tes recommandations sur la météo en temps réel, la saison, le budget, le type de groupe et les préférences exprimées. Tu parles principalement français, mais tu bascules automatiquement en anglais, russe, allemand ou suédois selon la langue détectée.",
+    "rules": [
+      "Toujours adapter la réponse au profil : budget, groupe, motivation, durée, saison.",
+      "Toujours inclure : prix THB, lien ou contact, conseil pratique.",
+      "Ne jamais inventer un prix ou un lien. Indiquer 'Prix à confirmer' si incertain.",
+      "Appliquer les règles météo sans attendre que l'utilisateur le demande.",
+      "Mémoriser le profil complet tout au long de la session.",
+      "Proposer maximum 3 recommandations par catégorie pour éviter l'overwhelm.",
+      "Toujours mentionner les variations saisonnières importantes.",
+      "Signaler les urgences médicales ou sécuritaires avec contacts appropriés.",
+      "Déconseiller les attractions impliquant la maltraitance animale.",
+      "Proposer des alternatives à portée de budget si l'option principale est hors budget.",
+      "Pour les familles avec enfants, toujours vérifier l'âge minimum des activités.",
+      "En cas de question hors Samui, rediriger poliment vers les ressources appropriées."
+    ]
+  },
+
+  "languages": {
+    "default": "fr",
+    "supported": {
+      "fr": "Français – langue principale",
+      "en": "English – second language",
+      "ru": "Русский – large communauté à Samui",
+      "de": "Deutsch – marché européen important",
+      "sv": "Svenska – marché scandinave en croissance",
+      "zh": "中文 – tourisme chinois en expansion"
+    },
+    "auto_detect": true,
+    "translation_api": "Google Cloud Translate API v3",
+    "fallback": "en"
+  },
+
+  "session_memory": {
+    "enabled": true,
+    "fields": ["budget", "motivation", "group_type", "nb_persons", "nb_children", "children_ages", "duration", "arrival_date", "departure_date", "hotel_zone", "hotel_name", "liked_activities", "disliked_activities", "dietary_restrictions", "mobility_restrictions", "satisfaction_scores", "language", "nationality"],
+    "usage_note": "Mémoriser ces champs dès qu'ils sont mentionnés et les réutiliser silencieusement pour personnaliser chaque réponse sans le souligner."
+  },
+
+  "profiles": {
+    "budget": {
+      "économique": { "range": "< 1 500 THB/jour activités", "accommodation": "< 1 500 THB/nuit", "food": "50–200 THB/repas" },
+      "moyen":      { "range": "1 500–4 000 THB/jour activités", "accommodation": "1 500–5 000 THB/nuit", "food": "200–600 THB/repas" },
+      "luxe":       { "range": "> 4 000 THB/jour activités", "accommodation": "> 5 000 THB/nuit", "food": "> 600 THB/repas" }
+    },
+    "motivation": {
+      "détente":     "Plage, lecture, spa, farniente",
+      "aventure":    "Randonnée, plongée, kayak, jungle, excursions",
+      "wellness":    "Yoga, retraite, détox, méditation, massages profonds",
+      "gastronomie": "Restaurants gastronomiques, food tours, cours de cuisine, marchés",
+      "culture":     "Temples, histoire, artisanat, cours de langue, festivals",
+      "famille":     "Activités enfants, sécurité, confort, espaces adaptés",
+      "romance":     "Dîners intimes, couchers de soleil, spa couple, plages secrètes",
+      "fête":        "Bars, clubs, beach parties, nightlife, full moon"
+    },
+    "group": {
+      "solo":              "1 personne – flexibilité maximale, rencontres, budget optimisé",
+      "couple":            "2 personnes – romantisme, intimité, expériences partagées",
+      "famille":           "Avec enfants – sécurité, activités mixtes, logement spacieux",
+      "groupe_amis":       "3–8 personnes – ambiance, activités de groupe, partage",
+      "lune_de_miel":      "2 personnes – ultra-romantique, budget libre, exclusivité",
+      "retraite_wellness": "Groupe yoga/méditation/détox – programme structuré"
+    },
+    "duration": {
+      "court":       "1–3 jours – highlights essentiels uniquement",
+      "semaine":     "4–7 jours – découverte complète équilibrée",
+      "deux_semaines":"8–14 jours – exploration approfondie + excursions îles voisines",
+      "long_sejour": "> 14 jours – vie locale, routines, découvertes cachées"
+    }
+  },
+
+  "geography": {
+    "coordinates": { "lat": 9.5120, "lng": 100.0136 },
+    "surface_km2": 228.7,
+    "circumference_km": 51,
+    "altitude_max_m": 635,
+    "population": 62000,
+    "main_city": "Nathon (administrative)",
+    "tourist_center": "Chaweng",
+    "airport_code": "USM",
+    "timezone": "ICT (UTC+7)",
+    "country": "Thaïlande",
+    "province": "Surat Thani",
+    "fun_facts": [
+      "Koh Samui signifie 'île des Saboëiers' en thaï",
+      "3ème plus grande île de Thaïlande",
+      "La noix de coco reste la principale culture de l'île",
+      "Plus de 1,5 million de touristes par an",
+      "L'aéroport est le seul privé de Thaïlande, opéré par Bangkok Airways"
+    ]
+  },
+
+  "zones": {
+    "Bophut": {
+      "ambiance": "Village de pêcheurs authentique, boutiques chics, Fisherman's Village",
+      "beach_length_km": 4,
+      "sea_conditions": "Calme, eau peu profonde, coucher de soleil côté ouest non visible",
+      "ideal_for": ["couple", "culture", "gastronomie", "calme", "expats"],
+      "highlight": "Marché nocturne du vendredi – le meilleur événement hebdo de l'île",
+      "distance_from_airport_min": 10,
+      "vibe": "Charme colonial, terrasses sur pilotis, cocktails au bord de l'eau"
+    },
+    "Chaweng": {
+      "ambiance": "Plage principale de Samui – animation, shopping, nightlife, tout y est",
+      "beach_length_km": 7,
+      "sea_conditions": "Belle plage, eau agitée en saison des pluies, courants parfois",
+      "ideal_for": ["groupe_amis", "fête", "solo", "budget_moyen", "families_teenagers"],
+      "highlight": "7 km de plage blanche, restaurants de toutes nationalités, vie nocturne",
+      "distance_from_airport_min": 15,
+      "vibe": "Energique, touristique, tous services disponibles, jamais ennuyeux"
+    },
+    "Lamai": {
+      "ambiance": "Plage détendue, moins animée que Chaweng, ambiance locale plus marquée",
+      "beach_length_km": 4,
+      "sea_conditions": "Eau claire, quelques rochers aux extrémités, bien protégée",
+      "ideal_for": ["couple", "famille", "détente", "wellness", "budget"],
+      "highlight": "Accès facile à Tamarind Springs et cascades Na Muang",
+      "distance_from_airport_min": 25,
+      "vibe": "Relax, moins de package tours, cafés sympas, vibe locale"
+    },
+    "Maenam": {
+      "ambiance": "Plage tranquille, locale, mer calme idéale pour familles",
+      "beach_length_km": 6,
+      "sea_conditions": "Très calme, eau peu profonde, idéale pour enfants",
+      "ideal_for": ["famille", "long_sejour", "détente", "budget", "expats"],
+      "highlight": "Prix 20–30% moins chers qu'à Chaweng, vie de quartier authentique",
+      "distance_from_airport_min": 15,
+      "vibe": "Doux, local, communauté d'expats résidents, vie tranquille"
+    },
+    "Choeng_Mon": {
+      "ambiance": "Baie protégée, eaux turquoise, haut de gamme et tranquille",
+      "beach_length_km": 2,
+      "sea_conditions": "Eau calme, turquoise, meilleure qualité de l'île",
+      "ideal_for": ["lune_de_miel", "luxe", "couple", "famille_jeunes_enfants"],
+      "highlight": "Meilleure qualité d'eau de Samui, proche aéroport, cadre intimiste",
+      "distance_from_airport_min": 5,
+      "vibe": "Exclusif, calme, resort life, très belle eau"
+    },
+    "Plai_Laem": {
+      "ambiance": "Spirituel, résidentiel, temples iconiques, front de mer authentique",
+      "beach_length_km": 1.5,
+      "sea_conditions": "Eau peu profonde, vue sur îlots, coucher de soleil",
+      "ideal_for": ["culture", "famille", "long_sejour", "budget", "résidentiel"],
+      "highlight": "Big Buddha et Wat Plai Laem à 500m l'un de l'autre",
+      "distance_from_airport_min": 8,
+      "vibe": "Local, temples, restos de quartier, calme résidentiel"
+    },
+    "Taling_Ngam": {
+      "ambiance": "Côte ouest sauvage, couchers de soleil spectaculaires, peu touristique",
+      "beach_length_km": 8,
+      "sea_conditions": "Mer parfois agitée en haute saison, couchers de soleil exceptionnels",
+      "ideal_for": ["couple", "luxe", "détente", "romance", "photography"],
+      "highlight": "Les plus beaux couchers de soleil de Koh Samui, hôtels exclusifs",
+      "distance_from_airport_min": 40,
+      "vibe": "Sauvage, romantique, exclusif, loin du tourisme de masse"
+    },
+    "Nathon": {
+      "ambiance": "Ville administrative, port principal, très local, marchés",
+      "beach_length_km": 3,
+      "sea_conditions": "Vue sur île de Koh Pangan, port animé",
+      "ideal_for": ["budget", "authentique", "long_sejour", "expats"],
+      "highlight": "Meilleur marché local de l'île, prix thaïs, vie authentique",
+      "distance_from_airport_min": 30,
+      "vibe": "100% local, aucun tourisme de masse, vie de quartier thaïe"
+    },
+    "Lipa_Noi": {
+      "ambiance": "Côte ouest, calme, résidentiel, villas, couchers de soleil",
+      "beach_length_km": 5,
+      "ideal_for": ["long_sejour", "luxe_discret", "famille", "calme"],
+      "highlight": "Plage peu fréquentée, villas de luxe, prix plus accessibles",
+      "distance_from_airport_min": 35,
+      "vibe": "Résidentiel haut de gamme, discret, authentique côté ouest"
+    }
+  },
+
+  "beaches": [
+    {
+      "name": "Chaweng Beach",
+      "zone": "Chaweng",
+      "length_km": 7,
+      "type": "principale / animée",
+      "water_quality": "Bonne en haute saison, parfois algues en basse saison",
+      "facilities": ["transats payants", "douches publiques", "restaurants bord de mer", "jet-ski", "parasailing", "clubs de plage"],
+      "ideal_for": ["tout profil"],
+      "caution": "Jet-skis : toujours vérifier l'état et l'assurance avant de louer. Arnaques fréquentes."
+    },
+    {
+      "name": "Lamai Beach",
+      "zone": "Lamai",
+      "length_km": 4,
+      "type": "mixte / détendue",
+      "water_quality": "Très bonne, eau claire, quelques rochers aux extrémités",
+      "facilities": ["transats", "restaurants", "bars", "sports nautiques", "massages de plage"],
+      "ideal_for": ["couple", "famille", "détente"],
+      "secret_tip": "L'extrémité nord de Lamai (vers les rochers Hin Yai) est moins fréquentée et très belle"
+    },
+    {
+      "name": "Maenam Beach",
+      "zone": "Maenam",
+      "length_km": 6,
+      "type": "familiale / calme",
+      "water_quality": "Excellente, eau peu profonde, idéale enfants",
+      "facilities": ["quelques restaurants", "transats basiques"],
+      "ideal_for": ["famille", "enfants", "calme"],
+      "secret_tip": "Le meilleur fish & chips de l'île se trouve dans un petit shack à Maenam"
+    },
+    {
+      "name": "Bophut Beach",
+      "zone": "Bophut",
+      "length_km": 4,
+      "type": "villageoise / charme",
+      "water_quality": "Bonne, peu profonde",
+      "facilities": ["restaurants de poisson", "bars ambiance", "terrasses"],
+      "ideal_for": ["couple", "gastronomie", "culture"],
+      "highlight": "La plage du Fisherman's Village – atmosph ère unique le vendredi soir"
+    },
+    {
+      "name": "Choeng Mon Beach",
+      "zone": "Choeng_Mon",
+      "length_km": 2,
+      "type": "baie protégée / premium",
+      "water_quality": "Meilleure eau de l'île – turquoise, claire, peu profonde",
+      "facilities": ["accès hôtels", "quelques petits restos", "sports nautiques doux"],
+      "ideal_for": ["lune_de_miel", "famille", "snorkeling_débutant"],
+      "secret_tip": "Louer un kayak le matin tôt pour explorer la baie seul – magique"
+    },
+    {
+      "name": "Silver Beach (Ao Thong Takian)",
+      "zone": "Entre Chaweng et Lamai",
+      "length_km": 0.5,
+      "type": "secrète / cachée",
+      "water_quality": "Excellente – rochers, eau turquoise, très belle",
+      "facilities": ["un seul restaurant", "peu de monde"],
+      "ideal_for": ["couple", "snorkeling", "photo"],
+      "secret_tip": "Accès difficile – chemin étroit depuis la route principale. Vaut vraiment le détour.",
+      "how_to_reach": "GPS : Silver Beach Koh Samui. Chemin à pied depuis parking (10 min)"
+    },
+    {
+      "name": "Crystal Bay",
+      "zone": "Lamai Sud",
+      "length_km": 0.8,
+      "type": "calme / snorkeling",
+      "water_quality": "Très bonne, rochers coralliens",
+      "facilities": ["Crystal Bay Beach Resort", "restaurant"],
+      "ideal_for": ["snorkeling", "détente", "couple"]
+    },
+    {
+      "name": "Lipa Noi Beach",
+      "zone": "Lipa_Noi",
+      "length_km": 5,
+      "type": "sauvage / coucher de soleil",
+      "water_quality": "Correcte, parfois trouble en basse saison",
+      "facilities": ["hôtels de luxe", "très peu de services publics"],
+      "ideal_for": ["couchers de soleil", "photographie", "luxe discret"],
+      "highlight": "Vue sur les îles Ang Thong au coucher du soleil – extraordinaire"
+    },
+    {
+      "name": "Bang Po Beach",
+      "zone": "Maenam Ouest",
+      "length_km": 3,
+      "type": "ultra-locale / inconnue des touristes",
+      "water_quality": "Bonne",
+      "facilities": ["quelques restos de pêcheurs"],
+      "ideal_for": ["long_sejour", "authentique", "budget"],
+      "secret_tip": "Meilleurs fruits de mer frais de l'île – pêcheurs vendent directement le matin"
+    },
+    {
+      "name": "Taling Ngam Beach",
+      "zone": "Taling_Ngam",
+      "length_km": 8,
+      "type": "sauvage / coucher de soleil",
+      "water_quality": "Variable, mer parfois agitée",
+      "facilities": ["InterContinental", "Six Senses", "quelques restaurants locaux"],
+      "ideal_for": ["couchers de soleil", "romance", "luxe"],
+      "highlight": "Couchers de soleil les plus spectaculaires de Koh Samui"
+    }
+  ],
+
+  "hotels": {
+    "Bophut": [
+      { "name": "Anantara Bophut Koh Samui Resort", "stars": 5, "rooms": 106, "price_from_thb": 8000, "email": "bophutsamui@anantara.com", "phone": "+66 77 428 300", "link": "https://www.anantara.com/en/bophut-koh-samui", "highlight": "Jardin de cocotiers face mer, spa primé, à 2 min du Fisherman's Village", "ideal_for": ["couple", "luxe", "wellness"] },
+      { "name": "Garrya Tongsai Bay Samui", "stars": 5, "rooms": 83, "price_from_thb": 9500, "email": "tongsaibay@garrya.com", "phone": "+66 77 245 480", "link": "https://www.garrya.com/en/hotels/samui", "highlight": "Baie privée, plongée directe, architecture thaïe authentique", "ideal_for": ["couple", "luxe", "plongée"] },
+      { "name": "Hansar Samui Resort & Spa", "stars": 5, "rooms": 74, "price_from_thb": 5500, "email": "reservation@hansarsamui.com", "phone": "+66 77 245 511", "link": "https://www.hansarsamui.com", "highlight": "Piscine infinity salée, à 500m du Fisherman's Village", "ideal_for": ["couple", "romance"] },
+      { "name": "Bandara Resort & Spa", "stars": 4, "rooms": 168, "price_from_thb": 3200, "email": "stay@bandarasamui.com", "phone": "+66 77 245 795", "link": "https://www.bandaragroup.com/bandara-samui-resort", "highlight": "Une des plus grandes piscines de Samui, excellent rapport qualité-prix", "ideal_for": ["famille", "couple", "budget_moyen"] },
+      { "name": "Bo Phut Resort & Spa", "stars": 4, "rooms": 60, "price_from_thb": 3000, "email": "info@bophutresort.com", "phone": "+66 77 245 777", "link": "https://www.bophutresort.com", "highlight": "Charme boutique, accès direct Fisherman's Village", "ideal_for": ["couple", "culture"] },
+      { "name": "Holiday Inn Resort Samui Bophut", "stars": 4, "rooms": 143, "price_from_thb": 3500, "email": "via formulaire ihg.com", "phone": "+66 77 960 777", "link": "https://www.ihg.com", "highlight": "Chaîne internationale fiable, grande piscine, kids club", "ideal_for": ["famille", "groupe"] }
+    ],
+    "Chaweng": [
+      { "name": "Centara Reserve Samui", "stars": 5, "rooms": 184, "price_from_thb": 12000, "email": "crs@chr.co.th", "phone": "+66 77 230 500", "link": "https://www.centarahotelsresorts.com/centarareserve/CRS", "highlight": "Architecture coloniale rénovée, accès direct plage Chaweng tranquille", "ideal_for": ["couple", "luxe", "romance"] },
+      { "name": "SALA Samui Chaweng Beach", "stars": 5, "rooms": 132, "price_from_thb": 9000, "email": "reservations@salachaweng.com", "phone": "+66 77 905 888", "link": "https://www.salasamui.com", "highlight": "Moon pool face mer, restaurant beachfront, villas privées", "ideal_for": ["couple", "lune_de_miel", "luxe"] },
+      { "name": "The Library", "stars": 5, "rooms": 26, "price_from_thb": 8500, "email": "info@thelibrary.co.th", "phone": "+66 77 422 767", "link": "https://www.thelibrary.co.th", "highlight": "Piscine rouge iconique, design ultra contemporain, art partout", "ideal_for": ["couple", "design", "luxe"] },
+      { "name": "Avani Chaweng Samui", "stars": 4, "rooms": 200, "price_from_thb": 4500, "email": "avani.samui@avanihotels.com", "phone": "+66 77 915 000", "link": "https://www.avanihotels.com", "highlight": "Beach club actif, au cœur de Chaweng, jeune et dynamique", "ideal_for": ["groupe_amis", "couple", "fête"] },
+      { "name": "Amari Koh Samui", "stars": 4, "rooms": 180, "price_from_thb": 3500, "email": "reservations.kohsamui@amari.com", "phone": "+66 77 300 306", "link": "https://www.amari.com/koh-samui", "highlight": "890m de beachfront, 3 piscines, design thai contemporain", "ideal_for": ["famille", "couple", "groupe"] },
+      { "name": "NH Collection Samui Peace Resort", "stars": 4, "rooms": 187, "price_from_thb": 3800, "email": "nhcollectionsamuipeaceresort@nh-hotels.com", "phone": "+66 77 914 888", "link": "https://www.nh-hotels.com", "highlight": "Cadre verdoyant, plage semi-privée, rapport qualité-prix excellent", "ideal_for": ["couple", "famille"] },
+      { "name": "Nora Beach Resort & Spa", "stars": 4, "rooms": 143, "price_from_thb": 3200, "email": "reservation@norabeachresort.com", "phone": "+66 77 413 999", "link": "https://www.norabeachresort.com", "highlight": "Ambiance bohème, rooftop avec vue, jardins tropicaux", "ideal_for": ["couple", "détente"] },
+      { "name": "OZO Chaweng Samui", "stars": 3, "rooms": 94, "price_from_thb": 2200, "email": "reservations@ozochaweng.com", "phone": "+66 77 960 600", "link": "https://www.ozohotels.com/chaweng-samui", "highlight": "Design moderne, bon rapport qualité-prix, idéal backpackers premium", "ideal_for": ["solo", "budget_moyen"] }
+    ],
+    "Lamai": [
+      { "name": "Banyan Tree Samui", "stars": 5, "rooms": 88, "price_from_thb": 14000, "email": "samui@banyantree.com", "phone": "+66 77 915 333", "link": "https://www.banyantree.com/thailand/samui", "highlight": "Toutes villas avec piscine privée, plage privée, baie de Lamai exclusif", "ideal_for": ["lune_de_miel", "luxe", "couple"] },
+      { "name": "Renaissance Koh Samui", "stars": 5, "rooms": 76, "price_from_thb": 8500, "email": "renaissance.kohsamui@marriott.com", "phone": "+66 77 429 300", "link": "https://www.marriott.com", "highlight": "Architecture en terrasses, vue panoramique sur Lamai Bay", "ideal_for": ["couple", "luxe"] },
+      { "name": "Silavadee Pool Spa Resort", "stars": 5, "rooms": 72, "price_from_thb": 7000, "email": "info@silavadee.com", "phone": "+66 77 920 888", "link": "https://www.silavadee.com", "highlight": "Spa réputé, architecture spectaculaire sur falaise, vue 180°", "ideal_for": ["wellness", "couple", "luxe"] },
+      { "name": "Beach Republic Samui", "stars": 4, "rooms": 59, "price_from_thb": 5500, "email": "info@beachrepublic.com", "phone": "+66 77 458 100", "link": "https://www.beachrepublic.com", "highlight": "Beach club trendy, piscine à débordement, ambiance jeune", "ideal_for": ["couple", "groupe_amis"] },
+      { "name": "Rocky's Boutique Resort", "stars": 4, "rooms": 67, "price_from_thb": 3800, "email": "reservations@rockyresort.com", "phone": "+66 77 458 001", "link": "https://www.rockyresort.com", "highlight": "Plage privée, cuisine française, resort boutique authentique", "ideal_for": ["couple", "gastronomie", "lune_de_miel"] },
+      { "name": "X2 Koh Samui Resort", "stars": 4, "rooms": 45, "price_from_thb": 4000, "email": "kohsamui@x2resorts.com", "phone": "+66 77 458 080", "link": "https://www.x2resorts.com/kohsamui", "highlight": "Design radical, villas suspendues au-dessus de la végétation", "ideal_for": ["couple", "architecture", "luxe"] },
+      { "name": "The Lamai Samui", "stars": 4, "rooms": 40, "price_from_thb": 3200, "email": "reservations@thelamai.com", "phone": "+66 77 233 500", "link": "https://www.thelamai.com", "highlight": "Charmant boutique hotel, cuisine thaïe authentique, terrasse vue mer", "ideal_for": ["couple", "culture"] }
+    ],
+    "Maenam": [
+      { "name": "Santiburi Koh Samui", "stars": 5, "rooms": 71, "price_from_thb": 7500, "email": "info@santiburisamui.com", "phone": "+66 77 425 031", "link": "https://santiburisamui.com", "highlight": "23 acres de jardins tropicaux, golf privé à 10min, excellent kids club", "ideal_for": ["famille", "couple", "long_sejour"] },
+      { "name": "W Koh Samui", "stars": 5, "rooms": 74, "price_from_thb": 11000, "email": "wkohsamui@whotels.com", "phone": "+66 77 915 999", "link": "https://www.marriott.com/w-koh-samui", "highlight": "Design spectaculaire, AWAY Spa, villas avec piscine", "ideal_for": ["luxe", "fête", "couple"] },
+      { "name": "The COAST Adults Only Resort", "stars": 4, "rooms": 32, "price_from_thb": 4500, "email": "info@thecoastsamui.com", "phone": "+66 77 960 900", "link": "https://www.thecoastsamui.com", "highlight": "Adults only, ambiance sereine, plage directe Maenam calme", "ideal_for": ["couple", "romance", "détente"] },
+      { "name": "Celes Beachfront Resort", "stars": 4, "rooms": 22, "price_from_thb": 4000, "email": "reservations@celesresort.com", "phone": "+66 77 233 188", "link": "https://www.celesresort.com", "highlight": "Minimaliste et élégant, accès direct plage, excellent spa", "ideal_for": ["couple", "wellness"] }
+    ],
+    "Choeng_Mon": [
+      { "name": "The Ritz-Carlton Koh Samui", "stars": 5, "rooms": 175, "price_from_thb": 18000, "email": "reservations@ritzcarlton-kohsamui.com", "phone": "+66 77 915 777", "link": "https://www.ritzcarlton.com/koh-samui", "highlight": "Service légendaire, spa de 3000m², meilleure eau de l'île", "ideal_for": ["luxe", "lune_de_miel", "famille_aisée"] },
+      { "name": "SALA Samui Choeng Mon", "stars": 5, "rooms": 69, "price_from_thb": 9500, "email": "reservations@salachoengmon.com", "phone": "+66 77 245 888", "link": "https://www.salasamui.com/choengmon", "highlight": "Face à la baie protégée, toutes villas ou suites, calme absolu", "ideal_for": ["lune_de_miel", "luxe", "couple"] },
+      { "name": "Samujana Villas", "stars": 5, "price_from_thb": 25000, "email": "reservations@samujana.com", "phone": "+66 77 423 465", "link": "https://www.samujana.com", "highlight": "Villas privées 3–9 chambres, vue panoramique, service all-inclusive", "ideal_for": ["groupe_famille", "luxe_total", "événements"] }
+    ],
+    "Taling_Ngam": [
+      { "name": "InterContinental Koh Samui Resort", "stars": 5, "rooms": 79, "price_from_thb": 13000, "email": "icasamui.rsvn@ihg.com", "phone": "+66 26 560 440", "link": "https://samui.intercontinental.com", "highlight": "Vue Ang Thong, piscine à débordement spectaculaire, couchers de soleil", "ideal_for": ["couple", "luxe", "photographie"] },
+      { "name": "Six Senses Samui", "stars": 5, "rooms": 66, "price_from_thb": 22000, "email": "reservations-samui@sixsenses.com", "phone": "+66 77 245 678", "link": "https://www.sixsenses.com/samui", "highlight": "Meilleur wellness resort de l'île, vue exceptionnelle, 100% durable", "ideal_for": ["wellness", "luxe", "détox", "lune_de_miel"] }
+    ],
+    "Others": [
+      { "name": "Four Seasons Koh Samui", "stars": 5, "rooms": 74, "price_from_thb": 20000, "email": "reservations.thailand@fourseasons.com", "phone": "+66 77 243 000", "link": "https://www.fourseasons.com/kohsamui", "zone": "Ang Thong côte NE", "highlight": "Plage quasi-privée au nord, villas sur falaise, cuisine de chef étoilé" },
+      { "name": "Kamalaya Koh Samui", "stars": 5, "rooms": 79, "price_from_thb": 8000, "email": "fo@kamalaya.com", "phone": "+66 77 429 800", "link": "https://www.kamalaya.com", "zone": "Lamai Sud", "highlight": "Meilleur wellness retreat d'Asie du Sud-Est, grottes bouddhistes intégrées" }
+    ]
+  },
+
+  "spas_and_wellness": [
+    {
+      "id": "tamarind_springs",
+      "name": "Tamarind Springs Forest Spa",
+      "zone": "Lamai (jungle)",
+      "type": "spa nature / jungle",
+      "price_from_thb": 1800,
+      "highlight": "Expérience unique dans la jungle – piscines naturelles chauffées, vapeur de pierre volcanique",
+      "signature_treatment": "Rock Pool & Steam (90 min – 2 200 THB)",
+      "link": "https://www.tamarindsprings.com",
+      "phone": "+66 77 230 571",
+      "booking_note": "Réservation 48h en avance recommandée – très demandé",
+      "ideal_for": ["couple", "wellness", "solo", "tous profils"]
+    },
+    {
+      "id": "kamalaya_spa",
+      "name": "Kamalaya Wellness Sanctuary",
+      "zone": "Lamai Sud",
+      "type": "retraite wellness / médecine holistische",
+      "price_from_thb": 4500,
+      "highlight": "Classé meilleur wellness retreat d'Asie, programmes détox et burnout recovery",
+      "signature_treatment": "Emotional Balance Programme (5 jours)",
+      "link": "https://www.kamalaya.com",
+      "phone": "+66 77 429 800",
+      "ideal_for": ["wellness", "burnout", "détox", "solo", "couple"]
+    },
+    {
+      "id": "sala_spa",
+      "name": "SALA Spa Chaweng",
+      "zone": "Chaweng",
+      "type": "spa resort 5 étoiles",
+      "price_from_thb": 2500,
+      "highlight": "Soins thaïs traditionnels + traitements modernes, salle de vapeur et sauna",
+      "signature_treatment": "SALA Signature Ritual (2h – 3 500 THB)",
+      "link": "https://www.salasamui.com/spa",
+      "phone": "+66 77 905 888",
+      "ideal_for": ["luxe", "couple", "wellness"]
+    },
+    {
+      "id": "anantara_spa",
+      "name": "Anantara Spa Bophut",
+      "zone": "Bophut",
+      "type": "spa resort 5 étoiles",
+      "price_from_thb": 3000,
+      "highlight": "Rituels thaïs dans jardins tropicaux, soin au lait de coco, bain aux herbes",
+      "signature_treatment": "Anantara Signature Massage (90 min – 3 800 THB)",
+      "link": "https://www.anantara.com/en/bophut-koh-samui/spa",
+      "ideal_for": ["luxe", "couple", "wellness"]
+    },
+    {
+      "id": "zazen_spa",
+      "name": "Zazen Spa Bophut",
+      "zone": "Bophut",
+      "type": "spa boutique / zen",
+      "price_from_thb": 1500,
+      "highlight": "Ambiance zen, soins aromathérapie, face à la mer, personnel très attentionné",
+      "signature_treatment": "Deep Tissue & Aromatherapy (90 min – 1 800 THB)",
+      "link": "https://www.samuizazen.com",
+      "phone": "+66 77 245 942",
+      "ideal_for": ["couple", "détente", "budget_moyen"]
+    },
+    {
+      "id": "ban_sabai",
+      "name": "Ban Sabai Spa",
+      "zone": "Chaweng",
+      "type": "spa local / meilleur rapport qualité-prix",
+      "price_from_thb": 400,
+      "highlight": "Massages thaïs authentiques, personnel formé en médecine thaïe traditionnelle",
+      "signature_treatment": "Traditional Thai Massage (1h – 500 THB)",
+      "link": "https://www.bansabaispa.com",
+      "note": "Le meilleur rapport qualité-prix de l'île pour les massages thaïs"
+    },
+    {
+      "id": "vikasa_yoga",
+      "name": "Vikasa Life Café & Yoga",
+      "zone": "Chaweng Hills",
+      "type": "yoga / wellness / brunch",
+      "price_from_thb": 600,
+      "highlight": "Cours de yoga avec vue panoramique 180° sur Chaweng, brunch healthy célèbre",
+      "schedule": "Cours dès 7h00 tous les jours",
+      "link": "https://www.vikasa.com",
+      "phone": "+66 84 068 4800",
+      "ideal_for": ["wellness", "solo", "couple", "végétarien"]
+    },
+    {
+      "id": "the_source",
+      "name": "The Source Herbal Detox Retreat",
+      "zone": "Lamai",
+      "type": "détox / retraite profonde",
+      "price_from_thb": 3500,
+      "highlight": "Programmes de jeûne et détox aux herbes thaïes, transformateur",
+      "signature_treatment": "7-Day Detox Programme (depuis 45 000 THB tout inclus)",
+      "link": "https://www.thesourcesamui.com",
+      "ideal_for": ["wellness", "détox", "solo", "long_sejour"]
+    },
+    {
+      "id": "santiburi_spa",
+      "name": "Santiburi Spa",
+      "zone": "Maenam",
+      "type": "spa resort 5 étoiles / jardin tropical",
+      "price_from_thb": 2800,
+      "highlight": "Traitements dans des pavillons ouverts sur 23 acres de jardins, massage lotus",
+      "link": "https://santiburisamui.com/spa",
+      "ideal_for": ["famille", "couple", "luxe"]
+    },
+    {
+      "id": "silavadee_spa",
+      "name": "The Villa by Silavadee Spa",
+      "zone": "Lamai colline",
+      "type": "spa resort / vue panoramique",
+      "price_from_thb": 2500,
+      "highlight": "Cabines de soin avec vue mer 180°, expérience mémorable garantie",
+      "link": "https://www.silavadee.com",
+      "ideal_for": ["couple", "luxe", "lune_de_miel"]
+    },
+    {
+      "id": "six_senses_spa",
+      "name": "Six Senses Spa Samui",
+      "zone": "Taling Ngam",
+      "type": "spa wellness resort de luxe",
+      "price_from_thb": 4000,
+      "highlight": "Approche holistique et durable, rituels de 3h minimum, aromathérapie premium",
+      "link": "https://www.sixsenses.com/samui/spa",
+      "ideal_for": ["luxe", "wellness", "lune_de_miel"]
+    },
+    {
+      "id": "harnn_spa",
+      "name": "Harnn Heritage Spa",
+      "zone": "Chaweng",
+      "type": "spa boutique thaï heritage",
+      "price_from_thb": 1200,
+      "highlight": "Marque thaïe de prestige, produits artisanaux, soins corps aux herbes locales",
+      "link": "https://www.harnn.com",
+      "ideal_for": ["couple", "shopping", "culture"]
+    }
+  ],
+
+  "activities": {
+    "adventure_nature": [
+      {
+        "id": "ang_thong_excursion",
+        "name": "Excursion Ang Thong Marine Park",
+        "duration_hours": 8,
+        "price_thb": { "adult": 1800, "child_under12": 1200, "note": "Tout inclus : bateau speedboat, snorkeling, kayak, déjeuner, parc national" },
+        "weather_required": "sunny_calm",
+        "departure": "Bophut Pier ou Lomprayah Pier, 8h00",
+        "description": "42 îles calcaires vierges, lagune émeraude secrète, snorkeling en récif, kayak en grotte marine. L'excursion incontournable de Samui.",
+        "booking_link": "https://www.angthongmarineparksamui.com",
+        "tips": "Prendre anti-nausée si mer agitée. Emporter crème solaire reef-safe obligatoire.",
+        "ideal_for": ["tous profils"]
+      },
+      {
+        "id": "koh_tao_diving",
+        "name": "Plongée à Koh Tao / Sail Rock",
+        "duration_hours": 10,
+        "price_thb": { "day_trip_sail_rock": 4235, "day_trip_koh_tao": 4510, "day_trip_chumphon_pinnacle": 4700, "discover_scuba": 5467, "padi_owd_course": 16728, "advanced_owd": 12990, "rescue_diver": 15345, "note": "Tarifs Discovery Divers, HORS TVA. Sorties incluent guide/instructeur, 2-3 plongées, transferts hôtel, repas & boissons, oxygène/sécurité ; équipement complet en option." },
+        "weather_required": "sunny_calm",
+        "description": "Sites emblématiques : Sail Rock (cheminée verticale 18m→7m, barracudas, requins baleines), Chumphon Pinnacle (14-36m), Southwest Pinnacle, et les récifs autour de Koh Tao. Parmi les meilleurs spots du Golfe de Thaïlande.",
+        "operator": {
+          "name": "Discovery Divers Koh Samui",
+          "highlight": "⭐ Recommandé – Centre PADI 5 étoiles, le plus ancien de l'île (depuis 1999, 26+ ans). Propriétaire Eric Vinik (PADI Master Scuba Diver Trainer).",
+          "location": "Amari Koh Samui Resort, North Chaweng (en face d'Amaya Café), 84320 – facile d'accès depuis Chaweng, Bophut, Choeng Mon",
+          "languages": ["en", "fr", "de", "th", "zh", "ja", "ru"],
+          "groups": "Petits groupes, max 4 plongeurs par guide ; speedboats privés (Sail Rock <60 min, Koh Tao <90 min)",
+          "safety": "Assuré PADI + DAN, membre du SSS Recompression Chamber Network",
+          "hours": "Centre ouvert 11h00–18h00, 363 jours/an (fermé 1er janvier et Songkran 13 avril)",
+          "phone": "+66 95 271 0017",
+          "whatsapp": "https://wa.me/66952710017",
+          "email": "info@discoverydivers.com",
+          "link": "https://discoverydivers.com",
+          "booking_link": "https://fareharbor.com/embeds/book/discoverydivers/?full-items=yes",
+          "facebook": "https://www.facebook.com/discoverydivecentre/",
+          "instagram": "https://www.instagram.com/discoverydivecentre/"
+        },
+        "tips": "Réserver à l'avance. Apporter carte de certification, carnet de plongée et questionnaire médical le 1er jour. Cours dès 10 ans. Cyril Joseph (+66 633753316) intervient comme instructeur de plongée.",
+        "certifications_available": ["PADI Discover Scuba", "Scuba Diver", "Open Water", "Advanced Open Water", "Rescue Diver", "Specialty", "Divemaster"],
+        "ideal_for": ["aventure", "solo", "couple", "groupe_amis", "famille"]
+      },
+      {
+        "id": "na_muang_waterfall",
+        "name": "Cascades Na Muang",
+        "duration_hours": 3,
+        "price_thb": { "na_muang_1": 100, "na_muang_2": 100, "scooter_rental": 250, "note": "Accès en scooter ou voiture depuis route principale" },
+        "weather_required": "any",
+        "description": "Na Muang 1 (facile, grande cascade, baignade possible) et Na Muang 2 (randonnée 45 min, spectaculaire, moins fréquentée). Centre-est de l'île.",
+        "maps_link": "https://maps.app.goo.gl/NaMuang",
+        "tips": "Chaussures de randonnée recommandées pour Na Muang 2. Prévoir eau.",
+        "ideal_for": ["famille", "aventure", "nature", "budget"]
+      },
+      {
+        "id": "secret_buddha_garden",
+        "name": "Secret Buddha Garden (Tarnim Magic Garden)",
+        "duration_hours": 2,
+        "price_thb": { "entrance": 80, "jeep_tour": 1200, "note": "Route très escarpée – 4x4 ou moto-trial fortement conseillé" },
+        "weather_required": "sunny_calm or partly_cloudy",
+        "description": "Jardin mystérieux au cœur de la jungle (alt. 600m), créé par un vieil agriculteur Nim Thongsuk. Statues bouddhistes, créatures mythologiques, vue époustouflante.",
+        "maps_link": "https://maps.app.goo.gl/SecretBuddhaGarden",
+        "tips": "Aller le matin tôt pour éviter la chaleur. Prévoir 2L d'eau par personne.",
+        "ideal_for": ["aventure", "culture", "couple", "photographie"]
+      },
+      {
+        "id": "kayak_mangrove_koh_taen",
+        "name": "Kayak mangrove – Koh Taen & Koh Mudsum",
+        "duration_hours": 5,
+        "price_thb": { "adult": 1200, "child": 800, "note": "Guide, équipement, bateau et déjeuner inclus" },
+        "weather_required": "sunny_calm or partly_cloudy",
+        "description": "Exploration en kayak de la mangrove préservée de Koh Taen, petite île voisine au sud. Observation d'oiseaux, raies, étoiles de mer. Snorkeling optionnel à Koh Mudsum.",
+        "booking_contact": "Depuis Ban Tai Pier (côté sud)",
+        "ideal_for": ["famille", "nature", "aventure", "couple", "budget_moyen"]
+      },
+      {
+        "id": "sunrise_khao_hua_jook",
+        "name": "Lever du soleil – Pagode Khao Hua Jook",
+        "duration_hours": 2,
+        "price_thb": { "entrance": 0 },
+        "weather_required": "sunny_calm",
+        "description": "Randonnée courte (20 min) jusqu'à la pagode blanche au sommet de Samui. Vue 360° sur toute l'île au lever du soleil. Gratuit, peu connu des touristes.",
+        "tips": "Départ 5h30 depuis Chaweng. Chemin bien balisé, pas besoin de guide.",
+        "maps_link": "https://maps.app.goo.gl/KhaoHuaJook",
+        "ideal_for": ["photographie", "aventure", "solo", "couple"]
+      },
+      {
+        "id": "safari_jungle_4x4",
+        "name": "Safari Jungle 4x4 / Quad",
+        "duration_hours": 4,
+        "price_thb": { "4x4_guided": 1500, "quad_solo": 1200, "note": "Guide inclus, parc à éléphants éthique optionnel en supplément" },
+        "weather_required": "any",
+        "description": "Exploration des sentiers de jungle de l'intérieur de l'île en 4x4 ou quad. Temples cachés, plantations de cocotiers, villages locaux.",
+        "tips": "Éviter les tours qui incluent des éléphants à dos de selle – choisir les sanctuaires éthiques.",
+        "ideal_for": ["aventure", "famille", "groupe_amis"]
+      },
+      {
+        "id": "hin_lat_waterfall",
+        "name": "Cascade Hin Lat",
+        "duration_hours": 2,
+        "price_thb": { "entrance": 50, "parking": 30 },
+        "weather_required": "any",
+        "description": "Cascade à quelques km de Nathon, moins connue que Na Muang, cadre très naturel, sentier agréable avec petits temples sur le chemin.",
+        "ideal_for": ["famille", "budget", "randonnée_facile"]
+      }
+    ],
+    "culture_heritage": [
+      {
+        "id": "big_buddha",
+        "name": "Wat Phra Yai (Grand Bouddha)",
+        "duration_hours": 1,
+        "price_thb": { "entrance": 0, "note": "Tenue correcte exigée – épaules et genoux couverts, sinon location sarong sur place 50 THB" },
+        "weather_required": "any",
+        "description": "Bouddha doré de 12 mètres sur îlot relié par chaussée. Symbole de Koh Samui visible depuis l'avion. Vue sur l'aéroport et la baie.",
+        "zone": "Plai Laem",
+        "maps_link": "https://maps.app.goo.gl/BigBuddha",
+        "tips": "Visiter tôt le matin (7h-9h) – lumière dorée, peu de monde, moines visibles",
+        "ideal_for": ["culture", "famille", "photographie", "tous profils"]
+      },
+      {
+        "id": "wat_plai_laem",
+        "name": "Wat Plai Laem",
+        "duration_hours": 1,
+        "price_thb": { "entrance": 0 },
+        "weather_required": "any",
+        "description": "Temple multicolore spectaculaire construit sur l'eau avec la déesse Guanyin à 18 bras au centre. Étangs de poissons et tortues sacrés. À 500m du Grand Bouddha.",
+        "zone": "Plai Laem",
+        "maps_link": "https://maps.app.goo.gl/WatPlaiLaem",
+        "tips": "Acheter de la nourriture pour les poissons sacrés à l'entrée (20 THB) – expérience magique",
+        "ideal_for": ["culture", "famille", "photographie"]
+      },
+      {
+        "id": "wat_khunaram",
+        "name": "Wat Khunaram – Moine momifié",
+        "duration_hours": 0.5,
+        "price_thb": { "entrance": 0 },
+        "weather_required": "any",
+        "description": "Temple abritant le corps momifié du moine bouddhiste Luang Pho Daeng, décédé en 1973. Lieu de vénération locale important.",
+        "zone": "Route centrale",
+        "tips": "Tenue respectueuse obligatoire. Silence et respect exigés.",
+        "ideal_for": ["culture", "histoire"]
+      },
+      {
+        "id": "cooking_class_pai",
+        "name": "Cours de cuisine thaïe – Pai Cookery School",
+        "duration_hours": 4,
+        "price_thb": { "adult": 1800, "child": 900, "note": "Inclus : marché local + 4 plats + recettes" },
+        "weather_required": "any",
+        "description": "Visite d'un marché local puis cours pour préparer Pad Thai, Green Curry, Tom Yum Goong et Mango Sticky Rice. Emmener les recettes chez soi.",
+        "booking_link": "https://www.paicookingclass.com",
+        "phone": "+66 77 413 172",
+        "schedule": "Matin 9h–13h ou après-midi 13h30–17h30",
+        "ideal_for": ["gastronomie", "culture", "famille", "couple", "rainy_day"]
+      },
+      {
+        "id": "fishermans_village_market",
+        "name": "Marché nocturne Fisherman's Village",
+        "duration_hours": 3,
+        "price_thb": { "budget_street_food": 300, "note": "Vendredi soir uniquement, 17h-22h" },
+        "weather_required": "any",
+        "description": "LE meilleur événement hebdomadaire de Samui. Street food, artisanat, vêtements, bijoux, musique live dans les ruelles du village de pêcheurs de Bophut. Ambiance unique.",
+        "zone": "Bophut",
+        "schedule": "Vendredi soir, 17h00–22h00",
+        "maps_link": "https://maps.app.goo.gl/FishermansVillage",
+        "tips": "Arriver à 17h pour la belle lumière et avant la foule. Se concentrer sur la rue principale et les ruelles latérales.",
+        "ideal_for": ["tous profils"]
+      },
+      {
+        "id": "temple_laem_sor",
+        "name": "Wat Laem Sor",
+        "duration_hours": 0.5,
+        "price_thb": { "entrance": 0 },
+        "weather_required": "any",
+        "description": "Petit temple au bout d'une presqu'île au sud, style khmer, très photogénique, peu visité. Vue sur l'archipel de Koh Tan.",
+        "zone": "Taling Ngam Sud",
+        "ideal_for": ["photographie", "culture", "hors_des_sentiers"]
+      },
+      {
+        "id": "shell_museum",
+        "name": "Musée des coquillages de Samui",
+        "duration_hours": 1,
+        "price_thb": { "entrance": 120 },
+        "weather_required": "any",
+        "description": "Collection de plus de 2000 espèces de coquillages rares du monde entier. Fossiles de 380 millions d'années inclus.",
+        "zone": "Bophut",
+        "ideal_for": ["famille", "rainy_day", "enfants"]
+      }
+    ],
+    "wellness_relaxation": [
+      {
+        "id": "massage_tamarind",
+        "name": "Massage jungle au Tamarind Springs",
+        "duration_hours": 2,
+        "price_thb": { "rock_steam_pool": 1800, "herbal_poultice": 2200, "couple_ritual": 4500 },
+        "weather_required": "any",
+        "description": "Soin de massage holistique au cœur de la jungle, suivi d'un bain dans les piscines naturelles chauffées. Expérience sensorielle unique.",
+        "booking_link": "https://www.tamarindsprings.com",
+        "ideal_for": ["wellness", "couple", "solo"]
+      },
+      {
+        "id": "yoga_vikasa",
+        "name": "Cours de yoga – Vikasa Yoga Retreat",
+        "duration_hours": 1.5,
+        "price_thb": { "drop_in": 600, "weekly_pass": 2500 },
+        "weather_required": "any",
+        "description": "Centre de yoga de renommée internationale, cours toutes niveaux dès 7h00. Vue panoramique sur la jungle et la mer.",
+        "link": "https://www.vikasa.com",
+        "ideal_for": ["wellness", "solo", "couple", "long_sejour"]
+      },
+      {
+        "id": "sunset_beach_massage",
+        "name": "Massage sunset sur plage privée",
+        "duration_hours": 1.5,
+        "price_thb": { "thai_massage": 600, "aromatherapy": 900, "note": "Possible d'organiser via la plupart des hôtels 4-5 étoiles" },
+        "weather_required": "sunny_calm",
+        "description": "Massage traditionnel ou aromathérapie directement sur la plage au coucher du soleil. Organiser via votre hôtel ou un thérapeute indépendant.",
+        "ideal_for": ["couple", "romance", "lune_de_miel"]
+      }
+    ],
+    "family_children": [
+      {
+        "id": "elephant_sanctuary",
+        "name": "Samui Elephant Sanctuary",
+        "duration_hours": 4,
+        "price_thb": { "adult": 2500, "child_under12": 1800, "note": "Sanctuaire éthique – pas de balade à dos d'éléphant" },
+        "weather_required": "any",
+        "description": "Rencontre authentique et éthique avec des éléphants rescapés. Nourrir, baigner, observer librement. Harcèlement zéro – les éléphants vivent librement.",
+        "booking_link": "https://www.samuielephantsanctuary.org",
+        "phone": "+66 77 960 145",
+        "ethical_note": "⭐ Certifié éthique – Aucun contact forcé, aucun dressage",
+        "ideal_for": ["famille", "couple", "solo", "enfants dès 5 ans"]
+      },
+      {
+        "id": "aqua_park",
+        "name": "Coco Splash Waterpark Samui",
+        "duration_hours": 4,
+        "price_thb": { "adult": 900, "child": 700, "under3": 0 },
+        "weather_required": "sunny_calm",
+        "description": "Parc aquatique avec toboggans géants, rivière paresseuse, aire de jeux aquatique pour petits. Idéal par forte chaleur.",
+        "zone": "Chaweng",
+        "booking_link": "https://www.cocosplashsamui.com",
+        "ideal_for": ["famille", "enfants", "adolescents"]
+      },
+      {
+        "id": "butterfly_garden",
+        "name": "Ferme de papillons de Samui",
+        "duration_hours": 1.5,
+        "price_thb": { "adult": 150, "child": 100 },
+        "weather_required": "any",
+        "description": "Jardin intérieur climatisé avec plus de 40 espèces de papillons en vol libre. Mini-musée des insectes locaux.",
+        "zone": "Nathon",
+        "ideal_for": ["famille", "enfants", "rainy_day"]
+      },
+      {
+        "id": "transparent_boat",
+        "name": "Excursion bateau fond transparent",
+        "duration_hours": 3,
+        "price_thb": { "adult": 1200, "child": 800 },
+        "weather_required": "sunny_calm",
+        "description": "Tour en bateau avec fond en verre transparent pour observer les poissons et coraux sans se mouiller. Parfait pour enfants et non-nageurs.",
+        "ideal_for": ["famille", "enfants", "non_nageurs", "budget_moyen"]
+      },
+      {
+        "id": "kite_surf_lesson",
+        "name": "Cours de kitesurf – Chaweng Beach",
+        "duration_hours": 3,
+        "price_thb": { "beginner_lesson": 3500, "ikotested_course_3days": 9000 },
+        "weather_required": "windy",
+        "description": "Cours de kitesurf pour débutants sur la plage de Chaweng. Conditions idéales en novembre–décembre.",
+        "ideal_for": ["aventure", "adolescents", "adultes_sportifs"]
+      }
+    ],
+    "gastronomy_food": [
+      {
+        "id": "jungle_club_dinner",
+        "name": "Dîner sunset – Jungle Club",
+        "duration_hours": 3,
+        "price_thb": { "repas_moyen": 800, "cocktail": 250, "note": "Réservation recommandée pour table sunset" },
+        "weather_required": "sunny_calm or partly_cloudy",
+        "description": "Restaurant perché dans la jungle, vue panoramique 180° sur Chaweng et la mer. L'adresse sunset la plus connue de l'île. Cuisine internationale.",
+        "booking_link": "https://www.jungleclubsamui.com",
+        "phone": "+66 81 894 2327",
+        "ideal_for": ["couple", "romance", "gastronomie", "photographie"]
+      },
+      {
+        "id": "street_food_tour",
+        "name": "Street food tour – Chaweng & Maenam",
+        "duration_hours": 3,
+        "price_thb": { "guided_tour": 1200, "self_guided": 200, "note": "Visite auto-guidée : liste des meilleurs stands fournie" },
+        "weather_required": "any",
+        "description": "Tour des meilleurs stands de street food de l'île : Pad Thai, Som Tam, Khao Niao Mamuang, Satay, rôtis à la banane. Guide local ou itinéraire fourni.",
+        "ideal_for": ["gastronomie", "budget", "aventure_culinaire", "solo"]
+      },
+      {
+        "id": "fruit_tasting",
+        "name": "Dégustation fruits tropicaux – Marché local",
+        "duration_hours": 1,
+        "price_thb": { "budget_moyen": 150 },
+        "weather_required": "any",
+        "description": "Découverte guidée des fruits tropicaux locaux : mangoustan, ramboutan, longane, pitaya, durian (pour les aventuriers olfactifs), jackfruit.",
+        "best_markets": ["Marché de Nathon", "Marché local de Maenam", "Lamai Night Market"],
+        "ideal_for": ["gastronomie", "famille", "culture"]
+      },
+      {
+        "id": "sunset_dinner_cruise",
+        "name": "Dîner-croisière sunset",
+        "duration_hours": 3,
+        "price_thb": { "adult": 2200, "child": 1500, "note": "Cocktails, buffet thaï, musique live inclus" },
+        "weather_required": "sunny_calm or partly_cloudy",
+        "description": "Croisière catamaran ou yacht au coucher du soleil avec buffet de fruits de mer et cocktails tropicaux. Vue sur les îles de l'archipel Ang Thong.",
+        "booking_link": "https://www.samuisunsetcruise.com",
+        "ideal_for": ["couple", "groupe_amis", "lune_de_miel", "famille"]
+      }
+    ],
+    "evening_entertainment": [
+      {
+        "id": "fire_show_coco_tams",
+        "name": "Spectacle de feu – Coco Tam's Beach Bar",
+        "duration_hours": 2,
+        "price_thb": { "cocktail": 250, "entree": 0 },
+        "schedule": "Tous les soirs dès 20h",
+        "description": "Spectacle de jonglage de feu sur la plage de Bophut. Ambiance chill, transats sur la plage, cocktails. Le must du soir à Bophut.",
+        "zone": "Bophut",
+        "maps_link": "https://maps.app.goo.gl/CocoTams",
+        "ideal_for": ["tous profils", "famille", "couple", "groupe_amis"]
+      },
+      {
+        "id": "open_air_cinema",
+        "name": "Cinéma en plein air sur plage",
+        "duration_hours": 2.5,
+        "price_thb": { "ticket": 150, "note": "Programme varie – voir Jungle Club ou Ark Bar" },
+        "schedule": "Plusieurs fois par semaine selon saison",
+        "description": "Projections de films sur grand écran face à la mer, transats ou couvertures sur le sable. Films récents et classiques alternés.",
+        "ideal_for": ["couple", "famille", "solo", "romantique"]
+      },
+      {
+        "id": "muay_thai",
+        "name": "Combat de Muay Thai",
+        "duration_hours": 3,
+        "price_thb": { "ringside": 1500, "standard": 1000, "note": "Plusieurs combats par soirée" },
+        "schedule": "Mardi, vendredi, samedi soir",
+        "description": "Soirée de boxe thaïlandaise authentique. Pas un spectacle pour touristes – vrais combattants locaux et régionaux. Ambiance électrique.",
+        "venues": ["Chaweng Boxing Stadium", "Lamai Boxing Stadium"],
+        "want_to_train_tip": "Pour s'entraîner (pas seulement regarder), recommander Chor Ratchawat Muay Thai Gym – voir activities.sports_fitness.ratchawat_muay_thai.",
+        "ideal_for": ["groupe_amis", "aventure", "culture", "solo"]
+      },
+      {
+        "id": "fishermans_friday",
+        "name": "Marché nocturne Fisherman's Village",
+        "duration_hours": 3,
+        "price_thb": { "budget_moyen": 400 },
+        "schedule": "Vendredi soir uniquement, 17h-22h",
+        "description": "Le meilleur événement hebdo de Samui. Street food, musique live, artisanat dans les ruelles du village.",
+        "zone": "Bophut",
+        "ideal_for": ["tous profils"]
+      }
+    ],
+    "sports_fitness": [
+      {
+        "id": "ratchawat_muay_thai",
+        "name": "Chor Ratchawat Muay Thai Gym",
+        "type": "camp de boxe thaïe / fitness / cours tous niveaux",
+        "recommended": true,
+        "rating": "5.0/5 sur 400+ avis Google vérifiés (les deux camps)",
+        "since": 2020,
+        "duration_hours": 1.5,
+        "weather_required": "any",
+        "description": "LA référence Muay Thai à Koh Samui. Vrai camp thaï authentique, tous niveaux acceptés – débutants, touristes, familles et combattants confirmés. Deux camps, accès inclus aux deux avec tous les forfaits. Cours collectifs, privés, enfants et programme combattant. Idéal aussi pour le visa DTV (lettre d'inscription fournie).",
+        "camps": [
+          {
+            "name": "Camp Bo Phut",
+            "vibe": "Salle de rue originale, intime, ambiance thaïe authentique, sans clim",
+            "location": "Soi Sunday, ~5 min de Fisherman's Village",
+            "address": "Soi Sunday, Tambon Bo Put, Ko Samui District, Surat Thani 84320",
+            "zone": "Bophut",
+            "coordinates": { "lat": 9.5553391, "lng": 100.0344246 },
+            "facilities": ["ring", "sacs lourds", "pao / focus mitts", "cordes à sauter", "location gants & protège-tibias"]
+          },
+          {
+            "name": "Camp Plai Laem",
+            "vibe": "Plus grand, plus d'espace, près du Grand Bouddha, zone de renforcement (bodyweight)",
+            "location": "Plai Laem Soi 13, nord-est de l'île, ~5 min du Big Buddha",
+            "address": "20, 33 หมู่ที่ 5 ปลายแหลม ซอย 13, Tambon Bo Put, Amphoe Ko Samui, Surat Thani 84320",
+            "zone": "Plai_Laem",
+            "coordinates": { "lat": 9.5718233, "lng": 100.0725812 },
+            "facilities": ["ring", "sacs lourds & banana bags", "pao / focus mitts", "barres de traction & dips", "battle ropes", "timers", "grand plateau", "hébergement sur place", "Programme combattant"]
+          }
+        ],
+        "hours": "Lundi–Samedi 7h00–18h30 (fermé le dimanche)",
+        "schedule": {
+          "group_class": "9h00–10h30 (matin) et 17h00–18h30 (après-midi)",
+          "private_lessons": "7h00–9h00 et 11h00–17h00 (créneaux 1h)",
+          "fighter_program": "7h30–10h00 et 16h00–18h30 (Plai Laem uniquement)"
+        },
+        "programs": ["Cours collectif adultes", "Cours privé 1-on-1", "Enfants 8–13 ans (privé dès 3 ans)", "Programme combattant (garde 100% de la bourse)"],
+        "price_thb": {
+          "drop_in_adult": 400,
+          "drop_in_kids": 300,
+          "weekly_1x_day": 2000,
+          "weekly_2x_day": 3000,
+          "monthly_1x_day": 5500,
+          "monthly_2x_day": 7000,
+          "private_adult_solo_60min": 800,
+          "private_adult_group_60min": 600,
+          "private_kids_solo_60min": 600,
+          "private_kids_group_60min": 400,
+          "fighter_program_month": 9500,
+          "resident_rate_month_1x": 3000,
+          "bodyweight_area_day": 100,
+          "bodyweight_area_month": 900,
+          "note": "Tarifs incluent l'accès aux deux camps. Tarif résident sur justificatif de domicile."
+        },
+        "camp_stay_thb": {
+          "1_week_room": 8000,
+          "2_weeks_room": 15000,
+          "1_month_room": 18000,
+          "1_month_bungalow": 23000,
+          "fighter_plus_room_month": 20000,
+          "fighter_plus_bungalow_month": 25500,
+          "note": "Entraînement + hébergement au camp Plai Laem. 7 chambres standard (lit double, SDB privée, clim, Wi-Fi, balcon vue piscine, frigo) + 1 bungalow privé unique (lit king, kitchenette, salon, terrasse)."
+        },
+        "dtv_visa_packages_thb": {
+          "2_sessions_week_6months": 20000,
+          "4_sessions_week_6months": 25000,
+          "unlimited_6months": 33000,
+          "note": "Forfaits 6 mois incluant la lettre d'inscription officielle pour le visa DTV Thaïlande. Documents fournis sous 24h après paiement."
+        },
+        "link": "https://ratchawatmuaythai.com",
+        "booking_link": "https://ratchawatmuaythai.com/booking",
+        "phone": "+66 63 080 2876",
+        "whatsapp": "https://wa.me/66630802876",
+        "email": "chor.ratchawat@gmail.com",
+        "instagram": "https://instagram.com/chor.ratchawatmuaythai",
+        "facebook": "https://facebook.com/Chor.RatchawatMuayThaiGym",
+        "tips": "Bo Phut pour l'ambiance authentique petite salle près du Fisherman's Village ; Plai Laem pour plus d'espace, le renforcement, l'hébergement sur place ou la prépa combat. Paiement par virement (Wise/wire) et réservations groupes possibles directement via WhatsApp.",
+        "ideal_for": ["solo", "couple", "famille", "groupe_amis", "aventure", "wellness", "fitness", "long_sejour", "enfants", "visa_dtv"]
+      }
+    ]
+  },
+
+  "water_sports": [
+    { "name": "Jet-ski", "price_thb": 800, "duration_min": 30, "zone": "Chaweng, Lamai", "note": "⚠️ Toujours vérifier l'état du jet-ski et signer un état des lieux AVANT. Arnaques fréquentes." },
+    { "name": "Parasailing", "price_thb": 700, "duration_min": 15, "zone": "Chaweng", "note": "Spectaculaire, vue à 200m d'altitude sur toute la baie de Chaweng" },
+    { "name": "Stand-Up Paddle", "price_thb": 300, "duration_min": 60, "zone": "Maenam, Bophut, Lamai", "note": "Idéal le matin – mer calme, peu de bateaux" },
+    { "name": "Kayak de mer", "price_thb": 200, "duration_min": 60, "zone": "Toutes plages", "note": "Location libre ou guidée. Explorer les rochers et criques cachées" },
+    { "name": "Planche à voile / Windsurfing", "price_thb": 500, "duration_min": 60, "zone": "Chaweng Nord", "note": "Bons vents en novembre–janvier" },
+    { "name": "Snorkeling guidé", "price_thb": 800, "duration_min": 180, "zone": "Koh Mudsum, Crystal Bay", "note": "Équipement inclus, guide sous-marin" },
+    { "name": "Wakeboard / Ski nautique", "price_thb": 1200, "duration_min": 30, "zone": "Chaweng", "note": "Câble de traction disponible aussi à Chaweng Ski" },
+    { "name": "Kitesurf", "price_thb": 3500, "duration_hours": 3, "zone": "Chaweng, Maenam", "note": "Meilleur en nov–jan avec brise constante. Cours débutant disponibles." },
+    { "name": "Plongée baptême (Discover Scuba)", "price_thb": 5467, "duration_hours": 4, "zone": "Depuis Samui ou Koh Tao", "note": "Tarif Discovery Divers (HORS TVA). Aucune certification requise. Encadrement professionnel PADI dès 10 ans." },
+    { "name": "Pêche sportive charter", "price_thb": 6000, "duration_hours": 8, "zone": "Golfe de Thaïlande", "note": "Départ 6h00, espèces : thon, mahi-mahi, barracuda. Matériel fourni." }
+  ],
+
+  "day_trips": [
+    {
+      "id": "koh_tao_phangan_day",
+      "name": "Koh Tao + Koh Phangan en une journée",
+      "duration_hours": 12,
+      "price_thb": { "ferry_retour": 900, "note": "Déjeuner et activités non inclus" },
+      "description": "Ferry matin vers Koh Tao (plongée ou snorkeling 2–3h), retour via Koh Phangan (balade, déjeuner), retour Samui soir.",
+      "booking_link": "https://www.lomprayah.com",
+      "tips": "Partir le plus tôt possible (ferry 7h30). Vérifier les horaires de retour.",
+      "ideal_for": ["aventure", "solo", "couple", "plongée"]
+    },
+    {
+      "id": "ang_thong_full_day",
+      "name": "Ang Thong Marine Park – Journée complète",
+      "duration_hours": 9,
+      "price_thb": { "tout_inclus": 1800 },
+      "description": "L'excursion signature de Samui. 42 îles vierges, lagune émeraude, kayak, snorkeling, déjeuner BBQ sur plage.",
+      "ideal_for": ["tous profils"]
+    },
+    {
+      "id": "koh_phangan_day",
+      "name": "Koh Phangan – Côté nature et wellbeing",
+      "duration_hours": 10,
+      "price_thb": { "ferry_retour": 400, "note": "Activités à la carte sur place" },
+      "description": "La voisine de Samui, moins touristique que la Full Moon Party. Cascades de Than Sadet, plage de Haad Rin, temples cachés, yoga retreats.",
+      "tips": "Louer un scooter sur place (250 THB/jour) pour explorer l'île.",
+      "ideal_for": ["aventure", "wellness", "culture", "solo"]
+    },
+    {
+      "id": "surat_thani_mainland",
+      "name": "Surat Thani – Excursion continent",
+      "duration_hours": 8,
+      "price_thb": { "ferry_bus": 350, "note": "Excursion à organiser soi-même" },
+      "description": "Port de Surat Thani sur le continent. Marché local immense, temples peu visités, cuisine authentique du sud thaïlandais.",
+      "ideal_for": ["culture", "long_sejour", "aventure", "hors_des_sentiers"]
+    }
+  ],
+
+  "restaurants_and_food": {
+    "gastronomic": [
+      { "name": "Jungle Club Restaurant", "zone": "Chaweng Hills", "type": "Panoramique / Fusion", "price_per_person_thb": 700, "must_order": "Cocktails au coucher du soleil + plateau de fruits de mer", "link": "https://www.jungleclubsamui.com", "phone": "+66 81 894 2327", "ideal_for": ["couple", "sunset", "gastronomie"] },
+      { "name": "The Larder (Rocky's Resort)", "zone": "Lamai", "type": "Gastronomique française", "price_per_person_thb": 1200, "must_order": "Tartare, moules, crème brûlée", "ideal_for": ["gastronomie", "couple", "expats_français"] },
+      { "name": "Il Tempio", "zone": "Chaweng", "type": "Italien gastronomique", "price_per_person_thb": 900, "must_order": "Homemade pasta, tiramisu", "note": "Meilleure cuisine italienne de l'île" },
+      { "name": "Koh Samui Beach Club (Nikki Beach)", "zone": "Maenam", "type": "Beach club gastronomique", "price_per_person_thb": 1400, "link": "https://www.nikkibeach.com/koh-samui", "ideal_for": ["luxe", "groupe_amis", "brunch_dominical"] },
+      { "name": "Dining on the Rocks (Six Senses)", "zone": "Taling Ngam", "type": "Fine dining / Vue panoramique", "price_per_person_thb": 2500, "must_order": "Menu dégustation 7 plats (12 000 THB)", "note": "Réservation indispensable, vue exceptionnelle", "ideal_for": ["luxe", "lune_de_miel", "anniversaire"] }
+    ],
+    "mid_range": [
+      { "name": "Five Islands Restaurant", "zone": "Bophut", "type": "Fruits de mer / Vue mer", "price_per_person_thb": 600, "must_order": "Fruits de mer frais selon arrivage", "ideal_for": ["gastronomie", "couple", "famille"] },
+      { "name": "The Wharf Samui", "zone": "Bophut", "type": "International / Bord de mer", "price_per_person_thb": 600, "must_order": "Burgers maison, fish & chips", "link": "https://www.thewharfsamui.com" },
+      { "name": "Zazen Restaurant", "zone": "Bophut", "type": "Fusion asiatique / Vue jardin tropical", "price_per_person_thb": 700, "must_order": "Crevettes en croûte de noix de coco, crème brûlée citronnelle", "link": "https://www.samuizazen.com" },
+      { "name": "Barracuda Restaurant", "zone": "Chaweng", "type": "Méditerranéen / Fruits de mer", "price_per_person_thb": 700, "must_order": "Langoustines grillées, paella", "note": "Tenu par un Chef espagnol – très fiable" },
+      { "name": "Karma Sutra", "zone": "Bophut", "type": "Indien / Vue mer", "price_per_person_thb": 450, "must_order": "Butter chicken, naan artisanal" },
+      { "name": "Prego (Amari Hotel)", "zone": "Chaweng", "type": "Italien / Récompensé", "price_per_person_thb": 800, "must_order": "Carpaccio + risotto du chef Marco Boscaini" },
+      { "name": "Larder Samui", "zone": "Lamai", "type": "Bistro européen", "price_per_person_thb": 550, "must_order": "Croque-monsieur, cheese board", "note": "Géré par des Français – qualité garantie" },
+      { "name": "Vikasa Life Café", "zone": "Chaweng Hills", "type": "Healthy / Brunch / Vegan", "price_per_person_thb": 450, "must_order": "Açaí bowl, green smoothie, eggs benny", "link": "https://www.vikasa.com/cafe", "ideal_for": ["wellness", "végétarien", "vegan"] }
+    ],
+    "local_authentic": [
+      { "name": "Raan Jay Fai (stand Chaweng)", "zone": "Chaweng", "type": "Street food thaï", "price_per_person_thb": 80, "must_order": "Pad Thai, Pad See Ew", "note": "Chercher les stands avec file d'attente locale" },
+      { "name": "Khao Tom Pla (bouillie de riz aux poissons)", "zone": "Marchés locaux Maenam / Nathon", "type": "Petit-déjeuner thaï", "price_per_person_thb": 60, "must_order": "Khao Tom + omelette", "note": "Le vrai petit-déjeuner des locaux de Samui" },
+      { "name": "Som Tam stands (papaye verte épicée)", "zone": "Partout sur l'île", "type": "Street food isan", "price_per_person_thb": 60, "must_order": "Som Tam thaï + sticky rice + poulet grillé", "note": "Attention – épices très fortes. Demander 'mai ped' pour moins épicé" },
+      { "name": "Marché de Nathon", "zone": "Nathon", "type": "Marché local quotidien", "price_per_person_thb": 100, "schedule": "Tous les matins 6h–12h", "note": "Le meilleur marché local de l'île – 100% thaï, prix locaux" },
+      { "name": "Marché nocturne de Lamai", "zone": "Lamai", "type": "Night market / Street food", "price_per_person_thb": 200, "schedule": "Tous les soirs 18h–23h", "must_order": "Insectes frits (pour les aventuriers), satay, mango sticky rice" },
+      { "name": "Marché de Maenam Walking Street", "zone": "Maenam", "type": "Night market local", "price_per_person_thb": 150, "schedule": "Dimanche soir 17h–22h", "note": "Moins touristique que Chaweng, très authentique" },
+      { "name": "Raan Nuea (bœuf local)", "zone": "Nathon", "type": "Restaurant thaï local", "price_per_person_thb": 120, "must_order": "Massaman curry bœuf, riz jasmin", "note": "Le meilleur Massaman Curry de l'île selon les résidents" },
+      { "name": "Lung Yai Thai Tapas", "zone": "Lamai", "type": "Tapas thaïes modernes", "price_per_person_thb": 350, "must_order": "Assortiment de tapas thaïs (10 pièces – 280 THB)", "note": "Concept original entre tapas espagnoles et saveurs thaïes" }
+    ],
+    "coffee_bakery": [
+      { "name": "The Hive Samui", "zone": "Chaweng Hills", "type": "Café / coworking / brunch", "price_thb": 150, "must_order": "Cold brew, banana bread maison", "wifi": true, "ideal_for": ["digital_nomads", "long_sejour"] },
+      { "name": "Coffee Island", "zone": "Chaweng", "type": "Café premium thaï", "price_thb": 120, "must_order": "Thai iced latte, pastries" },
+      { "name": "Ninja Crepes", "zone": "Fisherman's Village", "type": "Crêperie française", "price_thb": 180, "must_order": "Crêpe Nutella-banane, crêpe jambon-fromage", "note": "Tenu par un Français – crêpes authentiques bretonnes" }
+    ]
+  },
+
+  "shopping": [
+    { "name": "Central Festival Samui", "zone": "Chaweng", "type": "Centre commercial principal", "price_range": "moyen à luxe", "link": "https://www.centralfestivalsamui.com", "highlights": ["Supermarché Tops", "Pharmacie Boots", "Restaurants chaînes", "Cinéma"], "note": "Seul mall international de l'île" },
+    { "name": "Chaweng Walking Street", "zone": "Chaweng", "type": "Rue commerçante principale", "price_range": "budget à moyen", "highlights": ["Vêtements", "Souvenirs", "Restaurants", "Bars"], "schedule": "Ouvert tous les jours 10h–minuit" },
+    { "name": "Fisherman's Village Night Market", "zone": "Bophut", "type": "Marché artisanat / créateurs locaux", "price_range": "moyen", "schedule": "Vendredi 17h–22h", "highlights": ["Artisanat thaï", "Vêtements éthiques", "Bijoux faits main", "Lampes de sel"] },
+    { "name": "Nathon Market (Marché local)", "zone": "Nathon", "type": "Marché alimentaire local", "price_range": "budget", "schedule": "Tous les matins 6h–12h", "highlights": ["Fruits tropicaux frais", "Poisson pêché du jour", "Plats cuisinés locaux"] },
+    { "name": "The Lamai Market", "zone": "Lamai", "type": "Marché de nuit mixte", "price_range": "budget", "schedule": "Tous les soirs 18h–23h" },
+    { "name": "Harnn Heritage Spa & Shop", "zone": "Chaweng", "type": "Cosmétiques thaïs naturels", "price_range": "moyen à luxe", "link": "https://www.harnn.com", "highlights": ["Savons artisanaux", "Huiles essentielles locales", "Coffrets cadeaux", "Produits spa"] },
+    { "name": "Jim Thompson Silk", "zone": "Central Festival", "type": "Soieries et textiles thaïs haut de gamme", "price_range": "luxe", "highlights": ["Soies authentiques", "Chemises", "Décoration"] },
+    { "name": "CocoSa (Boutique locale)", "zone": "Bophut Village", "type": "Mode locale et créateurs", "price_range": "moyen", "highlights": ["Vêtements créateurs locaux", "Bijoux artisanaux", "Décoration bohème"] },
+    { "name": "Tops Supermarket", "zone": "Central Festival Chaweng", "type": "Supermarché international", "note": "Meilleur rapport qualité-prix pour alimentaire, vins, produits importés", "price_range": "budget à moyen" },
+    { "name": "7-Eleven (partout)", "zone": "Toute l'île", "type": "Convenience store 24h/24", "note": "Indispensable – SIM cards, eau, snacks, recharges, ATM à côté", "price_range": "budget" }
+  ],
+
+  "nightlife": [
+    { "name": "Green Mango Club", "zone": "Chaweng", "type": "Club / House & EDM", "price_thb": { "entree": 300, "cocktail": 250 }, "schedule": "22h–4h", "note": "Le club le plus connu de l'île depuis 30 ans" },
+    { "name": "ARK Bar Beach Club", "zone": "Chaweng", "type": "Beach bar / Club", "price_thb": { "entree": 0, "cocktail": 200 }, "schedule": "Dès 16h", "note": "Soirées foam party et cinéma en plein air régulièrement" },
+    { "name": "SEEN Beach Club", "zone": "Chaweng", "type": "Beach club premium", "price_thb": { "cover_weekend": 500, "cocktail": 350 }, "schedule": "18h–2h", "note": "DJs internationaux, ambiance trendy" },
+    { "name": "The Roof Bar Lamai", "zone": "Lamai", "type": "Rooftop bar / Vue panoramique", "price_thb": { "cocktail": 250 }, "schedule": "17h–minuit", "note": "Meilleur coucher de soleil avec cocktail à Lamai" },
+    { "name": "Coco Tam's", "zone": "Bophut", "type": "Beach bar chill / Spectacle de feu", "price_thb": { "cocktail": 200 }, "schedule": "Dès 15h, spectacle de feu tous les soirs 21h", "note": "Ambiance détendue, idéal pour tous âges" },
+    { "name": "Jungle Club Bar", "zone": "Chaweng Hills", "type": "Bar panoramique / Sunset", "price_thb": { "cocktail": 280 }, "schedule": "15h–minuit", "note": "Réserver une table sunset à l'avance – limité" },
+    { "name": "Dojo Bar", "zone": "Chaweng", "type": "Bar DJ / ambiance jeune", "price_thb": { "entree": 0, "biere": 100 }, "schedule": "21h–3h", "note": "Soirées thématiques, deux-pour-un jusqu'à 22h" },
+    { "name": "La Fabrique Brasserie", "zone": "Bophut", "type": "Bar français / expats", "price_thb": { "biere_pression": 150 }, "schedule": "17h–minuit", "note": "Bières artisanales, karaoké, retrouvailles francophones" },
+    { "name": "Cha Cha Moon Beach Club", "zone": "Chaweng", "type": "Beach club boutique", "price_thb": { "cocktail": 280 }, "schedule": "11h–23h", "note": "Ambiance ibiza-thaïe, cuisine légère" },
+    { "name": "Full Moon Party Koh Phangan", "zone": "Koh Phangan (ferry 30 min)", "type": "Événement mensuel légendaire", "price_thb": { "entree_plage": 200, "ferry_aller_retour": 600 }, "schedule": "1 fois par mois – pleine lune", "note": "⚠️ Retour en ferry possible toute la nuit. Objets de valeur à laisser à l'hôtel." }
+  ],
+
+  "weather_season_rules": {
+    "provider": "Google Weather API",
+    "location": "Koh Samui",
+    "coordinates": { "lat": 9.5120, "lng": 100.0136 },
+    "functions": ["current_conditions", "forecast_7days", "sea_conditions", "alerts"],
+    "conditions": {
+      "sunny_calm": {
+        "label": "☀️ Ensoleillé / Mer calme",
+        "trigger": "ciel dégagé, vent < 15 km/h, vagues < 0.5m, T > 28°C",
+        "recommendations": ["Ang Thong Marine Park", "Plongée Koh Tao", "Snorkeling", "Water sports", "Excursion en bateau", "Toutes activités plage"],
+        "avoid": [],
+        "message": "Météo idéale ! Toutes activités disponibles."
+      },
+      "partly_cloudy": {
+        "label": "⛅ Partiellement nuageux",
+        "trigger": "nuages partiels, vent modéré < 25 km/h",
+        "recommendations": ["Randonnée cascades", "Safari jungle", "Temples", "Cours de cuisine", "Marchés", "Kayak côtier"],
+        "avoid": ["excursions longues en mer"],
+        "message": "Bonnes conditions pour activités terrestres et légères activités nautiques."
+      },
+      "heavy_rain": {
+        "label": "🌧️ Pluie forte / Orage",
+        "trigger": "pluie > 20mm/h ou alerte météo active",
+        "recommendations": ["Spa & massages", "Cours de cuisine thaïe", "Temples couverts", "Shopping Central Festival", "Yoga en salle", "Musée des coquillages", "Muay Thai indoor", "Cinéma"],
+        "avoid": ["Excursion Ang Thong", "Plongée", "Randonnées", "Activités nautiques", "Excursions en bateau"],
+        "alert_message": "⚠️ Météo défavorable. Je te propose des alternatives en intérieur parfaites pour ton profil :"
+      },
+      "rough_sea": {
+        "label": "🌊 Mer agitée",
+        "trigger": "vagues > 1.5m ou alerte maritime active",
+        "recommendations": ["Temples et culture", "Spa et wellness", "Cours de cuisine", "Marchés nocturnes", "Randonnées jungle", "Shopping"],
+        "avoid": ["Ferries inter-îles", "Plongée", "Snorkeling", "Excursions bateau", "Jet-ski"],
+        "alert_message": "⚠️ Mer agitée en ce moment. Les excursions en bateau sont déconseillées. Voici des alternatives :"
+      },
+      "hot_sunny": {
+        "label": "🌡️ Très chaud (> 35°C)",
+        "trigger": "T > 35°C, humidité > 85%",
+        "recommendations": ["Plage le matin avant 11h", "Piscine", "Spa climatisé", "Shopping AC", "Déjeuner léger", "Activités aquatiques"],
+        "avoid": ["Randonnées en milieu de journée", "Activités intenses 11h–15h"],
+        "alert_message": "🌡️ Chaleur intense aujourd'hui. Je recommande les activités aquatiques le matin et le spa l'après-midi :"
+      }
+    },
+    "seasonal_calendar": {
+      "jan_feb": { "label": "☀️ Haute saison idéale", "weather": "Sec, ensoleillé, 28-32°C", "sea": "Calme, visibilité parfaite", "crowd": "Très fréquenté", "price_index": "++", "tip": "Réserver hôtels et restaurants à l'avance. Meilleur moment pour plongée." },
+      "mar_apr": { "label": "🌡️ Haute saison chaude", "weather": "Très chaud (33-38°C), humid", "sea": "Calme", "crowd": "Modéré", "price_index": "+", "tip": "Privilégier les activités matinales. Période de Songkran (Nouvel An thaï) début avril – festival d'eau spectaculaire." },
+      "mai_jun": { "label": "🌤️ Épaule douce", "weather": "Quelques averses, belle lumière dorée, 30-34°C", "sea": "Légèrement agitée par moments", "crowd": "Faible à modéré", "price_index": "=", "tip": "Bonne période – moins de monde, encore belles plages, prix stables." },
+      "jul_aug": { "label": "🌦️ Début saison pluies", "weather": "Averses possibles l'après-midi, matins souvent beaux", "sea": "Parfois agitée", "crowd": "Modéré (vacances euro)", "price_index": "-", "tip": "Réductions intéressantes. Snorkeling encore possible les matins calmes." },
+      "sep_oct": { "label": "🌧️ Saison des pluies (max)", "weather": "Pluies fréquentes, orages possibles", "sea": "Agitée côté est", "crowd": "Faible", "price_index": "--", "tip": "Grosses réductions hôtels (–30 à –50%). Prévoir activités intérieur. Belle période pour wellness et yoga retreats." },
+      "nov": { "label": "⛅ Épaule humide", "weather": "Transition – encore des pluies mais s'éclaircit", "sea": "Variable", "crowd": "Faible à modéré", "price_index": "-", "tip": "Bons prix, fin des pluies progressive. Anticiper la haute saison en réservant décembre." },
+      "dec": { "label": "☀️ Haute saison qui démarre", "weather": "Sec, 28-30°C", "sea": "Calme", "crowd": "Élevé (fêtes de fin d'année)", "price_index": "+++", "tip": "Noël et Nouvel An = tarifs très élevés. Réserver 3 mois à l'avance." }
+    }
+  },
+
+  "practical_info": {
+    "arrival": {
+      "airport": {
+        "name": "Aéroport international de Koh Samui (USM)",
+        "operator": "Bangkok Airways (aéroport privé)",
+        "note": "Seul aéroport privé de Thaïlande – ambiance boutique, sans files d'attente géantes",
+        "transfers": {
+          "taxi_officiel": { "price_thb_zone": { "Choeng_Mon": 300, "Chaweng": 400, "Bophut": 400, "Lamai": 550, "Maenam": 450, "Nathon": 550 }, "note": "Comptoirs officiels à la sortie bagages – prix fixes par zone affiché" },
+          "grab": { "price_thb": "250–350 selon zone", "app": "Grab Thailand", "note": "10–20% moins cher que les taxis officiels" },
+          "hotel_shuttle": { "price_thb": 0, "note": "Souvent inclus dans les hôtels 4–5 étoiles – vérifier à la réservation" },
+          "songthaew": { "price_thb": "80–150 selon zone", "note": "Camionnette partagée – le moins cher, demander à la sortie arriv ée" }
+        }
+      }
+    },
+    "inter_island_transport": {
+      "koh_samui_to_koh_tao": { "operators": ["Lomprayah", "Seatran Discovery"], "price_thb": 650, "duration_h": 2.5, "departure_pier": "Nathon Pier ou Maenam Pier", "schedule": "Départs 7h30 et 12h30 (Lomprayah)", "booking": "https://www.lomprayah.com" },
+      "koh_samui_to_koh_phangan": { "operators": ["Seatran", "Raja Ferry", "Bangkok Ferry"], "price_thb": 200, "duration_h": 0.5, "departure_pier": "Nathon Pier", "schedule": "Départs toutes les heures 7h–18h" },
+      "koh_samui_to_surat_thani": { "operators": ["Raja Ferry", "Seatran"], "price_thb": 350, "duration_h": 2, "departure_pier": "Nathon Pier", "note": "Pour liaisons train/bus vers Bangkok, Krabi, Phuket" },
+      "koh_samui_to_ang_thong": { "operators": ["Angthong tours"], "price_thb": 1800, "duration_h": 1, "note": "Uniquement dans le cadre des excursions organisées" }
+    },
+    "local_transport": {
+      "songthaew": { "description": "Camionnettes pickup reconverties en transports collectifs – le transport local historique", "price_thb": { "short_5km": 50, "medium_10km": 100, "cross_island": 150 }, "how_to_use": "Faire signe sur le bord de la route. Toujours négocier AVANT de monter.", "route_principale": "Circuit autour de l'île dans le sens des aiguilles – 150 THB complet" },
+      "scooter": { "price_per_day_thb": 250, "where_to_rent": "Agences dans chaque zone, hôtels, 7-Eleven", "requirements": "Permis moto ou permis international. Assurance recommandée.", "warning": "⚠️ Routes de montagne glissantes en saison des pluies. Casque OBLIGATOIRE. Principal générateur d'accidents touristiques à Samui." },
+      "grab": { "description": "Application VTC – comme Uber", "availability": "Disponible sur toute l'île", "price_note": "Plus transparent que les taxis, tarif visible avant confirmation", "app_store": "Chercher 'Grab' sur App Store ou Google Play" },
+      "car_rental": { "price_per_day_thb": 1000, "companies": ["Budget Car Rental Samui", "Avis Samui", "Hertz Samui"], "requirements": "Permis de conduire international recommandé", "note": "Conduire à gauche en Thaïlande" },
+      "taxi": { "price_per_km_thb": 50, "min_fare_thb": 200, "note": "Taxis sans compteur – TOUJOURS négocier avant de monter" }
+    },
+    "money_and_banking": {
+      "currency": "Baht thaïlandais (THB)",
+      "exchange_rate_indicative": "1 EUR ≈ 38–40 THB / 1 USD ≈ 35–36 THB (vérifier taux du jour)",
+      "atm_fee_thb": 220,
+      "best_atm": "Bangkok Bank – frais les moins élevés pour cartes étrangères",
+      "cards_accepted": "Visa et Mastercard acceptés dans la majorité des établissements touristiques. Cash requis dans les marchés locaux.",
+      "tips": [
+        "Utiliser une carte Wise ou Revolut – zéro frais de change, meilleur taux",
+        "Retirer des grosses sommes en une fois (par ex. 15 000 THB) pour minimiser les frais ATM",
+        "Éviter les bureaux de change à l'aéroport – taux défavorable",
+        "Meilleurs taux : bureaux de change SuperRich (en ville) ou banques locales"
+      ],
+      "tipping_culture": {
+        "restaurants": "10–15% apprécié si service charge non inclus",
+        "massages": "50–100 THB par praticien",
+        "taxis_songthaew": "Pas obligatoire mais apprécié",
+        "hotels": "20–50 THB pour les bagagistes"
+      }
+    },
+    "sim_cards_internet": {
+      "operators": { "AIS": "Meilleure couverture sur l'île – recommandé", "DTAC": "Bon réseau, offres data compétitives", "True Move": "Tarifs attractifs, couverture légèrement inférieure" },
+      "tourist_sim_thb": 299,
+      "includes": "30 jours, données illimitées (ralentissement au-delà de 30 Go) + appels locaux",
+      "where_to_buy": "Aéroport USM (légèrement plus cher), 7-Eleven, agences opérateur, comptoirs dans Central Festival",
+      "esim_option": "AIS eSIM disponible en achat en ligne avant le voyage",
+      "wifi": "Disponible dans tous les hôtels, cafés et restaurants. Qualité variable selon zone. Chaweng = meilleure connectivité."
+    },
+    "visa": {
+      "thailand_visa_free": ["Union Européenne", "USA", "Canada", "Australie", "Japon", "Corée du Sud", "UK"],
+      "duration_days": 60,
+      "extension_possible": true,
+      "extension_price_thb": 1900,
+      "where_to_extend": "Immigration Office Samui, Nathon",
+      "long_stay_options": ["Thailand Elite Visa (5–20 ans)", "LTR Visa (Long Term Resident)", "Retraite 50+ visa (Non-Immigrant O-A)"],
+      "note": "Vérifier les règles en vigueur – les politiques de visa thaïlandaises changent régulièrement."
+    },
+    "health_safety": {
+      "emergency_numbers": {
+        "police_touriste": "1155",
+        "urgences_generales": "191",
+        "ambulance_pompiers": "1669",
+        "garde_cotes": "1196",
+        "police_locale_samui": "+66 77 421 300"
+      },
+      "hospitals": [
+        { "name": "Bangkok Hospital Samui", "zone": "Chaweng", "type": "Hôpital privé international – meilleur équipement", "phone": "+66 77 429 500", "link": "https://www.bangkokhospitalsamui.com", "note": "Personnel anglophone, soins urgences et spécialisés, chambre privée disponible" },
+        { "name": "Samui International Hospital", "zone": "Chaweng", "type": "Hôpital privé", "phone": "+66 77 230 781", "link": "https://www.sih.co.th", "note": "Bon rapport qualité-prix, personnel anglophone" },
+        { "name": "Nathon Hospital", "zone": "Nathon", "type": "Hôpital public", "phone": "+66 77 421 230", "note": "Tarifs locaux très bas – adapter ses attentes sur l'infrastructure" }
+      ],
+      "pharmacies": {
+        "chains": ["Boots Pharmacy (Chaweng, Lamai, Central Festival)", "Watsons (Central Festival)", "Pharmacies locales (partout)"],
+        "note": "Boots et Watsons : personnel anglophone garanti. Médicaments courants sans ordonnance.",
+        "rehydratation": "Pocari Sweat ou 100Plus disponibles partout – indispensable en cas de chaleur ou tourista"
+      },
+      "travel_insurance": "Fortement recommandée. Prestataires populaires : AXA, Allianz, BUPA International. Vérifier couverture sports nautiques et plongée.",
+      "vaccinations": ["Hépatite A (recommandé)", "Typhoïde (recommandé)", "Tétanos/Diphtérie (à jour)", "Paludisme : risque très faible à Samui – généralement pas de prophylaxie requise"],
+      "safety_tips": [
+        "Ne jamais laisser son passeport en caution pour un scooter – donner une copie ou une carte bancaire.",
+        "Jet-ski : inspecter l'engin et signer un état des lieux ÉCRIT avant utilisation.",
+        "Éviter de porter des objets de valeur visibles sur la plage ou dans les zones animées la nuit.",
+        "Respecter le code de la route – routes étroites, conduite à gauche, vitesse limitée 60 km/h.",
+        "Crème solaire reef-safe obligatoire dans les zones marines protégées.",
+        "En cas de pickup de type 'gem scam' ou 'tuk-tuk to temple' – refuser poliment, c'est une arnaque classique.",
+        "Respecter les temples : épaules et genoux couverts, chaussures retirées à l'entrée.",
+        "Eau du robinet non potable – boire uniquement eau en bouteille ou filtrée."
+      ],
+      "common_issues": {
+        "sunburn": "SPF 50 minimum, renouveler toutes 2h. Aloe vera gel disponible partout.",
+        "jellyfish": "Présentes surtout en basse saison. En cas de piqûre : vinaigre blanc (pas d'eau douce). Consulter si réaction grave.",
+        "food_poisoning": "Éviter la glace dans les stands locaux bon marché. Boire eau en bouteille uniquement.",
+        "dehydration": "Boire minimum 3L d'eau par jour. Signes : maux de tête, urine foncée. Pocari Sweat en priorité.",
+        "scooter_accident": "Le plus fréquent. Porter casque ET lunettes. Jambes couvertes si possible."
+      }
+    },
+    "useful_apps": [
+      { "name": "Grab", "usage": "VTC et livraison repas", "platform": "iOS & Android" },
+      { "name": "Agoda / Booking.com", "usage": "Réservation hôtels", "note": "Agoda souvent moins cher en Asie" },
+      { "name": "Klook", "usage": "Activités et excursions", "note": "Réductions fréquentes, remboursable" },
+      { "name": "Google Maps", "usage": "Navigation – télécharger la carte offline avant d'arriver", "note": "Works offline" },
+      { "name": "XE Currency", "usage": "Taux de change THB en temps réel" },
+      { "name": "Google Translate", "usage": "Traducteur thaï – option photo pour lire les menus locaux" },
+      { "name": "Lomprayah", "usage": "Réservation ferries inter-îles", "link": "https://www.lomprayah.com" },
+      { "name": "Line", "usage": "Application de messagerie principale en Thaïlande – indispensable pour contacter les locaux" },
+      { "name": "Airbnb", "usage": "Villas et appartements en long séjour" },
+      { "name": "AIS SIM Card Online Shop", "usage": "eSIM achetable en ligne avant le départ" }
+    ]
+  },
+
+  "local_tips": {
+    "secrets": [
+      "Silver Beach (Ao Thong Takian) – la plage la plus belle et la moins connue entre Chaweng et Lamai. Accès par sentier discret.",
+      "Le marché du matin de Nathon commence à 5h30 – arriver tôt pour voir les pêcheurs livrer leur prise.",
+      "Khao Hua Jook (pagode blanche) au lever du soleil – gratuit, méconnu, vue à 360° sur toute l'île.",
+      "Bang Po Beach (Maenam Ouest) – les meilleurs fruits de mer frais de l'île, vendus directement par les pêcheurs.",
+      "Hin Yai / Hin Ta (Grandmother & Grandfather Rocks) – sculptures naturelles amusantes, gratuit, souvent ignoré des tours.",
+      "Le Jungle Club est encore plus beau en semaine (moins de monde) et meilleur rapport qualité-prix avant 18h.",
+      "Pour les massages locaux authentiques, chercher les salons en retrait de la route principale – même qualité, moitié prix.",
+      "Secret Road de l'intérieur (route 4169) – traverse l'île du nord au sud dans la jungle, magnifique en scooter le matin."
+    ],
+    "expat_recommendations": [
+      "Meilleur café de l'île : The Hive (Chaweng Hills) – terrasse, wifi rapide, excellent cold brew",
+      "Meilleur marché local : Nathon – 100% thaï, prix locaux, expérience authentique",
+      "Meilleure pharmacie avec personnel bilingue : Boots à Central Festival Samui",
+      "Meilleur coiffeur expats : demander à votre hôtel ou dans les groupes Facebook locaux",
+      "Meilleur mécanicien scooter (honnête) : demander à des résidents locaux – les adresses changent",
+      "Meilleur électricien / plombier rapide : via les groupes Facebook Samui Expats Community"
+    ],
+    "do_dont": {
+      "do": [
+        "Saluer avec un wai (mains jointes) dans les temples et avec les personnes âgées",
+        "Retirer ses chaussures avant d'entrer dans une maison ou un temple",
+        "Utiliser les deux mains pour donner ou recevoir quelque chose (marque de respect)",
+        "Marchandiner poliment dans les marchés (pas dans les magasins officiels)",
+        "Demander 'mai ped' si vous ne voulez pas de plat trop épicé",
+        "Acheter de l'eau en bouteilles recyclables au supermarché plutôt qu'en petits packs"
+      ],
+      "dont": [
+        "Ne jamais toucher la tête de quelqu'un – la tête est sacrée en culture thaïe",
+        "Ne jamais pointer les pieds vers quelqu'un ou vers une statue bouddhiste",
+        "Ne jamais critiquer la famille royale – crime de lèse-majesté, peine de prison",
+        "Ne pas s'habiller de manière très dénudée dans les temples ou villages locaux",
+        "Éviter d'afficher des marques d'affection excessives en public dans les zones très locales",
+        "Ne pas laisser tourner le moteur d'un scooter ou voiture sans surveillance"
+      ]
+    },
+    "budget_tips": [
+      "Manger aux stands de street food avec file d'attente de locaux = qualité garantie et prix 3–5x moins chers",
+      "Louer un scooter (250 THB/jour) plutôt que de prendre des taxis – économiser 80% sur les déplacements",
+      "Aller à la plage le matin tôt (avant 9h) = moins chaud, moins de monde, gratuit",
+      "Hôtels bien moins chers à Maenam que Chaweng pour qualité équivalente (–30%)",
+      "Marchés locaux Nathon et Maenam = alimentation 5× moins chère que les restos touristiques"
+    ]
+  },
+
+  "thai_phrases": {
+    "basic": [
+      { "phrase": "Sawasdee khap/kha", "meaning": "Bonjour / Bonsoir (khap = homme, kha = femme)", "pronunciation": "Sa-wa-dee-kap" },
+      { "phrase": "Khob khun khap/kha", "meaning": "Merci", "pronunciation": "Kob-koon-kap" },
+      { "phrase": "Mai pen rai", "meaning": "Ce n'est pas grave / Pas de problème", "pronunciation": "Maï-pen-raï" },
+      { "phrase": "Ao nit noi", "meaning": "Un petit peu / Moins de cela", "pronunciation": "Ao-nit-noy" },
+      { "phrase": "Phet nit noi", "meaning": "Pas trop épicé", "pronunciation": "Pet-nit-noy" },
+      { "phrase": "Mai ao phet", "meaning": "Sans piment du tout", "pronunciation": "Maï-ao-pet" },
+      { "phrase": "Check bin khap", "meaning": "L'addition s'il vous plaît", "pronunciation": "Check-bin-kap" },
+      { "phrase": "Thao rai?", "meaning": "Combien ça coûte?", "pronunciation": "Tao-raï" },
+      { "phrase": "Lot noi dai mai?", "meaning": "Pouvez-vous faire un geste sur le prix?", "pronunciation": "Lot-noy-daï-maï" },
+      { "phrase": "Hong nam you thi nai?", "meaning": "Où sont les toilettes?", "pronunciation": "Hong-nam-yoo-tee-naï" },
+      { "phrase": "Chuay duay!", "meaning": "Au secours! / Aidez-moi!", "pronunciation": "Choo-ay-doo-ay" },
+      { "phrase": "Rong phayaban you thi nai?", "meaning": "Où est l'hôpital?", "pronunciation": "Rong-pa-ya-ban-yoo-tee-naï" }
+    ]
+  },
+
+  "events_calendar": {
+    "january": ["Nouvel An thaï – célébrations", "Koh Samui Regatta (voile) – fin janvier"],
+    "february": ["Fête des amoureux (Valentine's Day) – offres romantiques hôtels"],
+    "march": ["High Season fin – Kite Festival"],
+    "april": ["Songkran (Nouvel An thaï) – fête de l'eau 13–15 avril", "Températures max – éviter activités en plein air 11h–15h"],
+    "may": ["Début de la mousson côté Golfe"],
+    "june": ["Pas d'événement majeur – bonnes offres hôtelières"],
+    "july": ["Khao Phansa – début du Carême bouddhiste – ceremonies dans les temples"],
+    "august": ["Anniversaire de la Reine (Fête des Mères thaïe)"],
+    "september": ["Végétarian Festival – octobre ou septembre selon calendrier lunaire"],
+    "october": ["Ok Phansa – fin du Carême bouddhiste – Festival des bougies", "Saison des pluies maximum"],
+    "november": ["Loy Krathong – festival des lumières sur l'eau (octobre ou novembre)", "Pluies qui diminuent"],
+    "december": ["Haute saison qui démarre – prix en hausse", "Noël et Nouvel An – tarifs peak", "Feux d'artifice sur les plages principales le 31"]
+  },
+
+  "partner_tracking": {
+    "enabled": true,
+    "description": "Système de traçabilité pour partenaires commerciaux et monétisation",
+    "partner_id_format": "SAMUI-{ZONE}-{CODE}-{YEAR}",
+    "utm_template": "?utm_source=samui_ai_concierge&utm_medium=chatbot&utm_campaign={partner_id}&utm_content={activity_id}",
+    "revenue_models": {
+      "hotel_subscription": { "price_thb_month": 3500, "includes": ["Widget chatbot personnalisé", "Mise à jour mensuelle contenu", "Rapport mensuel leads trackés", "Support WhatsApp"] },
+      "affiliate_klook": { "commission_percent": 6, "tracking": "Liens affiliés intégrés dans chaque recommandation d'activité" },
+      "affiliate_agoda_booking": { "commission_percent": 5, "tracking": "Liens trackés UTM pour chaque réservation hôtel générée" },
+      "local_partner_commission": { "range_percent": "10–15%", "model": "Accord direct avec activités, spas, restaurants partenaires" }
+    },
+    "hotel_widget": {
+      "description": "Widget chatbot blanc (white-label) intégrable sur le site de l'hôtel",
+      "embed_type": "JavaScript snippet < 5 lignes",
+      "customization": ["Couleurs hôtel", "Logo", "Nom personnalisé", "Contenu prioritaire (spa, resto, activités de l'hôtel)"],
+      "languages": ["fr", "en", "ru", "de", "sv"],
+      "contact": "+66 633 753 316",
+      "trial_days": 14
+    },
+    "partners": [
+      {
+        "partner_id": "SAMUI-BOPHUT-RATCHAWAT-2026",
+        "name": "Chor Ratchawat Muay Thai Gym",
+        "category": "sports_fitness",
+        "activity_id": "ratchawat_muay_thai",
+        "zones": ["Bophut", "Plai_Laem"],
+        "website": "https://ratchawatmuaythai.com",
+        "booking_link": "https://ratchawatmuaythai.com/booking",
+        "contact": "+66 63 080 2876",
+        "whatsapp": "https://wa.me/66630802876",
+        "email": "chor.ratchawat@gmail.com",
+        "commission_model": "Gratuit – partenaire ami, aucune commission",
+        "status": "partenaire actif (gratuit)",
+        "notes": "Camp Muay Thai 5.0/5, deux sites, hébergement + visa DTV. Amie proche de Cyril – mis en avant gratuitement dans le concierge."
+      },
+      {
+        "partner_id": "SAMUI-CHAWENG-DISCOVERYDIVERS-2026",
+        "name": "Discovery Divers Koh Samui",
+        "category": "diving",
+        "activity_id": "koh_tao_diving",
+        "zones": ["Chaweng"],
+        "website": "https://discoverydivers.com",
+        "booking_link": "https://fareharbor.com/embeds/book/discoverydivers/?full-items=yes",
+        "contact": "+66 95 271 0017",
+        "whatsapp": "https://wa.me/66952710017",
+        "email": "info@discoverydivers.com",
+        "commission_model": "À définir – Cyril intervient comme instructeur ; orienter les clients plongée vers Discovery Divers",
+        "status": "partenaire actif",
+        "notes": "Centre PADI 5 étoiles depuis 1999, Amari North Chaweng. Sorties Sail Rock/Koh Tao/Chumphon + cours PADI complets. Opérateur plongée principal recommandé par Coco."
+      }
+    ]
+  },
+
+  "adaptive_recommendation_engine": {
+    "logic": {
+      "step_1": "Identifier ou mémoriser le profil complet (budget, motivation, groupe, durée, zone, langue)",
+      "step_2": "Fetch conditions météo temps réel via API",
+      "step_3": "Filtrer activités compatibles : météo + profil + budget + contraintes",
+      "step_4": "Appliquer le calendrier saisonnier pour alertes pertinentes",
+      "step_5": "Trier par score de pertinence (profil) et satisfaction (feedback session)",
+      "step_6": "Présenter exactement 3 recommandations avec prix, lien, et astuce locale",
+      "step_7": "Demander retour satisfaction (1–10) et ajuster le ranking si < 7"
+    },
+    "personalization_matrix": {
+      "famille_budget": ["Maenam Beach", "Elephant Sanctuary", "Cascades Na Muang", "Street food tour"],
+      "couple_luxe": ["Banyan Tree ou Six Senses", "Tamarind Springs", "Dîner Jungle Club", "Ang Thong"],
+      "solo_aventure": ["Plongée Koh Tao", "Lever soleil Pagode", "Street food Nathon", "Silver Beach"],
+      "lune_de_miel": ["Ritz-Carlton ou Banyan Tree", "Massage couple Tamarind", "Sunset cruise", "Dîner Six Senses Dining on the Rocks"],
+      "wellness_retreat": ["Kamalaya", "Vikasa Yoga", "Détox The Source", "Méditation temple matin"]
+    },
+    "feedback_loop": {
+      "satisfaction_tracking": true,
+      "scale": "1–10",
+      "trigger": "Après chaque recommandation et après chaque journée si session active",
+      "re_ranking": "Basé sur score cumulé et préférences exprimées"
+    }
+  }
+}

@@ -1,0 +1,192 @@
+{
+  "assistant_name": "Samui AI Concierge",
+  "description": "Assistant de voyage local à Koh Samui ?? – aide à planifier séjours, activités et expériences authentiques.",
+  "system_instructions": {
+    "persona": "Tu es Samui AI Concierge ??, un assistant de voyage local spécialisé sur Koh Samui, bienveillant, souriant et toujours utile. Tu aides les voyageurs à planifier leur séjour selon leurs envies : détente, aventure, culture, gastronomie ou bien-être. Tu proposes des suggestions précises, fondées sur les profils, la météo et la saison. Tu parles principalement français, mais tu peux aussi t'exprimer en anglais sur demande.",
+    "behavior": [
+      "Adapte toujours tes réponses au profil du voyageur : budget, type de séjour, motivation, saison, météo.",
+      "Privilégie les expériences authentiques et locales plutôt que les attractions trop touristiques.",
+      "Pour chaque recommandation, donne une description courte, un prix indicatif (THB) et un lien TripAdvisor ou site officiel si disponible.",
+      "Répond de manière conviviale et immersive, avec un ton inspirant et positif.",
+      "Si le voyageur demande une traduction ou parle anglais, bascule automatiquement en anglais."
+    ]
+  },
+  "languages": {
+    "default": "fr",
+    "supported": ["fr", "en"],
+    "translation_api": "Google Cloud Translate",
+    "multi_language_support": true
+  },
+  "modules": {
+    "weather": {
+      "provider": "Google Weather API",
+      "functions": ["current_conditions", "forecast_7days", "alerts"],
+      "usage": "Fournir météo en temps réel pour Koh Samui, conditions mer et conseils saisonniers"
+    },
+    "reviews": {
+      "sources": ["Google Places API", "TripAdvisor API"],
+      "usage": "Afficher les avis et notes pour hôtels, restaurants et activités locales"
+    },
+    "data_file": {
+      "path": "/data/samui_data.txt",
+      "editable": true,
+      "usage": "Base de connaissances modifiable contenant les infos sur les lieux, activités et recommandations"
+    }
+  },
+  "profiles": {
+    "budget": ["économique", "moyen", "luxe"],
+    "motivation": ["détente", "aventure", "wellness", "gastronomie", "culture"],
+    "group": ["solo", "couple", "famille", "amis"],
+    "duration": ["weekend", "semaine", "long séjour"],
+    "season": ["haute", "basse"]
+  },
+  "hotels": {
+    "Bophut": [
+      "Anantara Bophut Koh Samui Resort",
+      "Bandara Resort & Spa",
+      "Bo Phut Resort & Spa",
+      "Cielo Boutique Hotel & Spa",
+      "Garrya Tongsai Bay Samui",
+      "Holiday Inn Resort Samui Bophut Beach",
+      "The White Cottage",
+      "Wild Cottages Elephant Sanctuary Resort",
+      "Karma Resort",
+      "Hansar Samui Resort & Spa"
+    ],
+    "Chaweng": [
+      "SALA Samui Chaweng Beach Resort",
+      "Centara Reserve Samui",
+      "OZO Chaweng Samui",
+      "NH Collection Samui Peace Resort",
+      "Chaweng Regent Beach Resort",
+      "The Library",
+      "Avani Chaweng Samui Hotel & Beach Club",
+      "Mantra Samui Resort",
+      "Nora Beach Resort & Spa",
+      "Amari Koh Samui"
+    ],
+    "Lamai": [
+      "Banyan Tree Samui",
+      "Samui Sense Beach Resort",
+      "The Lamai Samui",
+      "Silavadee Pool Spa Resort",
+      "Beach Republic Samui",
+      "Rocky's Boutique Resort",
+      "Pavilion Samui Villas & Resort",
+      "Thai House Beach Resort",
+      "Renaissance Koh Samui Resort & Spa",
+      "X2 Koh Samui Resort"
+    ],
+    "Maenam": [
+      "Santiburi Koh Samui",
+      "Fair House Villas & Spa",
+      "Mantra Samui Resort – Adults Only",
+      "The COAST Adults Only Resort",
+      "W Koh Samui",
+      "Khwan Beach Resort",
+      "The Sea Koh Samui Resort & Spa",
+      "Celes Beachfront Resort",
+      "Ampha Place Hotel",
+      "Escape Beach Resort"
+    ]
+  },
+  "spas_and_massages": [
+    "SALA Spa Chaweng",
+    "Tamarind Springs Forest Spa",
+    "Eranda Herbal Spa",
+    "Anantara Spa (Bophut / Lawana)",
+    "Four Seasons Spa Koh Samui",
+    "Kimpton Kitalay Spa & Massage",
+    "Santiburi Spa",
+    "Ban Sabai Spa",
+    "Karma Spa & Wellness",
+    "Zazen Spa Bophut",
+    "Magnolia Spa Chaweng",
+    "The Source Herbal Detox Retreat",
+    "Spa Serenity Maenam",
+    "Harnn Heritage Spa",
+    "Akiira Spa Chaweng"
+  ],
+  "activities": [
+    {
+      "category": "aventure / nature",
+      "list": [
+        "Excursion Ang Thong Marine Park",
+        "Plongée à Koh Tao",
+        "Randonnée aux cascades Na Muang",
+        "Secret Buddha Garden",
+        "Quad dans la jungle",
+        "Safari 4x4 à Koh Samui",
+        "Kayak dans la mangrove de Koh Taen",
+        "Snorkeling à Koh Mudsum",
+        "Observation du lever du soleil au sommet Khao Hua Jook",
+        "Visite de la cascade Hin Lat"
+      ]
+    },
+    {
+      "category": "détente / bien-être",
+      "list": [
+        "Massage jungle au Tamarind Springs",
+        "Yoga & brunch au Vikasa Life Café",
+        "Bain aux herbes locales",
+        "Méditation guidée au bord de la mer",
+        "Spa en plein air au Sala Samui",
+        "Massage aromathérapie au Zazen Spa",
+        "Cours de respiration & Qi Gong",
+        "Bain de fleurs tropicales",
+        "Rituel spa en couple",
+        "Massage sunset sur plage privée"
+      ]
+    },
+    {
+      "category": "culture / patrimoine",
+      "list": [
+        "Visite du temple Big Buddha",
+        "Wat Plai Laem",
+        "Wat Khunaram",
+        "Marché Fisherman’s Village",
+        "Cours de cuisine thaïe (Pai Cookery Class)",
+        "Musée des coquillages de Samui",
+        "Atelier de sculpture sur bois",
+        "Visite du temple Laem Sor",
+        "Spectacle de danse traditionnelle",
+        "Découverte d’un village de pêcheurs local"
+      ]
+    },
+    {
+      "category": "gastronomie / food",
+      "list": [
+        "Dîner au Jungle Club (vue sunset)",
+        "Street food tour à Chaweng",
+        "Dégustation de fruits tropicaux",
+        "Atelier desserts thaïs (mango sticky rice)",
+        "Dîner romantique sur la plage",
+        "Brunch healthy à Vikasa Life Café",
+        "Visite du marché local de Maenam",
+        "Food tour Fisherman’s Village",
+        "Cours de cocktails tropicaux",
+        "Visite de la distillerie de rhum local"
+      ]
+    },
+    {
+      "category": "famille / enfants",
+      "list": [
+        "Samui Elephant Sanctuary",
+        "Mini-golf à Lamai",
+        "Aquarium & Tiger Zoo",
+        "Ferme de papillons",
+        "Visite d’une ferme de fruits tropicaux",
+        "Excursion en bateau à fond transparent",
+        "Parc aquatique Pink Elephant Samui",
+        "Atelier de cerf-volant",
+        "Spectacle de feu à Coco Tam’s",
+        "Balade douce en forêt avec guide nature"
+      ]
+    },
+    {
+      "category": "soir / divertissement",
+      "list": [
+        "Spectacle de feu sur la plage (Coco Tam’s)",
+        "Marché de nuit Fisherman’s Village (vendredi)",
+        "Bar panoramique Jungle Club",
+        "Concerts live à Chaweng",

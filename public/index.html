@@ -1,0 +1,997 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="google-site-verification" content="8ga3DgjkBl0rAi_ymCg09sk_GxdbbVsGpLi_-cdSDqI" />
+  <title>Coco — AI Concierge Koh Samui 🌴</title>
+  <meta name="description" content="Coco is your AI travel concierge for Koh Samui — ask anything about hotels, diving, restaurants, beaches, tours and transport. Instant expert answers in 6 languages." />
+  <link rel="canonical" href="https://coco-samui-ai.com/" />
+  <meta name="robots" content="index, follow" />
+  <meta name="keywords" content="Koh Samui AI concierge, Samui travel assistant, Samui hotels, Koh Tao diving, Sail Rock, Ang Thong, restaurants Koh Samui, things to do Koh Samui, AI chatbot Samui" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Coco — Samui AI Concierge" />
+  <meta property="og:title" content="Coco — AI Concierge Koh Samui 🌴" />
+  <meta property="og:description" content="Your AI travel concierge for Koh Samui — hotels, diving, restaurants, tours and hidden gems. Ask anything, get expert local answers in 6 languages." />
+  <meta property="og:url" content="https://coco-samui-ai.com/" />
+  <meta property="og:image" content="https://coco-samui-ai.com/icon-512.png" />
+  <meta property="og:locale" content="en_US" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Coco — AI Concierge Koh Samui 🌴" />
+  <meta name="twitter:description" content="Your AI travel concierge for Koh Samui — ask anything, get expert local answers in 6 languages." />
+  <meta name="twitter:image" content="https://coco-samui-ai.com/icon-512.png" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://coco-samui-ai.com/#organization",
+        "name": "Coco — Samui AI Concierge",
+        "url": "https://coco-samui-ai.com/",
+        "logo": "https://coco-samui-ai.com/icon-512.png",
+        "description": "Coco is an AI travel concierge for Koh Samui answering travellers in English, French, German, Swedish, Thai and Chinese with local recommendations for hotels, diving, restaurants, tours and beaches, embeddable for hotels and villas as a 24/7 white-label concierge.",
+        "founder": { "@type": "Person", "@id": "https://coco-samui-ai.com/#founder", "name": "Cyril Joseph", "jobTitle": "PADI Dive Instructor & Founder" },
+        "areaServed": { "@type": "Place", "name": "Koh Samui, Surat Thani, Thailand" },
+        "contactPoint": { "@type": "ContactPoint", "telephone": "+66633753316", "contactType": "customer service", "availableLanguage": ["English","French","German","Swedish","Thai","Chinese"] }
+      },
+      {
+        "@type": ["TravelAgency","LocalBusiness"],
+        "@id": "https://coco-samui-ai.com/#business",
+        "name": "Coco — Samui AI Concierge",
+        "url": "https://coco-samui-ai.com/",
+        "telephone": "+66633753316",
+        "email": "hello@coco-samui-ai.com",
+        "priceRange": "$$",
+        "areaServed": { "@type": "Place", "name": "Koh Samui, Thailand" },
+        "address": { "@type": "PostalAddress", "addressLocality": "Koh Samui", "addressRegion": "Surat Thani", "addressCountry": "TH" },
+        "knowsLanguage": ["en","fr","de","sv","th","zh"]
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://coco-samui-ai.com/#website",
+        "url": "https://coco-samui-ai.com/",
+        "name": "Coco — AI Concierge Koh Samui",
+        "publisher": { "@id": "https://coco-samui-ai.com/#organization" },
+        "inLanguage": "en"
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://coco-samui-ai.com/#faq",
+        "mainEntity": [
+          { "@type": "Question", "name": "What is Coco, the Samui AI Concierge?", "acceptedAnswer": { "@type": "Answer", "text": "Coco is an AI travel concierge for Koh Samui that answers travellers instantly, 24/7, in English, French, German, Swedish, Thai and Chinese. It recommends hotels, dive sites, restaurants, tours and beaches with real local knowledge and indicative prices in Thai Baht." } },
+          { "@type": "Question", "name": "How much does Coco cost for hotels?", "acceptedAnswer": { "@type": "Answer", "text": "Hotels and villas start with a free 14-day trial. After that it is 3,500 THB per month for unlimited conversations, trackable in-room QR links and setup, cancellable anytime." } },
+          { "@type": "Question", "name": "Is Coco free for travellers?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Travellers can chat with Coco for free on the website with no signup, asking about hotels, diving, restaurants, transport, ferries and itineraries for Koh Samui." } },
+          { "@type": "Question", "name": "How do I get from Koh Samui to Koh Tao or Sail Rock?", "acceptedAnswer": { "@type": "Answer", "text": "Ferries to Koh Tao take around 1.5–2 hours from Nathon or Maenam piers (roughly 600–1,000 THB). Coco gives live, detailed routing, timings and dive operator options." } },
+          { "@type": "Question", "name": "Can Coco be added to my hotel or villa?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Coco embeds on your website or WhatsApp, or via an in-room QR code, in minutes. On setup it is configured to recommend your own spa, restaurant and in-house experiences first." } }
+        ]
+      },
+      {
+        "@type": "Person",
+        "@id": "https://coco-samui-ai.com/#founder",
+        "name": "Cyril Joseph",
+        "jobTitle": "PADI Dive Instructor & Founder",
+        "worksFor": { "@id": "https://coco-samui-ai.com/#organization" },
+        "knowsAbout": ["Scuba diving", "Koh Samui", "Sail Rock", "Gulf of Thailand dive sites", "Koh Samui travel"],
+        "knowsLanguage": ["English", "French"]
+      },
+      {
+        "@type": "Service",
+        "@id": "https://coco-samui-ai.com/#hotel-plan",
+        "serviceType": "White-label AI concierge for hotels and villas",
+        "provider": { "@id": "https://coco-samui-ai.com/#organization" },
+        "areaServed": { "@type": "Place", "name": "Koh Samui, Thailand" },
+        "description": "Embeddable 24/7 AI concierge for hotels and villas, configured to recommend the property's own restaurant, spa and experiences first. Free 14-day trial, then a flat monthly fee, cancellable anytime.",
+        "offers": {
+          "@type": "Offer",
+          "price": "3500",
+          "priceCurrency": "THB",
+          "priceSpecification": { "@type": "UnitPriceSpecification", "price": "3500", "priceCurrency": "THB", "unitText": "MONTH" },
+          "url": "https://coco-samui-ai.com/hotel-setup",
+          "availability": "https://schema.org/InStock",
+          "eligibleCustomerType": "Business"
+        }
+      },
+      {
+        "@type": "Service",
+        "@id": "https://coco-samui-ai.com/#traveller-chat",
+        "serviceType": "AI travel concierge for travellers",
+        "provider": { "@id": "https://coco-samui-ai.com/#organization" },
+        "areaServed": { "@type": "Place", "name": "Koh Samui, Thailand" },
+        "description": "Free AI chat for travellers: hotels, diving, restaurants, beaches, tours and transport on Koh Samui, in six languages, with indicative prices in Thai Baht.",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "THB", "availability": "https://schema.org/InStock", "eligibleCustomerType": "Consumer" }
+      }
+    ]
+  }
+  </script>
+
+  <link rel="manifest" href="/manifest.json" />
+  <meta name="theme-color" content="#070d1c" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="Coco" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --bg:       #070d1c;
+      --bg-2:     #0c1528;
+      --bg-3:     #101e38;
+      --teal:     #0a9396;
+      --teal-d:   #005f73;
+      --teal-l:   #94d2bd;
+      --teal-gl:  rgba(10,147,150,0.12);
+      --sand:     #e9c46a;
+      --coral:    #f4a261;
+      --coral-d:  #e76f51;
+      --navy:     #023047;
+      --white:    #ffffff;
+      --text:     rgba(255,255,255,0.92);
+      --muted:    rgba(255,255,255,0.58);
+      --dim:      rgba(255,255,255,0.28);
+      --card:     rgba(255,255,255,0.04);
+      --card-h:   rgba(255,255,255,0.08);
+      --border:   rgba(255,255,255,0.08);
+      --border-s: rgba(255,255,255,0.16);
+      --r:        16px;
+      --r-lg:     22px;
+    }
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);overflow-x:hidden;line-height:1.6}
+
+    /* ── NAV ── */
+    nav{position:fixed;top:0;left:0;right:0;z-index:1000;height:60px;padding:0 24px;display:flex;align-items:center;justify-content:space-between;background:rgba(7,13,28,0.92);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid var(--border)}
+    .nav-brand{display:flex;align-items:center;gap:9px;text-decoration:none}
+    .nav-logo{width:32px;height:32px;background:linear-gradient(135deg,var(--teal),var(--teal-l));border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:15px}
+    .nav-name{font-size:19px;font-weight:800;color:var(--white);letter-spacing:-0.4px}
+    .nav-links{display:flex;align-items:center;gap:2px}
+    .nav-link{color:var(--muted);text-decoration:none;font-size:13px;font-weight:500;padding:7px 12px;border-radius:8px;transition:all .2s}
+    .nav-link:hover{color:var(--white);background:var(--card-h)}
+    .nav-cta{background:var(--teal);color:#fff;padding:8px 16px;border-radius:8px;font-size:12.5px;font-weight:600;text-decoration:none;transition:all .2s;margin-left:6px}
+    .nav-cta:hover{background:var(--teal-d);transform:translateY(-1px)}
+    .nav-menu-btn{display:none;background:none;border:none;cursor:pointer;color:var(--white);font-size:22px;padding:4px}
+
+    /* ── HERO ── */
+    .hero{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:84px 20px 48px;position:relative;overflow:hidden}
+    .hero-glow{position:absolute;inset:0;background:radial-gradient(ellipse 90% 55% at 50% 20%,rgba(10,147,150,0.1) 0%,transparent 65%),radial-gradient(ellipse 55% 35% at 80% 85%,rgba(0,95,115,0.07) 0%,transparent 55%);pointer-events:none}
+    .hero-dots{position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,0.025) 1px,transparent 1px);background-size:36px 36px;pointer-events:none}
+
+    .hero-badge{display:inline-flex;align-items:center;gap:7px;background:rgba(10,147,150,0.12);border:1px solid rgba(10,147,150,0.28);color:var(--teal-l);font-size:11px;font-weight:700;padding:6px 15px;border-radius:100px;margin-bottom:22px;letter-spacing:.8px;text-transform:uppercase;position:relative}
+    .badge-dot{width:5px;height:5px;background:var(--teal-l);border-radius:50%;animation:blink 2s ease-in-out infinite}
+    @keyframes blink{0%,100%{opacity:1}50%{opacity:.4}}
+
+    .hero h1{font-size:clamp(28px,5.5vw,58px);font-weight:800;color:var(--white);text-align:center;line-height:1.1;margin-bottom:12px;letter-spacing:-1.2px;max-width:820px;position:relative}
+    .hero h1 .accent{color:var(--teal-l)}
+    .hero-sub{font-size:clamp(13.5px,1.8vw,17px);color:var(--muted);text-align:center;max-width:520px;margin-bottom:32px;line-height:1.7;position:relative}
+
+    /* ── CHAT HERO WINDOW ── */
+    .chat-hero-wrap{width:100%;max-width:820px;position:relative;z-index:1}
+    .chat-hero-wrap::before{content:'';position:absolute;inset:-1px;border-radius:calc(var(--r-lg)+1px);background:linear-gradient(135deg,rgba(10,147,150,0.35),transparent 60%,rgba(148,210,189,0.12));pointer-events:none;z-index:-1}
+    .chat-hero{background:rgba(12,21,40,0.92);border:1px solid var(--border-s);border-radius:var(--r-lg);overflow:hidden;box-shadow:0 28px 80px rgba(0,0,0,0.55),0 0 60px rgba(10,147,150,0.08);backdrop-filter:blur(12px)}
+
+    /* Chat head */
+    .ch-head{padding:14px 20px;background:rgba(10,147,150,0.08);border-bottom:1px solid var(--border);display:flex;align-items:center;gap:12px}
+    .ch-avi{width:36px;height:36px;background:linear-gradient(135deg,var(--teal),var(--teal-l));border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0}
+    .ch-info{flex:1}
+    .ch-name{font-size:14px;font-weight:700;color:var(--white)}
+    .ch-status{font-size:10.5px;color:var(--muted);display:flex;align-items:center;gap:5px;margin-top:2px}
+    .sdot{width:5px;height:5px;background:#4ade80;border-radius:50%;animation:blink 2.5s ease-in-out infinite}
+    .ch-langs{margin-left:auto;font-size:10px;color:var(--dim);letter-spacing:.3px}
+
+    /* Messages */
+    .ch-msgs{height:300px;overflow-y:auto;padding:16px;display:flex;flex-direction:column;gap:12px;scroll-behavior:smooth}
+    .ch-msgs::-webkit-scrollbar{width:3px}
+    .ch-msgs::-webkit-scrollbar-thumb{background:rgba(255,255,255,0.1);border-radius:2px}
+    .msg{max-width:86%}
+    .msg-coco{align-self:flex-start}
+    .msg-user{align-self:flex-end}
+    .msg-bubble{padding:11px 15px;border-radius:16px;font-size:13.5px;line-height:1.68}
+    .msg-coco .msg-bubble{background:rgba(255,255,255,0.07);color:var(--text);border-bottom-left-radius:4px}
+    .msg-user .msg-bubble{background:linear-gradient(135deg,var(--teal),var(--teal-d));color:#fff;border-bottom-right-radius:4px}
+    .msg-time{font-size:9.5px;color:var(--dim);margin-top:3px;padding:0 3px}
+    .msg-user .msg-time{text-align:right}
+
+    /* Example questions */
+    .ex-qs{display:flex;flex-direction:column;gap:7px;margin-top:6px}
+    .ex-q{display:flex;align-items:center;gap:10px;padding:9px 14px;background:rgba(255,255,255,0.04);border:1px solid var(--border);border-radius:11px;font-size:12.5px;color:var(--muted);cursor:pointer;transition:all .2s;text-align:left;width:100%}
+    .ex-q:hover{background:rgba(10,147,150,0.12);border-color:rgba(10,147,150,0.38);color:var(--white)}
+    .ex-q-ico{font-size:15px;flex-shrink:0}
+
+    /* Typing */
+    .typing-wrap{display:flex;align-items:center;gap:4px;padding:10px 14px;background:rgba(255,255,255,0.07);border-radius:16px;border-bottom-left-radius:4px;width:fit-content}
+    .tdot{width:5px;height:5px;background:var(--teal-l);border-radius:50%;animation:tdot 1.4s infinite}
+    .tdot:nth-child(2){animation-delay:.2s}
+    .tdot:nth-child(3){animation-delay:.4s}
+    @keyframes tdot{0%,100%{transform:translateY(0);opacity:.4}50%{transform:translateY(-4px);opacity:1}}
+
+    /* Category chips */
+    .cat-chips-row{padding:10px 16px;display:flex;gap:7px;overflow-x:auto;scrollbar-width:none;border-top:1px solid var(--border)}
+    .cat-chips-row::-webkit-scrollbar{display:none}
+    .c-chip{display:flex;align-items:center;gap:5px;background:rgba(255,255,255,0.05);border:1px solid var(--border);color:var(--muted);padding:6px 13px;border-radius:100px;font-size:11.5px;font-weight:500;white-space:nowrap;cursor:pointer;transition:all .2s;flex-shrink:0}
+    .c-chip:hover{background:var(--teal-gl);border-color:rgba(10,147,150,0.4);color:var(--white)}
+
+    /* Input */
+    .ch-inp-area{padding:12px 16px;border-top:1px solid var(--border);display:flex;gap:8px;align-items:flex-end;background:rgba(0,0,0,0.18)}
+    .chat-inp{flex:1;background:rgba(255,255,255,0.06);border:1.5px solid var(--border);border-radius:12px;padding:11px 14px;font-size:13.5px;font-family:'Inter',sans-serif;color:var(--white);resize:none;outline:none;min-height:44px;max-height:120px;transition:border-color .2s}
+    .chat-inp::placeholder{color:var(--dim)}
+    .chat-inp:focus{border-color:var(--teal)}
+    .send-btn{width:44px;height:44px;background:var(--teal);border:none;border-radius:12px;color:#fff;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:19px;transition:all .2s;flex-shrink:0}
+    .send-btn:hover{background:var(--teal-d);transform:scale(1.06)}
+    .send-btn:disabled{background:var(--card-h);cursor:not-allowed;transform:none}
+
+    /* Hero stats */
+    .hero-stats{display:flex;gap:28px;flex-wrap:wrap;justify-content:center;margin-top:28px;position:relative}
+    .h-stat{text-align:center}
+    .h-stat-n{font-size:22px;font-weight:800;color:var(--sand)}
+    .h-stat-l{font-size:10.5px;color:var(--dim);margin-top:2px;letter-spacing:.3px}
+
+    /* ── SECTIONS SHARED ── */
+    section{padding:80px 24px}
+    .container{max-width:1200px;margin:0 auto}
+    .s-lbl{font-size:10.5px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:var(--teal-l);margin-bottom:10px}
+    .s-title{font-size:clamp(24px,3.8vw,40px);font-weight:800;color:var(--white);line-height:1.15;margin-bottom:12px;letter-spacing:-.5px}
+    .s-sub{font-size:15px;color:var(--muted);max-width:520px;line-height:1.72;margin-bottom:40px}
+
+    /* ── EXPLORE ── */
+    #explore{background:var(--bg-2)}
+    .cat-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(175px,1fr));gap:12px}
+    .cat-card{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:22px 16px;text-align:center;cursor:pointer;transition:all .25s;display:flex;flex-direction:column;align-items:center;gap:9px}
+    .cat-card:hover{background:var(--card-h);border-color:rgba(10,147,150,0.5);transform:translateY(-3px)}
+    .cat-card.active{border-color:var(--teal);background:var(--teal-gl)}
+    .cat-icon{font-size:30px}
+    .cat-name{font-weight:600;font-size:13px;color:var(--white)}
+    .cat-count{font-size:11px;color:var(--muted)}
+    .listings-panel{margin-top:40px;display:none}
+    .listings-panel.show{display:block}
+    .panel-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:22px}
+    .panel-title{font-size:20px;font-weight:700;color:var(--white)}
+    .panel-close{background:none;border:1px solid var(--border);cursor:pointer;color:var(--muted);font-size:12px;font-weight:600;padding:7px 13px;border-radius:9px;transition:all .2s}
+    .panel-close:hover{background:var(--card-h);color:var(--white)}
+    .listings-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:16px}
+    .lst-card{background:var(--card);border:1px solid var(--border);border-radius:var(--r);overflow:hidden;transition:all .25s}
+    .lst-card:hover{transform:translateY(-3px);border-color:var(--border-s)}
+    .lst-img{height:150px;display:flex;align-items:center;justify-content:center;font-size:52px;position:relative}
+    .lst-badge{position:absolute;top:10px;right:10px;background:var(--coral);color:#fff;font-size:10px;font-weight:700;padding:3px 9px;border-radius:100px}
+    .lst-body{padding:16px}
+    .lst-area{font-size:10px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;color:var(--teal-l);margin-bottom:4px}
+    .lst-name{font-weight:700;font-size:14.5px;color:var(--white);margin-bottom:7px}
+    .lst-desc{font-size:12.5px;color:var(--muted);line-height:1.62;margin-bottom:12px}
+    .lst-foot{display:flex;align-items:center;justify-content:space-between}
+    .lst-price{font-weight:700;font-size:12.5px;color:var(--coral)}
+    .ask-btn{background:rgba(10,147,150,0.15);color:var(--teal-l);border:1px solid rgba(10,147,150,0.3);padding:6px 12px;border-radius:8px;font-size:11.5px;font-weight:600;cursor:pointer;transition:all .2s}
+    .ask-btn:hover{background:var(--teal);color:#fff;border-color:var(--teal)}
+
+    /* ── BEACHES ── */
+    #beaches{background:var(--bg)}
+    .beach-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:16px}
+    .beach-card{border-radius:var(--r);overflow:hidden;height:250px;cursor:pointer;transition:transform .25s;position:relative}
+    .beach-card:hover{transform:scale(1.025)}
+    .beach-inner{width:100%;height:100%;display:flex;align-items:flex-end;padding:20px;position:relative}
+    .beach-inner::after{content:'';position:absolute;inset:0;background:linear-gradient(0deg,rgba(0,0,0,0.68) 0%,rgba(0,0,0,0.04) 55%)}
+    .beach-info{position:relative;z-index:1}
+    .beach-name{font-size:19px;font-weight:700;color:#fff;margin-bottom:5px}
+    .beach-tag{font-size:10.5px;color:rgba(255,255,255,0.82);background:rgba(255,255,255,0.14);padding:3px 10px;border-radius:100px;display:inline-block}
+
+    /* ── HOW IT WORKS ── */
+    #how{background:var(--bg-2)}
+    .how-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+    .how-step{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:30px 26px;text-align:center;transition:border-color .25s}
+    .how-step:hover{border-color:rgba(10,147,150,0.45)}
+    .how-num{width:46px;height:46px;background:rgba(10,147,150,0.14);border:1px solid rgba(10,147,150,0.28);border-radius:13px;display:flex;align-items:center;justify-content:center;font-size:19px;font-weight:800;color:var(--teal-l);margin:0 auto 18px}
+    .how-title{font-size:16px;font-weight:700;color:var(--white);margin-bottom:9px}
+    .how-desc{font-size:13px;color:var(--muted);line-height:1.68}
+
+    /* ── EXPERIENCES ── */
+    #experiences{background:var(--bg)}
+    .exp-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .exp-card{background:var(--card);border:1px solid var(--border);border-radius:var(--r);overflow:hidden;transition:all .25s}
+    .exp-card:hover{border-color:var(--border-s);transform:translateY(-2px)}
+    .exp-head{padding:26px 22px 20px}
+    .exp-emo{font-size:38px;margin-bottom:13px;display:block}
+    .exp-title{font-size:18px;font-weight:700;color:var(--white);margin-bottom:9px}
+    .exp-desc{font-size:13px;color:var(--muted);line-height:1.7}
+    .exp-foot{padding:14px 22px;border-top:1px solid var(--border);display:flex;align-items:center;justify-content:space-between}
+    .exp-price{font-size:12.5px;font-weight:700;color:var(--coral)}
+    .exp-ask{color:var(--teal-l);font-size:12px;font-weight:600;text-decoration:none;background:none;border:none;cursor:pointer;display:flex;align-items:center;gap:3px;transition:color .2s}
+    .exp-ask:hover{color:var(--white)}
+
+    /* ── PRACTICAL ── */
+    #practical{background:var(--bg-2)}
+    .tips-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(245px,1fr));gap:16px}
+    .tip-card{background:var(--card);border:1px solid var(--border);border-left:3px solid var(--teal);border-radius:0 12px 12px 0;padding:20px 18px}
+    .tip-ico{font-size:24px;margin-bottom:10px}
+    .tip-title{font-weight:700;font-size:14px;color:var(--white);margin-bottom:7px}
+    .tip-text{font-size:12.5px;color:var(--muted);line-height:1.65}
+
+    /* ── CONTACT ── */
+    #contact{background:var(--bg)}
+    .contact-wrap{text-align:center}
+    .wa-btn{display:inline-flex;align-items:center;gap:12px;background:#25D366;color:#fff;padding:17px 36px;border-radius:14px;font-size:15px;font-weight:700;text-decoration:none;transition:all .25s;box-shadow:0 6px 28px rgba(37,211,102,.28)}
+    .wa-btn:hover{transform:translateY(-3px);box-shadow:0 12px 36px rgba(37,211,102,.38)}
+    .c-div{color:var(--dim);margin:32px 0;font-size:13px}
+    .c-perks{display:flex;justify-content:center;gap:24px;flex-wrap:wrap}
+    .c-perk{display:flex;align-items:center;gap:7px;color:var(--muted);font-size:13px}
+
+    /* ── FOR HOTELS ── */
+    #for-hotels{background:var(--bg-3)}
+    .b2b-inner{background:var(--card);border:1px solid var(--border);border-radius:var(--r-lg);padding:56px 48px;text-align:center}
+    .b2b-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(233,196,106,0.1);border:1px solid rgba(233,196,106,0.24);color:var(--sand);font-size:10.5px;font-weight:700;padding:6px 15px;border-radius:100px;margin-bottom:22px;letter-spacing:1px;text-transform:uppercase}
+    .b2b-title{font-size:clamp(24px,4vw,42px);font-weight:800;color:var(--white);margin-bottom:16px;letter-spacing:-.5px;line-height:1.15}
+    .b2b-sub{font-size:16px;color:var(--muted);max-width:580px;margin:0 auto 40px;line-height:1.72}
+    .b2b-feats{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-bottom:44px;text-align:left}
+    .b2b-feat{background:rgba(255,255,255,0.04);border:1px solid var(--border);border-radius:var(--r);padding:22px}
+    .b2b-feat-ico{font-size:24px;margin-bottom:10px}
+    .b2b-feat-title{font-size:15px;font-weight:700;color:var(--white);margin-bottom:7px}
+    .b2b-feat-desc{font-size:13px;color:var(--muted);line-height:1.62}
+    .b2b-price{font-size:40px;font-weight:800;color:var(--sand)}
+    .b2b-price-period{font-size:14px;color:var(--muted);margin-left:4px}
+    .b2b-trial{font-size:13px;color:var(--muted);margin-bottom:30px}
+    .btn-coral{background:var(--coral);color:#fff;padding:15px 32px;border-radius:12px;font-size:15px;font-weight:600;text-decoration:none;border:none;cursor:pointer;transition:all .25s;display:inline-flex;align-items:center;gap:9px}
+    .btn-coral:hover{background:var(--coral-d);transform:translateY(-2px);box-shadow:0 8px 28px rgba(244,162,97,.3)}
+
+    /* ── FAQ ── */
+    #faq{background:var(--bg-2)}
+    .faq-list{max-width:720px;margin:0 auto;display:flex;flex-direction:column;gap:11px}
+    .faq-item{background:var(--card);border:1px solid var(--border);border-radius:var(--r);overflow:hidden}
+    .faq-q{padding:18px 22px;font-size:14px;font-weight:600;color:var(--white);cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:12px;transition:background .2s;width:100%;text-align:left;background:none;border:none;font-family:inherit}
+    .faq-q:hover{background:var(--card-h)}
+    .faq-arrow{font-size:17px;color:var(--teal-l);transition:transform .25s;flex-shrink:0}
+    .faq-item.open .faq-arrow{transform:rotate(180deg)}
+    .faq-a{display:none;padding:0 22px 18px;font-size:13.5px;color:var(--muted);line-height:1.72}
+    .faq-item.open .faq-a{display:block}
+
+    /* ── FOOTER ── */
+    footer{background:var(--bg-2);padding:48px 24px 28px;border-top:1px solid var(--border)}
+    .foot-inner{max-width:1200px;margin:0 auto}
+    .foot-top{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:36px;margin-bottom:36px}
+    .foot-brand{font-size:21px;font-weight:800;color:var(--white);margin-bottom:10px;letter-spacing:-.3px}
+    .foot-desc{font-size:12.5px;color:var(--dim);line-height:1.7;max-width:210px}
+    .foot-col-title{font-weight:700;font-size:10.5px;letter-spacing:2px;text-transform:uppercase;color:var(--teal-l);margin-bottom:14px}
+    .foot-links{display:flex;flex-direction:column;gap:7px}
+    .foot-link{color:var(--dim);font-size:12.5px;text-decoration:none;transition:color .2s;background:none;border:none;cursor:pointer;text-align:left;font-family:inherit}
+    .foot-link:hover{color:var(--white)}
+    .foot-bottom{border-top:1px solid var(--border);padding-top:22px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px}
+    .foot-copy{font-size:11.5px;color:var(--dim)}
+    .heart{color:var(--coral)}
+
+    /* ── RESPONSIVE ── */
+    @media(max-width:900px){
+      .how-grid{grid-template-columns:1fr 1fr}
+      .exp-grid{grid-template-columns:1fr 1fr}
+      .b2b-feats{grid-template-columns:1fr}
+      .b2b-inner{padding:36px 24px}
+    }
+    @media(max-width:768px){
+      .nav-links{display:none}
+      .nav-menu-btn{display:block}
+      .how-grid{grid-template-columns:1fr}
+      .exp-grid{grid-template-columns:1fr}
+      .foot-top{grid-template-columns:1fr 1fr}
+      .ch-langs{display:none}
+    }
+    @media(max-width:480px){
+      section{padding:56px 16px}
+      .hero{padding:76px 16px 40px}
+      .hero-stats{gap:18px}
+      .foot-top{grid-template-columns:1fr}
+      .ch-msgs{height:250px}
+    }
+  </style>
+</head>
+<body>
+
+<!-- ── NAV ── -->
+<nav>
+  <a href="#" class="nav-brand">
+    <div class="nav-logo">🌴</div>
+    <span class="nav-name">Coco</span>
+  </a>
+  <div class="nav-links">
+    <a href="#explore" class="nav-link">Explore</a>
+    <a href="#beaches" class="nav-link">Beaches</a>
+    <a href="#experiences" class="nav-link">Experiences</a>
+    <a href="#for-hotels" class="nav-link">For Hotels</a>
+    <a href="https://wa.me/66633753316" target="_blank" class="nav-cta">📱 WhatsApp</a>
+  </div>
+  <button class="nav-menu-btn" onclick="document.querySelector('.nav-links').style.display=document.querySelector('.nav-links').style.display==='flex'?'none':'flex'">☰</button>
+</nav>
+
+<!-- ── HERO: CHAT IS THE MAIN ELEMENT ── -->
+<section class="hero" id="home">
+  <div class="hero-glow"></div>
+  <div class="hero-dots"></div>
+
+  <div class="hero-badge">
+    <span class="badge-dot"></span>
+    AI Concierge · Koh Samui
+  </div>
+
+  <h1>Ask me anything about<br><span class="accent">Koh Samui</span></h1>
+  <p class="hero-sub">Hotels, diving, restaurants, beaches, wellness, transport — expert local answers in seconds, in 6 languages.</p>
+
+  <!-- ── THE MAIN CHAT WINDOW ── -->
+  <div class="chat-hero-wrap">
+    <div class="chat-hero">
+
+      <!-- Head -->
+      <div class="ch-head">
+        <div class="ch-avi">🌴</div>
+        <div class="ch-info">
+          <div class="ch-name">Coco</div>
+          <div class="ch-status"><span class="sdot"></span>Online — always here</div>
+        </div>
+        <div class="ch-langs">EN · FR · DE · SV · TH · 中文</div>
+      </div>
+
+      <!-- Messages -->
+      <div class="ch-msgs" id="chatMsgs">
+        <div class="msg msg-coco">
+          <div class="msg-bubble">Sawadee kha! 🌺 I'm Coco, your AI travel guide for Koh Samui.<br><br>Whether you need the perfect hotel, a dive trip to Sail Rock, the best street food, or how to reach Ang Thong Marine Park — I've got you covered. What can I help you discover? 🌴</div>
+          <div class="msg-time">Just now</div>
+        </div>
+        <!-- Example questions shown before first message -->
+        <div class="ex-qs" id="exampleQs">
+          <button class="ex-q" onclick="chip('Best beach for families with young kids on Koh Samui?')"><span class="ex-q-ico">🏖️</span>Best beach for families with young kids?</button>
+          <button class="ex-q" onclick="chip('Best romantic restaurant in Fisherman\'s Village Bophut?')"><span class="ex-q-ico">🍽️</span>Romantic restaurant in Fisherman's Village?</button>
+          <button class="ex-q" onclick="chip('What to do in Koh Samui when it rains?')"><span class="ex-q-ico">🌧️</span>What to do when it rains?</button>
+          <button class="ex-q" onclick="chip('How do I get to Sail Rock for a diving trip?')"><span class="ex-q-ico">🤿</span>How do I get to Sail Rock for diving?</button>
+        </div>
+      </div>
+
+      <!-- Category chips -->
+      <div class="cat-chips-row" id="chipsRow">
+        <div class="c-chip" onclick="chip('Best hotels and resorts on Koh Samui — luxury, boutique and budget options?')">🏨 Hotels</div>
+        <div class="c-chip" onclick="chip('Best diving and snorkeling sites around Koh Samui and Koh Tao?')">🤿 Diving</div>
+        <div class="c-chip" onclick="chip('Best restaurants in Koh Samui — romantic, seafood, local Thai and family-friendly?')">🍽️ Restaurants</div>
+        <div class="c-chip" onclick="chip('Best sea tours from Koh Samui — Ang Thong Marine Park, Pig Island, Koh Tao?')">⛵ Tours</div>
+        <div class="c-chip" onclick="chip('Best spas, yoga and wellness retreats on Koh Samui?')">🧘 Wellness</div>
+        <div class="c-chip" onclick="chip('Best activities on Koh Samui — watersports, Muay Thai, ATV, cooking class?')">🏄 Activities</div>
+        <div class="c-chip" onclick="chip('What is the nightlife like in Koh Samui — beach clubs, bars, clubs?')">🌙 Nightlife</div>
+        <div class="c-chip" onclick="chip('Best temples and cultural sites in Koh Samui to visit?')">🛕 Culture</div>
+        <div class="c-chip" onclick="chip('How do I get around Koh Samui? Taxi, ferry, motorbike, Grab?')">🚗 Transport</div>
+        <div class="c-chip" onclick="chip('Best fishing charters in Koh Samui — deep sea, half day, squid fishing?')">🎣 Fishing</div>
+      </div>
+
+      <!-- Input -->
+      <div class="ch-inp-area">
+        <textarea class="chat-inp" id="chatInput" placeholder="Ask me anything about Koh Samui…" rows="1" onkeydown="onKey(event)" oninput="resize(this)"></textarea>
+        <button class="send-btn" id="sendBtn" onclick="send()">➤</button>
+      </div>
+      <div style="font-size:11px;color:var(--dim);text-align:center;margin-top:8px;line-height:1.5;padding:0 6px">
+        AI answers may be wrong and prices are indicative — always confirm with the operator. Not safety advice (e.g. diving). Some booking links are affiliate links. <a href="/terms" style="color:var(--teal-l);text-decoration:none">Terms</a> · <a href="/privacy" style="color:var(--teal-l);text-decoration:none">Privacy</a>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Stats -->
+  <div class="hero-stats">
+    <div class="h-stat"><div class="h-stat-n">40+</div><div class="h-stat-l">Hotels</div></div>
+    <div class="h-stat"><div class="h-stat-n">15+</div><div class="h-stat-l">Dive Sites</div></div>
+    <div class="h-stat"><div class="h-stat-n">50+</div><div class="h-stat-l">Restaurants</div></div>
+    <div class="h-stat"><div class="h-stat-n">30+</div><div class="h-stat-l">Activities</div></div>
+    <div class="h-stat"><div class="h-stat-n">12</div><div class="h-stat-l">Beaches</div></div>
+    <div class="h-stat"><div class="h-stat-n">6</div><div class="h-stat-l">Languages</div></div>
+  </div>
+</section>
+
+<!-- ── EXPLORE ── -->
+<section id="explore">
+  <div class="container">
+    <div class="s-lbl">Discover</div>
+    <h2 class="s-title">Everything Koh Samui Has to Offer</h2>
+    <p class="s-sub">Tap any category to browse — from 5-star resorts to whale shark dives to hidden waterfall temples. Each card links directly to Coco.</p>
+    <div class="cat-grid">
+      <div class="cat-card" onclick="showCat('hotels',this)"><div class="cat-icon">🏨</div><div class="cat-name">Hotels & Resorts</div><div class="cat-count">40+ options</div></div>
+      <div class="cat-card" onclick="showCat('diving',this)"><div class="cat-icon">🤿</div><div class="cat-name">Diving & Snorkeling</div><div class="cat-count">15+ dive sites</div></div>
+      <div class="cat-card" onclick="showCat('restaurants',this)"><div class="cat-icon">🍽️</div><div class="cat-name">Restaurants & Food</div><div class="cat-count">50+ venues</div></div>
+      <div class="cat-card" onclick="showCat('tours',this)"><div class="cat-icon">⛵</div><div class="cat-name">Sea Tours & Trips</div><div class="cat-count">Ang Thong, Pig Island +</div></div>
+      <div class="cat-card" onclick="showCat('wellness',this)"><div class="cat-icon">🧘</div><div class="cat-name">Wellness & Spa</div><div class="cat-count">World-class retreats</div></div>
+      <div class="cat-card" onclick="showCat('activities',this)"><div class="cat-icon">🏄</div><div class="cat-name">Activities & Sports</div><div class="cat-count">Watersports, Muay Thai +</div></div>
+      <div class="cat-card" onclick="showCat('nightlife',this)"><div class="cat-icon">🌙</div><div class="cat-name">Nightlife</div><div class="cat-count">Clubs, beach bars +</div></div>
+      <div class="cat-card" onclick="showCat('culture',this)"><div class="cat-icon">🛕</div><div class="cat-name">Culture & Temples</div><div class="cat-count">Big Buddha, markets +</div></div>
+      <div class="cat-card" onclick="showCat('transport',this)"><div class="cat-icon">🚗</div><div class="cat-name">Transport & Ferries</div><div class="cat-count">All the ways around</div></div>
+      <div class="cat-card" onclick="showCat('fishing',this)"><div class="cat-icon">🎣</div><div class="cat-name">Fishing Charters</div><div class="cat-count">Deep sea adventures</div></div>
+    </div>
+    <div class="listings-panel" id="listingsPanel">
+      <div class="panel-head">
+        <div class="panel-title" id="panelTitle"></div>
+        <button class="panel-close" onclick="closeCat()">✕ Close</button>
+      </div>
+      <div class="listings-grid" id="listingsGrid"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ── BEACHES ── -->
+<section id="beaches">
+  <div class="container">
+    <div class="s-lbl">Coast Guide</div>
+    <h2 class="s-title">The Beaches of Koh Samui</h2>
+    <p class="s-sub">12 beaches, each with its own personality. Tap any to ask Coco for full details, facilities and who each beach is best for.</p>
+    <div class="beach-grid">
+      <div class="beach-card" onclick="askQ('Tell me about Chaweng Beach — best spots, facilities and who it\'s best for.')">
+        <div class="beach-inner" style="background:linear-gradient(135deg,#0a9396,#023047)"><div class="beach-info"><div class="beach-name">Chaweng</div><span class="beach-tag">🎉 Most Lively · 7km</span></div></div>
+      </div>
+      <div class="beach-card" onclick="askQ('Tell me about Lamai Beach — vibe, facilities, best for who?')">
+        <div class="beach-inner" style="background:linear-gradient(135deg,#e9c46a,#f4a261)"><div class="beach-info"><div class="beach-name">Lamai</div><span class="beach-tag">🌅 Romantic · Relaxed</span></div></div>
+      </div>
+      <div class="beach-card" onclick="askQ('Tell me about Maenam Beach — is it good for families with kids?')">
+        <div class="beach-inner" style="background:linear-gradient(135deg,#94d2bd,#0a9396)"><div class="beach-info"><div class="beach-name">Maenam</div><span class="beach-tag">👨‍👩‍👧 Family Friendly</span></div></div>
+      </div>
+      <div class="beach-card" onclick="askQ('Tell me about Silver Beach Crystal Bay — is it worth visiting?')">
+        <div class="beach-inner" style="background:linear-gradient(135deg,#48cae4,#0077b6)"><div class="beach-info"><div class="beach-name">Silver Beach</div><span class="beach-tag">💎 Hidden Gem · Turquoise</span></div></div>
+      </div>
+      <div class="beach-card" onclick="askQ('Tell me about Choeng Mon Beach — best resorts and activities nearby?')">
+        <div class="beach-inner" style="background:linear-gradient(135deg,#52b788,#1b4332)"><div class="beach-info"><div class="beach-name">Choeng Mon</div><span class="beach-tag">🏰 Upscale · Calm Waters</span></div></div>
+      </div>
+      <div class="beach-card" onclick="askQ('Tell me about Lipa Noi Beach — best sunsets and which hotels are there?')">
+        <div class="beach-inner" style="background:linear-gradient(135deg,#f4a261,#e76f51)"><div class="beach-info"><div class="beach-name">Lipa Noi</div><span class="beach-tag">🌄 Best Sunsets · West Coast</span></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── HOW IT WORKS ── -->
+<section id="how">
+  <div class="container">
+    <div class="s-lbl">How It Works</div>
+    <h2 class="s-title">Instant Answers, Zero Hassle</h2>
+    <p class="s-sub">No signup, no app to download. Just ask — and get expert local answers in seconds.</p>
+    <div class="how-grid">
+      <div class="how-step">
+        <div class="how-num">1</div>
+        <div class="how-title">Ask anything</div>
+        <div class="how-desc">Type your question in any language — English, French, German, Swedish, Thai or Chinese. Coco understands you and replies in the same language.</div>
+      </div>
+      <div class="how-step">
+        <div class="how-num">2</div>
+        <div class="how-title">Get local answers</div>
+        <div class="how-desc">Coco draws on deep local knowledge — real prices in THB, real ferry times, real dive operator contacts — not generic internet content.</div>
+      </div>
+      <div class="how-step">
+        <div class="how-num">3</div>
+        <div class="how-title">Explore & plan</div>
+        <div class="how-desc">Follow up, refine, ask for itineraries — Coco remembers your conversation and builds your perfect Samui trip step by step.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── EXPERIENCES ── -->
+<section id="experiences">
+  <div class="container">
+    <div class="s-lbl">Must-Do</div>
+    <h2 class="s-title">Signature Koh Samui Experiences</h2>
+    <p class="s-sub">The experiences every visitor should have — handpicked by Coco with full details on request.</p>
+    <div class="exp-grid">
+      <div class="exp-card">
+        <div class="exp-head"><span class="exp-emo">🦈</span><div class="exp-title">Dive Sail Rock</div><div class="exp-desc">The crown jewel of diving in the Gulf of Thailand. A vertical chimney swimthrough, massive barracuda schools, and whale sharks May–September. Bucket list material.</div></div>
+        <div class="exp-foot"><span class="exp-price">From 2,500 THB/person</span><button class="exp-ask" onclick="askQ('How do I book a dive trip to Sail Rock from Koh Samui?')">Book via Coco →</button></div>
+      </div>
+      <div class="exp-card">
+        <div class="exp-head"><span class="exp-emo">🏝️</span><div class="exp-title">Ang Thong Marine Park</div><div class="exp-desc">42 pristine islands with an emerald lagoon, kayaking, snorkeling over untouched coral — a full-day paradise just 31km from Samui.</div></div>
+        <div class="exp-foot"><span class="exp-price">From 1,500 THB/person</span><button class="exp-ask" onclick="askQ('Tell me everything about Ang Thong Marine Park — tours, timing, what to bring.')">Ask Coco →</button></div>
+      </div>
+      <div class="exp-card">
+        <div class="exp-head"><span class="exp-emo">🐷</span><div class="exp-title">Pig Island Day Trip</div><div class="exp-desc">Swim with pigs on Koh Madsum, snorkel pristine Koh Tean coral, eat fresh grilled seafood on a deserted beach. Samui's most unique day trip.</div></div>
+        <div class="exp-foot"><span class="exp-price">From 1,500 THB/person</span><button class="exp-ask" onclick="askQ('How do I get to Pig Island Koh Madsum from Koh Samui?')">Ask Coco →</button></div>
+      </div>
+      <div class="exp-card">
+        <div class="exp-head"><span class="exp-emo">🌅</span><div class="exp-title">Sunset Dinner Cruise</div><div class="exp-desc">Watch the sun dissolve into the Gulf from a catamaran. Cocktails, fresh seafood, golden hour light — the most romantic evening on the island.</div></div>
+        <div class="exp-foot"><span class="exp-price">From 2,000 THB/person</span><button class="exp-ask" onclick="askQ('Best sunset cruise operators on Koh Samui?')">Ask Coco →</button></div>
+      </div>
+      <div class="exp-card">
+        <div class="exp-head"><span class="exp-emo">🧘</span><div class="exp-title">Kamalaya Wellness Day</div><div class="exp-desc">World-famous sanctuary built around a monk's cave. Yoga, meditation, treatments, healthy cuisine — a full reset. Worth every baht.</div></div>
+        <div class="exp-foot"><span class="exp-price">From 3,500 THB/day</span><button class="exp-ask" onclick="askQ('What Kamalaya day programs and treatments are available?')">Ask Coco →</button></div>
+      </div>
+      <div class="exp-card">
+        <div class="exp-head"><span class="exp-emo">🎆</span><div class="exp-title">Fisherman's Village Friday</div><div class="exp-desc">Every Friday 5–11pm: street food, art, live music and boutique shopping in a charming Sino-Portuguese colonial street. The perfect evening out.</div></div>
+        <div class="exp-foot"><span class="exp-price">Free entry</span><button class="exp-ask" onclick="askQ('What should I see and eat at Fisherman\'s Village walking street on Friday?')">Ask Coco →</button></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── PRACTICAL ── -->
+<section id="practical">
+  <div class="container">
+    <div class="s-lbl">Practical Guide</div>
+    <h2 class="s-title">Everything You Need to Know</h2>
+    <p class="s-sub">Essential facts for a smooth, safe and enjoyable stay on Koh Samui.</p>
+    <div class="tips-grid">
+      <div class="tip-card"><div class="tip-ico">💰</div><div class="tip-title">Currency & Money</div><div class="tip-text">Thai Baht (THB). 1 EUR ≈ 37–38 THB. ATMs everywhere (220 THB fee per withdrawal). Get larger amounts at once. Most tourist spots accept cards.</div></div>
+      <div class="tip-card"><div class="tip-ico">🚗</div><div class="tip-title">Getting Around</div><div class="tip-text">Songthaew (shared truck) 50–150 THB. Taxis 200–500 THB (negotiate). Grab app saves 20–30%. Motorbike 200–300 THB/day — drive carefully, high accident rate.</div></div>
+      <div class="tip-card"><div class="tip-ico">🌤️</div><div class="tip-title">Best Time to Visit</div><div class="tip-text">Dec–April: dry season, clear blue skies, best for diving. May–Sept: warm, some rain but usually sunny. Oct–Nov: monsoon season, avoid if possible.</div></div>
+      <div class="tip-card"><div class="tip-ico">📱</div><div class="tip-title">SIM & Connectivity</div><div class="tip-text">Buy AIS SIM at the airport (best coverage). 299 THB/30 days unlimited data. Download Grab before you arrive — you'll use it every day.</div></div>
+      <div class="tip-card"><div class="tip-ico">🛕</div><div class="tip-title">Temple Etiquette</div><div class="tip-text">Cover shoulders and knees. Remove shoes before entering. Don't point feet at Buddha images. A sarong or scarf can be bought near temples (~100 THB).</div></div>
+      <div class="tip-card"><div class="tip-ico">🏥</div><div class="tip-title">Health & Safety</div><div class="tip-text">Bangkok Hospital Samui (most reliable). Emergency: 1669. Tourist police (English): 1155. Travel insurance strongly recommended for diving and water activities.</div></div>
+      <div class="tip-card"><div class="tip-ico">🚢</div><div class="tip-title">Ferries & Islands</div><div class="tip-text">Koh Phangan: 30 min, ~400 THB from Bangrak Pier. Koh Tao: 2 hrs, ~750 THB. Surat Thani mainland: 2.5 hrs, ~300 THB from Nathon Pier.</div></div>
+      <div class="tip-card"><div class="tip-ico">🌊</div><div class="tip-title">Diving Safety</div><div class="tip-text">Only dive with PADI 5-Star centres. Never dive after alcohol. Reef-safe biodegradable sunscreen only. Check weather before sea trips in Oct–Nov.</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ── CONTACT ── -->
+<section id="contact">
+  <div class="container">
+    <div class="contact-wrap">
+      <div class="s-lbl">Personal Guide</div>
+      <h2 class="s-title">Want a Local Expert?</h2>
+      <p style="font-size:16px;color:var(--muted);max-width:480px;margin:0 auto 36px;line-height:1.72">For diving, boat charters and personalized tour planning — connect with Cyril, PADI dive instructor based in Koh Samui with 3,000+ dives in the Gulf of Thailand.</p>
+      <a href="https://wa.me/66633753316?text=Hi%20Coco!%20I%20found%20you%20via%20the%20website%20%F0%9F%8C%B4" target="_blank" class="wa-btn">
+        <span style="font-size:22px">💬</span> WhatsApp: +66 633 753 316
+      </a>
+      <div class="c-div">— or ask Coco above for instant AI answers —</div>
+      <div class="c-perks">
+        <div class="c-perk">✅ PADI Dive Instructor</div>
+        <div class="c-perk">✅ 3,000+ dives · Gulf of Thailand</div>
+        <div class="c-perk">✅ Based on Koh Samui</div>
+        <div class="c-perk">✅ English &amp; French spoken</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── FOR HOTELS ── -->
+<section id="for-hotels">
+  <div class="container" style="max-width:1000px">
+    <div class="b2b-inner">
+      <div class="b2b-badge">🏨 For hotels, villas &amp; resorts</div>
+      <h2 class="b2b-title">Add a 24/7 AI concierge to your guest experience</h2>
+      <p class="b2b-sub">What you're using above is the live product. The same Coco can be set up for <strong style="color:var(--white)">your property</strong> — answering your guests instantly in 6 languages, configured to recommend your own services first.</p>
+
+      <div class="b2b-feats">
+        <div class="b2b-feat">
+          <div class="b2b-feat-ico">🌐</div>
+          <div class="b2b-feat-title">6 languages, 24/7</div>
+          <div class="b2b-feat-desc">English, French, German, Swedish, Thai &amp; Chinese — no extra staff cost, no night shift needed.</div>
+        </div>
+        <div class="b2b-feat">
+          <div class="b2b-feat-ico">⭐</div>
+          <div class="b2b-feat-title">Your services first</div>
+          <div class="b2b-feat-desc">On setup I configure Coco to recommend your spa, restaurant and in-house experiences before anything external.</div>
+        </div>
+        <div class="b2b-feat">
+          <div class="b2b-feat-ico">⚡</div>
+          <div class="b2b-feat-title">Live in minutes</div>
+          <div class="b2b-feat-desc">Embed on your website or WhatsApp, or add an in-room QR code with a trackable per-hotel link. I set it all up.</div>
+        </div>
+      </div>
+
+      <div style="margin-bottom:8px">
+        <span class="b2b-price">3,500 THB</span>
+        <span class="b2b-price-period">/ month · white-label · cancel anytime</span>
+      </div>
+      <div class="b2b-trial">Start with a <strong style="color:var(--white)">14-day free trial</strong> — no card required, branded with your property name.</div>
+
+      <a href="https://wa.me/66633753316?text=Hi%20Cyril%2C%20I'm%20interested%20in%20Coco%20for%20my%20property%20—%20can%20we%20book%20a%2015-min%20demo?" target="_blank" class="btn-coral">💬 Book a 15-min demo</a>
+      <div style="font-size:13px;color:var(--dim);margin-top:18px">Cyril · Coco — Samui Concierge AI · +66 63 375 3316 · hello@coco-samui-ai.com</div>
+    </div>
+  </div>
+</section>
+
+<!-- ── FAQ ── -->
+<section id="faq">
+  <div class="container">
+    <div style="text-align:center;margin-bottom:44px">
+      <div class="s-lbl">FAQ</div>
+      <h2 class="s-title">Frequently Asked Questions</h2>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">Is Coco free for travellers? <span class="faq-arrow">▾</span></button>
+        <div class="faq-a">Yes — travellers can chat with Coco completely free, with no signup or app required. Just ask your question and get an instant answer about hotels, diving, restaurants, transport, or anything on Koh Samui.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">What languages does Coco speak? <span class="faq-arrow">▾</span></button>
+        <div class="faq-a">Coco is fluent in English, French, German, Swedish, Thai and Chinese. It automatically detects the language you write in and replies in the same language — no settings needed.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">How accurate is the information? <span class="faq-arrow">▾</span></button>
+        <div class="faq-a">Coco uses curated local knowledge from verified sources including official operator websites, tourism authorities and on-the-ground expertise from Cyril, a professional dive instructor based on Koh Samui. Prices are indicative in THB and should be confirmed directly with providers for booking. If Coco is unsure, it says so clearly.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">How do I get from Koh Samui to Koh Tao or Sail Rock? <span class="faq-arrow">▾</span></button>
+        <div class="faq-a">The fastest option is a speedboat ferry (Lomprayah or Seatran) from Nathon or Maenam Pier — about 1.5–2 hours to Koh Tao for roughly 600–1,000 THB. For Sail Rock, day trips depart from Samui with dive operators like Discovery Divers. Ask Coco directly for live routing, timing and booking options.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">Can Coco be added to my hotel or villa website? <span class="faq-arrow">▾</span></button>
+        <div class="faq-a">Absolutely. Coco can be embedded on your website or WhatsApp, or deployed via a trackable QR code in guest rooms — all configured to promote your own services first. Setup takes less than an hour. Start with a 14-day free trial, no card required. Contact Cyril on WhatsApp to get started.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">What is the best time of year to visit Koh Samui? <span class="faq-arrow">▾</span></button>
+        <div class="faq-a">December through April is the dry season — clear blue skies and the best visibility for diving. May through September is warm with some rain but usually sunny. October and November are the monsoon months and best avoided, particularly for boat trips and diving. Ask Coco for month-specific advice based on your travel dates.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── FOOTER ── -->
+<footer>
+  <div class="foot-inner">
+    <div class="foot-top">
+      <div>
+        <div class="foot-brand">🌴 Coco</div>
+        <div class="foot-desc">AI travel concierge for Koh Samui. Personalized recommendations for hotels, diving, tours, restaurants and everything in between.</div>
+      </div>
+      <div>
+        <div class="foot-col-title">Explore</div>
+        <div class="foot-links">
+          <button class="foot-link" onclick="showCat('hotels',null)">Hotels &amp; Resorts</button>
+          <button class="foot-link" onclick="showCat('diving',null)">Diving &amp; Snorkeling</button>
+          <button class="foot-link" onclick="showCat('restaurants',null)">Restaurants</button>
+          <button class="foot-link" onclick="showCat('tours',null)">Sea Tours</button>
+          <button class="foot-link" onclick="showCat('wellness',null)">Wellness &amp; Spa</button>
+        </div>
+      </div>
+      <div>
+        <div class="foot-col-title">Islands</div>
+        <div class="foot-links">
+          <button class="foot-link" onclick="askQ('Tell me about Ang Thong Marine Park')">Ang Thong Marine Park</button>
+          <button class="foot-link" onclick="askQ('How do I get to Koh Phangan?')">Koh Phangan</button>
+          <button class="foot-link" onclick="askQ('Tell me about Koh Tao diving')">Koh Tao</button>
+          <button class="foot-link" onclick="askQ('How do I get to Pig Island Koh Madsum?')">Pig Island</button>
+          <button class="foot-link" onclick="askQ('Tell me about Koh Nang Yuan snorkeling')">Koh Nang Yuan</button>
+        </div>
+      </div>
+      <div>
+        <div class="foot-col-title">Contact</div>
+        <div class="foot-links">
+          <a href="https://wa.me/66633753316" target="_blank" class="foot-link">📱 WhatsApp</a>
+          <a href="mailto:hello@coco-samui-ai.com" class="foot-link">✉️ Email</a>
+          <button class="foot-link" onclick="scrollToChat()">💬 Chat with Coco</button>
+          <a href="#for-hotels" class="foot-link">🏨 For Hotels</a>
+          <a href="/privacy" class="foot-link">🔒 Privacy Policy</a>
+          <a href="/terms" class="foot-link">📄 Terms of Service</a>
+        </div>
+      </div>
+    </div>
+    <div class="foot-disclosure" style="font-size:11.5px;color:var(--dim);line-height:1.6;margin-bottom:18px;max-width:760px">
+      Coco is free for travellers. Some activity and booking links are affiliate links (Viator, Klook, GetYourGuide, Booking.com) and Coco may earn a commission at no extra cost to you. Coco's answers are AI-generated and may be inaccurate — prices are indicative and not safety advice; always confirm with the operator.
+    </div>
+    <div class="foot-bottom">
+      <div class="foot-copy">© 2026 Coco Concierge · Built with <span class="heart">♥</span> on Koh Samui, Thailand · <a href="/privacy" style="color:inherit">Privacy</a> · <a href="/terms" style="color:inherit">Terms</a></div>
+      <div class="foot-copy">Powered by AI · All prices in THB</div>
+    </div>
+  </div>
+</footer>
+
+<script>
+// ── White-label per-hotel personalisation (?hotel=slug) ──
+var HOTELS_DISPLAY = {
+  "ritz-carlton":    { name:"The Ritz-Carlton Koh Samui",    accent:"#9a7b4f" },
+  "anantara-bophut": { name:"Anantara Bophut Koh Samui",     accent:"#7a6a53" },
+  "banyan-tree":     { name:"Banyan Tree Samui",             accent:"#1f6f5c" },
+  "centara-reserve": { name:"Centara Reserve Samui",         accent:"#0a7d6b" },
+  "hansar":          { name:"Hansar Samui Resort",           accent:"#2a6f97" },
+  "santiburi":       { name:"Santiburi Koh Samui",           accent:"#6a8d4f" },
+  "kamalaya":        { name:"Kamalaya Koh Samui",            accent:"#5b8c5a" },
+  "four-seasons":    { name:"Four Seasons Resort Koh Samui", accent:"#1d3f5e" }
+};
+var HOTEL_SLUG = (new URLSearchParams(window.location.search).get('hotel') || '').toLowerCase().replace(/[^a-z0-9]+/g,'-');
+function hotelMatch(slug){
+  if(!slug) return null;
+  if(HOTELS_DISPLAY[slug]) return HOTELS_DISPLAY[slug];
+  for(var k in HOTELS_DISPLAY){ if(slug.indexOf(k)!==-1) return HOTELS_DISPLAY[k]; }
+  return null;
+}
+function applyWhiteLabel(){
+  var h = hotelMatch(HOTEL_SLUG);
+  if(!h) return;
+  document.documentElement.style.setProperty('--coral', h.accent);
+  document.documentElement.style.setProperty('--coral-d', h.accent);
+  var nn = document.querySelector('.nav-name'); if(nn) nn.textContent = 'Coco × ' + h.name;
+  document.title = 'Coco — concierge for ' + h.name;
+  var fb = document.querySelector('#chatMsgs .msg-bubble');
+  if(fb){ fb.innerHTML = 'Sawadee kha! 🌺 Welcome to <b>'+h.name+'</b>. I am Coco, your personal concierge.<br><br>Ask me anything — what to do, where to eat, transfers, the spa, excursions — I will point you to the best of '+h.name+' first, and the island beyond. 🌴'; }
+  var badge = document.querySelector('.hero-badge'); if(badge) badge.innerHTML = '<span class="badge-dot"></span>Official concierge · ' + h.name;
+}
+if(document.readyState==='loading'){ document.addEventListener('DOMContentLoaded', applyWhiteLabel); } else { applyWhiteLabel(); }
+
+// ── DATA ──
+const DATA={
+  hotels:[
+    {n:'Four Seasons Resort',a:'Mae Nam',d:'Pinnacle of luxury. Hillside amphitheater design, private pool villas, exceptional destination dining.',p:'From 35,000 THB/night',b:'5★',e:'🏰'},
+    {n:'Banyan Tree Samui',a:'Lamai',d:'All-villa sanctuary, each with private infinity pool overlooking the Gulf of Thailand.',p:'From 28,000 THB/villa',b:'5★',e:'🌿'},
+    {n:'Cape Fahn Hotel',a:'Choeng Mon',d:'Built on its own private island connected by bridge. The wow-factor resort on Samui.',p:'From 22,000 THB/night',b:'5★',e:'🏝️'},
+    {n:'Ritz-Carlton Koh Samui',a:'Choeng Mon',d:'Ultra-luxury, private beach, multiple infinity pools, full spa and fine dining.',p:'From 25,000 THB/night',b:'5★',e:'✨'},
+    {n:'Conrad Koh Samui',a:'Taling Ngam',d:'Cascade of cliff villas with private infinity pools. Best sunsets on the island.',p:'From 18,000 THB/night',b:'5★',e:'🌅'},
+    {n:'Anantara Bophut',a:'Bophut',d:'5-star, Bill Bensley-designed gardens, beachfront, Tree Tops Sky Dining restaurant.',p:'From 14,000 THB/night',b:'5★',e:'🌺'},
+    {n:'The Library',a:'Chaweng',d:'Iconic design hotel with the famous red swimming pool. Minimalist, art-forward concept.',p:'From 9,000 THB/night',b:'Boutique',e:'📚'},
+    {n:'Hansar Samui',a:'Bophut',d:'Contemporary luxury right on Bophut beach with infinity pool and excellent service.',p:'From 10,000 THB/night',b:'5★',e:'🌊'},
+    {n:'W Koh Samui',a:'Mae Nam',d:'Trendy, pools, AWAY Spa. Great for a stylish, energetic stay on the north coast.',p:'From 12,000 THB/night',b:'5★',e:'🎉'},
+    {n:'Zazen Boutique Resort',a:'Choeng Mon',d:'French-Thai inspired design, romantic atmosphere, beautiful gardens and pool.',p:'From 8,000 THB/night',b:'Boutique',e:'🌸'},
+    {n:'Amari Koh Samui',a:'Chaweng',d:'PADI 5-Star dive resort. Beachfront, family-friendly with good facilities.',p:'From 6,000 THB/night',b:'4★',e:'🏖️'},
+    {n:'OZO Chaweng Samui',a:'Chaweng',d:'Modern, well-located mid-range option. Central access, comfortable and clean.',p:'From 3,500 THB/night',b:'4★',e:'🏨'},
+  ],
+  diving:[
+    {n:'Sail Rock (Hin Bai)',a:'Gulf of Thailand · 60min speedboat',d:'THE best dive in the Gulf. Vertical chimney swimthrough, whale sharks May–Sept, massive barracuda schools. 40m max depth.',p:'~2,500 THB/day trip',b:'⭐ Top Site',e:'🦈'},
+    {n:'Chumphon Pinnacle',a:'Near Koh Tao · 90min',d:'Massive granite peaks 14–36m. Grey reef sharks, great barracuda, whale sharks. Advanced divers.',p:'~3,000 THB/day trip',b:'Advanced',e:'🌊'},
+    {n:'Discovery Divers',a:'Nathon / Chaweng Samui',d:'PADI 5-Star, 25+ years on Samui. Best operator for Sail Rock and Koh Tao. discoverydivers.com ☎ +66 77 413 422',p:'From 2,500 THB',b:'PADI 5★',e:'🤿'},
+    {n:'Silent Divers',a:'Koh Samui',d:'PADI 5-Star dive centre, expert team, small groups, personalized service. silentdivers.com',p:'From 2,500 THB',b:'PADI 5★',e:'🐠'},
+    {n:'White Rock (Hin Khao)',a:'Near Koh Tao',d:'Perfect beginner dive, 8–20m, moray eels, angelfish, sea turtles, colorful corals in calm water.',p:'From 2,200 THB',b:'Beginner',e:'🐢'},
+    {n:'Japanese Gardens',a:'Koh Tao',d:'Very shallow (12m max), colorful corals, diverse fish. The perfect first open water dive site.',p:'From 2,200 THB',b:'Beginner',e:'🪸'},
+    {n:'Koh Nang Yuan Snorkel',a:'Near Koh Tao',d:'Three islands connected by a white sandbar. World-class snorkeling in crystal clear water. 100 THB island entry.',p:'~750 THB ferry',b:'Snorkeling',e:'🏝️'},
+    {n:'Open Water Diver Course',a:'Koh Samui',d:'Get your PADI certification in 3–4 days. Theory + pool + 4 open water dives. Valid worldwide for life.',p:'12,000–15,000 THB',b:'PADI Course',e:'📋'},
+  ],
+  restaurants:[
+    {n:'Dining on the Rocks',a:'Six Senses · North Samui',d:'Clifftop terrace, panoramic Gulf views, Asian-European fusion. One of the most dramatic dining settings in Thailand.',p:'From 3,000 THB/pp',b:'Fine Dining',e:'🌅'},
+    {n:'Tree Tops Sky Dining',a:'Anantara Bophut',d:'Rustic wooden huts in 120-year-old tree canopy with elevated walkways. Michelin-trained chefs, organic produce.',p:'From 2,500 THB/pp',b:'Unique',e:'🌳'},
+    {n:'Jun Hom',a:'Koh Samui',d:'Michelin Bib Gourmand 2026. Authentic Thai cuisine with local seasonal ingredients. Excellent value fine dining.',p:'600–800 THB/pp',b:'Michelin ⭐',e:'🍜'},
+    {n:'FishHouse',a:'Kimpton Kitalay · Choeng Mon',d:'Michelin-recommended 2024–2026. Fresh seafood, sunset beach views, beautiful private pier dining.',p:'~1,500 THB/pp',b:'Michelin',e:'🐟'},
+    {n:'Moon at Silavadee',a:'Lamai clifftop',d:'Perched on granite boulders with the Gulf below. Rooftop lounge with dramatic views every meal.',p:'~2,000 THB/pp',b:'Romantic',e:'🌙'},
+    {n:"Coco Tam's",a:"Fisherman's Village · Bophut",d:'Italian downstairs, open-air rooftop terrace upstairs with views to Koh Phangan. Always buzzy.',p:'~800 THB/pp',b:'Popular',e:'🍕'},
+    {n:'Sa Being Lae',a:'Koh Samui',d:'Local institution serving classic Thai seafood. Where locals eat when they want the best at fair prices.',p:'~500 THB/pp',b:'Local Fav',e:'🦞'},
+    {n:'Chaweng Night Market',a:'Chaweng · Ring Road',d:'Daily from 6pm. Pad Thai, grilled meats, fresh fruit, mango sticky rice, cold Thai beer. Cheap and delicious.',p:'60–150 THB/dish',b:'Street Food',e:'🍢'},
+  ],
+  tours:[
+    {n:'Ang Thong Marine Park',a:'31km from Samui',d:'42 pristine islands. Emerald lagoon, sea kayaking, snorkeling, panoramic viewpoints. Full-day paradise.',p:'1,500–2,200 THB/pp',b:'⭐ Must-Do',e:'🏝️'},
+    {n:'Pig Island (Koh Madsum)',a:'15 min from south Samui',d:'Swim with the famous pigs on the beach, snorkel Koh Tean coral gardens, eat fresh grilled seafood.',p:'1,500–2,000 THB/pp',b:'Unique',e:'🐷'},
+    {n:'Koh Tao Full Day',a:'2 hrs by speedboat ferry',d:'World-famous diving, Koh Nang Yuan sandbar, clear water, snorkeling. Perfect day trip.',p:'~750 THB ferry',b:'Day Trip',e:'🤿'},
+    {n:'Koh Phangan Visit',a:'30 min by speed ferry',d:'Beautiful quieter island. Haad Yao, Bottle Beach, yoga retreats. Plan around Full Moon Party (check dates!).',p:'~400 THB ferry',b:'Island Hop',e:'🌕'},
+    {n:'Sunset Dinner Cruise',a:'Gulf of Thailand',d:'Romantic 2–3 hour cruise at sunset with cocktails and fresh seafood. Catamaran or traditional Thai boat.',p:'2,000–3,500 THB/pp',b:'Romantic',e:'🌅'},
+    {n:'Private Yacht Charter',a:'From Samui piers',d:'Private speedboat or sailing catamaran for your group. Go anywhere — Ang Thong, Koh Tao, deserted coves.',p:'From 15,000 THB/day',b:'Premium',e:'⛵'},
+  ],
+  wellness:[
+    {n:'Kamalaya Wellness Sanctuary',a:'Laem Set · South Samui',d:"World-famous. Built around ancient Buddhist monk's cave. Programs 3–14 days: stress, detox, longevity.",p:'From 15,000 THB/night',b:'⭐ World-Class',e:'🧘'},
+    {n:'Samahita Retreat',a:'South Coast',d:'Year-round yoga, breath and meditation retreats. Certified instructors, serene setting, excellent food.',p:'From 5,000 THB/night',b:'Yoga',e:'🌿'},
+    {n:'Vikasa Yoga Retreat',a:'North Samui',d:'Transformative yoga, Teacher Training courses available. Year-round calendar of intensives and retreats.',p:'From 4,000 THB/night',b:'Yoga TT',e:'🌸'},
+    {n:'Absolute Sanctuary',a:'Maenam',d:"Asia's top fitness and detox retreat. Pilates, weight management, full detox programs, beautiful facility.",p:'From 6,000 THB/night',b:'Detox',e:'💪'},
+    {n:'Tamarind Retreat',a:'Inland Samui',d:'Private jungle spa built around spring-fed pools. Unique 5-pool experience, authentic Thai massage in nature.',p:'From 3,500 THB',b:'Spa Day',e:'🌺'},
+    {n:'Thai Massage',a:'Island-wide',d:'Available every 200 meters on Koh Samui. Standard Thai: 300–400 THB/hour. Oil massage: 500–600 THB. Foot: 200–300 THB.',p:'200–600 THB/hr',b:'Everywhere',e:'💆'},
+  ],
+  activities:[
+    {n:'ATV Jungle Tour',a:'Chaweng inland',d:'Ride through muddy jungle trails, scenic viewpoints and local villages. No experience needed.',p:'~1,500 THB/pp',b:'Adventure',e:'🏎️'},
+    {n:'Ziplining',a:'Jungle canopy',d:'10+ platforms zipping through jungle canopy. 1–2 hour experience, spectacular views, safe and well-run.',p:'~2,000 THB/pp',b:'Thrills',e:'🦅'},
+    {n:'Muay Thai Training',a:'Various gyms on Samui',d:'Train with professional Muay Thai fighters. Single classes or multi-day packages. Great workout and cultural experience.',p:'500–700 THB/class',b:'Combat',e:'🥊'},
+    {n:'Samui Elephant Sanctuary',a:'Samui (ethical)',d:'Walk with rescued elephants in forest, feed them, observe natural behavior. No riding, no shows. 3-hour morning program.',p:'~2,500 THB/pp',b:'✅ Ethical',e:'🐘'},
+    {n:'Thai Cooking Class',a:'Chaweng area',d:'Half-day: market visit then cook 4–5 classic Thai dishes. Take the recipes home. Excellent hands-on learning.',p:'1,500–2,500 THB',b:'Cultural',e:'👨‍🍳'},
+    {n:'James Jetstar Watersports',a:'Lamai & Lipa Beach',d:'Full menu: Flyboard, Jet Pack, Hoverboard, Wakeboard, Parasailing, Banana Boat, Water Ski. kohsamuiwatersports.com',p:'400–2,000 THB',b:'Watersports',e:'🚤'},
+  ],
+  nightlife:[
+    {n:'Green Mango Club',a:'Chaweng · Soi Green Mango',d:'The legendary Samui super-club. 1,000+ capacity, commercial and chart music, packed weekends midnight onwards.',p:'Free / drinks 200–300 THB',b:'⭐ Icon',e:'🍹'},
+    {n:'Ark Bar Beach Club',a:'Chaweng Beach',d:'Open 2pm to 2am. Pool party afternoon, famous fire show 8pm, beach party til late. Best day-to-night spot.',p:'Free / min spend',b:'Beach Party',e:'🔥'},
+    {n:'79 Beach Club',a:'Chaweng Beach',d:'Stylish beachfront pool club, sunset DJ sets, all-day dining, 11am–11pm. Beautiful crowd, great cocktails.',p:'Min spend',b:'Beach Club',e:'🌊'},
+    {n:'Babou Samui',a:'Chaweng',d:'The best craft cocktail bar on the island. Proper cocktails at conversational volume — sophisticated without the attitude.',p:'300–400 THB/cocktail',b:'Cocktails',e:'🍸'},
+    {n:"Coco Tam's Bophut",a:"Fisherman's Village",d:'Famous for swing chairs, cocktails and the best people-watching in Bophut. Great for a relaxed sunset session.',p:'200–350 THB/drink',b:'Chill',e:'🌅'},
+    {n:'Full Moon Party',a:'Koh Phangan (30 min ferry)',d:'Monthly legendary beach party at Haad Rin. 30,000+ people, multiple stages, neon face paint, fire shows.',p:'400 THB ferry + entry',b:'Monthly',e:'🌕'},
+  ],
+  culture:[
+    {n:'Wat Phra Yai (Big Buddha)',a:'Northeast · near Bangrak Pier',d:'12m golden Buddha visible from sea and air. Best visited early morning for golden light. Dress code required.',p:'FREE',b:'Must-See',e:'🪷'},
+    {n:'Wat Plai Laem',a:'Northeast · 1km from Big Buddha',d:'18-armed Guanyin goddess over a sacred lake. Colorful, photogenic, peaceful. Combine both temples in one morning.',p:'FREE',b:'Temple',e:'🛕'},
+    {n:"Fisherman's Village Market",a:'Bophut · every Friday',d:'Best Friday market on the island. Colonial street, street food, local crafts, live music. Every Friday 5–11pm.',p:'FREE entry',b:'Every Friday',e:'🏮'},
+    {n:'Na Muang Waterfall',a:'10km from Chaweng',d:'Two waterfalls. No.1: easy 200m path, natural pool to swim. No.2: 30-min hike, more beautiful and fewer tourists.',p:'FREE',b:'Nature',e:'🌊'},
+    {n:'Secret Buddha Garden',a:'Hilltop inland',d:'Dozens of mystical Buddhist and Hindu statues built by a fruit farmer since 1976. Best by scooter. Panoramic views.',p:'80 THB entry',b:'Hidden Gem',e:'🌿'},
+    {n:'Hin Ta & Hin Yai Rocks',a:'South Lamai',d:'Naturally shaped rock formations. Culturally significant and hilariously shaped. Free, easy, combine with a beach day.',p:'FREE',b:'Quirky',e:'🪨'},
+  ],
+  transport:[
+    {n:'Songthaew (Shared Truck)',a:'Island-wide',d:'Red pickup trucks on fixed routes. Wave them down. Negotiate price upfront. Most authentic local transport on Samui.',p:'50–150 THB/person',b:'Cheapest',e:'🚌'},
+    {n:'Grab App',a:'Island-wide',d:'Ride-hailing app. Download before arrival. Usually 20–30% cheaper than negotiating with taxis. Works well across Samui.',p:'Varies by distance',b:'Recommended',e:'📱'},
+    {n:'Taxi (Negotiate)',a:'Island-wide',d:'No meters — always agree price before. Airport→Chaweng ~400 THB. Airport→Lamai ~500 THB. Chaweng→Lamai ~300 THB.',p:'200–600 THB',b:'Comfortable',e:'🚖'},
+    {n:'Motorbike Rental',a:'Island-wide',d:'Freedom to explore but high accident risk. 200–300 THB/day. Always wear helmet. Go slowly on hills and in rain.',p:'200–300 THB/day',b:'⚠️ Caution',e:'🛵'},
+    {n:'Car Rental',a:'Airport & resorts',d:'Best for families. 800–1,800 THB/day. Check insurance carefully. Left-hand drive, ring road is easy to navigate.',p:'800–1,800 THB/day',b:'Family',e:'🚗'},
+    {n:'Ferry to Koh Phangan',a:'Bangrak Pier',d:'High-speed: ~30 min, 300–500 THB. Slower: ~60 min, 200 THB. Multiple daily departures. Lomprayah and Seatran.',p:'300–500 THB',b:'30 min',e:'⛴️'},
+  ],
+  fishing:[
+    {n:'Deep Sea Fishing Charter',a:'Gulf of Thailand',d:'Full day fishing for barracuda, king mackerel, yellowfin tuna, snapper, grouper. Captain and crew provided.',p:'12,000 THB/day (4 pax)',b:'Full Day',e:'🎣'},
+    {n:'Half Day Fishing',a:'Gulf of Thailand',d:'Morning fishing trip for reef fish and smaller pelagic species. Great for beginners and limited time.',p:'6,000 THB/half day',b:'Half Day',e:'🐟'},
+    {n:'Night Squid Fishing',a:'From local piers',d:'Traditional squid fishing at night — local style. Fun and social for all ages. Casual operators from piers.',p:'~1,500 THB/pp',b:'Night Trip',e:'🦑'},
+    {n:'Shore Fishing (Free)',a:'Any pier or beach',d:'Fish from shore using local squid bait. Ask fishermen on the pier for tips. Early morning or evening best.',p:'FREE',b:'DIY',e:'🌊'},
+  ]
+};
+
+const CAT_LABELS={hotels:'🏨 Hotels & Resorts',diving:'🤿 Diving & Snorkeling',restaurants:'🍽️ Restaurants & Food',tours:'⛵ Sea Tours & Excursions',wellness:'🧘 Wellness & Spa',activities:'🎯 Activities & Sports',nightlife:'🌙 Nightlife',culture:'🛕 Culture & Temples',transport:'🚗 Transport',fishing:'🎣 Fishing'};
+const CAT_GRADIENTS={hotels:'#0a9396,#005f73',diving:'#0077b6,#023047',restaurants:'#e9c46a,#f4a261',tours:'#48cae4,#0096c7',wellness:'#52b788,#1b4332',activities:'#f4a261,#e76f51',nightlife:'#8b5cf6,#4c1d95',culture:'#d97706,#92400e',transport:'#64748b,#1e293b',fishing:'#0891b2,#164e63'};
+
+function showCat(cat, el) {
+  if(el){document.querySelectorAll('.cat-card').forEach(function(c){c.classList.remove('active')});el.classList.add('active');}
+  var panel=document.getElementById('listingsPanel');
+  document.getElementById('panelTitle').textContent=CAT_LABELS[cat]||cat;
+  var items=DATA[cat]||[];
+  var g=CAT_GRADIENTS[cat]||'#0a9396,#005f73';
+  document.getElementById('listingsGrid').innerHTML=items.map(function(i){return '<div class="lst-card"><div class="lst-img" style="background:linear-gradient(135deg,'+g+')">'+i.e+'<div class="lst-badge">'+i.b+'</div></div><div class="lst-body"><div class="lst-area">'+i.a+'</div><div class="lst-name">'+i.n+'</div><div class="lst-desc">'+i.d+'</div><div class="lst-foot"><span class="lst-price">'+i.p+'</span><button class="ask-btn" onclick="askQ(this.closest(\'.lst-card\').querySelector(\'.lst-name\').textContent)">Ask Coco →</button></div></div></div>';}).join('');
+  panel.classList.add('show');
+  setTimeout(function(){panel.scrollIntoView({behavior:'smooth',block:'start'});},50);
+}
+
+function closeCat(){
+  document.getElementById('listingsPanel').classList.remove('show');
+  document.querySelectorAll('.cat-card').forEach(function(c){c.classList.remove('active');});
+}
+
+function scrollToChat(){
+  window.scrollTo({top:0,behavior:'smooth'});
+  setTimeout(function(){document.getElementById('chatInput').focus();},400);
+}
+
+function resize(el){
+  el.style.height='auto';
+  el.style.height=Math.min(el.scrollHeight,120)+'px';
+}
+
+function onKey(e){
+  if(e.key==='Enter' && !e.shiftKey){ e.preventDefault(); send(); }
+}
+
+function chip(text){
+  var exQs=document.getElementById('exampleQs');
+  if(exQs) exQs.style.display='none';
+  document.getElementById('chatInput').value=text;
+  send();
+}
+
+function askQ(text){
+  scrollToChat();
+  var exQs=document.getElementById('exampleQs');
+  if(exQs) exQs.style.display='none';
+  document.getElementById('chatInput').value=text;
+  setTimeout(send,500);
+}
+
+function toggleFaq(btn){
+  var item=btn.closest('.faq-item');
+  item.classList.toggle('open');
+}
+
+var chatHistory=[];
+
+function addMsg(role, text){
+  var wrap=document.getElementById('chatMsgs');
+  var div=document.createElement('div');
+  div.className='msg '+(role==='user'?'msg-user':'msg-coco');
+  var safe=text.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/\n/g,'<br>');
+  safe=safe.replace(/\*\*([^*]+)\*\*/g,'<strong>$1</strong>');
+  safe=safe.replace(/(https?:\/\/[^\s<]+)/g,function(u){return '<a href="'+u+'" target="_blank" rel="noopener noreferrer" style="color:#94d2bd;text-decoration:underline;word-break:break-all">'+u+'</a>';});
+  div.innerHTML='<div class="msg-bubble">'+safe+'</div><div class="msg-time">Just now</div>';
+  wrap.appendChild(div);
+  wrap.scrollTop=wrap.scrollHeight;
+  return div;
+}
+
+async function send(){
+  var input=document.getElementById('chatInput');
+  var text=input.value.trim();
+  if(!text) return;
+  input.value=''; resize(input);
+
+  // hide chips after first send
+  var chips=document.getElementById('chipsRow');
+  if(chips) chips.style.display='none';
+  var exQs=document.getElementById('exampleQs');
+  if(exQs) exQs.style.display='none';
+
+  addMsg('user', text);
+  chatHistory.push({role:'user', content:text});
+
+  var msgs=document.getElementById('chatMsgs');
+  var typing=document.createElement('div');
+  typing.className='msg msg-coco';
+  typing.innerHTML='<div class="typing-wrap"><div class="tdot"></div><div class="tdot"></div><div class="tdot"></div></div>';
+  msgs.appendChild(typing);
+  msgs.scrollTop=msgs.scrollHeight;
+
+  try{
+    var r=await fetch('/api/chat',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({messages:chatHistory, hotel:HOTEL_SLUG})});
+    var data=await r.json();
+    typing.remove();
+    var reply=(data && data.content) ? data.content : "Sorry, I had trouble answering just now — please try again. 🌴";
+    addMsg('coco', reply);
+    if(data && data.content) chatHistory.push({role:'assistant', content:data.content});
+  }catch(err){
+    typing.remove();
+    addMsg('coco', "I'm having a connection issue right now. Please try again in a moment, or reach Cyril on WhatsApp: +66 63 375 3316 🌴");
+  }
+}
+</script>
+
+</body>
+</html>

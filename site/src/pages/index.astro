@@ -1,0 +1,281 @@
+---
+import Base from "../layouts/Base.astro";
+import Split from "../layouts/Split.astro";
+import { SITE } from "../data/site";
+import { BEACHES } from "../data/beaches";
+import { EXPERIENCES, FAQ } from "../data/content";
+
+const faqTop = FAQ.slice(0, 5);
+const schema = [
+  {
+    "@type": "Service",
+    "@id": `${SITE.url}/#traveller-chat`,
+    serviceType: "AI travel concierge for travellers",
+    provider: { "@id": `${SITE.url}/#organization` },
+    areaServed: { "@type": "Place", name: "Koh Samui, Thailand" },
+    description: "Free AI chat for travellers: hotels, diving, restaurants, beaches, tours and transport on Koh Samui, in six languages, with indicative prices in Thai Baht.",
+    offers: { "@type": "Offer", price: "0", priceCurrency: "THB", availability: "https://schema.org/InStock" },
+  },
+];
+---
+<Base
+  title="Coco — Free AI Travel Concierge for Koh Samui | Hotels, Diving, Beaches"
+  description="Ask the island anything. Coco answers instantly in 6 languages with real local knowledge — hotels, Sail Rock diving, restaurants, ferries and prices in THB. Free, no signup."
+  schema={schema}
+>
+  <Split>
+    <!-- ══ 01 · HERO ══ -->
+    <section class="flex min-h-[calc(100dvh-var(--nav-h))] flex-col justify-center py-16 xl:py-10" aria-labelledby="hero-h">
+      <p class="sec-num mb-6">01 — THE ISLAND, ON DEMAND</p>
+      <h1 id="hero-h" class="font-display text-[clamp(2.6rem,6.5vw,4.6rem)] font-medium leading-[1.04] tracking-[-0.02em] text-white">
+        Ask the island<br /><em class="not-italic text-foam">anything.</em>
+      </h1>
+      <p class="mt-6 max-w-[46ch] text-[16.5px] leading-relaxed text-white/60">
+        Coco is the AI concierge that lives on Koh Samui. Hotels, Sail Rock dives, street food, ferries — expert local answers in seconds, with real prices in THB.
+      </p>
+
+      <div class="mt-7 flex flex-wrap items-center gap-2" aria-label="Languages">
+        {SITE.languages.map((l) => (
+          <span class="rounded-full border hairline bg-white/4 px-3 py-1.5 text-[11.5px] font-semibold tracking-wide text-white/70">{l}</span>
+        ))}
+        <span class="text-[11.5px] text-white/35">auto-detected</span>
+      </div>
+
+      <div class="mt-9 flex flex-wrap items-center gap-3 xl:hidden">
+        <button type="button" data-coco-open class="cursor-pointer rounded-xl bg-teal px-6 py-3.5 text-[15px] font-semibold text-white transition hover:bg-teal-deep">💬 Ask Coco now</button>
+        <a href="/how-it-works" class="rounded-xl border hairline px-6 py-3.5 text-[15px] font-medium text-white/70 hover:text-white">How it works</a>
+      </div>
+
+      <dl class="mt-12 flex flex-wrap gap-x-9 gap-y-4 border-t hairline pt-7">
+        {SITE.stats.map((s) => (
+          <div>
+            <dt class="sr-only">{s.l}</dt>
+            <dd class="thb font-display text-2xl font-semibold text-white">{s.n}</dd>
+            <dd class="text-[11px] uppercase tracking-[0.14em] text-white/40">{s.l}</dd>
+          </div>
+        ))}
+      </dl>
+    </section>
+
+    <!-- ══ 02 · PRODUCT VALUE ══ -->
+    <section class="border-t hairline py-20" aria-labelledby="value-h">
+      <p class="sec-num mb-4">02 — WHY COCO</p>
+      <h2 id="value-h" class="font-display max-w-[22ch] text-[clamp(1.7rem,3.4vw,2.5rem)] font-medium leading-tight text-white">
+        Not another chatbot. A local that never sleeps.
+      </h2>
+
+      <div class="mt-14 space-y-14">
+        <!-- Row 1: knowledge -->
+        <article class="grid items-center gap-8 md:grid-cols-[1.1fr_1fr]">
+          <div>
+            <h3 class="text-[19px] font-bold text-white">Real local knowledge, real prices</h3>
+            <p class="mt-3 max-w-[44ch] text-[14.5px] leading-relaxed text-white/55">
+              Coco doesn't paraphrase the internet. It runs on a curated Samui database — ferry timetables, dive operator rates, night-market days — maintained by someone who actually lives here.
+            </p>
+            <button type="button" data-coco-q="How much does a dive trip to Sail Rock cost and what's included?" class="mt-4 cursor-pointer text-[13.5px] font-semibold text-foam hover:underline">Try it: Sail Rock prices →</button>
+          </div>
+          <div class="rounded-2xl border hairline bg-ink-2 p-5" aria-hidden="true">
+            <p class="text-[12px] text-white/40">You ask</p>
+            <p class="mt-1 text-[14px] text-white">"Sail Rock dive tomorrow — price?"</p>
+            <div class="mt-4 border-t hairline pt-4">
+              <p class="text-[12px] text-foam">Coco answers</p>
+              <p class="thb mt-1 text-[14px] leading-relaxed text-white/80">Day trip <strong class="text-sand">4,235 THB</strong> · 2 dives · hotel transfer &amp; meals included · speedboat &lt;60 min · whale sharks May–Sept 🦈</p>
+            </div>
+          </div>
+        </article>
+
+        <!-- Row 2: languages (reversed) -->
+        <article class="grid items-center gap-8 md:grid-cols-[1fr_1.1fr]">
+          <div class="order-2 md:order-1 rounded-2xl border hairline bg-ink-2 p-5" aria-hidden="true">
+            <div class="space-y-2.5 text-[13.5px]">
+              <p class="text-white/80">🇫🇷 "Quelle plage pour les enfants ?"</p>
+              <p class="text-white/80">🇩🇪 "Wo kann man tauchen lernen?"</p>
+              <p class="text-white/80">🇹🇭 "ร้านอาหารทะเลที่ดีที่สุด?"</p>
+              <p class="text-foam">→ answered in the same language, instantly</p>
+            </div>
+          </div>
+          <div class="order-1 md:order-2">
+            <h3 class="text-[19px] font-bold text-white">Six languages, zero settings</h3>
+            <p class="mt-3 max-w-[44ch] text-[14.5px] leading-relaxed text-white/55">
+              English, French, German, Swedish, Thai, Chinese — Coco detects the language you write in and replies in kind. Matched to who actually visits Samui.
+            </p>
+          </div>
+        </article>
+
+        <!-- Row 3: live -->
+        <article class="grid items-center gap-8 md:grid-cols-[1.1fr_1fr]">
+          <div>
+            <h3 class="text-[19px] font-bold text-white">Live data when it matters</h3>
+            <p class="mt-3 max-w-[44ch] text-[14.5px] leading-relaxed text-white/55">
+              Weather right now, restaurant ratings, bookable tours with current prices — pulled live mid-conversation, with direct booking links when you're ready.
+            </p>
+            <button type="button" data-coco-q="What's the weather in Koh Samui right now — good day for a boat trip?" class="mt-4 cursor-pointer text-[13.5px] font-semibold text-foam hover:underline">Try it: weather now →</button>
+          </div>
+          <div class="rounded-2xl border hairline bg-gradient-to-br from-teal-deep/40 to-ink-2 p-5" aria-hidden="true">
+            <p class="text-[12px] text-foam">Live · Koh Samui</p>
+            <p class="mt-2 text-[15px] text-white">⛅ 29°C · light breeze<br /><span class="text-white/60">✅ Great day for Ang Thong</span></p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ══ 03 · FEATURES BENTO ══ -->
+    <section class="border-t hairline py-20" aria-labelledby="feat-h">
+      <p class="sec-num mb-4">03 — BUILT FOR TRAVEL</p>
+      <h2 id="feat-h" class="font-display text-[clamp(1.7rem,3.4vw,2.5rem)] font-medium leading-tight text-white">Everything a concierge desk does.</h2>
+
+      <div class="mt-10 grid gap-4 sm:grid-cols-2">
+        <div class="rounded-2xl border hairline bg-ink-2 p-6 sm:row-span-2 sm:flex sm:flex-col sm:justify-between">
+          <div>
+            <h3 class="text-[17px] font-bold text-white">🕐 24/7 — no app, no signup</h3>
+            <p class="mt-2.5 text-[13.5px] leading-relaxed text-white/55">Open the site, type, get answers. It works at 2am when the front desk is closed and your ferry leaves at 7.</p>
+          </div>
+          <button type="button" data-coco-open class="mt-6 w-fit cursor-pointer rounded-xl bg-teal px-5 py-3 text-[14px] font-semibold text-white transition hover:bg-teal-deep">Start chatting</button>
+        </div>
+        <div class="rounded-2xl border hairline bg-ink-2 p-6">
+          <h3 class="text-[15.5px] font-bold text-white">🧭 Follow-ups &amp; itineraries</h3>
+          <p class="mt-2 text-[13px] leading-relaxed text-white/55">Coco remembers the conversation — refine, compare, and build a day-by-day plan.</p>
+        </div>
+        <div class="rounded-2xl border hairline bg-ink-2 p-6">
+          <h3 class="text-[15.5px] font-bold text-white">🔗 Booking links included</h3>
+          <p class="mt-2 text-[13px] leading-relaxed text-white/55">Activity answers come with direct booking options — Viator, Klook, GetYourGuide — clearly disclosed.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══ 04 · HOW IT WORKS ══ -->
+    <section class="border-t hairline py-20" aria-labelledby="how-h">
+      <p class="sec-num mb-4">04 — HOW IT WORKS</p>
+      <h2 id="how-h" class="font-display text-[clamp(1.7rem,3.4vw,2.5rem)] font-medium leading-tight text-white">Instant answers, zero hassle.</h2>
+
+      <ol class="mt-10 space-y-0">
+        {[
+          { n: "1", t: "Ask anything", d: "Type in any of 6 languages — Coco understands and replies in yours." },
+          { n: "2", t: "Get local answers", d: "Real THB prices, real ferry times, real operator contacts — not generic content." },
+          { n: "3", t: "Explore & plan", d: "Follow up, refine, ask for itineraries — Coco builds your trip step by step." },
+        ].map((s, i, a) => (
+          <li class="relative flex gap-5 pb-8 last:pb-0">
+            {i < a.length - 1 && <span class="absolute left-[19px] top-11 h-[calc(100%-40px)] w-px bg-white/10" aria-hidden="true"></span>}
+            <span class="font-display grid size-10 shrink-0 place-items-center rounded-full border border-foam/40 text-[15px] font-semibold text-foam">{s.n}</span>
+            <div class="pt-1.5">
+              <h3 class="text-[16px] font-bold text-white">{s.t}</h3>
+              <p class="mt-1.5 max-w-[52ch] text-[13.5px] leading-relaxed text-white/55">{s.d}</p>
+            </div>
+          </li>
+        ))}
+      </ol>
+      <a href="/how-it-works" class="mt-8 inline-block text-[13.5px] font-semibold text-foam hover:underline">See it in detail →</a>
+    </section>
+
+    <!-- ══ 05 · TRUST ══ -->
+    <section class="border-t hairline py-20" aria-labelledby="trust-h">
+      <p class="sec-num mb-4">05 — THE HUMAN BEHIND THE AI</p>
+      <h2 id="trust-h" class="sr-only">Local expert</h2>
+      <blockquote class="font-display max-w-[26ch] text-[clamp(1.5rem,3vw,2.2rem)] font-medium leading-snug text-white">
+        "Coco knows what I know — <em class="not-italic text-sand">3,000 dives</em> worth of this island."
+      </blockquote>
+      <div class="mt-8 flex flex-wrap items-center gap-x-8 gap-y-4">
+        <div>
+          <p class="text-[15px] font-bold text-white">{SITE.founder.name}</p>
+          <p class="text-[12.5px] text-white/50">{SITE.founder.title}</p>
+        </div>
+        <ul class="flex flex-wrap gap-2">
+          {SITE.founder.perks.map((p) => (
+            <li class="rounded-full border hairline bg-white/4 px-3 py-1.5 text-[11.5px] text-white/65">✓ {p}</li>
+          ))}
+        </ul>
+      </div>
+      <a href={SITE.waLink("Hi Cyril! Found you via coco-samui-ai.com — I'd love local advice 🌴")} target="_blank" rel="noopener" class="mt-7 inline-flex items-center gap-2 rounded-xl border border-foam/30 px-5 py-3 text-[14px] font-semibold text-foam transition hover:bg-foam/10">
+        💬 WhatsApp {SITE.whatsappDisplay}
+      </a>
+    </section>
+
+    <!-- ══ 06 · EXPLORE MODULES ══ -->
+    <section class="border-t hairline py-20" aria-labelledby="explore-h">
+      <p class="sec-num mb-4">06 — EXPLORE KOH SAMUI</p>
+      <h2 id="explore-h" class="font-display text-[clamp(1.7rem,3.4vw,2.5rem)] font-medium leading-tight text-white">Start with the island itself.</h2>
+
+      <div class="mt-10 space-y-5">
+        <!-- Beaches module: gradient strip -->
+        <a href="/beaches" class="group block overflow-hidden rounded-2xl border hairline">
+          <div class="flex h-24 w-full" aria-hidden="true">
+            {BEACHES.slice(0, 6).map((b) => (
+              <div class="flex-1 transition-transform duration-300 group-hover:scale-y-105" style={`background:linear-gradient(160deg,${b.grad[0]},${b.grad[1]})`}></div>
+            ))}
+          </div>
+          <div class="flex items-center justify-between bg-ink-2 px-6 py-5">
+            <div>
+              <h3 class="text-[17px] font-bold text-white">The 12 beaches</h3>
+              <p class="mt-1 text-[13px] text-white/50">Lively, family, hidden, sunset — find yours by vibe and zone.</p>
+            </div>
+            <span class="text-xl text-foam transition-transform group-hover:translate-x-1" aria-hidden="true">→</span>
+          </div>
+        </a>
+
+        <!-- Experiences module: price ticker -->
+        <a href="/experiences" class="group block rounded-2xl border hairline bg-ink-2 px-6 py-5">
+          <div class="flex items-center justify-between">
+            <div>
+              <h3 class="text-[17px] font-bold text-white">Signature experiences</h3>
+              <p class="mt-1 text-[13px] text-white/50">The six things every visitor should do — with honest prices.</p>
+            </div>
+            <span class="text-xl text-foam transition-transform group-hover:translate-x-1" aria-hidden="true">→</span>
+          </div>
+          <div class="thb mt-4 flex flex-wrap gap-x-5 gap-y-1.5 text-[12px] text-white/45">
+            {EXPERIENCES.slice(0, 4).map((e) => (
+              <span>{e.emoji} {e.title} · <span class="text-sand/90">{e.price.replace("From ", "")}</span></span>
+            ))}
+          </div>
+        </a>
+
+        <!-- Guide module -->
+        <a href="/guide" class="group flex items-center justify-between rounded-2xl border hairline bg-gradient-to-r from-teal-deep/30 to-ink-2 px-6 py-5">
+          <div>
+            <h3 class="text-[17px] font-bold text-white">Practical guide</h3>
+            <p class="mt-1 text-[13px] text-white/50">Money, ferries, SIM cards, temple rules, hospitals — the essentials.</p>
+          </div>
+          <span class="text-xl text-foam transition-transform group-hover:translate-x-1" aria-hidden="true">→</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- ══ 07 · B2B BAND ══ -->
+    <section class="border-t hairline py-20" aria-labelledby="b2b-h">
+      <p class="sec-num mb-6">07 — FOR HOTELS &amp; VILLAS</p>
+      <div class="rounded-3xl bg-gradient-to-br from-sand to-coral p-8 text-ink sm:p-10">
+        <p class="text-[11px] font-bold uppercase tracking-[0.2em] text-ink/60">For hotels, villas &amp; resorts</p>
+        <h2 id="b2b-h" class="font-display mt-3 max-w-[20ch] text-[clamp(1.6rem,3.2vw,2.4rem)] font-semibold leading-tight">
+          Your night-shift concierge, in 6 languages.
+        </h2>
+        <p class="mt-4 max-w-[52ch] text-[14.5px] leading-relaxed text-ink/75">
+          The chat on this page is the live product. White-labelled for your property, it recommends <strong>your</strong> spa, restaurant and experiences first — via website widget or in-room QR.
+        </p>
+        <div class="mt-6 flex flex-wrap items-baseline gap-2">
+          <span class="thb font-display text-4xl font-semibold">{SITE.hotelPriceTHB} THB</span>
+          <span class="text-[13px] text-ink/60">/ month · 14-day free trial · no card · cancel anytime</span>
+        </div>
+        <a href="/hotels" class="mt-7 inline-block rounded-xl bg-ink px-6 py-3.5 text-[14.5px] font-semibold text-white transition hover:bg-ink-3">
+          See the hotel offer →
+        </a>
+      </div>
+    </section>
+
+    <!-- ══ 08 · FAQ ══ -->
+    <section class="border-t hairline py-20" aria-labelledby="faq-h">
+      <p class="sec-num mb-4">08 — FAQ</p>
+      <h2 id="faq-h" class="font-display text-[clamp(1.7rem,3.4vw,2.5rem)] font-medium leading-tight text-white">Quick answers.</h2>
+      <div class="mt-8 space-y-2.5">
+        {faqTop.map((f) => (
+          <details class="group rounded-xl border hairline bg-ink-2 open:border-foam/30">
+            <summary class="flex cursor-pointer items-center justify-between gap-3 px-5 py-4 text-[14px] font-semibold text-white [&::-webkit-details-marker]:hidden">
+              {f.q}
+              <span class="text-foam transition-transform group-open:rotate-180" aria-hidden="true">▾</span>
+            </summary>
+            <p class="px-5 pb-5 text-[13.5px] leading-relaxed text-white/60">{f.a}</p>
+          </details>
+        ))}
+      </div>
+      <a href="/faq" class="mt-6 inline-block text-[13.5px] font-semibold text-foam hover:underline">All questions →</a>
+    </section>
+  </Split>
+</Base>

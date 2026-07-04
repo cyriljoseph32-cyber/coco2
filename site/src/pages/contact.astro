@@ -1,0 +1,48 @@
+---
+import Base from "../layouts/Base.astro";
+import Split from "../layouts/Split.astro";
+import { SITE } from "../data/site";
+
+const chips = [
+  { label: "🤿 Dive with Cyril", q: "How can I book a dive trip or course with Cyril, the PADI instructor behind Coco?" },
+  { label: "⛵ Private charter", q: "Can Cyril help organise a private boat charter around Koh Samui?" },
+  { label: "🏨 Hotel partnership", q: "Can Coco be added to my hotel or villa?" },
+];
+---
+<Base
+  title="Contact — Coco & Cyril, Your Local Expert on Koh Samui"
+  description="Reach Coco's founder Cyril Joseph — PADI dive instructor based on Koh Samui with 3,000+ Gulf of Thailand dives. WhatsApp, email, or ask Coco for instant AI answers."
+  chips={chips}
+>
+  <Split>
+    <section class="py-16" aria-labelledby="h1">
+      <p class="sec-num mb-5">PERSONAL GUIDE</p>
+      <h1 id="h1" class="font-display max-w-[16ch] text-[clamp(2.2rem,5vw,3.6rem)] font-medium leading-[1.06] tracking-[-0.02em] text-white">
+        Want a human? There's one.
+      </h1>
+      <p class="mt-5 max-w-[50ch] text-[16px] leading-relaxed text-white/60">
+        For diving, boat charters and personalised tour planning — connect with {SITE.founder.name}, PADI dive instructor based on Koh Samui with 3,000+ dives in the Gulf of Thailand.
+      </p>
+
+      <div class="mt-9 flex flex-wrap gap-3">
+        <a href={SITE.waLink("Hi Coco! I found you via the website 🌴")} target="_blank" rel="noopener"
+          class="inline-flex items-center gap-2.5 rounded-xl bg-[#25d366] px-6 py-4 text-[15px] font-bold text-ink transition hover:brightness-110">
+          <span class="text-xl" aria-hidden="true">💬</span> WhatsApp {SITE.whatsappDisplay}
+        </a>
+        <a href={`mailto:${SITE.email}`} class="inline-flex items-center gap-2.5 rounded-xl border hairline px-6 py-4 text-[15px] font-medium text-white/80 hover:text-white">
+          ✉️ {SITE.email}
+        </a>
+      </div>
+
+      <ul class="mt-10 flex flex-wrap gap-2">
+        {SITE.founder.perks.map((p) => (
+          <li class="rounded-full border hairline bg-white/4 px-3.5 py-2 text-[12px] text-white/65">✅ {p}</li>
+        ))}
+      </ul>
+
+      <p class="mt-10 border-t hairline pt-8 text-[13.5px] text-white/45">
+        — or ask Coco in the chat for instant AI answers, any hour, any language —
+      </p>
+    </section>
+  </Split>
+</Base>

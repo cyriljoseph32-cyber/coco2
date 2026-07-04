@@ -1,0 +1,59 @@
+---
+import { NAV_LINKS } from "../data/site";
+const path = Astro.url.pathname.replace(/\.html$/, "").replace(/\/$/, "") || "/";
+---
+<header class="fixed inset-x-0 top-0 z-50 h-16 border-b hairline bg-ink/90 backdrop-blur-xl">
+  <nav class="mx-auto flex h-full max-w-[1440px] items-center justify-between gap-4 px-5 lg:px-8" aria-label="Main">
+    <a href="/" class="flex items-center gap-2.5 no-underline">
+      <span class="grid size-8 place-items-center rounded-[9px] bg-gradient-to-br from-teal to-foam text-[15px]" aria-hidden="true">🌴</span>
+      <span class="text-[19px] font-extrabold tracking-tight text-white">Coco</span>
+      <span class="mt-0.5 hidden text-[10px] font-semibold uppercase tracking-[0.18em] text-white/40 sm:inline">Koh Samui</span>
+    </a>
+
+    <div class="hidden items-center gap-0.5 lg:flex">
+      {NAV_LINKS.map((l) => (
+        <a
+          href={l.href}
+          aria-current={path === l.href ? "page" : undefined}
+          class:list={[
+            "rounded-lg px-3 py-2 text-[13px] font-medium transition-colors",
+            path === l.href ? "text-white bg-white/8" : "text-white/60 hover:text-white hover:bg-white/8",
+          ]}
+        >{l.label}</a>
+      ))}
+    </div>
+
+    <div class="flex items-center gap-2">
+      <a href="/hotels" aria-current={path === "/hotels" ? "page" : undefined}
+        class:list={["hidden rounded-lg px-3 py-2 text-[13px] font-medium transition-colors sm:inline-block", path === "/hotels" ? "text-sand" : "text-sand/80 hover:text-sand"]}
+      >For Hotels &amp; Villas</a>
+      <button type="button" data-coco-open class="cursor-pointer rounded-lg bg-teal px-4 py-2 text-[13px] font-semibold text-white transition hover:bg-teal-deep">
+        Ask Coco
+      </button>
+      <button type="button" id="nav-menu-btn" class="grid size-10 cursor-pointer place-items-center rounded-lg text-xl text-white lg:hidden" aria-expanded="false" aria-controls="nav-mobile" aria-label="Menu">
+        <span aria-hidden="true">☰</span>
+      </button>
+    </div>
+  </nav>
+
+  <div id="nav-mobile" hidden class="border-t hairline bg-ink-2 px-5 py-3 lg:hidden">
+    <div class="flex flex-col">
+      {NAV_LINKS.map((l) => (
+        <a href={l.href} class="rounded-lg px-3 py-3 text-[15px] font-medium text-white/80 hover:bg-white/8">{l.label}</a>
+      ))}
+      <a href="/hotels" class="rounded-lg px-3 py-3 text-[15px] font-medium text-sand">For Hotels &amp; Villas</a>
+      <a href="/faq" class="rounded-lg px-3 py-3 text-[15px] font-medium text-white/80 hover:bg-white/8">FAQ</a>
+      <a href="/contact" class="rounded-lg px-3 py-3 text-[15px] font-medium text-white/80 hover:bg-white/8">Contact</a>
+    </div>
+  </div>
+</header>
+
+<script>
+  const btn = document.getElementById("nav-menu-btn")!;
+  const panel = document.getElementById("nav-mobile")!;
+  btn.addEventListener("click", () => {
+    const open = panel.hidden;
+    panel.hidden = !open;
+    btn.setAttribute("aria-expanded", String(open));
+  });
+</script>

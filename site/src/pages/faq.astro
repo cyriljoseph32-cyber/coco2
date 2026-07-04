@@ -1,0 +1,45 @@
+---
+import Base from "../layouts/Base.astro";
+import Split from "../layouts/Split.astro";
+import { FAQ } from "../data/content";
+
+const schema = [{
+  "@type": "FAQPage",
+  "@id": "https://coco-samui-ai.com/faq#faq",
+  mainEntity: FAQ.map((f) => ({
+    "@type": "Question", name: f.q,
+    acceptedAnswer: { "@type": "Answer", text: f.a },
+  })),
+}];
+---
+<Base
+  title="FAQ — Coco, the AI Concierge for Koh Samui"
+  description="Everything about Coco: is it free, which languages it speaks, how accurate it is, ferry routes to Koh Tao, hotel white-label setup and affiliate disclosure."
+  schema={schema}
+>
+  <Split>
+    <section class="py-16" aria-labelledby="h1">
+      <p class="sec-num mb-5">FAQ</p>
+      <h1 id="h1" class="font-display max-w-[16ch] text-[clamp(2.2rem,5vw,3.6rem)] font-medium leading-[1.06] tracking-[-0.02em] text-white">
+        Questions, answered.
+      </h1>
+      <p class="mt-5 max-w-[50ch] text-[16px] leading-relaxed text-white/60">
+        Anything missing? Ask Coco directly — that's the whole point.
+      </p>
+    </section>
+
+    <section class="border-t hairline py-12" aria-label="All questions">
+      <div class="space-y-2.5">
+        {FAQ.map((f) => (
+          <details class="group rounded-xl border hairline bg-ink-2 open:border-foam/30">
+            <summary class="flex cursor-pointer items-center justify-between gap-3 px-5 py-4 text-[14.5px] font-semibold text-white [&::-webkit-details-marker]:hidden">
+              {f.q}
+              <span class="text-foam transition-transform group-open:rotate-180" aria-hidden="true">▾</span>
+            </summary>
+            <p class="px-5 pb-5 text-[13.5px] leading-relaxed text-white/60">{f.a}</p>
+          </details>
+        ))}
+      </div>
+    </section>
+  </Split>
+</Base>

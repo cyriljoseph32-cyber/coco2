@@ -1,0 +1,63 @@
+---
+import Base from "../layouts/Base.astro";
+import Split from "../layouts/Split.astro";
+import { CATEGORIES } from "../data/content";
+
+const chips = [
+  { label: "🏨 Hotels by zone", q: "Which zone of Koh Samui should I stay in — compare Chaweng, Bophut, Maenam and Lamai?" },
+  { label: "🛕 Temples", q: "Best temples and cultural sites in Koh Samui to visit?" },
+  { label: "🌙 Nightlife", q: "What is the nightlife like in Koh Samui — beach clubs, bars, clubs?" },
+  { label: "🎣 Fishing", q: "Best fishing charters in Koh Samui — deep sea, half day, squid fishing?" },
+];
+const schema = [{
+  "@type": "ItemList",
+  name: "Koh Samui categories covered by Coco",
+  itemListElement: CATEGORIES.map((c, i) => ({ "@type": "ListItem", position: i + 1, name: c.name })),
+}];
+---
+<Base
+  title="Explore Koh Samui — Hotels, Diving, Food, Tours & More | Coco"
+  description="Every side of Koh Samui in one place: 40+ hotels, 15+ dive sites, 50+ restaurants, sea tours, wellness, nightlife, temples and transport — each one a live conversation with Coco."
+  chips={chips}
+  schema={schema}
+>
+  <Split>
+    <section class="py-16" aria-labelledby="h1">
+      <p class="sec-num mb-5">EXPLORE</p>
+      <h1 id="h1" class="font-display max-w-[16ch] text-[clamp(2.2rem,5vw,3.6rem)] font-medium leading-[1.06] tracking-[-0.02em] text-white">
+        Everything the island has to offer.
+      </h1>
+      <p class="mt-5 max-w-[50ch] text-[16px] leading-relaxed text-white/60">
+        Ten categories, each one a live conversation. Tap any card and Coco opens with expert local answers.
+      </p>
+    </section>
+
+    <section class="border-t hairline py-12" aria-label="Categories">
+      <ul class="grid gap-3 sm:grid-cols-2">
+        {CATEGORIES.map((c, i) => (
+          <li>
+            <button type="button" data-coco-q={c.q}
+              class:list={["group w-full cursor-pointer rounded-2xl border hairline bg-ink-2 p-5 text-left transition hover:border-foam/40 hover:bg-ink-3", i === 0 && "sm:col-span-2 sm:flex sm:items-center sm:justify-between"]}>
+              <span class="flex items-start gap-4">
+                <span class="text-2xl" aria-hidden="true">{c.emoji}</span>
+                <span>
+                  <span class="block text-[15.5px] font-bold text-white">{c.name}</span>
+                  <span class="mt-0.5 block text-[12px] text-white/45">{c.count}</span>
+                </span>
+              </span>
+              <span class="mt-3 block text-[12.5px] font-semibold text-foam sm:mt-0">Ask Coco →</span>
+            </button>
+          </li>
+        ))}
+      </ul>
+    </section>
+
+    <section class="border-t hairline py-12" aria-label="Deeper guides">
+      <div class="grid gap-3 sm:grid-cols-3">
+        <a href="/beaches" class="rounded-2xl border hairline bg-ink-2 p-5 transition hover:border-foam/40"><span class="block text-[15px] font-bold text-white">🏖️ Beaches</span><span class="mt-1 block text-[12.5px] text-white/45">All 12, by vibe</span></a>
+        <a href="/experiences" class="rounded-2xl border hairline bg-ink-2 p-5 transition hover:border-foam/40"><span class="block text-[15px] font-bold text-white">✨ Experiences</span><span class="mt-1 block text-[12.5px] text-white/45">The must-do six</span></a>
+        <a href="/guide" class="rounded-2xl border hairline bg-ink-2 p-5 transition hover:border-foam/40"><span class="block text-[15px] font-bold text-white">🧭 Practical</span><span class="mt-1 block text-[12.5px] text-white/45">Money, ferries, safety</span></a>
+      </div>
+    </section>
+  </Split>
+</Base>

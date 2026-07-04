@@ -1,8 +1,30 @@
 {
-  "crons": [
+  "installCommand": "npm install && npm --prefix site install",
+  "buildCommand": "npm --prefix site run build",
+  "outputDirectory": "site/dist",
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "redirects": [
+    { "source": "/hotel-setup", "destination": "/hotels", "permanent": true },
+    { "source": "/hotel-setup.html", "destination": "/hotels", "permanent": true },
+    { "source": "/privacy.html", "destination": "/privacy", "permanent": true },
+    { "source": "/terms.html", "destination": "/terms", "permanent": true },
+    { "source": "/sitemap.xml", "destination": "/sitemap-index.xml", "permanent": true }
+  ],
+  "headers": [
     {
-      "path": "/api/cron",
-      "schedule": "35 21 * * 1-5"
+      "source": "/api/(.*)",
+      "headers": [
+        { "key": "Access-Control-Allow-Origin", "value": "*" },
+        { "key": "Access-Control-Allow-Methods", "value": "GET, POST, OPTIONS" },
+        { "key": "Access-Control-Allow-Headers", "value": "Content-Type" }
+      ]
+    },
+    {
+      "source": "/_astro/(.*)",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
+      ]
     }
   ]
 }

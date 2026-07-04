@@ -1,0 +1,18 @@
+{
+  "date": "2026-06-27T12:00:00Z",
+  "integrations": ["cmqgigpl301iio80yfzquv1sf"],
+  "posts": [
+    {
+      "provider": "instagram-standalone",
+      "post": [
+        {
+          "content": "Hotel owners, villa managers, resort GMs — this post is for you. 👋\n\nYour guests ask the same questions every day:\n🔹 Where to eat?\n🔹 How to get to Koh Tao?\n🔹 Can you book us a massage?\n🔹 What's the weather tomorrow?\n\nCoco answers all of these. 24/7. In 6 languages. Branded with your hotel's name.\nAnd it recommends YOUR services first.\n\n14-day free trial. No setup cost.\nDM us \"PARTNER\" or tap the link in bio. 🥥\n\n#kohsamui #hotelmanagement #hospitalitytech #kohsamuihotel #boutiquehotel #villamanager #traveltech #aitravel #samuibusiness #hotelkohsamui",
+          "image": ["https://uploads.postiz.com/arr1igHXeh.jpg"]
+        }
+      ],
+      "settings": {
+        "post_type": "post"
+      }
+    }
+  ]
+}

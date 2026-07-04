@@ -1,0 +1,18 @@
+[
+  { "name": "Sa Being Lae Restaurant", "type": "restaurant", "area": "Lamai" },
+  { "name": "Fisherman's Village Bophut", "type": "attraction", "area": "Bophut" },
+  { "name": "Ang Thong Marine Park Day Tour", "type": "activity", "area": "Gulf of Thailand" },
+  { "name": "Wat Plai Laem", "type": "attraction", "area": "Plai Laem" },
+  { "name": "Koh Tao Snorkeling Day Trip from Samui", "type": "activity", "area": "Koh Tao" },
+  { "name": "Koh Tao Scuba Diving Day Trip from Samui", "type": "activity", "area": "Koh Tao" },
+  { "name": "Samui Elephant Sanctuary", "type": "activity", "area": "Koh Samui" },
+  { "name": "ATV Jungle Tour Koh Samui", "type": "activity", "area": "Koh Samui" },
+  { "name": "Thai Cooking Class Koh Samui", "type": "activity", "area": "Koh Samui" },
+  { "name": "Samui Sunset Dinner Cruise", "type": "activity", "area": "Koh Samui" },
+  { "name": "Namuang Safari Park Koh Samui", "type": "activity", "area": "Koh Samui" },
+  { "name": "Muay Thai Training Koh Samui", "type": "activity", "area": "Koh Samui" },
+  { "name": "Koh Phangan Day Trip from Samui", "type": "activity", "area": "Koh Phangan" },
+  { "name": "Zipline Canopy Adventure Koh Samui", "type": "activity", "area": "Koh Samui" },
+  { "name": "Big Buddha Temple Island Tour", "type": "attraction", "area": "Bophut" },
+  { "name": "Sail Rock Diving from Koh Samui", "type": "activity", "area": "Gulf of Thailand" }
+]

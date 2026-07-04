@@ -1,0 +1,69 @@
+---
+import Base from "../layouts/Base.astro";
+import Split from "../layouts/Split.astro";
+import { SITE } from "../data/site";
+
+const chips = [
+  { label: "🗓️ Plan me 3 days", q: "Plan me a perfect 3-day Koh Samui itinerary — mix of beaches, food and one boat trip." },
+  { label: "🇫🇷 En français ?", q: "Bonjour ! Quelles sont les meilleures plages de Koh Samui pour une famille ?" },
+  { label: "🌦️ Weather now", q: "What's the weather in Koh Samui right now — good day for a boat trip?" },
+  { label: "💸 Daily budget", q: "How much money should I budget per day on Koh Samui?" },
+];
+const steps = [
+  { n: "01", t: "Ask anything, in your language", d: "English, French, German, Swedish, Thai or Chinese — Coco detects your language automatically and answers in it. No settings, no signup, no app to download." },
+  { n: "02", t: "Coco answers like a local", d: "Behind the chat is a curated Koh Samui knowledge base — hotels by zone, dive operators with real rates, night market days, ferry timetables, temple etiquette — maintained by Cyril, a PADI instructor living on the island." },
+  { n: "03", t: "Live data joins the conversation", d: "When you ask about food, activities or weather, Coco pulls live sources mid-answer: current conditions, ratings, bookable tours with today's prices — plus direct booking links (disclosed affiliate partners)." },
+  { n: "04", t: "Refine until it's your trip", d: "Coco remembers the conversation. Compare beaches, adjust budgets, ask for a day-by-day plan — it builds on everything you've said." },
+];
+---
+<Base
+  title="How Coco Works — AI Concierge for Koh Samui in 6 Languages"
+  description="How Coco answers travel questions about Koh Samui: curated local knowledge, live weather and tour data, 6 auto-detected languages, and honest THB prices. Free, no signup."
+  chips={chips}
+>
+  <Split>
+    <section class="py-16" aria-labelledby="h1">
+      <p class="sec-num mb-5">HOW COCO WORKS</p>
+      <h1 id="h1" class="font-display max-w-[18ch] text-[clamp(2.2rem,5vw,3.6rem)] font-medium leading-[1.06] tracking-[-0.02em] text-white">
+        A concierge desk, rebuilt as a conversation.
+      </h1>
+      <p class="mt-5 max-w-[50ch] text-[16px] leading-relaxed text-white/60">
+        Try it live in the chat — everything on this page is the actual product, not a demo.
+      </p>
+    </section>
+
+    <section class="border-t hairline py-14" aria-label="The four steps">
+      <ol class="space-y-12">
+        {steps.map((s) => (
+          <li class="grid gap-4 md:grid-cols-[90px_1fr]">
+            <span class="font-display text-[28px] font-medium text-foam/60" aria-hidden="true">{s.n}</span>
+            <div>
+              <h2 class="text-[19px] font-bold text-white">{s.t}</h2>
+              <p class="mt-2.5 max-w-[58ch] text-[14.5px] leading-relaxed text-white/55">{s.d}</p>
+            </div>
+          </li>
+        ))}
+      </ol>
+    </section>
+
+    <section class="border-t hairline py-14" aria-labelledby="honest-h">
+      <h2 id="honest-h" class="font-display text-[clamp(1.5rem,3vw,2.1rem)] font-medium text-white">What Coco is honest about</h2>
+      <ul class="mt-7 space-y-4 text-[14.5px] leading-relaxed text-white/60">
+        <li class="flex gap-3"><span aria-hidden="true">⚠️</span><span><strong class="text-white">Prices are indicative.</strong> Always confirm with the operator before booking — rates change with seasons.</span></li>
+        <li class="flex gap-3"><span aria-hidden="true">🤿</span><span><strong class="text-white">Not safety advice.</strong> For diving, boat trips and water sports, follow your certified operator's briefing — never an AI.</span></li>
+        <li class="flex gap-3"><span aria-hidden="true">🔗</span><span><strong class="text-white">Some links earn commission.</strong> Booking links (Viator, Klook, GetYourGuide, Booking.com) may earn Coco a commission at no extra cost to you. <a href="/terms" class="text-foam hover:underline">Full disclosure</a>.</span></li>
+        <li class="flex gap-3"><span aria-hidden="true">🤷</span><span><strong class="text-white">If Coco is unsure, it says so</strong> — and points you to a human: Cyril on WhatsApp.</span></li>
+      </ul>
+    </section>
+
+    <section class="border-t hairline py-14">
+      <div class="rounded-2xl border hairline bg-ink-2 p-7">
+        <h2 class="text-[17px] font-bold text-white">Run Coco at your property</h2>
+        <p class="mt-2 max-w-[52ch] text-[13.5px] leading-relaxed text-white/55">
+          The same engine, white-labelled: your services recommended first, in-room QR codes, {SITE.hotelPriceTHB} THB/month.
+        </p>
+        <a href="/hotels" class="mt-5 inline-block rounded-xl bg-teal px-5 py-3 text-[14px] font-semibold text-white transition hover:bg-teal-deep">For Hotels &amp; Villas →</a>
+      </div>
+    </section>
+  </Split>
+</Base>

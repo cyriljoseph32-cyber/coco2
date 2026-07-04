@@ -1,0 +1,18 @@
+{
+  "date": "2026-06-23T12:00:00Z",
+  "integrations": ["cmqgigpl301iio80yfzquv1sf"],
+  "posts": [
+    {
+      "provider": "instagram-standalone",
+      "post": [
+        {
+          "content": "Koh Samui is paradise. Unless you make these 5 mistakes. 🌴🚫\n\n❌ Renting a scooter without an international license → police fine ฿2,000+\n❌ Taking a taxi without asking the price first → you'll pay 3x\n❌ Booking a beach bar at Fisherman's Village on a Tuesday → it's closed\n❌ Trusting 5-star Google reviews near hotels → tourist trap\n❌ Going to the east coast in November → stormy season, go west\n\nWe've seen them all. Saved this post → you're already ahead of 90% of tourists.\n\nGot more questions? Ask Coco — your free AI local guide 🥥\n👉 Link in bio.\n\n#kohsamui #traveltips #thailand #samuitravel #kohsamuiisland #travelthailand #smarttravel #islandlife #samuiholiday #backpackingthailand",
+          "image": ["https://uploads.postiz.com/3Jbs1FH9De.jpg"]
+        }
+      ],
+      "settings": {
+        "post_type": "post"
+      }
+    }
+  ]
+}

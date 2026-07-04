@@ -1,0 +1,18 @@
+{
+  "date": "2026-06-21T12:00:00Z",
+  "integrations": ["cmqgigpl301iio80yfzquv1sf"],
+  "posts": [
+    {
+      "provider": "instagram-standalone",
+      "post": [
+        {
+          "content": "POV: you just landed in Koh Samui and you don't know where to start. 🌴\n\nWhat to eat. Which beach. What's a fair price.\n\nDon't waste your first hours guessing — just ask Coco. 🥥\nYour AI travel concierge for Samui. Real local answers in seconds. 6 languages. Free, no signup.\n\n👉 Link in bio.\n\n#kohsamui #travelthailand #samuiisland #pov #traveltips #thailandtravel #kohsamuithailand #islandlife #samuiholiday #aitravel",
+          "image": ["https://uploads.postiz.com/EMMc3LZIoc.jpg"]
+        }
+      ],
+      "settings": {
+        "post_type": "post"
+      }
+    }
+  ]
+}

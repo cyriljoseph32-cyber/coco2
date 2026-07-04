@@ -1,0 +1,2175 @@
+{
+  "generated_at": "2026-06-16T00:00:00.000Z",
+  "_note": "Viator URLs are affiliate-ready — VIATOR_AFFILIATE_PID appended at runtime by _providers.js. To activate: add VIATOR_AFFILIATE_PID env var in Vercel.",
+  "listings": [
+    {
+      "name": "Sa Being Lae Restaurant",
+      "type": "restaurant",
+      "area": "Lamai",
+      "instagram": "@sabeinglaethai",
+      "description": "Authentic Thai seafood on Lamai Beach. Local favorite, fresh fish, sea view.",
+      "price_range": "200–500 THB",
+      "google_rating": 4.8,
+      "affiliate_links": [
+        {
+          "provider": "viator",
+          "url": "https://www.viator.com/searchResults/all?text=Sa+Being+Lae+Restaurant+Lamai"
+        }
+      ]
+    },
+    {
+      "name": "Imchai Restaurant",
+      "type": "restaurant",
+      "area": "Lamai",
+      "instagram": "@imchaisamui",
+      "description": "Beloved local Thai restaurant in Lamai, incredibly fresh ingredients, real home-cooking. Always busy with locals.",
+      "price_range": "80–200 THB",
+      "google_rating": 4.8,
+      "affiliate_links": []
+    },
+    {
+      "name": "Thai Kitchen Samui",
+      "type": "restaurant",
+      "area": "Lamai",
+      "instagram": null,
+      "description": "Consistently rated one of Samui's best for authentic Thai food. Tiny, unassuming, perfect.",
+      "price_range": "100–300 THB",
+      "google_rating": 4.9,
+      "affiliate_links": []
+    },
+    {
+      "name": "Noo Beer Garden",
+      "type": "restaurant",
+      "area": "Lamai",
+      "instagram": null,
+      "description": "Legendary open-air local beer garden and Thai food spot in Lamai. Cheap, lively, extremely local.",
+      "price_range": "80–200 THB",
+      "google_rating": 4.9,
+      "affiliate_links": []
+    },
+    {
+      "name": "Barracuda Restaurant & Bar",
+      "type": "restaurant",
+      "area": "Chaweng",
+      "instagram": "@barracudasamui",
+      "description": "Mediterranean and seafood with a sea view in Chaweng. Popular with expats and tourists. Great cocktails.",
+      "price_range": "400–900 THB",
+      "google_rating": 4.6,
+      "affiliate_links": []
+    },
+    {
+      "name": "The Larder",
+      "type": "restaurant",
+      "area": "Chaweng",
+      "instagram": "@thelardersamui",
+      "description": "European-style deli and restaurant — proper breakfasts, sandwiches, imported cheeses. Expat institution.",
+      "price_range": "300–700 THB",
+      "google_rating": 4.7,
+      "affiliate_links": []
+    },
+    {
+      "name": "Ninja Crepes",
+      "type": "restaurant",
+      "area": "Lamai",
+      "instagram": null,
+      "description": "Famous street food crepes in Lamai — sweet and savory. A backpacker classic, open late.",
+      "price_range": "60–150 THB",
+      "google_rating": 4.6,
+      "affiliate_links": []
+    },
+    {
+      "name": "Fisherman's Village Friday Night Market",
+      "type": "restaurant",
+      "area": "Bophut",
+      "instagram": "@fishermansvillagebophut",
+      "description": "Every Friday evening — walking street transforms into a night market with street food, live music, crafts, and local vendors. Don't miss it.",
+      "price_range": "50–300 THB",
+      "google_rating": 4.6,
+      "affiliate_links": []
+    },
+    {
+      "name": "Lamai Night Market",
+      "type": "restaurant",
+      "area": "Lamai",
+      "instagram": null,
+      "description": "Nightly market in central Lamai — pad thai, BBQ, fresh fruit, local snacks. Cheap, authentic, lively.",
+      "price_range": "50–200 THB",
+      "affiliate_links": []
+    },
+    {
+      "name": "The Shack Bar & Grill",
+      "type": "restaurant",
+      "area": "Chaweng",
+      "instagram": "@theshacksamui",
+      "description": "Lively sports bar and grill in Chaweng — burgers, ribs, live sports on big screens, craft beers.",
+      "price_range": "300–700 THB",
+      "google_rating": 4.5,
+      "affiliate_links": []
+    },
+    {
+      "name": "Anantara Bophut Koh Samui Resort",
+      "type": "hotel",
+      "area": "Bophut",
+      "instagram": "@anantarabophut",
+      "description": "5-star boutique resort on Bophut Beach. Thai-style villas, exceptional spa, sunset views. Great for couples.",
+      "price_range": "from 6,000 THB/night",
+      "affiliate_links": [
+        {
+          "provider": "viator",
+          "url": "https://www.viator.com/searchResults/all?text=Anantara+Bophut+Koh+Samui"
+        }
+      ]
+    },
+    {
+      "name": "W Koh Samui",
+      "type": "hotel",
+      "area": "Choeng Mon",
+      "instagram": "@wkohsamui",
+      "description": "Ultra-design luxury resort on the quiet north shore. Stunning infinity pool, party vibe, world-class service.",
+      "price_range": "from 8,000 THB/night",
+      "affiliate_links": []
+    },
+    {
+      "name": "Six Senses Samui",
+      "type": "hotel",
+      "area": "North Shore",
+      "instagram": "@sixsensessamui",
+      "description": "Cliffside eco-luxury resort with private villas perched over the Gulf. Exceptional spa, organic food, unrivalled views.",
+      "price_range": "from 15,000 THB/night",
+      "affiliate_links": []
+    },
+    {
+      "name": "Kamalaya Wellness Sanctuary",
+      "type": "hotel",
+      "area": "Lamai",
+      "instagram": "@kamalaya_samui",
+      "description": "Award-winning wellness retreat built around a Buddhist monk's cave. Detox, yoga, Ayurveda, burnout recovery. World-class.",
+      "price_range": "from 10,000 THB/night",
+      "affiliate_links": [
+        {
+          "provider": "viator",
+          "url": "https://www.viator.com/searchResults/all?text=Kamalaya+Wellness+Koh+Samui"
+        }
+      ]
+    },
+    {
+      "name": "Samui Paradise Chaweng Beach Resort",
+      "type": "hotel",
+      "area": "Chaweng",
+      "instagram": "@samuiparadise",
+      "description": "Mid-range beachfront resort on Chaweng. Good value, great location, large pool. Family-friendly.",
+      "price_range": "from 2,500 THB/night",
+      "affiliate_links": []
+    },
+    {
+      "name": "Hansar Samui Resort",
+      "type": "hotel",
+      "area": "Bophut",
+      "instagram": "@hansarsamui",
+      "description": "Contemporary boutique resort with stunning Bophut bay views, infinity pool, excellent H Bistro restaurant.",
+      "price_range": "from 5,000 THB/night",
+      "affiliate_links": []
+    },
+    {
+      "name": "Centara Reserve Samui",
+      "type": "hotel",
+      "area": "Chaweng",
+      "instagram": "@centarareservesamui",
+      "description": "Newly repositioned luxury resort in Chaweng with stunning pool terraces, great beach access, multiple restaurants.",
+      "price_range": "from 7,000 THB/night",
+      "affiliate_links": []
+    },
+    {
+      "name": "Discovery Divers Samui",
+      "type": "dive_shop",
+      "area": "Chaweng",
+      "instagram": "@discoverydivers",
+      "description": "Professional PADI dive center in Chaweng. Day trips to Koh Tao, Sail Rock, and Chumphon Pinnacle. Courses from beginner to Divemaster.",
+      "price_range": "2,500–5,000 THB (2 dives)",
+      "affiliate_links": [
+        {
+          "provider": "viator",
+          "url": "https://www.viator.com/searchResults/all?text=Discovery+Divers+Koh+Samui"
+        }
+      ]
+    },
+    {
+      "name": "Aquanauts Samui",
+      "type": "dive_shop",
+      "area": "Chaweng",
+      "instagram": "@aquanautssamui",
+      "description": "PADI 5-Star dive center. Full range of courses, guided dives, and multi-day packages to Koh Tao.",
+      "price_range": "2,500–5,000 THB",
+      "affiliate_links": []
+    },
+    {
+      "name": "Ocean Safari Samui",
+      "type": "activity",
+      "area": "Chaweng",
+      "instagram": "@oceansafarisamui",
+      "description": "Jet ski tours and speedboat adventures around Koh Samui. Popular for island hopping, snorkeling spots, and thrill-seekers.",
+      "price_range": "1,500–3,500 THB",
+      "affiliate_links": [
+        {
+          "provider": "viator",
+          "url": "https://www.viator.com/searchResults/all?text=jet+ski+tour+Koh+Samui"
+        }
+      ]
+    },
+    {
+      "name": "Ang Thong Marine Park Day Tour",
+      "type": "activity",
+      "area": "Gulf of Thailand",
+      "instagram": "@angthongmarinepark",
+      "description": "Full-day speedboat tour to Ang Thong National Marine Park — 42 islands, snorkeling, kayaking, panoramic viewpoint. One of Thailand's best day trips.",
+      "price_range": "1,800–2,500 THB",
+      "duration": "Full day (~10 hours)",
+      "affiliate_links": [
+        {
+          "provider": "klook",
+          "url": "https://www.klook.com/en-US/search/?query=Ang+Thong+Marine+Park+tour+Koh+Samui&aid=12425"
+        },
+        {
+          "provider": "getyourguide",
+          "url": "https://www.getyourguide.com/koh-samui-l35004/ang-thong-national-marine-park-tc55/"
+        },
+        {
+          "provider": "viator",
+          "url": "https://www.viator.com/searchResults/all?text=Ang+Thong+Marine+Park+tour+from+Koh+Samui"
+        }
+      ]
+    },
+    {
+      "name": "Koh Tao Snorkeling Day Trip from Samui",
+      "type": "activity",
+      "area": "Koh Tao",
+      "description": "Speedboat day trip to Koh Tao — snorkeling at multiple reefs, lunch included. Reef sharks, turtles, tropical fish.",
+      "price_range": "1,500–2,200 THB",
+      "duration": "Full day (~12 hours with transfers)",
+      "affiliate_links": [
+        {
+          "provider": "klook",
+          "url": "https://www.klook.com/en-US/search/?query=Koh+Tao+snorkeling+day+trip+Koh+Samui&aid=12425"
+        },
+        {
+          "provider": "getyourguide",
+          "url": "https://www.getyourguide.com/koh-samui-l35004/koh-tao-tc55/"
+        },
+        {
+          "provider": "viator",
+          "url": "https://www.viator.com/searchResults/all?text=Koh+Tao+snorkeling+day+trip+from+Koh+Samui"
+        }
+      ]
+    },
+    {
+      "name": "Koh Tao Scuba Diving Day Trip from Samui",
+      "type": "activity",
+      "area": "Koh Tao",
+      "description": "2 boat dives with PADI instructors to Koh Tao. Sail Rock, Chumphon Pinnacle, or local reefs. Equipment included.",
+      "price_range": "2,500–4,500 THB",
+      "duration": "Full day",
+      "affiliate_links": [
+        {
+          "provider": "klook",
+          "url": "https://www.klook.com/en-US/search/?query=Koh+Tao+scuba+diving+Koh+Samui&aid=12425"
+        },
+        {
+          "provider": "getyourguide",
+          "url": "https://www.getyourguide.com/koh-samui-l35004/scuba-diving-tc58/"
+        },
+        {
+          "provider": "viator",
+          "url": "https://www.viator.com/searchResults/all?text=Koh+Tao+scuba+diving+day+trip+from+Koh+Samui"
+        }
+      ]
+    },
+    {
+      "name": "Sail Rock Diving from Koh Samui",
+      "type": "activity",
+      "area": "Gulf of Thailand",
+      "description": "Dive Sail Rock — Gulf of Thailand's #1 site. Whale sharks Jul–Sep, massive baitballs, chimney swim-through. 2 dives.",
+      "price_range": "3,000–5,000 THB",
+      "duration": "Full day",
+      "affiliate_links": [
+        {
+          "provider": "klook",
+          "url": "https://www.klook.com/en-US/search/?query=Sail+Rock+diving+Koh+Samui&aid=12425"
+        },
+        {
+          "provider": "viator",
+          "url": "https://www.viator.com/searchResults/all?text=Sail+Rock+diving+day+trip+Koh+Samui"
+        }
+      ]
+    },
+    {
+      "name": "Samui Elephant Sanctuary",
+      "type": "activity",
+      "area": "Koh Samui",
+      "instagram": "@samuielephantsanctuary",
+      "description": "Ethical elephant experience — feed, walk with, and bathe rescued elephants. No riding. Deeply moving.",
+      "price_range": "2,500–3,500 THB",
+      "duration": "Half day (3–4 hours)",
+      "affiliate_links": [
+        {
+          "provider": "klook",
+          "url": "https://www.klook.com/en-US/search/?query=Samui+Elephant+Sanctuary&aid=12425"
+        },
+        {
+          "provider": "getyourguide",
+          "url": "https://www.getyourguide.com/koh-samui-l35004/elephant-sanctuary-tc55/"
+        },
+        {
+          "provider": "viator",
+          "url": "https://www.viator.com/searchResults/all?text=Samui+Elephant+Sanctuary+ethical"
+        }
+      ]
+    },
+    {
+      "name": "ATV Jungle Tour Koh Samui",
+      "type": "activity",
+      "area": "Koh Samui",
+      "description": "Off-road ATV through jungle, rubber plantations, mud trails. No license needed. Fun for all levels.",
+      "price_range": "1,200–2,000 THB",
+      "duration": "1.5–3 hours",
+      "affiliate_links": [
+        {
+          "provider": "klook",
+          "url": "https://www.klook.com/en-US/search/?query=ATV+jungle+tour+Koh+Samui&aid=12425"
+        },
+        {
+          "provider": "viator",
+          "url": "https://www.viator.com/searchResults/all?text=ATV+jungle+tour+Koh+Samui"
+        }
+      ]
+    },
+    {
+      "name": "Thai Cooking Class Koh Samui",
+      "type": "activity",
+      "area": "Koh Samui",
+      "instagram": "@samuicookingschool",
+      "description": "Market visit + hands-on cooking class — learn to make pad thai, green curry, mango sticky rice. You eat everything.",
+      "price_range": "1,200–1,800 THB",
+      "duration": "Half day (4 hours)",
+      "affiliate_links": [
+        {
+          "provider": "klook",
+          "url": "https://www.klook.com/en-US/search/?query=Thai+cooking+class+Koh+Samui&aid=12425"
+        },
+        {
+          "provider": "getyourguide",
+          "url": "https://www.getyourguide.com/koh-samui-l35004/cooking-classes-tc63/"
+        },
+        {
+          "provider": "viator",
+          "url": "https://www.viator.com/searchResults/all?text=Thai+cooking+class+Koh+Samui"
+        }
+      ]
+    },
+    {
+      "name": "Samui Sunset Dinner Cruise",
+      "type": "activity",
+      "area": "Koh Samui",
+      "description": "Catamaran cruise at sunset — dinner, open bar, snorkeling stop. Best romantic evening on the island.",
+      "price_range": "1,800–3,500 THB",
+      "duration": "4–5 hours (evening)",
+      "affiliate_links": [
+        {
+          "provider": "klook",
+          "url": "https://www.klook.com/en-US/search/?query=Samui+sunset+dinner+cruise&aid=12425"
+        },
+        {
+          "provider": "viator",
+          "url": "https://www.viator.com/searchResults/all?text=Koh+Samui+sunset+dinner+cruise"
+        }
+      ]
+    },
+    {
+      "name": "Muay Thai Training Koh Samui",
+      "type": "activity",
+      "area": "Koh Samui",
+      "description": "Train with real fighters at an authentic gym. Pad work, technique, conditioning. Beginner-friendly morning or afternoon class.",
+      "price_range": "500–1,200 THB",
+      "duration": "1.5–2 hours",
+      "affiliate_links": [
+        {
+          "provider": "klook",
+          "url": "https://www.klook.com/en-US/search/?query=Muay+Thai+training+Koh+Samui&aid=12425"
+        },
+        {
+          "provider": "viator",
+          "url": "https://www.viator.com/searchResults/all?text=Muay+Thai+training+Koh+Samui"
+        }
+      ]
+    },
+    {
+      "name": "Zipline Canopy Adventure Koh Samui",
+      "type": "activity",
+      "area": "Koh Samui",
+      "description": "Fly through jungle canopy on high-speed ziplines. Multiple platforms, tropical forest, guides included.",
+      "price_range": "1,200–2,500 THB",
+      "duration": "2–3 hours",
+      "affiliate_links": [
+        {
+          "provider": "viator",
+          "url": "https://www.viator.com/searchResults/all?text=zipline+canopy+adventure+Koh+Samui"
+        }
+      ]
+    },
+    {
+      "name": "Koh Phangan Day Trip from Samui",
+      "type": "activity",
+      "area": "Koh Phangan",
+      "description": "Full Moon Party island, 30 min by ferry. Explore Had Rin beach, Thong Sala town, jungle waterfalls.",
+      "price_range": "600–1,200 THB (ferry + return)",
+      "duration": "Full day",
+      "affiliate_links": [
+        {
+          "provider": "viator",
+          "url": "https://www.viator.com/searchResults/all?text=Koh+Phangan+day+trip+from+Koh+Samui"
+        }
+      ]
+    },
+    {
+      "name": "Namuang Safari Park Koh Samui",
+      "type": "activity",
+      "area": "Koh Samui",
+      "description": "Family park in Samui's interior — shows, zip line, ATV, Namuang waterfalls nearby.",
+      "price_range": "600–1,500 THB",
+      "duration": "Half day",
+      "affiliate_links": [
+        {
+          "provider": "viator",
+          "url": "https://www.viator.com/searchResults/all?text=Namuang+Safari+Park+Koh+Samui"
+        }
+      ]
+    },
+    {
+      "name": "Tamarind Springs Forest Spa",
+      "type": "spa",
+      "area": "Lamai",
+      "instagram": "@tamarindspringssamui",
+      "description": "Stunning outdoor spa built into natural boulders in the Samui jungle. Steam caves, cold plunge, herbal treatments. Unique experience.",
+      "price_range": "600–2,500 THB",
+      "google_rating": 4.7,
+      "affiliate_links": [
+        {
+          "provider": "viator",
+          "url": "https://www.viator.com/searchResults/all?text=Tamarind+Springs+Spa+Koh+Samui"
+        }
+      ]
+    },
+    {
+      "name": "Kamalaya Wellness Sanctuary Spa",
+      "type": "spa",
+      "area": "Lamai",
+      "instagram": "@kamalaya_samui",
+      "description": "World-ranked wellness resort and spa. Yoga, Ayurveda, detox programs, traditional Thai massage, meditation. Built around a Buddhist cave.",
+      "price_range": "1,500–8,000 THB",
+      "affiliate_links": [
+        {
+          "provider": "viator",
+          "url": "https://www.viator.com/searchResults/all?text=Kamalaya+Wellness+spa+Koh+Samui"
+        }
+      ]
+    },
+    {
+      "name": "The Spa Samui",
+      "type": "spa",
+      "area": "Bophut",
+      "instagram": "@thespasamui",
+      "description": "Award-winning day spa with pool. Thai massage, body wraps, facials, detox programs. Beautiful setting near Bophut.",
+      "price_range": "800–3,000 THB",
+      "google_rating": 4.7,
+      "affiliate_links": []
+    },
+    {
+      "name": "Health Oasis Resort",
+      "type": "spa",
+      "area": "Bophut",
+      "instagram": "@healthoasissamui",
+      "description": "Detox and fasting retreat near Bophut. Juice fasting, colonic, yoga, Ayurveda. Popular with health-conscious travelers.",
+      "price_range": "from 2,000 THB/day (programs)",
+      "affiliate_links": []
+    },
+    {
+      "name": "Fisherman's Village Bophut",
+      "type": "attraction",
+      "area": "Bophut",
+      "instagram": "@fishermansvillagebophut",
+      "description": "Charming Chinese-style walking street. Boutique shops, galleries, restaurants, Friday night market.",
+      "price_range": "Free to visit",
+      "affiliate_links": []
+    },
+    {
+      "name": "Wat Plai Laem",
+      "type": "attraction",
+      "area": "Plai Laem",
+      "description": "Stunning Buddhist temple with 18-armed Guanyin goddess over the water. Free, best in morning.",
+      "price_range": "Free",
+      "affiliate_links": []
+    },
+    {
+      "name": "Big Buddha Temple (Wat Phra Yai)",
+      "type": "attraction",
+      "area": "Bophut",
+      "instagram": "@bigbuddhasamui",
+      "description": "Samui's most iconic landmark — 12m golden Buddha overlooking the sea. Free to visit, must-see.",
+      "price_range": "Free",
+      "affiliate_links": []
+    },
+    {
+      "name": "Hin Ta Hin Yai (Grandmother/Grandfather Rocks)",
+      "type": "attraction",
+      "area": "Lamai",
+      "description": "Naturally shaped rocks of legendary local fame — a quirky, funny stop at the south end of Lamai Beach. Free.",
+      "price_range": "Free",
+      "affiliate_links": []
+    },
+    {
+      "name": "Na Muang Waterfall",
+      "type": "attraction",
+      "area": "Central Koh Samui",
+      "description": "Two waterfalls in the jungle interior of Samui. Namuang 1 is easy access, Namuang 2 requires a short hike. Refreshing swim at the base.",
+      "price_range": "Free (100 THB entry)",
+      "affiliate_links": [
+        {
+          "provider": "viator",
+          "url": "https://www.viator.com/searchResults/all?text=Namuang+Waterfall+Koh+Samui"
+        }
+      ]
+    },
+    {
+      "name": "Samui Airport Taxi / Transfer",
+      "type": "transport",
+      "area": "Koh Samui",
+      "description": "Private airport transfer from Samui Airport (USM) to any hotel. Book in advance to avoid touts. Green taxis are official.",
+      "price_range": "400–800 THB (to Chaweng/Lamai)",
+      "affiliate_links": [
+        {
+          "provider": "klook",
+          "url": "https://www.klook.com/en-US/search/?query=Koh+Samui+airport+transfer&aid=12425"
+        },
+        {
+          "provider": "viator",
+          "url": "https://www.viator.com/searchResults/all?text=Koh+Samui+airport+transfer"
+        }
+      ]
+    },
+    {
+      "name": "Lomprayah Ferry Koh Tao / Koh Phangan",
+      "type": "transport",
+      "area": "Nathon / Maenam Pier",
+      "description": "High-speed catamaran — Samui to Koh Phangan (30 min, 400–600 THB), Koh Tao (1h30, 700–1,000 THB). Departs Nathon or Maenam pier.",
+      "price_range": "400–1,000 THB",
+      "affiliate_links": [
+        {
+          "provider": "klook",
+          "url": "https://www.klook.com/en-US/search/?query=Lomprayah+ferry+Koh+Samui&aid=12425"
+        }
+      ]
+    }
+  ],
+  "business_database": [
+    {
+      "id": "H001",
+      "name": "Four Seasons Resort Koh Samui",
+      "type": "hotel",
+      "subcategory": "Luxury Resort",
+      "area": "Choeng Mon",
+      "website": "fourseasons.com/kohsamui",
+      "instagram": "@FourSeasonsKohSamui",
+      "google_rating": "4.8",
+      "digital_score": 8,
+      "ai_need_score": 6,
+      "priority": "HOT",
+      "notes": "Resort iconique. Besoin chatbot multilingue, réservation spa & activités."
+    },
+    {
+      "id": "H002",
+      "name": "Banyan Tree Samui",
+      "type": "hotel",
+      "subcategory": "Luxury Resort",
+      "area": "Lamai",
+      "website": "banyantree.com/samui",
+      "instagram": "@BanyanTreeSamui",
+      "google_rating": "4.7",
+      "digital_score": 9,
+      "ai_need_score": 5,
+      "priority": "WARM",
+      "notes": "#1 Spa Resort Thailand 2025. Très digital. IA pour upsell spa."
+    },
+    {
+      "id": "H003",
+      "name": "Anantara Bophut Resort",
+      "type": "hotel",
+      "subcategory": "Luxury Resort",
+      "area": "Bophut",
+      "website": "samui.anantara.com",
+      "instagram": "@AnantaraSamui",
+      "google_rating": "4.6",
+      "digital_score": 8,
+      "ai_need_score": 6,
+      "priority": "WARM",
+      "notes": "Proximité Fisherman's Village. Clientèle premium."
+    },
+    {
+      "id": "H004",
+      "name": "Belmond Napasai",
+      "type": "hotel",
+      "subcategory": "Luxury Resort",
+      "area": "Maenam",
+      "website": "belmond.com/napasai-koh-samui",
+      "instagram": "à vérifier",
+      "google_rating": "4.7",
+      "digital_score": 8,
+      "ai_need_score": 5,
+      "priority": "WARM",
+      "notes": "Plage privée. Clientèle internationale premium."
+    },
+    {
+      "id": "H005",
+      "name": "The Library",
+      "type": "hotel",
+      "subcategory": "Boutique Hotel",
+      "area": "Chaweng",
+      "website": "thelibrarysamui.com",
+      "instagram": "@thelibrarysamui",
+      "google_rating": "4.5",
+      "digital_score": 9,
+      "ai_need_score": 7,
+      "priority": "HOT",
+      "notes": "Design iconique, piscine rouge. Fort besoin IA concierge créatif."
+    },
+    {
+      "id": "H006",
+      "name": "Cielo Boutique Hotel & Spa",
+      "type": "hotel",
+      "subcategory": "Boutique Hotel",
+      "area": "Bophut",
+      "website": "cielospasamui.com",
+      "instagram": "@cielosamui",
+      "google_rating": "4.4",
+      "digital_score": 6,
+      "ai_need_score": 8,
+      "priority": "HOT",
+      "notes": "Pas de système réservation automatisé. Idéal Coco AI."
+    },
+    {
+      "id": "H007",
+      "name": "Marasca Samui",
+      "type": "hotel",
+      "subcategory": "Beachfront Hotel",
+      "area": "Chaweng",
+      "website": "marascasamui.com",
+      "instagram": "à vérifier",
+      "google_rating": "4.3",
+      "digital_score": 6,
+      "ai_need_score": 8,
+      "priority": "HOT",
+      "notes": "Hôtel mid-range. Gestion réservation manuelle probable."
+    },
+    {
+      "id": "H008",
+      "name": "SALA Samui Choengmon Beach",
+      "type": "hotel",
+      "subcategory": "Boutique Resort",
+      "area": "Choeng Mon",
+      "website": "salaresorts.com/kohsamui",
+      "instagram": "@SALAResorts",
+      "google_rating": "4.6",
+      "digital_score": 7,
+      "ai_need_score": 7,
+      "priority": "WARM",
+      "notes": "Boutique resort tendance. Clientèle internationale."
+    },
+    {
+      "id": "H009",
+      "name": "Samui Buri Beach Resort",
+      "type": "hotel",
+      "subcategory": "Family Resort",
+      "area": "Maenam",
+      "website": "samuiburi.com",
+      "instagram": "à vérifier",
+      "google_rating": "4.2",
+      "digital_score": 5,
+      "ai_need_score": 8,
+      "priority": "HOT",
+      "notes": "Famille & budget. Forte demande réservation directe. Lead chaud."
+    },
+    {
+      "id": "H010",
+      "name": "Nora Beach Resort & Spa",
+      "type": "hotel",
+      "subcategory": "Mid-range Resort",
+      "area": "Chaweng",
+      "website": "norabeachresort.com",
+      "instagram": "à vérifier",
+      "google_rating": "4.1",
+      "digital_score": 5,
+      "ai_need_score": 9,
+      "priority": "HOT",
+      "notes": "Très grand. Besoin automatisation réservation, FAQ, multilingual."
+    },
+    {
+      "id": "H011",
+      "name": "Six Senses Samui",
+      "type": "hotel",
+      "subcategory": "Eco-Luxury Resort",
+      "area": "Choeng Mon",
+      "website": "sixsenses.com/samui",
+      "instagram": "@SixSensesSamui",
+      "google_rating": "4.8",
+      "digital_score": 9,
+      "ai_need_score": 4,
+      "priority": "LOW",
+      "notes": "Very digital. IA déjà en place. Partenariat contenu possible."
+    },
+    {
+      "id": "H012",
+      "name": "Centara Reserve Samui",
+      "type": "hotel",
+      "subcategory": "5-Star Resort",
+      "area": "Chaweng",
+      "website": "centarahotelsresorts.com",
+      "instagram": "@CentaraReserve",
+      "google_rating": "4.7",
+      "digital_score": 9,
+      "ai_need_score": 5,
+      "priority": "WARM",
+      "notes": "Grand groupe. Décision lente mais volume fort."
+    },
+    {
+      "id": "H013",
+      "name": "Yuka Residence",
+      "type": "hotel",
+      "subcategory": "Boutique Hotel",
+      "area": "Lamai",
+      "website": "yukaresidence.com",
+      "instagram": "à vérifier",
+      "google_rating": "4.3",
+      "digital_score": 4,
+      "ai_need_score": 9,
+      "priority": "HOT 🔥",
+      "notes": "Très petit. Zéro IA, WhatsApp only. LEAD PARFAIT Coco AI."
+    },
+    {
+      "id": "H014",
+      "name": "Kanda Residences",
+      "type": "hotel",
+      "subcategory": "Boutique Hotel",
+      "area": "Plai Laem",
+      "website": "kandaresidences.com",
+      "instagram": "à vérifier",
+      "google_rating": "4.4",
+      "digital_score": 5,
+      "ai_need_score": 9,
+      "priority": "HOT 🔥",
+      "notes": "Zone calme. Petite structure. Fort besoin automatisation."
+    },
+    {
+      "id": "H015",
+      "name": "Celes Beachfront Resort",
+      "type": "hotel",
+      "subcategory": "Boutique Resort",
+      "area": "Lamai",
+      "website": "celesresort.com",
+      "instagram": "@celesresort",
+      "google_rating": "4.5",
+      "digital_score": 7,
+      "ai_need_score": 7,
+      "priority": "WARM",
+      "notes": "Beau resort mais présence digitale améliorable."
+    },
+    {
+      "id": "V001",
+      "name": "Horizon Homes Samui",
+      "type": "other",
+      "subcategory": "Property Management",
+      "area": "Chaweng",
+      "website": "horizonhomes-samui.com",
+      "instagram": "à vérifier",
+      "google_rating": "4.5",
+      "digital_score": 7,
+      "ai_need_score": 7,
+      "priority": "WARM",
+      "notes": "Depuis 2010. Gère 50+ villas. Besoin CRM automatisé."
+    },
+    {
+      "id": "V002",
+      "name": "Estate Samui Properties",
+      "type": "other",
+      "subcategory": "Property Management",
+      "area": "Chaweng",
+      "website": "estate-samui-properties.com",
+      "instagram": "à vérifier",
+      "google_rating": "4.4",
+      "digital_score": 7,
+      "ai_need_score": 8,
+      "priority": "HOT",
+      "notes": "Full service management. Besoin chatbot pour prospects."
+    },
+    {
+      "id": "V003",
+      "name": "Sublime Samui Villas",
+      "type": "other",
+      "subcategory": "Villa Rental & Mgmt",
+      "area": "Bophut",
+      "website": "sublimesamuivillas.com",
+      "instagram": "@sublimesamui",
+      "google_rating": "4.6",
+      "digital_score": 8,
+      "ai_need_score": 7,
+      "priority": "WARM",
+      "notes": "Depuis 2016. Bon digital. Partenariat possible."
+    },
+    {
+      "id": "V004",
+      "name": "Mr Property Siam",
+      "type": "other",
+      "subcategory": "Property Management",
+      "area": "Chaweng",
+      "website": "mrpropertysiam.com",
+      "instagram": "à vérifier",
+      "google_rating": "4.3",
+      "digital_score": 6,
+      "ai_need_score": 8,
+      "priority": "HOT",
+      "notes": "Structure légère. Fort besoin IA pour communication clients."
+    },
+    {
+      "id": "V005",
+      "name": "Samui Villa Finder",
+      "type": "other",
+      "subcategory": "Villa Rental Agency",
+      "area": "Island-wide",
+      "website": "samui-villa.com",
+      "instagram": "à vérifier",
+      "google_rating": "4.4",
+      "digital_score": 7,
+      "ai_need_score": 7,
+      "priority": "WARM",
+      "notes": "250+ villas. Portail booking. Partenariat lead possible."
+    },
+    {
+      "id": "V006",
+      "name": "WeCare Service & Management",
+      "type": "other",
+      "subcategory": "Property Management",
+      "area": "Island-wide",
+      "website": "wecareservice-management.com",
+      "instagram": "à vérifier",
+      "google_rating": "4.3",
+      "digital_score": 5,
+      "ai_need_score": 9,
+      "priority": "HOT 🔥",
+      "notes": "Très peu de digital. Fort potentiel Coco AI."
+    },
+    {
+      "id": "V007",
+      "name": "Elite Havens Samui",
+      "type": "other",
+      "subcategory": "Luxury Villa Rental",
+      "area": "Island-wide",
+      "website": "elitehavens.com/koh-samui",
+      "instagram": "@EliteHavens",
+      "google_rating": "4.7",
+      "digital_score": 9,
+      "ai_need_score": 4,
+      "priority": "LOW",
+      "notes": "Très établi. Partenariat activités/concierge possible."
+    },
+    {
+      "id": "V008",
+      "name": "LUXE Samui",
+      "type": "other",
+      "subcategory": "Luxury Concierge",
+      "area": "Island-wide",
+      "website": "luxesamui.com",
+      "instagram": "à vérifier",
+      "google_rating": "4.6",
+      "digital_score": 8,
+      "ai_need_score": 6,
+      "priority": "WARM",
+      "notes": "Concierge luxe. Potentiel collaboration sur recommandations."
+    },
+    {
+      "id": "V009",
+      "name": "Samui & Koh Real Estate",
+      "type": "other",
+      "subcategory": "Real Estate Agency",
+      "area": "Chaweng",
+      "website": "samui-and-koh.com",
+      "instagram": "à vérifier",
+      "google_rating": "4.2",
+      "digital_score": 6,
+      "ai_need_score": 7,
+      "priority": "WARM",
+      "notes": "Immobilier + gestion. Besoin CRM digital."
+    },
+    {
+      "id": "V010",
+      "name": "Paradise Island Estate",
+      "type": "other",
+      "subcategory": "Villa & Concierge",
+      "area": "Island-wide",
+      "website": "paradiseislandestate.com",
+      "instagram": "à vérifier",
+      "google_rating": "4.4",
+      "digital_score": 7,
+      "ai_need_score": 7,
+      "priority": "WARM",
+      "notes": "Combine villa + services. Partenariat naturel."
+    },
+    {
+      "id": "R001",
+      "name": "Tree Tops Sky Dining & Bar",
+      "type": "other",
+      "subcategory": "Fine Dining",
+      "area": "Choeng Mon",
+      "website": "treetopdining.com",
+      "instagram": "@treetopssamui",
+      "google_rating": "4.8",
+      "digital_score": 9,
+      "ai_need_score": 5,
+      "priority": "WARM",
+      "notes": "Best of Best Tripadvisor. Notoriété forte. Réservation digitale existante."
+    },
+    {
+      "id": "R002",
+      "name": "Dining on the Rocks",
+      "type": "other",
+      "subcategory": "Fine Dining",
+      "area": "Choeng Mon",
+      "website": "sixsenses.com/samui/dining",
+      "instagram": "@SixSensesSamui",
+      "google_rating": "4.9",
+      "digital_score": 9,
+      "ai_need_score": 3,
+      "priority": "LOW",
+      "notes": "Intégré 5 étoiles. Digital géré en interne."
+    },
+    {
+      "id": "R003",
+      "name": "Kapi Sator",
+      "type": "other",
+      "subcategory": "Thai Fine Dining",
+      "area": "Chaweng",
+      "website": "à vérifier",
+      "instagram": "@kapi_sator",
+      "google_rating": "4.7",
+      "digital_score": 8,
+      "ai_need_score": 6,
+      "priority": "WARM",
+      "notes": "Michelin Bib Gourmand. Réservation peut être améliorée."
+    },
+    {
+      "id": "R004",
+      "name": "Fish Tales Restaurant",
+      "type": "other",
+      "subcategory": "Seafood",
+      "area": "Bophut",
+      "website": "à vérifier",
+      "instagram": "à vérifier",
+      "google_rating": "4.5",
+      "digital_score": 5,
+      "ai_need_score": 8,
+      "priority": "HOT",
+      "notes": "Seafood populaire. Peu de digital. Besoin système réservation."
+    },
+    {
+      "id": "R005",
+      "name": "Tiki Beach Club",
+      "type": "other",
+      "subcategory": "Beach Club Restaurant",
+      "area": "Lamai",
+      "website": "à vérifier",
+      "instagram": "@tikibeachsamui",
+      "google_rating": "4.3",
+      "digital_score": 6,
+      "ai_need_score": 8,
+      "priority": "HOT 🔥",
+      "notes": "Bar & resto plage. WhatsApp only pour réservations. Lead parfait."
+    },
+    {
+      "id": "R006",
+      "name": "The Plate Lamai",
+      "type": "other",
+      "subcategory": "Thai & International",
+      "area": "Lamai",
+      "website": "à vérifier",
+      "instagram": "@theplate_samui",
+      "google_rating": "4.5",
+      "digital_score": 6,
+      "ai_need_score": 8,
+      "priority": "HOT",
+      "notes": "Vue mer. Modern Thai. Pas de booking en ligne."
+    },
+    {
+      "id": "R007",
+      "name": "Catch Restaurant",
+      "type": "other",
+      "subcategory": "Tasting Menu",
+      "area": "Chaweng",
+      "website": "à vérifier",
+      "instagram": "à vérifier",
+      "google_rating": "4.6",
+      "digital_score": 7,
+      "ai_need_score": 6,
+      "priority": "WARM",
+      "notes": "11 cours. Belle expérience. Réservation à optimiser."
+    },
+    {
+      "id": "R008",
+      "name": "Nahm Restaurant Samui",
+      "type": "other",
+      "subcategory": "Seafood & Sunset",
+      "area": "Lamai",
+      "website": "à vérifier",
+      "instagram": "à vérifier",
+      "google_rating": "4.4",
+      "digital_score": 5,
+      "ai_need_score": 8,
+      "priority": "HOT",
+      "notes": "Vue coucher de soleil. Communication faible. Fort potentiel."
+    },
+    {
+      "id": "R009",
+      "name": "Zazen Restaurant",
+      "type": "other",
+      "subcategory": "French-Thai",
+      "area": "Bophut",
+      "website": "zazensamui.com",
+      "instagram": "@ZazenKohSamui",
+      "google_rating": "4.7",
+      "digital_score": 8,
+      "ai_need_score": 5,
+      "priority": "WARM",
+      "notes": "Boutique resort + resto. Clientèle premium internationale."
+    },
+    {
+      "id": "R010",
+      "name": "Peppina Samui",
+      "type": "other",
+      "subcategory": "Italian",
+      "area": "Chaweng",
+      "website": "peppinasamui.com",
+      "instagram": "@peppina_samui",
+      "google_rating": "4.5",
+      "digital_score": 8,
+      "ai_need_score": 7,
+      "priority": "WARM",
+      "notes": "Très populaire auprès expatriés. Instagram actif."
+    },
+    {
+      "id": "R011",
+      "name": "Mr Fish",
+      "type": "other",
+      "subcategory": "Seafood",
+      "area": "Fisherman's Village, Bophut",
+      "website": "mrfishsamui.com",
+      "instagram": "à vérifier",
+      "google_rating": "4.3",
+      "digital_score": 6,
+      "ai_need_score": 7,
+      "priority": "HOT",
+      "notes": "Plage. Populaire. Système réservation basique."
+    },
+    {
+      "id": "R012",
+      "name": "Larder Restaurant",
+      "type": "other",
+      "subcategory": "Western Brunch & Cafe",
+      "area": "Bophut",
+      "website": "à vérifier",
+      "instagram": "@larder_samui",
+      "google_rating": "4.6",
+      "digital_score": 8,
+      "ai_need_score": 7,
+      "priority": "HOT 🔥",
+      "notes": "Brunch tendance. Instagram fort. Réservation WhatsApp. Lead chaud."
+    },
+    {
+      "id": "R013",
+      "name": "Green Bird Restaurant",
+      "type": "other",
+      "subcategory": "Vegan & Healthy",
+      "area": "Chaweng",
+      "website": "à vérifier",
+      "instagram": "à vérifier",
+      "google_rating": "4.4",
+      "digital_score": 5,
+      "ai_need_score": 9,
+      "priority": "HOT 🔥",
+      "notes": "Vegan/healthy. Clientèle wellness. Zéro automation. Lead idéal."
+    },
+    {
+      "id": "R014",
+      "name": "Stacked Samui",
+      "type": "other",
+      "subcategory": "Burgers & Western",
+      "area": "Chaweng",
+      "website": "à vérifier",
+      "instagram": "@stackedsamui",
+      "google_rating": "4.2",
+      "digital_score": 7,
+      "ai_need_score": 8,
+      "priority": "HOT",
+      "notes": "Populaire. Commandes digitales possibles."
+    },
+    {
+      "id": "R015",
+      "name": "Food at Home",
+      "type": "other",
+      "subcategory": "Local Thai",
+      "area": "Lamai",
+      "website": "à vérifier",
+      "instagram": "à vérifier",
+      "google_rating": "3.9",
+      "digital_score": 2,
+      "ai_need_score": 9,
+      "priority": "HOT 🔥",
+      "notes": "Local authentic. Zéro digital. IA pour visibilité = transformation."
+    },
+    {
+      "id": "A001",
+      "name": "100 Degrees East",
+      "type": "other",
+      "subcategory": "Snorkeling & Marine Tours",
+      "area": "Chaweng",
+      "website": "100degreeseast.com",
+      "instagram": "@100degreeseast",
+      "google_rating": "4.9",
+      "digital_score": 9,
+      "ai_need_score": 5,
+      "priority": "WARM",
+      "notes": "Best of Best Tripadvisor. Plastic-free. Booking déjà optimisé."
+    },
+    {
+      "id": "A002",
+      "name": "Member Diving Koh Samui",
+      "type": "other",
+      "subcategory": "Scuba Diving",
+      "area": "Chaweng",
+      "website": "member-diving.com",
+      "instagram": "à vérifier",
+      "google_rating": "4.7",
+      "digital_score": 8,
+      "ai_need_score": 6,
+      "priority": "WARM",
+      "notes": "Swiss-owned. Pro. Système booking à améliorer."
+    },
+    {
+      "id": "A003",
+      "name": "Samui Island Explorer",
+      "type": "other",
+      "subcategory": "Tours & Transfers",
+      "area": "Island-wide",
+      "website": "samuiislandexplorer.com",
+      "instagram": "à vérifier",
+      "google_rating": "4.5",
+      "digital_score": 7,
+      "ai_need_score": 7,
+      "priority": "WARM",
+      "notes": "Tours privés + transferts. Besoin chatbot WhatsApp."
+    },
+    {
+      "id": "A004",
+      "name": "Koh Samui Tours",
+      "type": "other",
+      "subcategory": "Excursions & Tours",
+      "area": "Island-wide",
+      "website": "kohsamui.tours",
+      "instagram": "à vérifier",
+      "google_rating": "4.4",
+      "digital_score": 7,
+      "ai_need_score": 8,
+      "priority": "HOT",
+      "notes": "Plateforme multi-activités. Partenariat distributeur possible."
+    },
+    {
+      "id": "A005",
+      "name": "Angthong Marine Park Tours",
+      "type": "other",
+      "subcategory": "National Park Tours",
+      "area": "Lipa Noi Pier",
+      "website": "à vérifier",
+      "instagram": "à vérifier",
+      "google_rating": "4.6",
+      "digital_score": 5,
+      "ai_need_score": 8,
+      "priority": "HOT",
+      "notes": "Très demandé. Réservation souvent via WhatsApp. Besoin IA."
+    },
+    {
+      "id": "A006",
+      "name": "Samui Snooker & Games",
+      "type": "other",
+      "subcategory": "Indoor Activities",
+      "area": "Chaweng",
+      "website": "à vérifier",
+      "instagram": "à vérifier",
+      "google_rating": "3.8",
+      "digital_score": 2,
+      "ai_need_score": 9,
+      "priority": "HOT 🔥",
+      "notes": "Activité pluie. Zéro digital. Besoin fort visibilité IA."
+    },
+    {
+      "id": "A007",
+      "name": "Samui Elephant Sanctuary",
+      "type": "other",
+      "subcategory": "Ethical Animal Tour",
+      "area": "Interior Samui",
+      "website": "samui-elephantsanctuary.com",
+      "instagram": "à vérifier",
+      "google_rating": "4.8",
+      "digital_score": 8,
+      "ai_need_score": 6,
+      "priority": "WARM",
+      "notes": "Très éthique. Forte notoriété. Partenariat recommandation."
+    },
+    {
+      "id": "A008",
+      "name": "Koh Samui ATV Adventure",
+      "type": "other",
+      "subcategory": "ATV / Quad Bikes",
+      "area": "Chaweng Noi",
+      "website": "à vérifier",
+      "instagram": "à vérifier",
+      "google_rating": "4.2",
+      "digital_score": 4,
+      "ai_need_score": 9,
+      "priority": "HOT 🔥",
+      "notes": "Réservations WhatsApp uniquement. Lead prioritaire Coco AI."
+    },
+    {
+      "id": "A009",
+      "name": "Samui Fisherman Charter",
+      "type": "other",
+      "subcategory": "Fishing Tours",
+      "area": "Nathon Pier",
+      "website": "à vérifier",
+      "instagram": "à vérifier",
+      "google_rating": "4.1",
+      "digital_score": 2,
+      "ai_need_score": 9,
+      "priority": "HOT 🔥",
+      "notes": "Zéro présence digitale. Transformation massive possible."
+    },
+    {
+      "id": "A010",
+      "name": "Big Buddha Viewpoint Tour",
+      "type": "other",
+      "subcategory": "Cultural Tour",
+      "area": "Plai Laem",
+      "website": "à vérifier",
+      "instagram": "à vérifier",
+      "google_rating": "4.0",
+      "digital_score": 1,
+      "ai_need_score": 10,
+      "priority": "HOT 🔥",
+      "notes": "Guides indépendants. Pas de booking. IA = business x5."
+    },
+    {
+      "id": "A011",
+      "name": "Samui Parasailing",
+      "type": "other",
+      "subcategory": "Water Sports",
+      "area": "Chaweng Beach",
+      "website": "à vérifier",
+      "instagram": "à vérifier",
+      "google_rating": "3.9",
+      "digital_score": 3,
+      "ai_need_score": 9,
+      "priority": "HOT 🔥",
+      "notes": "Tout manuel. Booking sur la plage. Lead chaud."
+    },
+    {
+      "id": "A012",
+      "name": "Nathon Kayak & Paddle",
+      "type": "other",
+      "subcategory": "Water Sports",
+      "area": "Nathon",
+      "website": "à vérifier",
+      "instagram": "à vérifier",
+      "google_rating": "3.8",
+      "digital_score": 2,
+      "ai_need_score": 10,
+      "priority": "HOT 🔥",
+      "notes": "Micro-business. Zéro digital. Impact Coco AI maximal."
+    },
+    {
+      "id": "W001",
+      "name": "Kamalaya Wellness Sanctuary",
+      "type": "other",
+      "subcategory": "Wellness Retreat",
+      "area": "Lamai",
+      "website": "kamalaya.com",
+      "instagram": "@KamalayaKohSamui",
+      "google_rating": "4.9",
+      "digital_score": 9,
+      "ai_need_score": 4,
+      "priority": "LOW",
+      "notes": "World-class. IA déjà utilisée en interne très probablement."
+    },
+    {
+      "id": "W002",
+      "name": "Samahita Retreat",
+      "type": "other",
+      "subcategory": "Yoga & Wellness Retreat",
+      "area": "Koh Samui South",
+      "website": "samahitaretreat.com",
+      "instagram": "@SamahitaRetreat",
+      "google_rating": "4.8",
+      "digital_score": 8,
+      "ai_need_score": 5,
+      "priority": "WARM",
+      "notes": "Depuis 2003. Séjours structurés. Partenariat itinéraires bien-être."
+    },
+    {
+      "id": "W003",
+      "name": "Vikasa Yoga Retreat",
+      "type": "other",
+      "subcategory": "Yoga Retreat",
+      "area": "Chaweng Noi",
+      "website": "vikasa.com",
+      "instagram": "@VikasaYoga",
+      "google_rating": "4.7",
+      "digital_score": 8,
+      "ai_need_score": 6,
+      "priority": "WARM",
+      "notes": "Centre yoga premium. Clientèle internationale. Partenariat recommandation."
+    },
+    {
+      "id": "W004",
+      "name": "Absolute Sanctuary",
+      "type": "other",
+      "subcategory": "Fitness & Detox Resort",
+      "area": "Choeng Mon",
+      "website": "absolutesanctuary.com",
+      "instagram": "@AbsoluteSanctuary",
+      "google_rating": "4.6",
+      "digital_score": 8,
+      "ai_need_score": 5,
+      "priority": "WARM",
+      "notes": "Célèbre pour fitness & detox. Système booking existant."
+    },
+    {
+      "id": "W005",
+      "name": "Banyan Tree Spa",
+      "type": "other",
+      "subcategory": "Luxury Spa",
+      "area": "Lamai",
+      "website": "banyantree.com/samui/spa",
+      "instagram": "@BanyanTreeSamui",
+      "google_rating": "4.9",
+      "digital_score": 9,
+      "ai_need_score": 4,
+      "priority": "LOW",
+      "notes": "#1 Spa mondial. Très premium. Partenariat indirect possible."
+    },
+    {
+      "id": "W006",
+      "name": "Tamarind Springs Forest Spa",
+      "type": "other",
+      "subcategory": "Nature Spa",
+      "area": "Lamai",
+      "website": "tamarindsprings.com",
+      "instagram": "à vérifier",
+      "google_rating": "4.8",
+      "digital_score": 7,
+      "ai_need_score": 6,
+      "priority": "WARM",
+      "notes": "Très original. Dans forêt. Clientèle curieux & premium."
+    },
+    {
+      "id": "W007",
+      "name": "Thai Massage at Fisherman's Village",
+      "type": "other",
+      "subcategory": "Traditional Massage",
+      "area": "Bophut",
+      "website": "à vérifier",
+      "instagram": "à vérifier",
+      "google_rating": "4.2",
+      "digital_score": 2,
+      "ai_need_score": 9,
+      "priority": "HOT 🔥",
+      "notes": "Salons indépendants. Aucune présence digitale. Lead parfait."
+    },
+    {
+      "id": "W008",
+      "name": "Cenvaree Spa at Centara",
+      "type": "other",
+      "subcategory": "Hotel Spa",
+      "area": "Chaweng",
+      "website": "centarahotelsresorts.com",
+      "instagram": "@CentaraSamui",
+      "google_rating": "4.7",
+      "digital_score": 8,
+      "ai_need_score": 5,
+      "priority": "WARM",
+      "notes": "Award-winning. Partenariat packages touristes."
+    },
+    {
+      "id": "W009",
+      "name": "Soul Yoga Samui",
+      "type": "other",
+      "subcategory": "Yoga Studio",
+      "area": "Chaweng",
+      "website": "à vérifier",
+      "instagram": "@soulyogasamui",
+      "google_rating": "4.5",
+      "digital_score": 6,
+      "ai_need_score": 8,
+      "priority": "HOT 🔥",
+      "notes": "Petit studio indépendant. Cours en ligne & présentiel. Lead chaud."
+    },
+    {
+      "id": "W010",
+      "name": "The Spa at Four Seasons",
+      "type": "other",
+      "subcategory": "Luxury Spa",
+      "area": "Choeng Mon",
+      "website": "fourseasons.com/kohsamui",
+      "instagram": "@FourSeasonsKohSamui",
+      "google_rating": "4.9",
+      "digital_score": 9,
+      "ai_need_score": 3,
+      "priority": "LOW",
+      "notes": "Intégré au 4 Saisons. Budget décision corporate."
+    },
+    {
+      "id": "W011",
+      "name": "Anda Mana Spa",
+      "type": "other",
+      "subcategory": "Boutique Spa",
+      "area": "Maenam",
+      "website": "à vérifier",
+      "instagram": "à vérifier",
+      "google_rating": "4.3",
+      "digital_score": 3,
+      "ai_need_score": 9,
+      "priority": "HOT 🔥",
+      "notes": "Petite structure locale. Zéro digital. Transformation totale."
+    },
+    {
+      "id": "W012",
+      "name": "The Hideaway Day Spa",
+      "type": "other",
+      "subcategory": "Day Spa",
+      "area": "Chaweng Noi",
+      "website": "à vérifier",
+      "instagram": "à vérifier",
+      "google_rating": "4.4",
+      "digital_score": 4,
+      "ai_need_score": 8,
+      "priority": "HOT 🔥",
+      "notes": "Ouvert aux non-résidents. Besoin visibilité digitale urgente."
+    },
+    {
+      "id": "M001",
+      "name": "Superpro Samui",
+      "type": "fitness",
+      "subcategory": "MMA & Muay Thai",
+      "area": "Chaweng",
+      "website": "superprosamui.com",
+      "instagram": "@superprosamui",
+      "google_rating": "4.7",
+      "digital_score": 8,
+      "ai_need_score": 6,
+      "priority": "HOT",
+      "notes": "Camp MMA exclusif. 4 rings + cage. Partenariat programme fitness."
+    },
+    {
+      "id": "M002",
+      "name": "Lionheart Samui",
+      "type": "fitness",
+      "subcategory": "Muay Thai Camp",
+      "area": "Chaweng Noi",
+      "website": "lionheartsamui.com",
+      "instagram": "@lionheartsamui",
+      "google_rating": "4.6",
+      "digital_score": 7,
+      "ai_need_score": 7,
+      "priority": "HOT",
+      "notes": "Équipements modernes. Clientèle internationale. Besoin booking."
+    },
+    {
+      "id": "M003",
+      "name": "Lamai Muay Thai Camp",
+      "type": "fitness",
+      "subcategory": "Muay Thai Camp",
+      "area": "Lamai",
+      "website": "lamaimuaythai.com",
+      "instagram": "à vérifier",
+      "google_rating": "4.5",
+      "digital_score": 6,
+      "ai_need_score": 8,
+      "priority": "HOT 🔥",
+      "notes": "WMTC Certifié. Packages semaine/mois. Réservation manuelle."
+    },
+    {
+      "id": "M004",
+      "name": "Punch it Gym",
+      "type": "fitness",
+      "subcategory": "Muay Thai & Fitness",
+      "area": "Lamai",
+      "website": "punchitgym.com",
+      "instagram": "@punchitgym",
+      "google_rating": "4.5",
+      "digital_score": 7,
+      "ai_need_score": 8,
+      "priority": "HOT 🔥",
+      "notes": "Hébergement + entraînement + café. Lead parfait multi-services."
+    },
+    {
+      "id": "M005",
+      "name": "Jun Muay Thai",
+      "type": "fitness",
+      "subcategory": "Muay Thai Camp",
+      "area": "Lamai",
+      "website": "junmuaythai.com",
+      "instagram": "à vérifier",
+      "google_rating": "4.4",
+      "digital_score": 5,
+      "ai_need_score": 8,
+      "priority": "HOT",
+      "notes": "Fitness & perte de poids. Beaucoup de digital nomads."
+    },
+    {
+      "id": "M006",
+      "name": "Wech Pinyo Muay Thai",
+      "type": "fitness",
+      "subcategory": "Authentic Muay Thai",
+      "area": "Lamai",
+      "website": "wechpinyo-muaythai.com",
+      "instagram": "à vérifier",
+      "google_rating": "4.3",
+      "digital_score": 4,
+      "ai_need_score": 9,
+      "priority": "HOT 🔥",
+      "notes": "Authentique. Tous âges. Aucune présence digitale. Lead chaud."
+    },
+    {
+      "id": "M007",
+      "name": "Koh Fit Thailand",
+      "type": "fitness",
+      "subcategory": "Fitness & Muay Thai",
+      "area": "Chaweng",
+      "website": "kohfitthailand.com",
+      "instagram": "@kohfitthailand",
+      "google_rating": "4.6",
+      "digital_score": 7,
+      "ai_need_score": 7,
+      "priority": "WARM",
+      "notes": "Combat + fitness. Bonne présence. Automatisation planning."
+    },
+    {
+      "id": "M008",
+      "name": "Hippo's Gym Samui",
+      "type": "fitness",
+      "subcategory": "Commercial Gym",
+      "area": "Chaweng",
+      "website": "à vérifier",
+      "instagram": "à vérifier",
+      "google_rating": "3.9",
+      "digital_score": 3,
+      "ai_need_score": 9,
+      "priority": "HOT 🔥",
+      "notes": "Gym classique. Zéro digital. Abonnements sur place seulement."
+    },
+    {
+      "id": "M009",
+      "name": "Elite Gym Samui",
+      "type": "fitness",
+      "subcategory": "Commercial Gym",
+      "area": "Chaweng",
+      "website": "à vérifier",
+      "instagram": "à vérifier",
+      "google_rating": "4.0",
+      "digital_score": 3,
+      "ai_need_score": 9,
+      "priority": "HOT 🔥",
+      "notes": "Similaire Hippo's. Fort potentiel digitalisation."
+    },
+    {
+      "id": "M010",
+      "name": "Coconut Samui Rugby Academy",
+      "type": "fitness",
+      "subcategory": "Rugby Academy",
+      "area": "Lamai",
+      "website": "à vérifier",
+      "instagram": "@coconutrugby",
+      "google_rating": "N/A",
+      "digital_score": 2,
+      "ai_need_score": 10,
+      "priority": "HOT 🔥",
+      "notes": "Nouveau concept. Première académie rugby sur l'île. En développement."
+    },
+    {
+      "id": "T001",
+      "name": "Koh Samui Taxis",
+      "type": "other",
+      "subcategory": "Airport & Island Taxi",
+      "area": "Island-wide",
+      "website": "kohsamuitaxis.com",
+      "instagram": "à vérifier",
+      "google_rating": "4.3",
+      "digital_score": 6,
+      "ai_need_score": 8,
+      "priority": "HOT",
+      "notes": "Leader taxi. WhatsApp + site. Besoin chatbot automatique."
+    },
+    {
+      "id": "T002",
+      "name": "HAKUNARENT",
+      "type": "other",
+      "subcategory": "Car & Motorbike Rental",
+      "area": "Chaweng",
+      "website": "rentcarsamui.com",
+      "instagram": "à vérifier",
+      "google_rating": "4.4",
+      "digital_score": 7,
+      "ai_need_score": 7,
+      "priority": "WARM",
+      "notes": "Honda, Yamaha, Toyota, Mercedes. Bon digital. Partenariat."
+    },
+    {
+      "id": "T003",
+      "name": "James Rental Samui",
+      "type": "other",
+      "subcategory": "Car & Scooter Rental",
+      "area": "Island-wide",
+      "website": "james-rental-samui.com",
+      "instagram": "à vérifier",
+      "google_rating": "4.5",
+      "digital_score": 8,
+      "ai_need_score": 6,
+      "priority": "WARM",
+      "notes": "Depuis 2003. Cible francophone. Fort partenariat possible."
+    },
+    {
+      "id": "T004",
+      "name": "Wan Scooter Rental",
+      "type": "other",
+      "subcategory": "Scooter Rental",
+      "area": "Chaweng",
+      "website": "kohsamuiscooterrentals.com",
+      "instagram": "à vérifier",
+      "google_rating": "4.2",
+      "digital_score": 4,
+      "ai_need_score": 8,
+      "priority": "HOT 🔥",
+      "notes": "Très petit. WhatsApp only. Besoin visibilité forte."
+    },
+    {
+      "id": "T005",
+      "name": "Mr Wine Taxi Samui",
+      "type": "other",
+      "subcategory": "Private Van & Taxi",
+      "area": "Island-wide",
+      "website": "à vérifier",
+      "instagram": "à vérifier",
+      "google_rating": "4.6",
+      "digital_score": 5,
+      "ai_need_score": 8,
+      "priority": "HOT 🔥",
+      "notes": "Très bien noté. Peu de présence digitale propre."
+    },
+    {
+      "id": "T006",
+      "name": "Grab Thailand - Koh Samui",
+      "type": "other",
+      "subcategory": "Ride Sharing App",
+      "area": "Island-wide",
+      "website": "grab.com",
+      "instagram": "@grabthailand",
+      "google_rating": "4.2",
+      "digital_score": 9,
+      "ai_need_score": 2,
+      "priority": "LOW",
+      "notes": "Application globale. Non-prospect mais alternative à mentionner."
+    },
+    {
+      "id": "T007",
+      "name": "Samui Airport Transfer",
+      "type": "other",
+      "subcategory": "Airport Transfer",
+      "area": "Samui Airport",
+      "website": "à vérifier",
+      "instagram": "à vérifier",
+      "google_rating": "4.0",
+      "digital_score": 3,
+      "ai_need_score": 9,
+      "priority": "HOT 🔥",
+      "notes": "Transferts aéroport. Booking WhatsApp. Lead parfait Coco AI."
+    },
+    {
+      "id": "T008",
+      "name": "Lomprayah Ferry Samui",
+      "type": "other",
+      "subcategory": "Ferry Service",
+      "area": "Nathon Pier",
+      "website": "lomprayah.com",
+      "instagram": "à vérifier",
+      "google_rating": "4.3",
+      "digital_score": 8,
+      "ai_need_score": 5,
+      "priority": "WARM",
+      "notes": "Ferry Samui-Koh Tao-Phangan. Partenariat recommandation."
+    },
+    {
+      "id": "T009",
+      "name": "Seatran Ferry",
+      "type": "other",
+      "subcategory": "Ferry Service",
+      "area": "Nathon Pier",
+      "website": "seatranferry.com",
+      "instagram": "à vérifier",
+      "google_rating": "4.1",
+      "digital_score": 7,
+      "ai_need_score": 5,
+      "priority": "WARM",
+      "notes": "Ferry voitures & passagers. Utile pour recommandation."
+    },
+    {
+      "id": "T010",
+      "name": "Private Van Charter Samui",
+      "type": "other",
+      "subcategory": "Private Van Hire",
+      "area": "Island-wide",
+      "website": "à vérifier",
+      "instagram": "à vérifier",
+      "google_rating": "4.2",
+      "digital_score": 2,
+      "ai_need_score": 9,
+      "priority": "HOT 🔥",
+      "notes": "Indépendants. Réservations WhatsApp. Lead direct Coco AI."
+    },
+    {
+      "id": "E001",
+      "name": "Dreamcatchers Events",
+      "type": "wedding",
+      "subcategory": "Wedding Planner",
+      "area": "Chaweng",
+      "website": "dreamcatchers-events.com",
+      "instagram": "à vérifier",
+      "google_rating": "4.7",
+      "digital_score": 8,
+      "ai_need_score": 5,
+      "priority": "WARM",
+      "notes": "Planification complète. Clientèle internationale."
+    },
+    {
+      "id": "E002",
+      "name": "Eventia Samui",
+      "type": "wedding",
+      "subcategory": "Wedding & Corporate Events",
+      "area": "Island-wide",
+      "website": "eventia-samui.com",
+      "instagram": "à vérifier",
+      "google_rating": "4.5",
+      "digital_score": 7,
+      "ai_need_score": 6,
+      "priority": "HOT",
+      "notes": "Mariages + corporate. Besoin CRM & suivi automatisé."
+    },
+    {
+      "id": "E003",
+      "name": "Riess Weddings",
+      "type": "wedding",
+      "subcategory": "Luxury Wedding Planner",
+      "area": "Island-wide",
+      "website": "riessweddings.com",
+      "instagram": "à vérifier",
+      "google_rating": "4.8",
+      "digital_score": 8,
+      "ai_need_score": 5,
+      "priority": "WARM",
+      "notes": "20 ans d'expérience. 400+ mariages. Clientèle germanophone."
+    },
+    {
+      "id": "E004",
+      "name": "Wonders & Weddings",
+      "type": "wedding",
+      "subcategory": "Wedding Planner",
+      "area": "Island-wide",
+      "website": "wondersweddings.com",
+      "instagram": "à vérifier",
+      "google_rating": "4.6",
+      "digital_score": 7,
+      "ai_need_score": 6,
+      "priority": "WARM",
+      "notes": "Services complets photo + vidéo inclus."
+    },
+    {
+      "id": "E005",
+      "name": "DJ Simon Solo / Koh Samui Events",
+      "type": "wedding",
+      "subcategory": "DJ & Events",
+      "area": "Island-wide",
+      "website": "kohsamuievents.com",
+      "instagram": "à vérifier",
+      "google_rating": "4.7",
+      "digital_score": 6,
+      "ai_need_score": 7,
+      "priority": "HOT",
+      "notes": "DJ le plus demandé depuis 20 ans. Partenariat packages mariage."
+    },
+    {
+      "id": "E006",
+      "name": "Samui Wedding Photo & Video",
+      "type": "wedding",
+      "subcategory": "Photography & Video",
+      "area": "Island-wide",
+      "website": "à vérifier",
+      "instagram": "à vérifier",
+      "google_rating": "4.6",
+      "digital_score": 5,
+      "ai_need_score": 7,
+      "priority": "HOT 🔥",
+      "notes": "Photographes indépendants. Réservation WhatsApp. Besoin CRM."
+    },
+    {
+      "id": "E007",
+      "name": "Koh Samui Floral Design",
+      "type": "wedding",
+      "subcategory": "Floral Decoration",
+      "area": "Chaweng",
+      "website": "à vérifier",
+      "instagram": "à vérifier",
+      "google_rating": "4.3",
+      "digital_score": 3,
+      "ai_need_score": 8,
+      "priority": "HOT 🔥",
+      "notes": "Décoration florale. Peu de digital. Lead partenariat planners."
+    },
+    {
+      "id": "E008",
+      "name": "Samui Sound & Lighting",
+      "type": "wedding",
+      "subcategory": "Audio Visual",
+      "area": "Island-wide",
+      "website": "à vérifier",
+      "instagram": "à vérifier",
+      "google_rating": "4.2",
+      "digital_score": 3,
+      "ai_need_score": 8,
+      "priority": "HOT 🔥",
+      "notes": "Son & lumière. Très peu de présence digitale."
+    },
+    {
+      "id": "E009",
+      "name": "Samui Villa Catering",
+      "type": "wedding",
+      "subcategory": "Catering",
+      "area": "Island-wide",
+      "website": "à vérifier",
+      "instagram": "à vérifier",
+      "google_rating": "4.3",
+      "digital_score": 3,
+      "ai_need_score": 8,
+      "priority": "HOT 🔥",
+      "notes": "Traiteur événementiel. Booking manuel exclusivement."
+    },
+    {
+      "id": "E010",
+      "name": "The Deck Samui - Events",
+      "type": "wedding",
+      "subcategory": "Wedding Venue",
+      "area": "Lamai",
+      "website": "thedeck-samui.com",
+      "instagram": "à vérifier",
+      "google_rating": "4.6",
+      "digital_score": 7,
+      "ai_need_score": 6,
+      "priority": "WARM",
+      "notes": "Lieu événementiel avec terrasse. Partenariat présentation."
+    },
+    {
+      "id": "D001",
+      "name": "Highly Persuasive Samui",
+      "type": "other",
+      "subcategory": "Marketing Agency",
+      "area": "Chaweng",
+      "website": "highlypersuasive.com/samui",
+      "instagram": "à vérifier",
+      "google_rating": "4.5",
+      "digital_score": 8,
+      "ai_need_score": 4,
+      "priority": "LOW",
+      "notes": "Concurrent direct potentiel. Analyse positionnement."
+    },
+    {
+      "id": "D002",
+      "name": "Samui Digital Maker",
+      "type": "other",
+      "subcategory": "Web & Digital Design",
+      "area": "Island-wide",
+      "website": "samuidigitalmaker.com",
+      "instagram": "à vérifier",
+      "google_rating": "4.3",
+      "digital_score": 7,
+      "ai_need_score": 5,
+      "priority": "WARM",
+      "notes": "Web design local. Partenariat technique possible."
+    },
+    {
+      "id": "D003",
+      "name": "MediaWave Samui",
+      "type": "other",
+      "subcategory": "Social Media & Video",
+      "area": "Island-wide",
+      "website": "à vérifier",
+      "instagram": "@mediawavesamui",
+      "google_rating": "4.4",
+      "digital_score": 7,
+      "ai_need_score": 5,
+      "priority": "WARM",
+      "notes": "Social media + vidéo. Concurrent & partenaire potentiel."
+    },
+    {
+      "id": "D004",
+      "name": "Samui Media Group",
+      "type": "other",
+      "subcategory": "Graphic & Web Design",
+      "area": "Chaweng",
+      "website": "à vérifier",
+      "instagram": "à vérifier",
+      "google_rating": "4.0",
+      "digital_score": 5,
+      "ai_need_score": 6,
+      "priority": "WARM",
+      "notes": "Design graphique. Référencement à améliorer."
+    },
+    {
+      "id": "D005",
+      "name": "Digital Clinch Samui",
+      "type": "other",
+      "subcategory": "Social Media Agency",
+      "area": "Island-wide",
+      "website": "digitalclinch.com",
+      "instagram": "à vérifier",
+      "google_rating": "4.2",
+      "digital_score": 6,
+      "ai_need_score": 5,
+      "priority": "WARM",
+      "notes": "Social media strategy. Partenariat ou concurrent direct."
+    },
+    {
+      "id": "D006",
+      "name": "Freelance Photo Samui",
+      "type": "other",
+      "subcategory": "Photography Content",
+      "area": "Island-wide",
+      "website": "à vérifier",
+      "instagram": "à vérifier",
+      "google_rating": "4.5",
+      "digital_score": 5,
+      "ai_need_score": 6,
+      "priority": "HOT",
+      "notes": "Photographes indépendants. Réseau à cultiver pour Coco AI."
+    },
+    {
+      "id": "D007",
+      "name": "Web Developer Freelance Samui",
+      "type": "other",
+      "subcategory": "Web Development",
+      "area": "Island-wide",
+      "website": "à vérifier",
+      "instagram": "à vérifier",
+      "google_rating": "à vérifier",
+      "digital_score": 6,
+      "ai_need_score": 6,
+      "priority": "WARM",
+      "notes": "Développeurs locaux. Partenaires intégration widget Coco AI."
+    },
+    {
+      "id": "D008",
+      "name": "Twine Freelancers Samui",
+      "type": "other",
+      "subcategory": "Freelance Platform",
+      "area": "Online",
+      "website": "twine.net",
+      "instagram": "à vérifier",
+      "google_rating": "4.3",
+      "digital_score": 9,
+      "ai_need_score": 3,
+      "priority": "LOW",
+      "notes": "Plateforme. Pas un prospect direct."
+    },
+    {
+      "id": "D009",
+      "name": "Samui Business Consultant",
+      "type": "other",
+      "subcategory": "Business Consulting",
+      "area": "Chaweng",
+      "website": "à vérifier",
+      "instagram": "à vérifier",
+      "google_rating": "4.1",
+      "digital_score": 4,
+      "ai_need_score": 7,
+      "priority": "HOT",
+      "notes": "Consultants expats. Partenaires pour recommandation Coco AI."
+    },
+    {
+      "id": "D010",
+      "name": "Travel Blogger / Influencer Network",
+      "type": "other",
+      "subcategory": "Influence Marketing",
+      "area": "Online",
+      "website": "à vérifier",
+      "instagram": "à vérifier",
+      "google_rating": "Variable",
+      "digital_score": 8,
+      "ai_need_score": 5,
+      "priority": "WARM",
+      "notes": "Réseau blogueurs Samui. Partenariat contenu & recommandation."
+    },
+    {
+      "id": "L001",
+      "name": "Morya Pharmacy 24h",
+      "type": "shop",
+      "subcategory": "Pharmacie",
+      "area": "Chaweng / Lamai",
+      "website": "à vérifier",
+      "instagram": "à vérifier",
+      "google_rating": "4.4",
+      "digital_score": 4,
+      "ai_need_score": 7,
+      "priority": "HOT",
+      "notes": "Pharmacie 24h. Besoin chatbot pour questions médicaments."
+    },
+    {
+      "id": "L002",
+      "name": "Boots Pharmacy Samui",
+      "type": "shop",
+      "subcategory": "Pharmacie",
+      "area": "Chaweng",
+      "website": "boots.co.th",
+      "instagram": "à vérifier",
+      "google_rating": "4.3",
+      "digital_score": 7,
+      "ai_need_score": 4,
+      "priority": "LOW",
+      "notes": "Chaîne internationale. Décision corporate."
+    },
+    {
+      "id": "L003",
+      "name": "Central Festival Samui",
+      "type": "shop",
+      "subcategory": "Shopping Mall",
+      "area": "Chaweng",
+      "website": "centralfestivalsamui.com",
+      "instagram": "à vérifier",
+      "google_rating": "4.2",
+      "digital_score": 8,
+      "ai_need_score": 5,
+      "priority": "WARM",
+      "notes": "3ème plus grand mall région. Potentiel kiosque info Coco AI."
+    },
+    {
+      "id": "L004",
+      "name": "Tesco Lotus Samui",
+      "type": "shop",
+      "subcategory": "Hypermarché",
+      "area": "Chaweng",
+      "website": "à vérifier",
+      "instagram": "à vérifier",
+      "google_rating": "4.0",
+      "digital_score": 5,
+      "ai_need_score": 3,
+      "priority": "LOW",
+      "notes": "Grande enseigne. Peu pertinent pour Coco AI."
+    },
+    {
+      "id": "L005",
+      "name": "Big C Samui",
+      "type": "shop",
+      "subcategory": "Supermarché",
+      "area": "Chaweng",
+      "website": "à vérifier",
+      "instagram": "à vérifier",
+      "google_rating": "4.0",
+      "digital_score": 5,
+      "ai_need_score": 3,
+      "priority": "LOW",
+      "notes": "Supermarché chaîne. Non prioritaire."
+    },
+    {
+      "id": "L006",
+      "name": "Lamai Night Market",
+      "type": "shop",
+      "subcategory": "Marché",
+      "area": "Lamai",
+      "website": "à vérifier",
+      "instagram": "à vérifier",
+      "google_rating": "4.4",
+      "digital_score": 3,
+      "ai_need_score": 8,
+      "priority": "HOT 🔥",
+      "notes": "Marché nocturne. Vendeurs indépendants. Besoin visibilité digitale."
+    },
+    {
+      "id": "L007",
+      "name": "Fisherman's Village Night Market",
+      "type": "shop",
+      "subcategory": "Marché",
+      "area": "Bophut",
+      "website": "à vérifier",
+      "instagram": "à vérifier",
+      "google_rating": "4.6",
+      "digital_score": 5,
+      "ai_need_score": 7,
+      "priority": "WARM",
+      "notes": "Très populaire vendredi soir. Référence incontournable Coco AI."
+    },
+    {
+      "id": "L008",
+      "name": "Chaweng Night Market",
+      "type": "shop",
+      "subcategory": "Marché",
+      "area": "Chaweng",
+      "website": "à vérifier",
+      "instagram": "à vérifier",
+      "google_rating": "4.1",
+      "digital_score": 3,
+      "ai_need_score": 7,
+      "priority": "WARM",
+      "notes": "Marché principal. À recommander systématiquement."
+    },
+    {
+      "id": "L009",
+      "name": "Tops Supermarket Samui",
+      "type": "shop",
+      "subcategory": "Supermarché premium",
+      "area": "Chaweng",
+      "website": "à vérifier",
+      "instagram": "à vérifier",
+      "google_rating": "4.2",
+      "digital_score": 5,
+      "ai_need_score": 4,
+      "priority": "LOW",
+      "notes": "Produits importés. Moins pertinent pour IA."
+    },
+    {
+      "id": "L010",
+      "name": "Samui Hospital / Bangkok Hospital",
+      "type": "shop",
+      "subcategory": "Hôpital",
+      "area": "Chaweng / Nathon",
+      "website": "bangkokhospital.com",
+      "instagram": "à vérifier",
+      "google_rating": "4.5",
+      "digital_score": 8,
+      "ai_need_score": 5,
+      "priority": "WARM",
+      "notes": "Info urgence = valeur immense dans assistant IA. À référencer."
+    }
+  ],
+  "database_meta": {
+    "generated_at": "2026-06-23",
+    "total": 114,
+    "version": "2026.1"
+  }
+}

@@ -1,0 +1,171 @@
+---
+import Base from "../layouts/Base.astro";
+import Split from "../layouts/Split.astro";
+import { SITE } from "../data/site";
+
+const chips = [
+  { label: "🏨 Demo: guest asks", q: "I'm a guest at a beachfront hotel in Bophut — what should I do tonight within walking distance?" },
+  { label: "🇩🇪 German guest", q: "Wo ist der nächste Geldautomat und was kostet ein Taxi nach Chaweng?" },
+  { label: "🛠️ How is setup done?", q: "Can Coco be added to my hotel or villa?" },
+  { label: "📊 What do hotels get?", q: "What does the Coco hotel dashboard show — conversations, languages, top questions?" },
+];
+const schema = [{
+  "@type": "Service",
+  "@id": `${SITE.url}/#hotel-plan`,
+  serviceType: "White-label AI concierge for hotels and villas",
+  provider: { "@id": `${SITE.url}/#organization` },
+  areaServed: { "@type": "Place", name: "Koh Samui, Thailand" },
+  description: "Embeddable 24/7 AI concierge for hotels and villas, configured to recommend the property's own restaurant, spa and experiences first. Free 14-day trial, then a flat monthly fee, cancellable anytime.",
+  offers: {
+    "@type": "Offer", price: "3500", priceCurrency: "THB",
+    priceSpecification: { "@type": "UnitPriceSpecification", price: "3500", priceCurrency: "THB", unitText: "MONTH" },
+    url: `${SITE.url}/hotels`, availability: "https://schema.org/InStock", eligibleCustomerType: "Business",
+  },
+}];
+const feats = [
+  { e: "🌐", t: "6 languages, 24/7", d: "English, French, German, Swedish, Thai & Chinese — no extra staff cost, no night shift needed." },
+  { e: "⭐", t: "Your services first", d: "On setup Coco is configured to recommend your spa, restaurant and in-house experiences before anything external. Never a competing hotel." },
+  { e: "⚡", t: "Live in minutes", d: "Embed on your website or WhatsApp, or add an in-room QR code with a trackable per-hotel link. Setup is done for you." },
+  { e: "📊", t: "Monthly insights", d: "A private dashboard: conversations, guest languages, top questions, how often your own services were recommended." },
+];
+---
+<Base
+  title="AI Concierge for Hotels & Villas in Koh Samui — 3,500 THB/month | Coco"
+  description="Add a 24/7 white-label AI concierge to your Koh Samui property. 6 languages, your services recommended first, in-room QR codes. 14-day free trial, no card, 3,500 THB/month."
+  chips={chips}
+  schema={schema}
+>
+  <Split>
+    <section class="py-16" aria-labelledby="h1">
+      <p class="sec-num mb-5">FOR HOTELS, VILLAS &amp; RESORTS</p>
+      <h1 id="h1" class="font-display max-w-[18ch] text-[clamp(2.2rem,5vw,3.6rem)] font-medium leading-[1.06] tracking-[-0.02em] text-white">
+        Your night-shift concierge, in six languages.
+      </h1>
+      <p class="mt-5 max-w-[52ch] text-[16px] leading-relaxed text-white/60">
+        The chat on this page is the live product. Try it as your guest would — then imagine it branded for <strong class="text-white">your property</strong>, recommending your services first.
+      </p>
+      <div class="mt-8 flex flex-wrap items-baseline gap-2.5">
+        <span class="thb font-display text-5xl font-semibold text-sand">{SITE.hotelPriceTHB} THB</span>
+        <span class="text-[14px] text-white/50">/ month · white-label · cancel anytime</span>
+      </div>
+      <p class="mt-2 text-[13.5px] text-white/60">Start with a <strong class="text-white">14-day free trial</strong> — no card required.</p>
+      <div class="mt-7 flex flex-wrap gap-3">
+        <a href="#trial" class="rounded-xl bg-coral px-6 py-3.5 text-[15px] font-semibold text-ink transition hover:bg-coral-deep hover:text-white">🌴 Start free trial</a>
+        <a href={SITE.waLink("Hi Cyril, I'm interested in Coco for my property — can we book a 15-min demo?")} target="_blank" rel="noopener" class="rounded-xl border hairline px-6 py-3.5 text-[15px] font-medium text-white/75 hover:text-white">💬 Book a 15-min demo</a>
+      </div>
+    </section>
+
+    <section class="border-t hairline py-14" aria-label="What you get">
+      <div class="grid gap-4 sm:grid-cols-2">
+        {feats.map((f) => (
+          <div class="rounded-2xl border hairline bg-ink-2 p-6">
+            <h2 class="text-[16px] font-bold text-white">{f.e} {f.t}</h2>
+            <p class="mt-2 text-[13.5px] leading-relaxed text-white/55">{f.d}</p>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <section class="border-t hairline py-14" aria-labelledby="steps-h">
+      <h2 id="steps-h" class="font-display text-[clamp(1.5rem,3vw,2.1rem)] font-medium text-white">Live at your property in three steps</h2>
+      <ol class="mt-8 space-y-6 text-[14.5px] leading-relaxed text-white/60">
+        <li class="flex gap-4"><span class="font-display text-foam" aria-hidden="true">1.</span><span><strong class="text-white">15-min call</strong> — your property, services and tone. That's all Cyril needs.</span></li>
+        <li class="flex gap-4"><span class="font-display text-foam" aria-hidden="true">2.</span><span><strong class="text-white">Setup done for you</strong> — branded chat page, website widget or WhatsApp, printable in-room QR cards.</span></li>
+        <li class="flex gap-4"><span class="font-display text-foam" aria-hidden="true">3.</span><span><strong class="text-white">Guests start asking</strong> — you get a dashboard link and a monthly summary. Cancel anytime.</span></li>
+      </ol>
+    </section>
+
+    <!-- Lead form -->
+    <section id="trial" class="border-t hairline py-14" aria-labelledby="form-h">
+      <h2 id="form-h" class="font-display text-[clamp(1.5rem,3vw,2.1rem)] font-medium text-white">Start your free trial</h2>
+      <p class="mt-2 text-[13.5px] text-white/50">No credit card · cancel anytime · reply within 24 hours</p>
+
+      <form id="lead-form" class="mt-8 max-w-xl space-y-4" novalidate>
+        <div class="grid gap-4 sm:grid-cols-2">
+          <div>
+            <label for="f-name" class="mb-1.5 block text-[13px] font-semibold text-white/80">Your name <span class="text-coral" aria-hidden="true">*</span></label>
+            <input id="f-name" name="name" type="text" required autocomplete="name" placeholder="Alex Dupont"
+              class="h-12 w-full rounded-xl border hairline bg-white/5 px-4 text-[14px] text-white placeholder:text-white/25 focus:border-teal focus:outline-none" />
+          </div>
+          <div>
+            <label for="f-hotel" class="mb-1.5 block text-[13px] font-semibold text-white/80">Property name <span class="text-coral" aria-hidden="true">*</span></label>
+            <input id="f-hotel" name="hotel" type="text" required autocomplete="organization" placeholder="The Samui Retreat"
+              class="h-12 w-full rounded-xl border hairline bg-white/5 px-4 text-[14px] text-white placeholder:text-white/25 focus:border-teal focus:outline-none" />
+          </div>
+          <div>
+            <label for="f-email" class="mb-1.5 block text-[13px] font-semibold text-white/80">Email <span class="text-coral" aria-hidden="true">*</span></label>
+            <input id="f-email" name="email" type="email" required autocomplete="email" placeholder="you@yourhotel.com"
+              class="h-12 w-full rounded-xl border hairline bg-white/5 px-4 text-[14px] text-white placeholder:text-white/25 focus:border-teal focus:outline-none" />
+          </div>
+          <div>
+            <label for="f-phone" class="mb-1.5 block text-[13px] font-semibold text-white/80">WhatsApp / phone</label>
+            <input id="f-phone" name="phone" type="tel" autocomplete="tel" placeholder="+66 81 234 5678"
+              class="h-12 w-full rounded-xl border hairline bg-white/5 px-4 text-[14px] text-white placeholder:text-white/25 focus:border-teal focus:outline-none" />
+          </div>
+        </div>
+        <div>
+          <label for="f-msg" class="mb-1.5 block text-[13px] font-semibold text-white/80">Anything to add? <span class="text-white/35">(optional)</span></label>
+          <textarea id="f-msg" name="message" rows="3" placeholder="e.g. We have 2 properties, prefer Thai + English…"
+            class="w-full rounded-xl border hairline bg-white/5 px-4 py-3 text-[14px] text-white placeholder:text-white/25 focus:border-teal focus:outline-none"></textarea>
+        </div>
+        <div>
+          <label for="f-lang" class="mb-1.5 block text-[13px] font-semibold text-white/80">Preferred language for setup</label>
+          <select id="f-lang" name="lang" class="h-12 w-full max-w-xs rounded-xl border hairline bg-white/5 px-4 text-[14px] text-white focus:border-teal focus:outline-none">
+            <option value="en" class="bg-ink-2">English</option>
+            <option value="fr" class="bg-ink-2">Français</option>
+            <option value="de" class="bg-ink-2">Deutsch</option>
+            <option value="sv" class="bg-ink-2">Svenska</option>
+          </select>
+        </div>
+        <label class="flex cursor-pointer items-start gap-3 text-[12.5px] leading-relaxed text-white/55">
+          <input id="f-consent" type="checkbox" required class="mt-0.5 size-4 shrink-0 accent-teal" />
+          <span>I agree that my name, email and phone will be stored to respond to this enquiry, as described in the <a href="/privacy" target="_blank" class="text-foam hover:underline">Privacy Policy</a>, and I accept the <a href="/terms" target="_blank" class="text-foam hover:underline">Terms</a>.</span>
+        </label>
+        <button type="submit" id="f-submit" class="h-13 cursor-pointer rounded-xl bg-coral px-8 py-3.5 text-[15px] font-semibold text-ink transition hover:bg-coral-deep hover:text-white disabled:opacity-50">
+          🌴 Start Free Trial
+        </button>
+        <p id="f-error" role="alert" hidden class="text-[13px] text-coral-deep"></p>
+      </form>
+      <div id="f-success" hidden class="mt-8 max-w-xl rounded-2xl border border-foam/30 bg-foam/8 p-6">
+        <p class="text-[16px] font-bold text-white">🎉 Request received!</p>
+        <p class="mt-2 text-[13.5px] leading-relaxed text-white/60">Cyril will reach out within 24 hours to set up your trial. Want to move faster? <a href={SITE.waLink("Hi Cyril, I just sent a trial request via the website — let's set it up!")} target="_blank" rel="noopener" class="text-foam hover:underline">Message him on WhatsApp now</a>.</p>
+      </div>
+    </section>
+  </Split>
+
+  <script>
+    const form = document.getElementById("lead-form") as HTMLFormElement;
+    const err = document.getElementById("f-error")!;
+    const btn = document.getElementById("f-submit") as HTMLButtonElement;
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      err.hidden = true;
+      const v = (id: string) => (document.getElementById(id) as HTMLInputElement).value.trim();
+      if (!(document.getElementById("f-consent") as HTMLInputElement).checked) {
+        err.textContent = "Please agree to the Privacy Policy and Terms to continue.";
+        err.hidden = false; return;
+      }
+      if (!v("f-name") || !v("f-hotel") || !v("f-email").includes("@")) {
+        err.textContent = "Please fill in your name, property and a valid email.";
+        err.hidden = false;
+        (form.querySelector(":invalid, [required]") as HTMLElement)?.focus();
+        return;
+      }
+      btn.disabled = true; btn.textContent = "Sending…";
+      try {
+        const r = await fetch("/api/lead", {
+          method: "POST", headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ name: v("f-name"), hotel: v("f-hotel"), email: v("f-email"), phone: v("f-phone"), message: v("f-msg"), lang: (document.getElementById("f-lang") as HTMLSelectElement).value, consent: true }),
+        });
+        const d = await r.json();
+        if (!r.ok || !d.ok) throw new Error(d.error || "Something went wrong.");
+        form.hidden = true;
+        document.getElementById("f-success")!.hidden = false;
+      } catch (ex) {
+        err.textContent = (ex as Error).message + " — or contact us on WhatsApp.";
+        err.hidden = false;
+        btn.disabled = false; btn.textContent = "🌴 Start Free Trial";
+      }
+    });
+  </script>
+</Base>

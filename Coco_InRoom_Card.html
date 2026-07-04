@@ -1,0 +1,53 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>Coco · In-room QR Card</title>
+<style>
+  :root{ --teal:#0E7C5A; --dark:#0B3D2E; --sand:#F5EFE0; }
+  *{ box-sizing:border-box; margin:0; padding:0; }
+  body{ font-family:'Segoe UI',Arial,sans-serif; background:#e9e6df; display:flex; flex-direction:column;
+        align-items:center; gap:18px; padding:24px; }
+  .toolbar{ font-size:13px; color:#555; }
+  .toolbar button{ background:var(--teal); color:#fff; border:0; padding:8px 14px; border-radius:8px; cursor:pointer; font-size:13px; }
+  .card{ width:360px; background:#fff; border-radius:22px; overflow:hidden;
+         box-shadow:0 10px 30px rgba(0,0,0,.15); border:1px solid #e3ddcf; }
+  .top{ background:linear-gradient(135deg,var(--teal),var(--dark)); color:#fff; padding:26px 24px 22px; text-align:center; }
+  .logo{ font-size:30px; font-weight:800; letter-spacing:.5px; }
+  .tag{ font-size:13px; opacity:.92; margin-top:4px; }
+  .body{ padding:22px 24px 12px; text-align:center; }
+  .scanline{ font-size:17px; font-weight:700; color:var(--dark); }
+  #qr{ display:flex; justify-content:center; margin:16px auto; }
+  #qr img,#qr canvas{ border:10px solid #fff; border-radius:12px; box-shadow:0 0 0 1px #e3ddcf; }
+  .url{ font-size:12px; color:var(--teal); word-break:break-all; margin-top:2px; }
+  .langs{ font-size:12.5px; color:#444; line-height:1.7; padding:14px 22px 4px; text-align:center; border-top:1px dashed #e0d9c8; margin-top:8px;}
+  .footer{ background:var(--sand); color:var(--dark); font-size:11px; text-align:center; padding:12px; }
+  @media print{ .toolbar{ display:none; } body{ background:#fff; padding:0; } .card{ box-shadow:none; border:none; } }
+</style>
+
+<div class="toolbar">Aperçu — clique pour imprimer ou exporter en PDF &nbsp; <button onclick="window.print()">Imprimer / PDF</button></div>
+
+<div class="card">
+  <div class="top">
+    <div class="logo">Coco 🥥</div>
+    <div class="tag">Your local AI concierge · Koh Samui</div>
+  </div>
+  <div class="body">
+    <div class="scanline">Scan me to plan your stay</div>
+    <div id="qr"></div>
+    <div class="url">coco-samui-ai.com</div>
+  </div>
+  <div class="langs">
+    🇬🇧 Ask me anything about Samui &nbsp;·&nbsp; 🇫🇷 Posez-moi vos questions<br>
+    🇩🇪 Fragen Sie mich &nbsp;·&nbsp; 🇷🇺 Спросите меня &nbsp;·&nbsp; 🇸🇪 Fråga mig &nbsp;·&nbsp; 🇨🇳 问我任何事
+  </div>
+  <div class="footer">Beaches · Restaurants · Diving · Tours · 24/7 · 6 languages</div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+<script>
+  new QRCode(document.getElementById("qr"), {
+    text: "https://coco-samui-ai.com/",
+    width: 210, height: 210,
+    colorDark: "#0B3D2E", colorLight: "#ffffff",
+    correctLevel: QRCode.CorrectLevel.H
+  });
+</script>

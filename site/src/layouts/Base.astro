@@ -1,0 +1,109 @@
+---
+import "@fontsource-variable/inter";
+import "@fontsource-variable/fraunces";
+import "../styles/global.css";
+import Nav from "../components/Nav.astro";
+import Footer from "../components/Footer.astro";
+import ChatPanel from "../components/ChatPanel.astro";
+import { SITE } from "../data/site";
+
+interface Chip { label: string; q: string; }
+interface Props {
+  title: string;
+  description: string;
+  /** Extra JSON-LD nodes for this page (merged into @graph). */
+  schema?: object[];
+  chips?: Chip[];
+  ogImage?: string;
+}
+const { title, description, schema = [], chips, ogImage = "/icon-512.png" } = Astro.props;
+const canonical = new URL(Astro.url.pathname.replace(/\.html$/, ""), SITE.url).href;
+
+const baseGraph = [
+  {
+    "@type": "Organization",
+    "@id": `${SITE.url}/#organization`,
+    name: "Coco — Samui AI Concierge",
+    url: `${SITE.url}/`,
+    logo: `${SITE.url}/icon-512.png`,
+    description:
+      "Coco is an AI travel concierge for Koh Samui answering travellers in English, French, German, Swedish, Thai and Chinese with local recommendations for hotels, diving, restaurants, tours and beaches, embeddable for hotels and villas as a 24/7 white-label concierge.",
+    founder: { "@type": "Person", "@id": `${SITE.url}/#founder`, name: SITE.founder.name, jobTitle: SITE.founder.title },
+    areaServed: { "@type": "Place", name: "Koh Samui, Surat Thani, Thailand" },
+    contactPoint: { "@type": "ContactPoint", telephone: SITE.whatsapp, contactType: "customer service", availableLanguage: ["English", "French", "German", "Swedish", "Thai", "Chinese"] },
+  },
+  {
+    "@type": "WebSite",
+    "@id": `${SITE.url}/#website`,
+    url: `${SITE.url}/`,
+    name: SITE.name,
+    publisher: { "@id": `${SITE.url}/#organization` },
+    inLanguage: "en",
+  },
+  ...schema,
+];
+---
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="google-site-verification" content="8ga3DgjkBl0rAi_ymCg09sk_GxdbbVsGpLi_-cdSDqI" />
+  <title>{title}</title>
+  <meta name="description" content={description} />
+  <link rel="canonical" href={canonical} />
+  <meta name="robots" content="index, follow" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Coco — Samui AI Concierge" />
+  <meta property="og:title" content={title} />
+  <meta property="og:description" content={description} />
+  <meta property="og:url" content={canonical} />
+  <meta property="og:image" content={new URL(ogImage, SITE.url).href} />
+  <meta property="og:locale" content="en_US" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content={title} />
+  <meta name="twitter:description" content={description} />
+  <meta name="twitter:image" content={new URL(ogImage, SITE.url).href} />
+
+  <link rel="sitemap" href="/sitemap-index.xml" />
+  <link rel="manifest" href="/manifest.json" />
+  <meta name="theme-color" content="#070d1c" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-title" content="Coco" />
+
+  <script type="application/ld+json" set:html={JSON.stringify({ "@context": "https://schema.org", "@graph": baseGraph })} />
+</head>
+<body class="min-h-dvh">
+  <a href="#main" class="skip-link">Skip to main content</a>
+  <Nav />
+
+  <main id="main" class="pt-16">
+    <slot />
+  </main>
+
+  <Footer />
+
+  <!-- ── Mobile dock (hidden when chat is in the desktop rail) ── -->
+  <div id="coco-dock" hidden class="fixed inset-x-0 bottom-0 z-40 border-t hairline bg-ink/95 px-4 pb-[max(env(safe-area-inset-bottom),10px)] pt-2.5 backdrop-blur-xl">
+    <button type="button" data-coco-open class="flex h-12 w-full cursor-pointer items-center gap-3 rounded-2xl border border-teal/40 bg-ink-2 px-4 text-left shadow-[0_-8px_30px_rgba(0,0,0,.35)]">
+      <span class="grid size-8 shrink-0 place-items-center rounded-lg bg-gradient-to-br from-teal to-foam text-base" aria-hidden="true">🌴</span>
+      <span class="flex-1 truncate text-[13.5px] text-white/50">Ask me anything about Koh Samui…</span>
+      <span class="rounded-lg bg-teal px-3 py-1.5 text-[12px] font-semibold text-white">Ask Coco</span>
+    </button>
+  </div>
+
+  <!-- ── Mobile bottom sheet ── -->
+  <div id="coco-sheet" hidden role="dialog" aria-modal="true" aria-label="Chat with Coco"
+    class="fixed inset-0 z-50 translate-y-full bg-black/50 backdrop-blur-sm">
+    <div id="chat-sheet-slot" class="absolute inset-x-0 bottom-0 top-[max(env(safe-area-inset-top),12px)] mx-auto flex max-w-2xl flex-col overflow-hidden rounded-t-3xl p-0 [&>#coco-chat]:rounded-b-none [&>#coco-chat]:rounded-t-3xl [&>#coco-chat]:h-full"></div>
+  </div>
+
+  <ChatPanel chips={chips} />
+
+  <script>
+    if ("serviceWorker" in navigator) navigator.serviceWorker.register("/sw.js").catch(() => {});
+  </script>
+</body>
+</html>

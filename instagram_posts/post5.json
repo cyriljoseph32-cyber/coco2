@@ -1,0 +1,18 @@
+{
+  "date": "2026-06-29T12:00:00Z",
+  "integrations": ["cmqgigpl301iio80yfzquv1sf"],
+  "posts": [
+    {
+      "provider": "instagram-standalone",
+      "post": [
+        {
+          "content": "Chaweng is beautiful. But in peak season? 🫠\n\nSilver Beach is Koh Samui's best-kept secret.\nCrystal water, almost no crowds, easy parking, great for snorkeling. 🤿\n\nAsk Coco for more hidden spots on the island 🥥\nLink in bio.\n\n#kohsamui #silverbeach #samuibeach #hiddenbeach #travelthailand #kohsamuiisland #samuiisland #beach #beachthailand #traveltips",
+          "image": ["https://uploads.postiz.com/gcjWfHMH7P.jpg"]
+        }
+      ],
+      "settings": {
+        "post_type": "post"
+      }
+    }
+  ]
+}

@@ -1,0 +1,72 @@
+---
+import Base from "../layouts/Base.astro";
+---
+<Base
+  title="Privacy Policy — Coco Samui AI Concierge"
+  description="How Coco (coco-samui-ai.com) collects, uses and protects your data under the GDPR and Thailand's PDPA."
+>
+  <article class="prose-legal mx-auto max-w-[820px] px-5 py-16 sm:px-8">
+    <p class="sec-num mb-5">LEGAL</p>
+    <h1 class="font-display text-[clamp(2rem,4.5vw,3rem)] font-medium tracking-[-0.02em] text-white">Privacy Policy</h1>
+    <p class="mt-2 text-[13px] text-white/40">Last updated: 4 July 2026</p>
+
+    <div class="mt-7 rounded-xl border hairline bg-ink-2 p-5 text-[13.5px] leading-relaxed text-white/60">
+      This policy explains what personal data Coco collects and why. It is written to meet the EU/EEA/UK <strong class="text-white">GDPR</strong> and Thailand's <strong class="text-white">Personal Data Protection Act (PDPA)</strong>. It is a good-faith template and should be reviewed by a qualified lawyer before you rely on it commercially.
+    </div>
+
+    <h2>1. Who we are (Data Controller)</h2>
+    <p>Coco ("Coco", "we", "us") is an AI travel concierge for Koh Samui operated by Cyril Joseph, based in Koh Samui, Surat Thani, Thailand. For any privacy request, contact: <a href="mailto:privacy@coco-samui-ai.com">privacy@coco-samui-ai.com</a> or via WhatsApp <a href="https://wa.me/66633753316">+66 63 375 3316</a>.</p>
+
+    <h2>2. What we collect and why</h2>
+    <div class="overflow-x-auto">
+      <table>
+        <thead><tr><th>Data</th><th>Purpose</th><th>Legal basis</th></tr></thead>
+        <tbody>
+          <tr><td>Chat messages you send to Coco</td><td>To generate travel answers. Messages are sent to our AI provider (Anthropic) for processing.</td><td>Legitimate interest / consent</td></tr>
+          <tr><td>Hotel partner enquiry: name, email, phone, property, message</td><td>To respond to your enquiry and set up a trial.</td><td>Consent / steps prior to a contract</td></tr>
+          <tr><td>Aggregated, non-identifying usage counts (e.g. questions per property, language)</td><td>To improve the service and report to partner hotels.</td><td>Legitimate interest</td></tr>
+          <tr><td>Technical data (IP address, approximate region, user agent)</td><td>Security, abuse-prevention and rate-limiting.</td><td>Legitimate interest</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>We do <strong>not</strong> knowingly collect data from children, we do not sell your data, and we do not require an account to chat with Coco.</p>
+
+    <h2>3. Processors and third parties</h2>
+    <ul>
+      <li><strong>Anthropic</strong> (AI model provider) — processes chat messages to produce answers.</li>
+      <li><strong>Vercel</strong> — hosting and serverless functions.</li>
+      <li><strong>Upstash / Vercel KV (Redis)</strong> — stores partner enquiries and aggregated usage counts.</li>
+      <li><strong>Affiliate partners</strong> (Viator, Klook, GetYourGuide, Booking.com) — only if you click a booking link; they then apply their own privacy policies.</li>
+    </ul>
+
+    <h2>4. Affiliate links</h2>
+    <p>Some booking links Coco shows are affiliate links. If you book through them, Coco may earn a commission at no extra cost to you. This never changes the price you pay. See our <a href="/terms">Terms</a> for details.</p>
+
+    <h2>5. International transfers</h2>
+    <p>Coco operates from Thailand and uses providers that may process data outside your country (including the EU and the US). Where required, transfers rely on appropriate safeguards such as Standard Contractual Clauses.</p>
+
+    <h2>6. Retention</h2>
+    <p>Partner enquiries are kept for up to 24 months to manage the commercial relationship, then deleted. Aggregated usage counts contain no personal data and may be kept indefinitely. Chat messages are not stored by Coco for long-term profiling.</p>
+
+    <h2>7. Your rights</h2>
+    <p>Under the GDPR and PDPA you may request access, correction, deletion, restriction, portability, or object to processing, and withdraw consent at any time. To exercise any right, email <a href="mailto:privacy@coco-samui-ai.com">privacy@coco-samui-ai.com</a>. You may also lodge a complaint with your local data protection authority (EU) or the PDPC (Thailand).</p>
+
+    <h2>8. Cookies &amp; local storage</h2>
+    <p>Coco uses only essential local storage (for the PWA/service worker and to remember your language). We do not use third-party advertising or tracking cookies.</p>
+
+    <h2>9. Changes</h2>
+    <p>We may update this policy; the "last updated" date above will change. Material changes will be highlighted on this page.</p>
+  </article>
+
+  <style>
+    .prose-legal h2 { color: #fff; font-size: 19px; font-weight: 700; margin: 34px 0 10px; }
+    .prose-legal p, .prose-legal li { color: rgb(255 255 255 / 0.6); font-size: 14px; line-height: 1.75; margin-bottom: 12px; }
+    .prose-legal ul { padding-left: 22px; list-style: disc; }
+    .prose-legal a { color: var(--color-foam); }
+    .prose-legal a:hover { text-decoration: underline; }
+    .prose-legal strong { color: rgb(255 255 255 / 0.85); }
+    .prose-legal table { width: 100%; border-collapse: collapse; margin: 14px 0; font-size: 13.5px; }
+    .prose-legal th, .prose-legal td { border: 1px solid rgb(255 255 255 / 0.1); padding: 9px 11px; text-align: left; vertical-align: top; color: rgb(255 255 255 / 0.6); }
+    .prose-legal th { color: #fff; background: var(--color-ink-2); }
+  </style>
+</Base>

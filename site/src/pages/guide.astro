@@ -1,0 +1,58 @@
+---
+import Base from "../layouts/Base.astro";
+import Split from "../layouts/Split.astro";
+import { GUIDE } from "../data/content";
+
+const chips = [
+  { label: "🚢 Ferry times", q: "Ferry times and prices from Koh Samui to Koh Phangan and Koh Tao?" },
+  { label: "💊 Pharmacy/hospital", q: "Which hospital should I go to on Koh Samui? Emergency numbers?" },
+  { label: "🛵 Rent a scooter?", q: "Should I rent a motorbike on Koh Samui — safety, price, license requirements?" },
+  { label: "🌧️ Monsoon months", q: "What is the best time of year to visit Koh Samui?" },
+];
+---
+<Base
+  title="Koh Samui Practical Guide — Money, Ferries, SIM, Safety | Coco"
+  description="Essential Koh Samui facts: THB budgets and ATM fees, songthaew and Grab prices, ferry routes to Koh Phangan and Koh Tao, AIS SIM cards, temple etiquette, hospitals and diving safety."
+  chips={chips}
+>
+  <Split>
+    <section class="py-16" aria-labelledby="h1">
+      <p class="sec-num mb-5">PRACTICAL GUIDE</p>
+      <h1 id="h1" class="font-display max-w-[16ch] text-[clamp(2.2rem,5vw,3.6rem)] font-medium leading-[1.06] tracking-[-0.02em] text-white">
+        Everything you need to know.
+      </h1>
+      <p class="mt-5 max-w-[50ch] text-[16px] leading-relaxed text-white/60">
+        The essentials for a smooth, safe stay — and every card opens a deeper conversation with Coco.
+      </p>
+    </section>
+
+    <section class="border-t hairline py-12" aria-label="Practical tips">
+      <ul class="space-y-3">
+        {GUIDE.map((t) => (
+          <li>
+            <button type="button" data-coco-q={t.q} class="flex w-full cursor-pointer items-start gap-4 rounded-2xl border hairline bg-ink-2 p-5 text-left transition hover:border-foam/40">
+              <span class="text-2xl" aria-hidden="true">{t.emoji}</span>
+              <span class="min-w-0">
+                <span class="block text-[15.5px] font-bold text-white">{t.title}</span>
+                <span class="thb mt-1.5 block text-[13.5px] leading-relaxed text-white/55">{t.text}</span>
+                <span class="mt-2 block text-[12.5px] font-semibold text-foam">Ask Coco more →</span>
+              </span>
+            </button>
+          </li>
+        ))}
+      </ul>
+    </section>
+
+    <section class="border-t hairline py-12" aria-labelledby="emg-h">
+      <div class="rounded-2xl border border-coral/30 bg-coral/8 p-6">
+        <h2 id="emg-h" class="text-[15px] font-bold text-white">🚨 Emergency numbers</h2>
+        <ul class="thb mt-3 grid gap-2 text-[14px] text-white/70 sm:grid-cols-3">
+          <li><strong class="text-white">1669</strong> — Ambulance</li>
+          <li><strong class="text-white">1155</strong> — Tourist police (EN)</li>
+          <li><strong class="text-white">191</strong> — Police</li>
+        </ul>
+        <p class="mt-3 text-[12.5px] text-white/50">Most reliable hospital: Bangkok Hospital Samui (Chaweng). Travel insurance strongly recommended for diving and water activities.</p>
+      </div>
+    </section>
+  </Split>
+</Base>

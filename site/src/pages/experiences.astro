@@ -1,0 +1,55 @@
+---
+import Base from "../layouts/Base.astro";
+import Split from "../layouts/Split.astro";
+import { EXPERIENCES } from "../data/content";
+
+const chips = [
+  { label: "🦈 Whale sharks?", q: "When can I see whale sharks at Sail Rock and how do I book?" },
+  { label: "🏝️ Ang Thong tour", q: "Tell me everything about Ang Thong Marine Park — tours, timing, what to bring." },
+  { label: "🍜 Cooking class", q: "Best Thai cooking classes on Koh Samui with market visit?" },
+  { label: "🥊 Muay Thai", q: "Where can I train Muay Thai on Koh Samui — drop-in classes and prices?" },
+];
+const schema = [{
+  "@type": "ItemList",
+  name: "Signature Koh Samui experiences",
+  itemListElement: EXPERIENCES.map((e, i) => ({
+    "@type": "ListItem", position: i + 1,
+    item: { "@type": "TouristAttraction", name: e.title, description: e.desc },
+  })),
+}];
+---
+<Base
+  title="Signature Koh Samui Experiences — Sail Rock, Ang Thong & More | Coco"
+  description="The six experiences every Koh Samui visitor should have — Sail Rock diving, Ang Thong Marine Park, Pig Island, sunset cruises — with honest THB prices and instant booking help."
+  chips={chips}
+  schema={schema}
+>
+  <Split>
+    <section class="py-16" aria-labelledby="h1">
+      <p class="sec-num mb-5">MUST-DO</p>
+      <h1 id="h1" class="font-display max-w-[16ch] text-[clamp(2.2rem,5vw,3.6rem)] font-medium leading-[1.06] tracking-[-0.02em] text-white">
+        Six experiences worth the flight.
+      </h1>
+      <p class="mt-5 max-w-[50ch] text-[16px] leading-relaxed text-white/60">
+        Handpicked, honestly priced. Prices are indicative in THB — Coco gives you current rates and booking options on request.
+      </p>
+    </section>
+
+    <section class="border-t hairline py-12" aria-label="Experiences">
+      <ol class="space-y-10">
+        {EXPERIENCES.map((e, i) => (
+          <li class="grid gap-4 border-b hairline pb-10 last:border-0 last:pb-0 md:grid-cols-[64px_1fr_auto] md:items-start">
+            <span class="font-display text-[26px] font-medium text-foam/50" aria-hidden="true">{String(i + 1).padStart(2, "0")}</span>
+            <div>
+              <h2 class="text-[20px] font-bold text-white">{e.emoji} {e.title}</h2>
+              <p class="mt-2.5 max-w-[58ch] text-[14.5px] leading-relaxed text-white/55">{e.desc}</p>
+              <button type="button" data-coco-q={e.q} class="mt-4 cursor-pointer rounded-xl border border-foam/30 px-4 py-2.5 text-[13px] font-semibold text-foam transition hover:bg-foam/10">{e.cta} →</button>
+            </div>
+            <span class="thb rounded-full border hairline bg-white/4 px-4 py-2 text-[12.5px] font-semibold text-sand md:mt-1.5">{e.price}</span>
+          </li>
+        ))}
+      </ol>
+      <p class="mt-8 text-[11.5px] text-white/35">Some booking options are affiliate links — commission never changes your price. <a href="/terms" class="text-foam/70 hover:text-foam">Details</a>.</p>
+    </section>
+  </Split>
+</Base>

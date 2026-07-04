@@ -1,6 +1,0 @@
-fastapi>=0.115
-uvicorn[standard]>=0.30
-sqlalchemy>=2.0
-pydantic>=2.7
-# Pilote PostgreSQL (prod). En dev, SQLite (stdlib) suffit.
-psycopg[binary]>=3.1
