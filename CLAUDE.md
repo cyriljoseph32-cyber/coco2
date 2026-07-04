@@ -23,4 +23,10 @@ Validation: `node --env-file=samui-concierge-mcp/.env scripts/smoke-test.mjs`
 (unit-tests affiliate builders + live-tests Google/Viator/OpenWeather with real keys).
 Batch data refresh: `node --env-file=samui-concierge-mcp/.env scripts/build-samui-data.mjs`.
 
+**Mobile app shell** (`public/index.html`): at ≤768px the page becomes a chat-first bot shell —
+`100dvh` hero with the chat filling the viewport, composer + safe-area at the bottom, ☰ bottom
+menu sheet, snap carousels for beaches/experiences, floating "Ask Coco" pill when scrolled.
+All of it lives in the `@media(max-width:768px)` block + `.m-only` elements; desktop markup/CSS
+must stay untouched. Inputs stay ≥16px font (iOS zoom), tap targets ≥44px.
+
 Most other files at the root are business collateral (pitch decks, outreach kits, contracts) — not code.
