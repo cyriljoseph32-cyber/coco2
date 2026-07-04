@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   <meta name="google-site-verification" content="8ga3DgjkBl0rAi_ymCg09sk_GxdbbVsGpLi_-cdSDqI" />
   <title>Coco — AI Concierge Koh Samui 🌴</title>
   <meta name="description" content="Coco is your AI travel concierge for Koh Samui — ask anything about hotels, diving, restaurants, beaches, tours and transport. Instant expert answers in 6 languages." />
@@ -384,6 +384,116 @@
       .foot-top{grid-template-columns:1fr}
       .ch-msgs{height:250px}
     }
+
+    /* ══ MOBILE APP SHELL (≤768px) — the bot IS the product ══ */
+    .m-only{display:none}
+    @media(max-width:768px){
+      body{-webkit-tap-highlight-color:transparent}
+      section{scroll-margin-top:56px}
+
+      /* top bar */
+      nav{height:52px;padding:0 14px}
+      .nav-logo{width:28px;height:28px;font-size:13px}
+      .nav-name{font-size:17px}
+      .m-langs{display:block;margin-left:auto;margin-right:10px;font-size:10px;color:var(--dim);letter-spacing:.4px}
+      .nav-menu-btn{min-width:44px;min-height:44px;display:flex;align-items:center;justify-content:center}
+
+      /* screen 1: full-viewport chat */
+      .hero{min-height:0;height:var(--appvh,100dvh);padding:52px 0 0;justify-content:flex-start;overflow:visible}
+      .hero-badge,.hero h1,.hero-sub,.hero-stats{display:none}
+      .m-trust{display:flex;align-items:center;justify-content:center;gap:6px;width:100%;padding:7px 14px;font-size:11.5px;color:var(--muted);text-align:center;position:relative;z-index:1}
+      .m-trust b{color:var(--teal-l);font-weight:600}
+      .chat-hero-wrap{flex:1;display:flex;flex-direction:column;min-height:0;max-width:none}
+      .chat-hero-wrap::before{display:none}
+      .chat-hero{flex:1;display:flex;flex-direction:column;min-height:0;border-radius:0;border-left:none;border-right:none;box-shadow:none}
+      .ch-head{padding:10px 14px}
+      .ch-msgs{flex:1;height:auto;min-height:0;overscroll-behavior:contain;padding:14px}
+      .msg{max-width:90%}
+      .ex-q{min-height:46px;font-size:13.5px}
+      .cat-chips-row{padding:8px 12px}
+      .c-chip{min-height:40px;padding:0 15px;font-size:12.5px;align-items:center}
+      .ch-inp-area{padding:10px 12px}
+      .chat-inp{font-size:16px}
+      .send-btn{width:46px;height:46px}
+      .chat-hero > div:last-child{font-size:9.5px;line-height:1.45;margin-top:0;padding:5px 12px calc(5px + env(safe-area-inset-bottom))}
+
+      /* floating return-to-chat pill */
+      .m-pill{position:fixed;bottom:calc(16px + env(safe-area-inset-bottom));left:50%;transform:translateX(-50%);z-index:900;display:none;align-items:center;gap:8px;background:var(--teal);color:#fff;border:none;border-radius:100px;padding:13px 24px;font-size:14.5px;font-weight:700;font-family:inherit;cursor:pointer;box-shadow:0 8px 28px rgba(0,0,0,.5),0 0 0 1px rgba(255,255,255,.08)}
+      .m-pill.show{display:flex}
+
+      /* menu sheet */
+      .m-sheet-bk{display:block;position:fixed;inset:0;z-index:1100;background:rgba(0,0,0,.55);opacity:0;pointer-events:none;transition:opacity .2s}
+      .m-sheet{display:block;position:fixed;left:0;right:0;bottom:0;z-index:1101;background:var(--bg-2);border-top:1px solid var(--border-s);border-radius:20px 20px 0 0;padding:8px 16px calc(16px + env(safe-area-inset-bottom));transform:translateY(105%);transition:transform .25s ease;max-height:82dvh;overflow-y:auto}
+      body.sheet-open .m-sheet{transform:translateY(0)}
+      body.sheet-open .m-sheet-bk{opacity:1;pointer-events:auto}
+      .m-sheet-grab{width:38px;height:4px;background:var(--dim);border-radius:2px;margin:6px auto 12px}
+      .m-sheet a{display:flex;align-items:center;gap:12px;min-height:48px;padding:0 8px;color:var(--text);text-decoration:none;font-size:15px;font-weight:600;border-radius:10px}
+      .m-sheet a:active{background:var(--card-h)}
+      .m-sheet .m-sheet-wa{background:var(--teal);color:#fff;justify-content:center;margin-top:10px;border-radius:12px}
+
+      /* use-case rows */
+      .m-usecases{display:flex;flex-direction:column;gap:8px;padding:28px 16px 8px;background:var(--bg-2)}
+      .m-usecases button{display:flex;align-items:center;gap:12px;min-height:52px;padding:0 16px;background:var(--card);border:1px solid var(--border);border-radius:14px;color:var(--text);font-size:14px;font-weight:600;font-family:inherit;text-align:left;cursor:pointer}
+      .m-usecases button span:last-child{margin-left:auto;color:var(--teal-l)}
+      .m-uc-lbl{font-size:10.5px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:var(--teal-l);padding:0 2px 2px}
+
+      /* sections → compact modules */
+      section{padding:40px 16px}
+      .s-sub{margin-bottom:24px;font-size:13.5px}
+
+      /* explore: list rows */
+      .cat-grid{display:flex;flex-direction:column;gap:8px}
+      .cat-card{flex-direction:row;text-align:left;padding:0 14px;min-height:56px;gap:12px;justify-content:flex-start}
+      .cat-icon{font-size:22px}
+      .cat-name{font-size:14px}
+      .cat-count{margin-left:auto;font-size:11px;flex-shrink:0}
+      .listings-grid{grid-template-columns:1fr}
+      .ask-btn{min-height:40px;padding:0 16px}
+
+      /* beaches + experiences: snap carousels */
+      .beach-grid{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:12px;margin:0 -16px;padding:0 16px 6px;scrollbar-width:none}
+      .beach-grid::-webkit-scrollbar{display:none}
+      .beach-card{flex:0 0 72%;scroll-snap-align:start;height:180px}
+      .exp-grid{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:12px;margin:0 -16px;padding:0 16px 6px;scrollbar-width:none}
+      .exp-grid::-webkit-scrollbar{display:none}
+      .exp-card{flex:0 0 82%;scroll-snap-align:start;display:flex;flex-direction:column}
+      .exp-head{padding:20px 18px 14px;flex:1}
+      .exp-ask{min-height:40px}
+
+      /* how it works: numbered rows */
+      .how-grid{display:flex;flex-direction:column;gap:10px}
+      .how-step{display:grid;grid-template-columns:38px 1fr;column-gap:14px;row-gap:2px;text-align:left;padding:16px}
+      .how-num{grid-row:1/3;width:38px;height:38px;margin:0;font-size:16px}
+      .how-title{font-size:14.5px;margin:0;align-self:center}
+
+      /* practical: collapsible rows */
+      .tip-card{padding:14px 16px;cursor:pointer}
+      .tip-ico{font-size:18px;margin-bottom:0;display:inline;margin-right:9px}
+      .tip-title{display:inline;font-size:13.5px}
+      .tip-card::after{content:'▾';float:right;color:var(--teal-l);transition:transform .2s}
+      .tip-card.open::after{transform:rotate(180deg)}
+      .tip-text{display:none;margin-top:9px}
+      .tip-card.open .tip-text{display:block}
+
+      /* B2B + contact + faq */
+      .b2b-inner{padding:30px 18px}
+      .b2b-sub{font-size:14px;margin-bottom:26px}
+      .b2b-feats{margin-bottom:28px}
+      .b2b-price{font-size:32px}
+      .btn-coral{width:100%;justify-content:center;min-height:52px}
+      .wa-btn{width:100%;justify-content:center}
+      .faq-q{min-height:52px}
+
+      /* slim footer */
+      .foot-top{grid-template-columns:1fr;gap:22px}
+      .foot-top > div:nth-child(2),.foot-top > div:nth-child(3){display:none}
+      .foot-link{min-height:36px;display:flex;align-items:center}
+      footer{padding:36px 16px calc(90px + env(safe-area-inset-bottom))}
+    }
+    @media(hover:none){
+      .cat-card:hover,.lst-card:hover,.exp-card:hover,.beach-card:hover{transform:none}
+      .send-btn:hover{transform:none}
+    }
   </style>
 </head>
 <body>
@@ -401,8 +511,28 @@
     <a href="#for-hotels" class="nav-link">For Hotels</a>
     <a href="https://wa.me/66633753316" target="_blank" class="nav-cta">📱 WhatsApp</a>
   </div>
-  <button class="nav-menu-btn" onclick="document.querySelector('.nav-links').style.display=document.querySelector('.nav-links').style.display==='flex'?'none':'flex'">☰</button>
+  <span class="m-langs m-only">EN·FR·DE·SV·TH·中文</span>
+  <button class="nav-menu-btn" onclick="toggleSheet()" aria-label="Menu" aria-expanded="false" id="menuBtn">☰</button>
 </nav>
+
+<!-- ── MOBILE MENU SHEET ── -->
+<div class="m-sheet-bk m-only" onclick="toggleSheet(false)"></div>
+<div class="m-sheet m-only" role="dialog" aria-label="Menu">
+  <div class="m-sheet-grab"></div>
+  <a href="#home" onclick="toggleSheet(false)">💬 Chat with Coco</a>
+  <a href="#how" onclick="toggleSheet(false)">✨ How Coco Works</a>
+  <a href="#explore" onclick="toggleSheet(false)">🧭 Explore</a>
+  <a href="#experiences" onclick="toggleSheet(false)">🎯 Experiences</a>
+  <a href="#beaches" onclick="toggleSheet(false)">🏖️ Beaches</a>
+  <a href="#practical" onclick="toggleSheet(false)">📋 Practical Guide</a>
+  <a href="#for-hotels" onclick="toggleSheet(false)">🏨 Hotels &amp; Villas</a>
+  <a href="#faq" onclick="toggleSheet(false)">❓ FAQ</a>
+  <a href="#contact" onclick="toggleSheet(false)">👋 Contact</a>
+  <a class="m-sheet-wa" href="https://wa.me/66633753316" target="_blank" rel="noopener">📱 WhatsApp</a>
+</div>
+
+<!-- ── MOBILE RETURN-TO-CHAT PILL ── -->
+<button class="m-pill m-only" id="askPill" onclick="scrollToChat()">💬 Ask Coco</button>
 
 <!-- ── HERO: CHAT IS THE MAIN ELEMENT ── -->
 <section class="hero" id="home">
@@ -416,6 +546,7 @@
 
   <h1>Ask me anything about<br><span class="accent">Koh Samui</span></h1>
   <p class="hero-sub">Hotels, diving, restaurants, beaches, wellness, transport — expert local answers in seconds, in 6 languages.</p>
+  <div class="m-trust m-only"><b>Free</b> AI concierge for Koh Samui · <b>6 languages</b> · no signup</div>
 
   <!-- ── THE MAIN CHAT WINDOW ── -->
   <div class="chat-hero-wrap">
@@ -482,6 +613,15 @@
     <div class="h-stat"><div class="h-stat-n">6</div><div class="h-stat-l">Languages</div></div>
   </div>
 </section>
+
+<!-- ── MOBILE KEY USE CASES ── -->
+<div class="m-usecases m-only" aria-label="What Coco can do">
+  <div class="m-uc-lbl">What Coco can do</div>
+  <button onclick="askQ('Plan me a 5-day Koh Samui itinerary with beaches, food and one boat trip.')">🗺️ Plan my Samui itinerary<span>→</span></button>
+  <button onclick="askQ('Help me choose the right hotel and area in Koh Samui for my trip.')">🏨 Find my hotel &amp; area<span>→</span></button>
+  <button onclick="askQ('How do I book a dive trip to Sail Rock from Koh Samui?')">🤿 Book a dive at Sail Rock<span>→</span></button>
+  <button onclick="askQ('How do I get around Koh Samui and to Koh Phangan and Koh Tao?')">⛴️ Get around &amp; island-hop<span>→</span></button>
+</div>
 
 <!-- ── EXPLORE ── -->
 <section id="explore">
@@ -910,7 +1050,11 @@ function closeCat(){
 
 function scrollToChat(){
   window.scrollTo({top:0,behavior:'smooth'});
-  setTimeout(function(){document.getElementById('chatInput').focus();},400);
+  var t0=Date.now();
+  (function waitTop(){
+    if(window.scrollY<2 || Date.now()-t0>1500){ document.getElementById('chatInput').focus({preventScroll:true}); }
+    else{ requestAnimationFrame(waitTop); }
+  })();
 }
 
 function resize(el){
@@ -940,6 +1084,38 @@ function askQ(text){
 function toggleFaq(btn){
   var item=btn.closest('.faq-item');
   item.classList.toggle('open');
+}
+
+// ── Mobile app shell ──
+var MQ=window.matchMedia('(max-width:768px)');
+
+function toggleSheet(force){
+  var open=(typeof force==='boolean')?force:!document.body.classList.contains('sheet-open');
+  document.body.classList.toggle('sheet-open',open);
+  var b=document.getElementById('menuBtn'); if(b) b.setAttribute('aria-expanded',open);
+}
+
+// floating "Ask Coco" pill when chat screen is scrolled away (mobile only)
+(function(){
+  var hero=document.getElementById('home'), pill=document.getElementById('askPill');
+  if(!hero||!pill||!('IntersectionObserver' in window)) return;
+  new IntersectionObserver(function(en){
+    pill.classList.toggle('show', MQ.matches && !en[0].isIntersecting);
+  },{threshold:0.05}).observe(hero);
+})();
+
+// practical guide rows collapse on mobile
+document.querySelectorAll('.tip-card').forEach(function(c){
+  c.addEventListener('click',function(){ if(MQ.matches) c.classList.toggle('open'); });
+});
+
+// keyboard: size the app shell to the visual viewport so the composer stays visible
+if(window.visualViewport){
+  window.visualViewport.addEventListener('resize',function(){
+    if(!MQ.matches){ document.documentElement.style.removeProperty('--appvh'); return; }
+    document.documentElement.style.setProperty('--appvh', window.visualViewport.height+'px');
+    var m=document.getElementById('chatMsgs'); if(m) m.scrollTop=m.scrollHeight;
+  });
 }
 
 var chatHistory=[];
