@@ -89,5 +89,5 @@ body {
 @keyframes ty { 0%,60%,100% { opacity: .25; transform: translateY(0);} 30% { opacity: 1; transform: translateY(-3px);} }
 
 /* Bottom sheet (mobile chat) */
-#coco-sheet { transition: transform .28s cubic-bezier(.32,.72,0,1); }
-#coco-sheet.open { transform: translateY(0); }
+#coco-sheet { transition: translate .28s cubic-bezier(.32,.72,0,1); }
+#coco-sheet.open { translate: 0 0; }

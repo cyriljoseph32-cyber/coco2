@@ -3,9 +3,11 @@
 Two deployables in this folder:
 
 1. **Vercel app** (root) — Coco, the AI concierge chatbot. `api/chat.js` (Claude Haiku),
-   `api/enrich.js`, `api/lead.js`, `api/stats.js`; static frontend in `public/`.
+   `api/enrich.js`, `api/lead.js`, `api/stats.js`. **The deployed frontend is the Astro
+   app in `site/`** (`vercel.json`: build `site/` → `site/dist`; static assets in
+   `site/public/`). Root `public/` is the LEGACY pre-Astro site — NOT deployed; don't edit it.
    Production: https://coco-samui-ai.com (Vercel project `coco-samui-concierge`).
-   Deploy: `vercel --prod`. Env vars live in Vercel → Settings → Environment Variables.
+   Deploys: merge to `main` (Git integration) or `vercel --prod`. Env vars in Vercel settings.
 2. **MCP server** (`samui-concierge-mcp/`) — stdio server for Claude Desktop that wraps the
    same providers (Google Places, Viator, TripAdvisor, affiliate links). Build: `npm run build`
    inside that folder. Keys in `samui-concierge-mcp/.env`. See its `DEPLOY.md`.
@@ -23,10 +25,11 @@ Validation: `node --env-file=samui-concierge-mcp/.env scripts/smoke-test.mjs`
 (unit-tests affiliate builders + live-tests Google/Viator/OpenWeather with real keys).
 Batch data refresh: `node --env-file=samui-concierge-mcp/.env scripts/build-samui-data.mjs`.
 
-**Mobile app shell** (`public/index.html`): at ≤768px the page becomes a chat-first bot shell —
-`100dvh` hero with the chat filling the viewport, composer + safe-area at the bottom, ☰ bottom
-menu sheet, snap carousels for beaches/experiences, floating "Ask Coco" pill when scrolled.
-All of it lives in the `@media(max-width:768px)` block + `.m-only` elements; desktop markup/CSS
-must stay untouched. Inputs stay ≥16px font (iOS zoom), tap targets ≥44px.
+**Mobile chat** (Astro site): one chat DOM instance (`site/src/components/ChatPanel.astro`),
+relocated by JS — desktop ≥1280px into `#chat-rail-slot`, below that into the bottom sheet
+(`#coco-sheet` in `Base.astro`), opened from the fixed dock. Gotcha: Tailwind v4 translate
+utilities use the CSS `translate` property, not `transform` — override with `translate`,
+never `transform` (this bug once left the sheet permanently off-screen). Chat input must
+stay ≥16px font (iOS focus-zoom).
 
 Most other files at the root are business collateral (pitch decks, outreach kits, contracts) — not code.
