@@ -1,9 +1,14 @@
 {
+  "$schema": "https://openapi.vercel.sh/vercel.json",
   "installCommand": "npm install && npm --prefix site install",
   "buildCommand": "npm --prefix site run build",
   "outputDirectory": "site/dist",
   "cleanUrls": true,
   "trailingSlash": false,
+  "functions": {
+    "api/chat.js": { "maxDuration": 60, "memory": 2048 },
+    "api/enrich.js": { "maxDuration": 60, "memory": 2048 }
+  },
   "redirects": [
     { "source": "/hotel-setup", "destination": "/hotels", "permanent": true },
     { "source": "/hotel-setup.html", "destination": "/hotels", "permanent": true },
