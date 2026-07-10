@@ -10,14 +10,14 @@
 
 | Nom | Email | Priorité | Date envoi | Statut |
 | --- | --- | --- | --- | --- |
-| Yuka Residence | yukaresidencesamui@gmail.com | HOT | 2026-07-08 | Brouillon créé ✅ — à envoyer |
-| Kanda Residences | info@kandapoolvillas.com | HOT | 2026-07-08 | Brouillon créé ✅ — à envoyer |
-| Wech Pinyo Muay Thai | info@wechpinyo-muaythai.com | HOT | 2026-07-08 | Brouillon créé ✅ — à envoyer |
-| Elite Gym Samui | elitegymsamui@hotmail.com | HOT | 2026-07-08 | Brouillon créé ✅ — à envoyer |
-| Nora Beach Resort & Spa | reservation@norabeachresort.com | HOT | 2026-07-08 | Brouillon créé ✅ — à envoyer |
-| WeCare Service & Management | contact.samui@wecareservice-management.com | HOT | 2026-07-08 | Brouillon créé ✅ — à envoyer |
-| Cielo Boutique Hotel & Spa | info@cielosamui.com | HOT | 2026-07-08 | Brouillon créé ✅ — à envoyer |
-| Marasca Samui | hello.samui@marasca.live | HOT | 2026-07-08 | Brouillon créé ✅ — à envoyer |
+| Yuka Residence | yukaresidencesamui@gmail.com | HOT | 2026-07-08 | Envoyé ✅ 2026-07-10 (Zapier) |
+| Kanda Residences | info@kandapoolvillas.com | HOT | 2026-07-08 | Envoyé ✅ 2026-07-10 (Zapier) |
+| Wech Pinyo Muay Thai | info@wechpinyo-muaythai.com | HOT | 2026-07-08 | Envoyé ✅ 2026-07-10 (Zapier) |
+| Elite Gym Samui | elitegymsamui@hotmail.com | HOT | 2026-07-08 | Envoyé ✅ 2026-07-10 (Zapier) |
+| Nora Beach Resort & Spa | reservation@norabeachresort.com | HOT | 2026-07-08 | Envoyé ✅ 2026-07-10 (Zapier) |
+| WeCare Service & Management | contact.samui@wecareservice-management.com | HOT | 2026-07-08 | Envoyé ✅ 2026-07-10 (Zapier) |
+| Cielo Boutique Hotel & Spa | info@cielosamui.com | HOT | 2026-07-08 | Envoyé ✅ 2026-07-10 (Zapier) |
+| Marasca Samui | hello.samui@marasca.live | HOT | 2026-07-08 | Envoyé ✅ 2026-07-10 (Zapier) |
 | Samui Buri Beach Resort | rsvn@samuiburi.com | HOT | 2026-07-08 | Brouillon créé ✅ — à envoyer |
 | Mr Property Siam | info@mrpropertysiam.com | HOT | 2026-07-08 | Brouillon créé ✅ — à envoyer |
 | The Plate Lamai | reservations@thelamaisamui.com | HOT | 2026-07-08 | Brouillon créé ✅ — à envoyer |
