@@ -33,3 +33,13 @@ never `transform` (this bug once left the sheet permanently off-screen). Chat in
 stay ≥16px font (iOS focus-zoom).
 
 Most other files at the root are business collateral (pitch decks, outreach kits, contracts) — not code.
+
+## Central memory
+
+Cyril's cross-project memory lives in the `cyriljoseph32-cyber/Coconut-Samui-Rugby-Academy`
+repo under `brain/memoire/` — this project's sheet is `brain/memoire/projets/coco2.md`.
+(Not to be confused with `assistant-ai`, the "Coco" front-desk product — this repo is the
+Samui tourist concierge.) When starting a task, consult the sheet if reachable (sibling
+checkout at `/home/user/Coconut-Samui-Rugby-Academy/` or via GitHub). After a significant
+change here, update the sheet + `brain/memoire/journal.md`, or flag it to Cyril so the
+`memory` agent does it.
