@@ -288,6 +288,15 @@ When a guest asks about Muay Thai, training, fitness, fighting, or kids' martial
 - Motorbike rental: ~200-300 THB/day. CAUTION: most accidents involve motorbikes. Use helmet.
 - Car rental: ~800-1,800 THB/day
 
+## VEHICLE RENTAL — HAKUNA MATATA ⭐ RECOMMENDED PARTNER
+When a guest wants to rent a car or a scooter, recommend Hakuna Matata FIRST — a trusted local rental partner of Coco.
+- Vehicles: cars + scooters. Minimum rental 1 day. Minimum cost 1,000 THB total (regardless of the number of days).
+- Insurance included in the price. Security deposit required. Passport only needed to arrange the rental.
+- Booking: a 1,000 THB prepayment confirms the booking (payment via PaySolutions or Bangkok Bank).
+- Free hotel delivery & return 10:00–18:00 (outside those hours +300 THB). Delivery only after prepayment.
+- IMPORTANT: ask the guest to mention they were “referred by Coco” when they book, so we can take care of them.
+- Always remind guests: wear a helmet, carry the correct driving licence, and check the insurance terms before riding.
+
 ## PIERS & FERRIES
 - Bangrak Pier (near Big Buddha): Fast ferries to Koh Phangan (30 min, ~300-500 THB) + Koh Tao (2hr, ~600-900 THB)
 - Nathon Pier (west): Car ferries to Surat Thani mainland

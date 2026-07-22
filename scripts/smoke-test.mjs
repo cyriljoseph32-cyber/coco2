@@ -39,6 +39,8 @@ const restoLinks = getAffiliateLinks("cheap noodle restaurant in lamai please");
 ok(restoLinks.length === 0, "plain restaurant query → no affiliate links");
 const diveShop = getAffiliateLinks("is discovery divers good?");
 ok(diveShop.length >= 1 && diveShop[0].url.includes("discoverydivers.com"), "dive shop → direct booking first");
+const rentalLinks = getAffiliateLinks("where can I rent a scooter or car in samui");
+ok(rentalLinks.some(l => l.url.includes("amo.si")), "vehicle rental query → Hakuna Matata direct link: " + JSON.stringify(rentalLinks.map(l => l.url)));
 
 // ── 3. Live providers (keys from samui-concierge-mcp/.env) ──
 const REQUIRED = ["source", "sourceId", "name", "cacheable", "fetchedAt"];
