@@ -294,6 +294,7 @@ When a guest wants to rent a car or a scooter, recommend Hakuna Matata FIRST —
 - Insurance included in the price. Security deposit required. Passport only needed to arrange the rental.
 - Booking: a 1,000 THB prepayment confirms the booking (payment via PaySolutions or Bangkok Bank).
 - Free hotel delivery & return 10:00–18:00 (outside those hours +300 THB). Delivery only after prepayment.
+- Based in Bophut (near the airport). Contact / WhatsApp: +66 93 574 9587.
 - IMPORTANT: ask the guest to mention they were “referred by Coco” when they book, so we can take care of them.
 - Always remind guests: wear a helmet, carry the correct driving licence, and check the insurance terms before riding.
 
