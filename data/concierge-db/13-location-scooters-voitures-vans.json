@@ -6,6 +6,43 @@
   "businesses": [
     {
       "rank": 1,
+      "priority_score": 90,
+      "name": "Hakuna Matata Rental",
+      "business_type": "Location de voitures et scooters (partenaire Coco)",
+      "secondary_categories": [],
+      "short_description_fr": "Partenaire officiel de Coco : loueur de voitures et scooters à Koh Samui, assurance incluse dans le prix, passeport seul pour établir le contrat, livraison et récupération gratuites à l'hôtel de 10h à 18h. Réservation confirmée par un prépaiement de 1 000 THB.",
+      "area": "Bophut (proche aéroport, livraison île)",
+      "full_address": "31/26 (Samui Badminton), Tambon Bo Phut, Ko Samui District, Surat Thani 84320, Thailand",
+      "google_maps_url": "https://www.google.com/maps/search/?api=1&query=Hakuna+Matata+Rent+Car+Motorbike+Bophut+Koh+Samui",
+      "website_url": "https://amo.si/K/YNSE7V/YJLEOZ",
+      "facebook_url": "",
+      "instagram_url": "",
+      "phone": "+66 93 574 9587",
+      "whatsapp": "+66 93 574 9587",
+      "email": "",
+      "opening_hours": "Livraison/récupération 10:00–18:00 (hors horaires +300 THB)",
+      "price_level": "$$",
+      "languages": ["English"],
+      "booking_required": true,
+      "booking_url": "https://amo.si/K/YNSE7V/YJLEOZ",
+      "google_rating": null,
+      "google_review_count": null,
+      "tripadvisor_rating": null,
+      "tripadvisor_review_count": null,
+      "key_services": ["Voitures et scooters", "Assurance incluse", "Passeport seul pour louer", "Livraison/récupération gratuites 10h-18h", "Prépaiement 1 000 THB (PaySolutions / Bangkok Bank)"],
+      "ideal_for": ["Clients Coco", "Location courte ou longue", "Livraison à l'hôtel"],
+      "highlights": ["Partenaire (commission 10%)", "Min 1 000 THB / location", "Caution demandée"],
+      "coco_concierge_recommendation": "Loueur partenaire à recommander en premier pour une voiture ou un scooter. Demander au client de préciser qu'il vient de Coco pour le suivi de la réservation et rappeler casque + permis + vérifier l'assurance.",
+      "affiliate_or_partnership_potential": "high",
+      "contact_status": "verified",
+      "source_urls": [
+        "https://amo.si/K/YNSE7V/YJLEOZ"
+      ],
+      "source_notes": "Partenaire commercial direct (accord verbal, commission 10% versée en fin de location, suivi par mention « referred by Coco » ou notification directe à Cyril). Coordonnées (Bophut, tél/WhatsApp +66 93 574 9587) recoupées via recherche web. Notes d'avis non stockées.",
+      "last_checked": "2026-07-22"
+    },
+    {
+      "rank": 2,
       "priority_score": 86,
       "name": "Drive Car Rental (Samui Airport)",
       "business_type": "Location de voitures (comptoir aéroport)",
@@ -43,7 +80,7 @@
       "last_checked": "2026-07-12"
     },
     {
-      "rank": 2,
+      "rank": 3,
       "priority_score": 83,
       "name": "SIXT Samui International Airport",
       "business_type": "Location de voitures (réseau international)",
@@ -80,7 +117,7 @@
       "last_checked": "2026-07-12"
     },
     {
-      "rank": 3,
+      "rank": 4,
       "priority_score": 81,
       "name": "TOH Motorbike Rental",
       "business_type": "Location de scooters",
@@ -118,7 +155,7 @@
       "last_checked": "2026-07-12"
     },
     {
-      "rank": 4,
+      "rank": 5,
       "priority_score": 80,
       "name": "Rent A Bike Samui",
       "business_type": "Location de scooters et motos",
@@ -156,7 +193,7 @@
       "last_checked": "2026-07-12"
     },
     {
-      "rank": 5,
+      "rank": 6,
       "priority_score": 78,
       "name": "46 Moto",
       "business_type": "Location de scooters",
@@ -194,7 +231,7 @@
       "last_checked": "2026-07-12"
     },
     {
-      "rank": 6,
+      "rank": 7,
       "priority_score": 76,
       "name": "Tommy RM Samui",
       "business_type": "Location de scooters et maxi-scooters",
@@ -231,7 +268,7 @@
       "last_checked": "2026-07-12"
     },
     {
-      "rank": 7,
+      "rank": 8,
       "priority_score": 75,
       "name": "Coconut Island Rentals",
       "business_type": "Location scooters, motos et voitures",
@@ -268,7 +305,7 @@
       "last_checked": "2026-07-12"
     },
     {
-      "rank": 8,
+      "rank": 9,
       "priority_score": 74,
       "name": "Samui Rent Cars (samuirentcars.com)",
       "business_type": "Location de voitures locale",
@@ -305,7 +342,7 @@
       "last_checked": "2026-07-12"
     },
     {
-      "rank": 9,
+      "rank": 10,
       "priority_score": 72,
       "name": "Avis Koh Samui Airport",
       "business_type": "Location de voitures (réseau international)",
@@ -342,7 +379,7 @@
       "last_checked": "2026-07-12"
     },
     {
-      "rank": 10,
+      "rank": 11,
       "priority_score": 70,
       "name": "Byklo (plateforme de location 2 roues)",
       "business_type": "Plateforme en ligne scooters/motos",

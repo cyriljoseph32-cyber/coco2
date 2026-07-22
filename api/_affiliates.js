@@ -592,6 +592,32 @@ export const AFFILIATE_MAP = [
   },
 
   // ══════════════════════════════════════════════════════════════
+  // 🛵 VEHICLE RENTAL — Hakuna Matata (direct partner, 10% commission)
+  // Tracking is manual (guest mentions "referred by Coco") — no ?ref= needed.
+  // ══════════════════════════════════════════════════════════════
+  {
+    keywords: [
+      // EN
+      "scooter rental", "rent a scooter", "scooter hire", "motorbike rental",
+      "rent a motorbike", "motorbike hire", "motorcycle rental", "rent a motorcycle",
+      "rent a bike", "bike rental", "moped rental", "rent a moped", "scooter",
+      "car rental", "rent a car", "car hire", "vehicle rental", "rent a vehicle",
+      // FR
+      "louer un scooter", "location scooter", "location de scooter", "louer une voiture",
+      "location voiture", "location de voiture", "louer une moto", "location moto",
+      "louer un véhicule", "location de véhicule", "louer un deux-roues",
+      // DE
+      "roller mieten", "motorrad mieten", "auto mieten", "mietwagen", "motorroller",
+    ],
+    businessName: "Hakuna Matata",
+    type: "transport",
+    noFallback: true,
+    links: () => [
+      { provider: "🛵 Book direct (Hakuna Matata)", url: "https://amo.si/K/YNSE7V/YJLEOZ" },
+    ],
+  },
+
+  // ══════════════════════════════════════════════════════════════
   // 🚌 TRANSPORT — Klook first
   // ══════════════════════════════════════════════════════════════
   {
