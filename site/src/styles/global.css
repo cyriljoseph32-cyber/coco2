@@ -1,19 +1,25 @@
 @import "tailwindcss";
 
 @theme {
-  /* Coco palette (kept from v1 identity) */
-  --color-ink: #070d1c;
+  /* Coco palette — dark navy chat/hero + warm paper editorial surfaces */
+  --color-ink: #0a1224;
   --color-ink-2: #0c1528;
   --color-ink-3: #101e38;
-  --color-teal: #0a9396;
+  --color-teal: #0d8f8a;
   --color-teal-deep: #005f73;
-  --color-foam: #94d2bd;
-  --color-sand: #e9c46a;
-  --color-coral: #f4a261;
-  --color-coral-deep: #e76f51;
+  --color-foam: #a7d9c9;
+  --color-sand: #e7c98a;
+  --color-coral: #e2664a;
+  --color-coral-deep: #c94e33;
+
+  /* Cream "paper" surface for editorial content modules */
+  --color-paper: #f7f1e4;
+  --color-paper-2: #e9e2d2;
+  --color-paper-ink: #231609;
+  --color-paper-ink-soft: #4a3324;
 
   --font-display: "Fraunces Variable", ui-serif, Georgia, serif;
-  --font-sans: "Inter Variable", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: "Instrument Sans Variable", ui-sans-serif, system-ui, sans-serif;
 }
 
 :root {
@@ -71,6 +77,8 @@ body {
 
 /* Subtle hairline used across sections */
 .hairline { border-color: rgb(255 255 255 / 0.08); }
+/* Hairline for cream "paper" surfaces (ink-brown border, not white) */
+.hairline-paper { border-color: rgb(74 51 36 / 0.12); }
 
 /* Chat message bubbles (shared rail/sheet) */
 .msg-coco, .msg-user {

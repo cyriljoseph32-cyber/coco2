@@ -1,33 +1,56 @@
 /** Experiences, practical guide, FAQ, categories — extracted from v1 site. */
 
 export interface Experience {
+  slug: string;
   emoji: string;
   title: string;
   desc: string;
   price: string;
   q: string;
   cta: string;
+  bestTime?: string;
+  travelTime?: string;
+  booking?: string;
+  tips?: string[];
 }
 
 export const EXPERIENCES: Experience[] = [
-  { emoji: "🦈", title: "Dive Sail Rock", price: "From 2,500 THB/person", cta: "Book via Coco",
+  { slug: "sail-rock", emoji: "🦈", title: "Dive Sail Rock", price: "From 2,500 THB/person", cta: "Book via Coco",
     desc: "The crown jewel of diving in the Gulf of Thailand. A vertical chimney swimthrough, massive barracuda schools, and whale sharks May–September. Bucket list material.",
-    q: "How do I book a dive trip to Sail Rock from Koh Samui?" },
-  { emoji: "🏝️", title: "Ang Thong Marine Park", price: "From 1,500 THB/person", cta: "Ask Coco",
+    q: "How do I book a dive trip to Sail Rock from Koh Samui?",
+    bestTime: "Early morning departure, best visibility Dec–Apr", travelTime: "~1 hr boat from Samui piers",
+    booking: "Required, via a PADI 5-star dive centre",
+    tips: ["Book at least a few days ahead in high season", "Bring reef-safe sunscreen and motion sickness tablets", "Whale sharks are most likely May–September"] },
+  { slug: "ang-thong", emoji: "🏝️", title: "Ang Thong Marine Park", price: "From 1,500 THB/person", cta: "Ask Coco",
     desc: "42 pristine islands with an emerald lagoon, kayaking, snorkeling over untouched coral — a full-day paradise just 31 km from Samui.",
-    q: "Tell me everything about Ang Thong Marine Park — tours, timing, what to bring." },
-  { emoji: "🐷", title: "Pig Island Day Trip", price: "From 1,500 THB/person", cta: "Ask Coco",
+    q: "Tell me everything about Ang Thong Marine Park — tours, timing, what to bring.",
+    bestTime: "Full-day tour, calmest seas Dec–Apr", travelTime: "~1.5 hr boat from Samui",
+    booking: "Required, via a licensed tour operator",
+    tips: ["Wear water shoes for the emerald lagoon viewpoint hike", "Pack seasickness tablets for the crossing", "Bring a dry bag for cameras and phones"] },
+  { slug: "pig-island", emoji: "🐷", title: "Pig Island Day Trip", price: "From 1,500 THB/person", cta: "Ask Coco",
     desc: "Swim with pigs on Koh Madsum, snorkel pristine Koh Tean coral, eat fresh grilled seafood on a deserted beach. Samui's most unique day trip.",
-    q: "How do I get to Pig Island Koh Madsum from Koh Samui?" },
-  { emoji: "🌅", title: "Sunset Dinner Cruise", price: "From 2,000 THB/person", cta: "Ask Coco",
+    q: "How do I get to Pig Island Koh Madsum from Koh Samui?",
+    bestTime: "Morning departure, half or full day", travelTime: "~30–45 min boat from Samui",
+    booking: "Required, via a longtail or speedboat operator",
+    tips: ["Don't feed the pigs by hand — throw food instead", "Bring cash for the small landing fee", "Combine with Koh Tean snorkeling on the same trip"] },
+  { slug: "sunset-cruise", emoji: "🌅", title: "Sunset Dinner Cruise", price: "From 2,000 THB/person", cta: "Ask Coco",
     desc: "Watch the sun dissolve into the Gulf from a catamaran. Cocktails, fresh seafood, golden hour light — the most romantic evening on the island.",
-    q: "Best sunset cruise operators on Koh Samui?" },
-  { emoji: "🧘", title: "Kamalaya Wellness Day", price: "From 3,500 THB/day", cta: "Ask Coco",
+    q: "Best sunset cruise operators on Koh Samui?",
+    bestTime: "Evening departure, ~5:30–6pm", travelTime: "Departs from Bophut or Maenam pier",
+    booking: "Required, via the cruise operator",
+    tips: ["Book the west-facing side of the boat for the best sunset", "Bring a light jacket — it cools down on the water", "Popular for anniversaries — mention it when booking"] },
+  { slug: "kamalaya-wellness", emoji: "🧘", title: "Kamalaya Wellness Day", price: "From 3,500 THB/day", cta: "Ask Coco",
     desc: "World-famous sanctuary built around a monk's cave. Yoga, meditation, treatments, healthy cuisine — a full reset. Worth every baht.",
-    q: "What Kamalaya day programs and treatments are available?" },
-  { emoji: "🎆", title: "Fisherman's Village Friday", price: "Free entry", cta: "Ask Coco",
+    q: "What Kamalaya day programs and treatments are available?",
+    bestTime: "Any day, book treatments ahead", travelTime: "Chaweng Noi, ~15 min from Chaweng",
+    booking: "Recommended in advance, via Kamalaya directly",
+    tips: ["Day guests can book spa treatments without staying overnight", "Arrive early to use the grounds and monk's cave before treatments", "Healthy set menus are available at the on-site restaurant"] },
+  { slug: "fishermans-village-friday", emoji: "🎆", title: "Fisherman's Village Friday", price: "Free entry", cta: "Ask Coco",
     desc: "Every Friday 5–11pm: street food, art, live music and boutique shopping in a charming Sino-Portuguese colonial street. The perfect evening out.",
-    q: "What should I see and eat at Fisherman's Village walking street on Friday?" },
+    q: "What should I see and eat at Fisherman's Village walking street on Friday?",
+    bestTime: "Friday, 5–11pm only", travelTime: "Bophut, north coast",
+    booking: "No booking needed — just show up",
+    tips: ["Go hungry — the street food stalls are the highlight", "Arrive by 6pm to beat the crowds for a table", "Combine with a walk along Bophut beach at sunset"] },
 ];
 
 export interface Tip { emoji: string; title: string; text: string; q: string; }

@@ -1,0 +1,104 @@
+---
+import Base from "../layouts/Base.astro";
+import Split from "../layouts/Split.astro";
+import { EXPERIENCES } from "../data/content";
+import { BEACHES } from "../data/beaches";
+
+const angThong = EXPERIENCES.find((e) => e.slug === "ang-thong")!;
+const sailRock = EXPERIENCES.find((e) => e.slug === "sail-rock")!;
+const sunsetCruise = EXPERIENCES.find((e) => e.slug === "sunset-cruise")!;
+const silverBeach = BEACHES.find((b) => b.name === "Silver Beach")!;
+const lamai = BEACHES.find((b) => b.name === "Lamai")!;
+
+const planQ = "Plan me a 3-day itinerary for Koh Samui — beaches, one boat trip, good food.";
+const estSpend = [angThong, sailRock, sunsetCruise]
+  .reduce((sum, e) => sum + parseInt(e.price.replace(/\D/g, "")), 0)
+  .toLocaleString();
+
+const chips = [
+  { label: "🗓️ Refine this plan", q: planQ },
+  { label: "🤿 Not a diver — what instead?", q: "I'm not a diver — what should I swap Sail Rock for on a Koh Samui itinerary?" },
+  { label: "🌧️ It's raining, plan B?", q: "It's raining on my Koh Samui trip — what's a good backup day plan?" },
+];
+const schema = [{
+  "@type": "TouristTrip",
+  name: "3 days in Koh Samui",
+  description: "A 3-day Koh Samui itinerary combining Ang Thong Marine Park, Sail Rock diving, and the island's beaches — planned and refined live with Coco.",
+}];
+---
+<Base
+  title="3-Day Koh Samui Trip Planner | Coco"
+  description="A ready-made 3-day Koh Samui itinerary — Ang Thong Marine Park, Sail Rock diving, and the best beaches — refine it live with Coco for your dates and pace."
+  chips={chips}
+  schema={schema}
+>
+  <Split>
+    <section class="flex flex-wrap items-end justify-between gap-4 py-12" aria-labelledby="h1">
+      <div>
+        <p class="sec-num mb-4">YOUR PLAN</p>
+        <h1 id="h1" class="font-display text-[clamp(1.9rem,4.5vw,3rem)] font-medium leading-[1.08] tracking-[-0.02em] text-white">3 days in Koh Samui</h1>
+      </div>
+      <button type="button" data-coco-q={planQ} class="cursor-pointer rounded-xl bg-teal px-5 py-3 text-[13.5px] font-semibold text-white transition hover:bg-teal-deep">✨ Refine with Coco</button>
+    </section>
+
+    <section class="rounded-2xl border hairline bg-ink-2 p-5" aria-label="Trip summary">
+      <div class="flex flex-wrap gap-x-8 gap-y-4">
+        <div><p class="text-[10px] font-bold uppercase tracking-[0.08em] text-white/40">Based near</p><p class="mt-1 text-[13px] font-semibold text-white">Chaweng</p></div>
+        <div><p class="text-[10px] font-bold uppercase tracking-[0.08em] text-white/40">Pace</p><p class="mt-1 text-[13px] font-semibold text-white">Balanced · 2 boat days</p></div>
+        <div><p class="text-[10px] font-bold uppercase tracking-[0.08em] text-white/40">Est. activities</p><p class="thb mt-1 text-[13px] font-semibold text-white">~{estSpend} THB / person</p></div>
+      </div>
+    </section>
+
+    <section class="mt-5 flex flex-col gap-4 pb-8" aria-label="Itinerary">
+      <!-- DAY 1 -->
+      <div class="rounded-2xl border hairline bg-ink-2 p-5">
+        <div class="flex items-center gap-2.5">
+          <span class="font-display rounded-lg bg-teal px-2.5 py-1 text-[11px] font-bold text-white">DAY 1</span>
+          <h2 class="font-display text-[15.5px] font-bold text-white">Land, settle into Chaweng</h2>
+        </div>
+        <div class="mt-3.5 grid gap-3 sm:grid-cols-3">
+          <div class="border-l-2 hairline pl-3"><p class="text-[11px] font-semibold text-white/70">2:00 PM</p><p class="mt-0.5 text-[12.5px] text-white/55">Arrive, check in, walk Chaweng Beach</p></div>
+          <div class="border-l-2 hairline pl-3"><p class="text-[11px] font-semibold text-white/70">7:00 PM</p><p class="mt-0.5 text-[12.5px] text-white/55">Easy dinner in Chaweng — ask Coco for tonight's pick</p></div>
+          <div class="border-l-2 hairline pl-3"><p class="text-[11px] font-semibold text-white/70">9:30 PM</p><p class="mt-0.5 text-[12.5px] text-white/55">Early night — tomorrow's a boat day</p></div>
+        </div>
+      </div>
+
+      <!-- DAY 2 -->
+      <div class="rounded-2xl border hairline bg-ink-2 p-5">
+        <div class="flex items-center gap-2.5">
+          <span class="font-display rounded-lg bg-teal px-2.5 py-1 text-[11px] font-bold text-white">DAY 2</span>
+          <h2 class="font-display text-[15.5px] font-bold text-white">Ang Thong Marine Park + sunset on the water</h2>
+        </div>
+        <div class="mt-3.5 grid gap-3 sm:grid-cols-3">
+          <div class="border-l-2 hairline pl-3"><p class="text-[11px] font-semibold text-white/70">7:30 AM</p><p class="mt-0.5 text-[12.5px] text-white/55">{angThong.desc}</p></div>
+          <div class="border-l-2 hairline pl-3"><p class="text-[11px] font-semibold text-white/70">5:30 PM</p><p class="mt-0.5 text-[12.5px] text-white/55">{sunsetCruise.desc}</p></div>
+          <div class="border-l-2 hairline pl-3"><p class="text-[11px] font-semibold text-white/70">Note</p><p class="mt-0.5 text-[12.5px] text-white/55">Two boat trips same day is a full day — ask Coco to space them out if you'd rather not.</p></div>
+        </div>
+        <a href={`/experiences/${angThong.slug}`} class="mt-3 inline-block text-[12.5px] font-semibold text-foam hover:underline">See Ang Thong details →</a>
+      </div>
+
+      <!-- DAY 3 -->
+      <div class="rounded-2xl border hairline bg-ink-2 p-5">
+        <div class="flex items-center gap-2.5">
+          <span class="font-display rounded-lg bg-teal px-2.5 py-1 text-[11px] font-bold text-white">DAY 3</span>
+          <h2 class="font-display text-[15.5px] font-bold text-white">Dive Sail Rock, unwind, depart</h2>
+        </div>
+        <div class="mt-3.5 grid gap-3 sm:grid-cols-3">
+          <div class="border-l-2 hairline pl-3"><p class="text-[11px] font-semibold text-white/70">Early AM</p><p class="mt-0.5 text-[12.5px] text-white/55">{sailRock.desc}</p></div>
+          <div class="border-l-2 hairline pl-3"><p class="text-[11px] font-semibold text-white/70">Afternoon</p><p class="mt-0.5 text-[12.5px] text-white/55">{lamai.name} — relax on the beach, last swim</p></div>
+          <div class="border-l-2 hairline pl-3"><p class="text-[11px] font-semibold text-white/70">Evening</p><p class="mt-0.5 text-[12.5px] text-white/55">Transfer to airport / Bangrak pier</p></div>
+        </div>
+        <a href={`/experiences/${sailRock.slug}`} class="mt-3 inline-block text-[12.5px] font-semibold text-foam hover:underline">See Sail Rock details →</a>
+      </div>
+
+      <!-- Swap suggestion -->
+      <div class="flex flex-wrap items-center gap-3 rounded-2xl border border-dashed hairline p-5">
+        <p class="text-[11px] font-bold text-foam">Not a diver?</p>
+        <p class="flex-1 text-[12.5px] text-white/60">Swap Day 3 for {silverBeach.name} snorkeling ({silverBeach.desc.toLowerCase()}) — no dive certification needed.</p>
+        <button type="button" data-coco-q="I'm not a diver — swap Day 3 for Silver Beach snorkeling instead of Sail Rock." class="shrink-0 cursor-pointer rounded-lg border hairline px-3.5 py-2 text-[12px] font-semibold text-white/80 hover:text-white">Swap it in</button>
+      </div>
+
+      <p class="text-center text-[12px] text-white/40">Every stop is editable — ask Coco to swap a day, add a beach, or slow things down.</p>
+    </section>
+  </Split>
+</Base>

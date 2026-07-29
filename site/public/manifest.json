@@ -6,8 +6,8 @@
   "scope": "/",
   "display": "standalone",
   "orientation": "portrait",
-  "background_color": "#023047",
-  "theme_color": "#023047",
+  "background_color": "#0a1224",
+  "theme_color": "#0a1224",
   "lang": "en",
   "categories": ["travel", "lifestyle", "navigation"],
   "icons": [

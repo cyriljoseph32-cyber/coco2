@@ -56,13 +56,25 @@ const feats = [
     </section>
 
     <section class="border-t hairline py-14" aria-label="What you get">
-      <div class="grid gap-4 sm:grid-cols-2">
-        {feats.map((f) => (
-          <div class="rounded-2xl border hairline bg-ink-2 p-6">
-            <h2 class="text-[16px] font-bold text-white">{f.e} {f.t}</h2>
-            <p class="mt-2 text-[13.5px] leading-relaxed text-white/55">{f.d}</p>
+      {feats.map((f, i) => (
+        <div class:list={["flex flex-col items-start gap-4 py-8 sm:flex-row sm:items-center sm:gap-8", i > 0 && "border-t hairline"]}>
+          <span class="font-display shrink-0 text-[13px] font-bold text-foam">{String(i + 1).padStart(2, "0")}</span>
+          <div>
+            <h2 class="text-[17px] font-bold text-white">{f.e} {f.t}</h2>
+            <p class="mt-2 max-w-[58ch] text-[13.5px] leading-relaxed text-white/55">{f.d}</p>
           </div>
-        ))}
+        </div>
+      ))}
+    </section>
+
+    <section class="border-t hairline py-14" aria-label="Simple pricing">
+      <div class="flex flex-col items-start justify-between gap-6 rounded-2xl bg-white/3 p-8 sm:flex-row sm:items-center">
+        <div>
+          <p class="text-[11px] font-semibold text-white/40">Simple pricing</p>
+          <p class="thb font-display mt-1 text-[28px] font-bold text-white">{SITE.hotelPriceTHB} THB <span class="font-sans text-[13px] font-normal text-white/50">/ month</span></p>
+          <p class="mt-1 text-[12.5px] text-white/45">14-day free trial · no card · cancel anytime</p>
+        </div>
+        <p class="max-w-[34ch] text-[13px] leading-relaxed text-white/55">"Coco knows what I know — the island, not a script." <span class="text-foam">— {SITE.founder.name}, founder</span></p>
       </div>
     </section>
 
@@ -73,6 +85,13 @@ const feats = [
         <li class="flex gap-4"><span class="font-display text-foam" aria-hidden="true">2.</span><span><strong class="text-white">Setup done for you</strong> — branded chat page, website widget or WhatsApp, printable in-room QR cards.</span></li>
         <li class="flex gap-4"><span class="font-display text-foam" aria-hidden="true">3.</span><span><strong class="text-white">Guests start asking</strong> — you get a dashboard link and a monthly summary. Cancel anytime.</span></li>
       </ol>
+    </section>
+
+    <section class="border-t hairline py-14" aria-label="Call to action">
+      <a href="#trial" class="flex flex-col items-start justify-between gap-5 rounded-3xl bg-gradient-to-br from-sand to-coral p-8 text-ink sm:flex-row sm:items-center sm:p-10">
+        <p class="font-display max-w-[22ch] text-[clamp(1.3rem,2.6vw,1.8rem)] font-medium leading-tight">Bring a local concierge to every guest, tonight.</p>
+        <span class="shrink-0 rounded-xl bg-ink px-6 py-3.5 text-[14px] font-semibold text-white transition hover:bg-ink-3">Start free trial →</span>
+      </a>
     </section>
 
     <!-- Lead form -->
