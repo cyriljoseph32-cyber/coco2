@@ -30,8 +30,11 @@ const { chips = defaultChips } = Astro.props;
         Online — always here
       </div>
     </div>
-    <div class="ml-auto hidden text-[10.5px] tracking-wide text-white/35 min-[400px]:block">{SITE.languages.join(" · ")}</div>
-    <button type="button" id="coco-sheet-close" class="ml-1 hidden size-9 shrink-0 cursor-pointer place-items-center rounded-lg text-lg text-white/60 hover:bg-white/8 hover:text-white" aria-label="Close chat">✕</button>
+    <div class="ml-auto hidden text-[10.5px] tracking-wide text-white/35 min-[500px]:block">{SITE.languages.join(" · ")}</div>
+    <button type="button" id="coco-reset" class="ml-auto grid size-9 shrink-0 cursor-pointer place-items-center rounded-lg text-white/50 hover:bg-white/8 hover:text-white min-[500px]:ml-1" aria-label="Start a new conversation" title="New conversation">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 11a8 8 0 1 0-2.3 5.7M20 5v6h-6" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </button>
+    <button type="button" id="coco-sheet-close" class="hidden size-9 shrink-0 cursor-pointer place-items-center rounded-lg text-lg text-white/60 hover:bg-white/8 hover:text-white" aria-label="Close chat">✕</button>
   </div>
 
   <!-- Messages -->
@@ -73,13 +76,61 @@ Hotels, a dive trip to Sail Rock, the best street food, how to reach Ang Thong �
   const input = $("coco-input") as HTMLTextAreaElement;
   const form = $("coco-form") as HTMLFormElement;
   const sendBtn = $("coco-send") as HTMLButtonElement;
+  const chips = $("coco-chips");
+  const greeting = msgs.innerHTML; // kept so "new chat" can restore the cold-start state
 
   // White-label param persists across the multi-page site.
   const urlHotel = new URLSearchParams(location.search).get("hotel");
   if (urlHotel) sessionStorage.setItem("coco-hotel", urlHotel);
   const hotel = urlHotel || sessionStorage.getItem("coco-hotel") || undefined;
 
-  const history: { role: "user" | "assistant"; content: string }[] = [];
+  type Msg = { role: "user" | "assistant"; content: string };
+  const history: Msg[] = [];
+
+  // ── Conversation memory ──
+  // The site is multi-page, so without this the thread dies on every navigation.
+  // Kept on the device only, for 24h; never sent anywhere but /api/chat.
+  const STORE_KEY = "coco-chat-v1";
+  const TTL_MS = 24 * 60 * 60 * 1000;
+  // Stay under the server caps in api/chat.js (40 messages / 12000 chars).
+  const MAX_MSGS = 20;
+  const MAX_CHARS = 9000;
+
+  /** Last messages that fit the budget, starting on a user turn (Anthropic requires it). */
+  function trimmed(h: Msg[]): Msg[] {
+    const out = h.slice(-MAX_MSGS);
+    let chars = out.reduce((n, m) => n + m.content.length, 0);
+    // Never trim to nothing — the newest turn always survives.
+    while (out.length > 1 && chars > MAX_CHARS) chars -= out.shift()!.content.length;
+    while (out.length > 1 && out[0].role !== "user") out.shift();
+    return out;
+  }
+
+  // localStorage throws in Safari private mode and when the quota is full —
+  // memory is a nicety, it must never take the chat down with it.
+  function saveHistory() {
+    try {
+      localStorage.setItem(STORE_KEY, JSON.stringify({ ts: Date.now(), history: trimmed(history) }));
+    } catch {}
+  }
+  function clearHistory() {
+    try { localStorage.removeItem(STORE_KEY); } catch {}
+  }
+  function loadHistory(): Msg[] {
+    try {
+      const raw = localStorage.getItem(STORE_KEY);
+      if (!raw) return [];
+      const s = JSON.parse(raw);
+      if (!s || !Array.isArray(s.history) || typeof s.ts !== "number" || Date.now() - s.ts > TTL_MS) {
+        clearHistory();
+        return [];
+      }
+      return s.history.filter((m: Msg) => (m.role === "user" || m.role === "assistant") && typeof m.content === "string");
+    } catch {
+      clearHistory();
+      return [];
+    }
+  }
 
   const esc = (s: string) => s.replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]!));
   function render(text: string): string {
@@ -97,6 +148,10 @@ Hotels, a dive trip to Sail Rock, the best street food, how to reach Ang Thong �
     return d;
   }
 
+  /** Drop the booking-link block bookingFooter() appends — Coco must never
+   *  read its own past answers as licence to print URLs (see api/chat.js). */
+  const stripFooter = (s: string) => s.split("\n\n─────\n🔗")[0];
+
   let busy = false;
   async function ask(q: string) {
     const text = q.trim();
@@ -105,7 +160,7 @@ Hotels, a dive trip to Sail Rock, the best street food, how to reach Ang Thong �
     sendBtn.disabled = true;
     input.value = "";
     input.style.height = "";
-    $("coco-chips")?.remove(); // chips are a cold-start aid only
+    chips.hidden = true; // chips are a cold-start aid only
     bubble("msg-user", render(text));
     history.push({ role: "user", content: text });
     const t = bubble("msg-coco", '<span class="typing" role="status" aria-label="Coco is typing"><i></i><i></i><i></i></span>');
@@ -113,20 +168,41 @@ Hotels, a dive trip to Sail Rock, the best street food, how to reach Ang Thong �
       const r = await fetch("/api/chat", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ messages: history, hotel }),
+        body: JSON.stringify({ messages: trimmed(history), hotel }),
       });
       const data = await r.json();
       if (!r.ok || !data.content) throw new Error(data.error || "No reply");
       t.innerHTML = render(data.content);
-      history.push({ role: "assistant", content: data.content });
+      history.push({ role: "assistant", content: stripFooter(data.content) });
     } catch {
       t.innerHTML = "Sorry — I hit a wave 🌊 Please try again in a moment, or reach Cyril on WhatsApp (+66 633 753 316).";
     } finally {
       busy = false;
       sendBtn.disabled = false;
       msgs.scrollTop = msgs.scrollHeight;
+      saveHistory(); // keep the question even if the reply failed
     }
   }
+
+  // Replay the stored thread under the greeting, so Coco picks up where the guest left off.
+  function restore() {
+    const stored = loadHistory();
+    if (!stored.length) return;
+    history.push(...stored);
+    for (const m of stored) bubble(m.role === "user" ? "msg-user" : "msg-coco", render(m.content));
+    chips.hidden = true;
+    msgs.scrollTop = msgs.scrollHeight;
+  }
+  restore();
+
+  function resetChat() {
+    history.length = 0;
+    clearHistory();
+    msgs.innerHTML = greeting;
+    chips.hidden = false;
+    input.focus();
+  }
+  $("coco-reset").addEventListener("click", resetChat);
 
   form.addEventListener("submit", (e) => { e.preventDefault(); ask(input.value); });
   input.addEventListener("keydown", (e) => {
