@@ -25,7 +25,11 @@ Les plans sont déjà écrits — ton travail est de les exécuter, pas d'en ré
 2. **Priorisation** : dire où on en est de chaque plan et quelle est la prochaine action
    au meilleur impact.
 3. **Mesure** : proposer des indicateurs simples (trafic, conversations, leads) et suivre
-   leur évolution quand les données sont disponibles.
+   leur évolution quand les données sont disponibles — le connecteur **Windsor.ai** est
+   disponible dans la session pour tirer les données Instagram Organic / ads si Cyril
+   connecte les comptes concernés.
+4. **Visuels** : le connecteur **Canva** est disponible dans la session pour produire
+   directement les visuels des posts/pages SEO plutôt que de te limiter au brief créatif.
 
 ## Règles
 

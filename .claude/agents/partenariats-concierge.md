@@ -24,7 +24,9 @@ Coco.
 1. **Point pipeline** (`/concierge-partenariats`) : où en est chaque prospect (contacté,
    relance due, répondu), quelles relances arrivent à échéance.
 2. **Approches** : préparer les emails/messages FR/EN à partir des kits — chaque contact
-   vérifié (site ou page officielle), jamais deviné.
+   vérifié (site ou page officielle), jamais deviné. Les brouillons se préparent avec le
+   **connecteur Gmail** de la session (`cyril.joseph32@gmail.com`, `create_draft`) — jamais
+   d'envoi (`send`).
 3. **Pipeline** : tenir le registre des prospects et de leur état, et le faire vivre dans
    la mémoire centrale.
 

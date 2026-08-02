@@ -23,6 +23,10 @@ confondre avec `assistant-ai`, le produit front desk pour commerces.
 2. Avant toute livraison : `node --env-file=samui-concierge-mcp/.env scripts/smoke-test.mjs`.
 3. Le frontend déployé est l'app Astro dans `site/` uniquement ; la racine `public/` est
    l'ancien site non déployé — ne jamais l'éditer.
+4. Le connecteur **Vercel** est disponible dans la session pour diagnostiquer un déploiement
+   ou une erreur en prod sur le projet `coco-samui-concierge` (`coco-samui-ai.com`) sans
+   attendre un retour de Cyril : `get_deployment`, `get_deployment_build_logs`,
+   `get_runtime_errors`, `get_runtime_logs`, `get_web_analytics`.
 
 ## Règles
 
