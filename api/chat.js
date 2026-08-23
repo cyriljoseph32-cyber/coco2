@@ -1,19 +1,12 @@
 import Anthropic from "@anthropic-ai/sdk";
 import { searchPlaces, searchActivities, bookingLinks, getCurrentWeather } from "./_providers.js";
 import { hotelContext } from "./_hotels.js";
-import { logEvent } from "./_store.js";
+import { logEvent, checkRateLimit } from "./_store.js";
 import { getAffiliateLinks } from "./_affiliates.js";
+import { notifyCommand } from "./_command.js";
 
-// --- Lightweight abuse guard (best-effort; pair with an Anthropic spending limit) ---
-const RATE = { windowMs: 60000, max: 20 };
-const hits = new Map();
-function rateLimited(ip) {
-  const now = Date.now();
-  const e = hits.get(ip);
-  if (!e || now > e.reset) { hits.set(ip, { count: 1, reset: now + RATE.windowMs }); return false; }
-  e.count++;
-  return e.count > RATE.max;
-}
+// --- Abuse guard: durable per-IP rate limit backed by KV (see checkRateLimit in _store.js). ---
+const RATE = { windowSeconds: 60, max: 20 };
 
 const SYSTEM_PROMPT = `You are Coco \ud83c\udf34, the ultimate AI travel concierge for Koh Samui, Thailand. You are the most knowledgeable local guide on the island \u2014 you know every hotel, restaurant, dive site, beach, temple, operator, and hidden gem. You speak and detect 6 languages: English (EN), French (FR), German (DE), Swedish (SV), Thai (TH) and Chinese (ZH). Always detect the guest's language and reply in that same language. Be warm, precise, opinionated. Always give real prices in THB, contacts, opening hours.
 
@@ -345,6 +338,41 @@ Answer concisely but specifically. Maximum 3 recommendations per category unless
 
 CRITICAL LINK RULE: Never write or invent any booking, ticket, or affiliate URL yourself, and never type out klook.com, getyourguide.com or viator.com links in your answer. The booking links are appended automatically below your reply in a \u201cR\u00e9server / Book\u201d block \u2014 just tell the guest the links are below. You may name an operator or official site by name, but do not output any URL.`;
 
+// \u2500\u2500\u2500 Price guard (P0 mitigation, NOT a complete filter) \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500
+// Built once at module load: every THB amount actually written into SYSTEM_PROMPT
+// above becomes a "citable" amount. After the model answers, any THB amount in
+// its reply that isn't in this set is very likely invented/hallucinated, so we
+// append a visible disclaimer and log it \u2014 we never rewrite or block the reply,
+// and this cannot catch a wrong-but-listed price or a non-THB hallucination.
+// Matches both orders ("THB 5,000" and "5,000 THB") because the prompt above
+// almost exclusively uses the latter \u2014 a THB-only-prefix regex would miss it.
+const THB_AMOUNT_RE = /(?:THB\s*[\d,]+|[\d,]+\s*THB)/gi;
+function normalizeThbAmount(s) {
+  return s.replace(/[^\d]/g, "").replace(/^0+(?=\d)/, "");
+}
+const CITABLE_THB_AMOUNTS = new Set(
+  (SYSTEM_PROMPT.match(THB_AMOUNT_RE) || []).map(normalizeThbAmount)
+);
+
+const PRICE_WARNING = {
+  en: "\n\n\u26a0\ufe0f The price mentioned isn't confirmed yet \u2014 please double-check directly before booking.",
+  fr: "\n\n\u26a0\ufe0f Le tarif mentionn\u00e9 n'est pas encore confirm\u00e9 \u2014 merci de v\u00e9rifier directement avant de r\u00e9server.",
+  de: "\n\n\u26a0\ufe0f Der genannte Preis ist noch nicht best\u00e4tigt \u2014 bitte vor der Buchung direkt nachfragen.",
+  sv: "\n\n\u26a0\ufe0f Det angivna priset \u00e4r inte bekr\u00e4ftat \u00e4n \u2014 kontrollera direkt innan du bokar.",
+  th: "\n\n\u26a0\ufe0f \u0e23\u0e32\u0e04\u0e32\u0e17\u0e35\u0e48\u0e23\u0e30\u0e1a\u0e38\u0e22\u0e31\u0e07\u0e44\u0e21\u0e48\u0e44\u0e14\u0e49\u0e23\u0e31\u0e1a\u0e01\u0e32\u0e23\u0e22\u0e37\u0e19\u0e22\u0e31\u0e19 \u0e01\u0e23\u0e38\u0e13\u0e32\u0e15\u0e23\u0e27\u0e08\u0e2a\u0e2d\u0e1a\u0e01\u0e48\u0e2d\u0e19\u0e08\u0e2d\u0e07",
+  zh: "\n\n\u26a0\ufe0f \u63d0\u5230\u7684\u4ef7\u683c\u5c1a\u672a\u786e\u8ba4 \u2014\u2014 \u9884\u8ba2\u524d\u8bf7\u76f4\u63a5\u6838\u5b9e\u3002",
+};
+
+// Appends a disclaimer + logs when `answer` cites a THB amount not found in
+// SYSTEM_PROMPT. Never throws, never modifies the underlying answer text itself.
+function applyPriceGuard(answer, lang) {
+  const found = answer.match(THB_AMOUNT_RE) || [];
+  const uncited = found.filter((m) => !CITABLE_THB_AMOUNTS.has(normalizeThbAmount(m)));
+  if (!uncited.length) return answer;
+  console.warn("[COCO PRICE-GUARD] Uncited THB amount(s) in answer:", uncited.join(", "));
+  return answer + (PRICE_WARNING[lang] || PRICE_WARNING.en);
+}
+
 function fmtListing(l) {
   const bits = [l.name];
   if (l.rating != null) bits.push(`${l.rating}\u2605${l.reviewCount ? `(${l.reviewCount})` : ""}`);
@@ -368,6 +396,45 @@ function detectLang(t) {
   if (/[äöüß]/.test(t)) return "de";
   if (/[åäö]/.test(t)) return "sv";
   return "en";
+}
+
+// ─── Safety escalation (P0) ──────────────────────────────────────────────────
+// Matches health/safety/emergency topics in English and French. On a match, Coco
+// short-circuits BEFORE calling Anthropic: no live safety advice is generated,
+// the guest is redirected to a certified professional/operator, and a
+// COMMAND_API_URL + SAFETY_NOTIFY_WEBHOOK alert fires so a human can follow up.
+const safetyRe = /\b(emergency|medical emergency|injur(?:y|ed|ies)|drown(?:ing|ed)?|can'?t swim|cannot swim|don'?t know how to swim|pregnan(?:t|cy)|panic attack|hurt myself|harm myself|self[- ]harm|suicid(?:e|al)|chest pain|allergic reaction|anaphyla(?:xis|ctic)|bleeding|unconscious|heart attack|overdose|snake ?bite|jellyfish sting|decompression sickness|the bends|urgence médicale|blessure|blessée?s?|noyade|se noie|(?:ne\s+)?sai[st]\s+pas\s+nager|enceinte|grossesse|crise de panique|envie de me faire du mal|envie de se faire du mal|me faire du mal|automutilation|suicidaire|douleur (?:thoracique|à la poitrine)|allergie|réaction allergique|saignement|inconscient(?:e)?|crise cardiaque|morsure de serpent|piqûre de méduse|accident de plongée)\b/i;
+
+const SAFETY_DEVIATION = {
+  en: "I'm not the right resource for this — for anything involving a possible injury, medical issue, or safety emergency, please contact a certified professional or operator directly, or local emergency services (ambulance 1669, tourist police 1155) right away. I can't give safety, medical, or emergency guidance myself. Is there anything else I can help you plan?",
+  fr: "Je ne suis pas la bonne ressource pour ça — pour tout ce qui touche à une possible blessure, un problème médical ou une urgence, merci de contacter directement un professionnel certifié ou un opérateur, ou les secours locaux (ambulance 1669, police touristique 1155). Je ne peux pas donner de conseil de sécurité, médical ou d'urgence moi-même. Puis-je vous aider pour autre chose ?",
+  de: "Dafür bin ich nicht die richtige Anlaufstelle — bei allem, was eine mögliche Verletzung, ein medizinisches Problem oder einen Notfall betrifft, wenden Sie sich bitte direkt an eine zertifizierte Fachperson oder einen Anbieter, oder an den örtlichen Notdienst (Ambulanz 1669, Touristenpolizei 1155). Ich kann selbst keine Sicherheits-, Medizin- oder Notfallberatung geben. Kann ich Ihnen sonst bei etwas helfen?",
+  sv: "Jag är inte rätt resurs för detta — vid allt som rör en möjlig skada, ett medicinskt problem eller en nödsituation, kontakta direkt en certifierad expert eller operatör, eller lokala nödtjänster (ambulans 1669, turistpolis 1155). Jag kan inte själv ge säkerhets-, medicinsk eller akutrådgivning. Kan jag hjälpa dig med något annat?",
+  th: "ฉันไม่ใช่แหล่งข้อมูลที่เหมาะสมสำหรับเรื่องนี้ — หากเกี่ยวข้องกับการบาดเจ็บ ปัญหาทางการแพทย์ หรือเหตุฉุกเฉิน กรุณาติดต่อผู้เชี่ยวชาญที่ได้รับการรับรองหรือผู้ให้บริการโดยตรง หรือหน่วยฉุกเฉิน (รถพยาบาล 1669, ตำรวจท่องเที่ยว 1155) ฉันไม่สามารถให้คำแนะนำด้านความปลอดภัย การแพทย์ หรือเหตุฉุกเฉินได้ด้วยตัวเอง ให้ฉันช่วยเรื่องอื่นได้ไหม?",
+  zh: "这个问题我无法提供帮助 —— 如果涉及可能的受伤、医疗问题或安全紧急情况，请直接联系持证专业人士或运营商，或当地紧急服务（救护车 1669，旅游警察 1155）。我本身不能提供安全、医疗或紧急情况方面的指导。还有别的我可以帮您安排的吗？",
+};
+
+// Fire-and-forget alert to a Slack/Discord/Make-style webhook, mirroring notify()
+// in api/lead.js exactly. Silently degrades (no crash, no blocked response) if
+// SAFETY_NOTIFY_WEBHOOK isn't configured.
+async function notifySafety(payload) {
+  const url = process.env.SAFETY_NOTIFY_WEBHOOK;
+  if (!url) return false;
+  try {
+    await fetch(url, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        text:
+          `🚨 *Coco safety deviation triggered*\n` +
+          `*Hotel:* ${payload.hotel}\n*Lang:* ${payload.lang}\n` +
+          `*Preview:* ${payload.messagePreview}\n*Time:* ${payload.ts}`,
+      }),
+    });
+    return true;
+  } catch (_) {
+    return false;
+  }
 }
 
 // Live enrichment: pulls real-time data only when the guest asks about food or
@@ -443,9 +510,13 @@ export default async function handler(req, res) {
 
   res.setHeader("Access-Control-Allow-Origin", "*");
 
-  // Best-effort per-IP rate limit (protects the Anthropic key from burst abuse).
+  // Durable per-IP rate limit via KV (protects the Anthropic key from burst abuse).
+  // See checkRateLimit() in _store.js for the degradation behavior when no KV is configured.
   const ip = (req.headers["x-forwarded-for"] || "").split(",")[0].trim() || req.socket?.remoteAddress || "unknown";
-  if (rateLimited(ip)) {
+  const rl = await checkRateLimit(`chat:${ip}`, RATE.max, RATE.windowSeconds);
+  res.setHeader("X-RateLimit-Limit", String(RATE.max));
+  res.setHeader("X-RateLimit-Remaining", String(Math.max(0, RATE.max - rl.count)));
+  if (rl.limited) {
     return res.status(429).json({ error: "Too many requests \u2014 please slow down." });
   }
 
@@ -461,6 +532,36 @@ export default async function handler(req, res) {
   const totalChars = messages.reduce((n, m) => n + (m && m.content ? String(m.content).length : 0), 0);
   if (totalChars > 12000) {
     return res.status(400).json({ error: "Message too long." });
+  }
+
+  // \u2500\u2500\u2500 Safety escalation (P0) \u2014 short-circuits BEFORE the Anthropic call \u2500\u2500\u2500
+  const lastUserMsg = [...messages].reverse().find((m) => m.role === "user");
+  const lastUserText = lastUserMsg && lastUserMsg.content ? String(lastUserMsg.content) : "";
+  const detectedLang = detectLang(lastUserText.toLowerCase());
+  if (safetyRe.test(lastUserText)) {
+    const lang = detectedLang;
+    const deviationText = SAFETY_DEVIATION[lang] || SAFETY_DEVIATION.en;
+    // Fire-and-forget: never block the guest's response on these.
+    notifySafety({
+      hotel: hotel || "_global",
+      lang,
+      ts: new Date().toISOString(),
+      messagePreview: lastUserText.slice(0, 200),
+    }).catch(() => {});
+    notifyCommand({
+      venture: "COCO",
+      agent: "chat.js",
+      type: "ALERT",
+      priority: "P0",
+      status: "DONE",
+      summary: "D\u00e9viation s\u00e9curit\u00e9 d\u00e9clench\u00e9e sur une conversation Coco",
+      details: `hotel=${hotel || "_global"} lang=${lang}`,
+      links: [],
+      next_action: "V\u00e9rifier qu'un suivi humain a eu lieu si n\u00e9cessaire.",
+      needs_owner: true,
+      repo: "coco2",
+    }).catch(() => {});
+    return res.status(200).json({ content: deviationText });
   }
 
   try {
@@ -491,14 +592,16 @@ export default async function handler(req, res) {
     });
 
     let answer = response.content[0].text;
+    // Price guard (P0 mitigation): flags THB amounts the model invented that
+    // aren't backed by SYSTEM_PROMPT — see applyPriceGuard() above.
+    answer = applyPriceGuard(answer, detectedLang);
     const footer = (() => { try { return bookingFooter(messages, answer); } catch (e) { return ""; } })();
     answer += footer;
 
     // ─── Analytics (non-blocking, best-effort — never affects the reply) ───
     try {
-      const lastUser = [...messages].reverse().find((m) => m.role === "user");
-      const question = lastUser && lastUser.content ? String(lastUser.content).slice(0, 120) : "";
-      const lang = detectLang((question || "").toLowerCase());
+      const question = lastUserText.slice(0, 120);
+      const lang = detectedLang;
       const house = Boolean(hotelInfo && hotelInfo.name && answer.includes(hotelInfo.name));
       logEvent({
         hotel: hotel || "_global",

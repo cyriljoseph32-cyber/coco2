@@ -13,6 +13,7 @@
  */
 
 import { pushLead, storeConfigured } from "./_store.js";
+import { notifyCommand } from "./_command.js";
 
 function cors(res) {
   res.setHeader("Access-Control-Allow-Origin", "*");
@@ -98,6 +99,23 @@ export default async function handler(req, res) {
 
   if (!persisted && !process.env.LEAD_NOTIFY_WEBHOOK) {
     console.warn("[COCO LEAD] ⚠️ No KV store and no LEAD_NOTIFY_WEBHOOK set — lead only in console logs. Configure one ASAP.");
+  }
+
+  // COCO COMMAND event — fire-and-forget, never blocks the response to the form.
+  if (persisted) {
+    notifyCommand({
+      venture: "COCO",
+      agent: "lead-capture",
+      type: "ACTION",
+      priority: "P2",
+      status: "DONE",
+      summary: `Nouveau lead hôtel capté — ${lead.hotel}`,
+      details: `id=${lead.id} name=${lead.name} email=${lead.email} phone=${lead.phone || "N/A"} lang=${lead.lang}`,
+      links: [],
+      next_action: "Qualifier le lead et relancer si besoin.",
+      needs_owner: false,
+      repo: "coco2",
+    }).catch(() => {});
   }
 
   return res.status(201).json({ ok: true, id, persisted });

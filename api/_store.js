@@ -68,6 +68,33 @@ async function pipeline(cmds) {
   }
 }
 
+// ─── Durable rate limiting (KV-backed) ──────────────────────────────────────
+// checkRateLimit(key, max, windowSeconds): fixed-window counter using INCR + EXPIRE
+// on a bucketed key (one bucket per window). Returns { count, limited }.
+//
+// COMPROMISE, DOCUMENTED: if no KV store is configured, this returns
+// { count: 0, limited: false } — i.e. NO rate limiting at all, rather than
+// falling back to an in-memory per-instance counter. On serverless, an
+// in-memory counter only ever sees the traffic that happens to land on that
+// one warm instance — it resets on every cold start and never sees the other
+// concurrent instances, so it gives a false sense of protection without
+// providing real coverage. We'd rather be honestly unprotected (and log it)
+// than silently pretend to rate-limit. Configure Vercel KV or Upstash for
+// real protection.
+export async function checkRateLimit(key, max, windowSeconds) {
+  if (!storeConfigured()) return { count: 0, limited: false };
+  const bucket = Math.floor(Date.now() / 1000 / windowSeconds);
+  const redisKey = `coco:rl:${key}:${bucket}`;
+  const count = await cmd("INCR", redisKey);
+  if (count === 1) {
+    // Only set TTL on the first hit of this window — avoids resetting the
+    // expiry (and therefore extending the window) on every subsequent hit.
+    await cmd("EXPIRE", redisKey, String(windowSeconds));
+  }
+  const n = Number(count) || 0;
+  return { count: n, limited: n > max };
+}
+
 function ym(d = new Date()) {
   return `${d.getUTCFullYear()}${String(d.getUTCMonth() + 1).padStart(2, "0")}`;
 }
