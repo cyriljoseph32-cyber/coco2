@@ -7,7 +7,7 @@
   "scripts": {
     "dev": "vercel dev",
     "deploy": "vercel --prod",
-    "smoke": "node --env-file=samui-concierge-mcp/.env scripts/smoke-test.mjs"
+    "smoke": "node --env-file-if-exists=samui-concierge-mcp/.env scripts/smoke-test.mjs"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.39.0"

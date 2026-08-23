@@ -7,10 +7,10 @@
 process.env.VIATOR_AFFILIATE_PID = process.env.VIATOR_AFFILIATE_PID || "P00TESTPID";
 process.env.GETYOURGUIDE_PARTNER_ID = process.env.GETYOURGUIDE_PARTNER_ID || "GYGTEST";
 process.env.BOOKING_AFFILIATE_ID = process.env.BOOKING_AFFILIATE_ID || "BKTEST";
+process.env.KLOOK_AFFILIATE_ID = process.env.KLOOK_AFFILIATE_ID || "KLOOKTEST";
 
-const api = "file:///C:/Users/Cyril/Claude/Projects/Coco Samui/api";
-const { bookingLinks, searchActivities, searchPlaces, getCurrentWeather } = await import(`${api}/_providers.js`);
-const { getAffiliateLinks } = await import(`${api}/_affiliates.js`);
+import { bookingLinks, searchActivities, searchPlaces, getCurrentWeather } from "../api/_providers.js";
+import { getAffiliateLinks } from "../api/_affiliates.js";
 
 let fails = 0, warns = 0;
 const ok = (cond, name) => { console.log((cond ? "PASS" : "FAIL") + " — " + name); if (!cond) fails++; };
