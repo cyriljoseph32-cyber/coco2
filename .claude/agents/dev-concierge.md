@@ -57,6 +57,10 @@ provisionner sur Vercel.
   `Listing`), `vercel.json`, `package.json`.
 - `scripts/smoke-test.mjs` et `scripts/build-samui-data.mjs`.
 - `samui-concierge-mcp/DEPLOY.md`.
+- Connecteur **Vercel** de claude.ai (`get_deployment`, `get_deployment_build_logs`,
+  `get_runtime_errors`, `get_runtime_logs`, `get_web_analytics`) — diagnostic direct du
+  projet `coco-samui-concierge` en production (lecture seule ; jamais de déploiement ni de
+  changement de configuration sans validation de Cyril, cf. §2).
 - La fiche mémoire centrale `brain/memoire/projets/coco2.md` dans
   `/home/user/Coconut-Samui-Rugby-Academy/` si accessible (sinon via GitHub) — jamais les
   autres dossiers `brain/` de ce dépôt (académie de rugby, hors périmètre).

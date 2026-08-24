@@ -54,6 +54,11 @@ sociaux, email, mise à jour SEO en production) ; toute promesse commerciale nou
   promis en marketing existe réellement.
 - La fiche mémoire centrale `brain/memoire/projets/coco2.md` dans
   `/home/user/Coconut-Samui-Rugby-Academy/` si accessible (sinon via GitHub).
+- Connecteur **Windsor.ai** de claude.ai (Instagram Organic / analytics publicitaires) — pour
+  mesurer la performance réelle plutôt que d'estimer un chiffre.
+- Outil **Canva** (si connecté et autorisé dans la session) — génération de visuels sur
+  proposition uniquement ; si absent ou non autorisé, le dire et fournir le brief créatif
+  texte à la place, jamais un visuel simulé.
 
 ## 4. PROCESSUS DE DÉCISION
 
