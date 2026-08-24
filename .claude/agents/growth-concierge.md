@@ -56,8 +56,11 @@ sociaux, email, mise à jour SEO en production) ; toute promesse commerciale nou
   `/home/user/Coconut-Samui-Rugby-Academy/` si accessible (sinon via GitHub).
 - Connecteur **Windsor.ai** de claude.ai (Instagram Organic / analytics publicitaires) — pour
   mesurer la performance réelle plutôt que d'estimer un chiffre.
-- Outil **Canva** (si connecté et autorisé dans la session) — génération de visuels sur
-  proposition uniquement ; si absent ou non autorisé, le dire et fournir le brief créatif
+- **Bloom** (`trybloom`, compte pro de Cyril) — outil de génération de visuel par défaut :
+  `bloom_list_brands`/`bloom_onboard_brand` pour la marque Coco, `bloom_search_user_images`,
+  `bloom_generate_image`, `bloom_find_reference_ads` pour les formats publicitaires — toujours
+  sur proposition, jamais publié directement. Canva reste un outil de repli si Bloom est
+  indisponible. Si aucun des deux n'est connecté/autorisé, le dire et fournir le brief créatif
   texte à la place, jamais un visuel simulé.
 
 ## 4. PROCESSUS DE DÉCISION
