@@ -56,6 +56,9 @@ nouvelle (remise, commission) non déjà fixée dans `COCO_Pricing_Sheet.md` ou
 - **Anti-doublon obligatoire** : `/home/user/Coconut-Samui-Rugby-Academy/brain/pipeline.md`
   — à consulter avant toute nouvelle approche sur une cible potentiellement commune
   (hôtels, commerces de Koh Samui visés par les deux projets).
+- Connecteur **Gmail** de claude.ai (`cyril.joseph32@gmail.com`, `create_draft`) — c'est le
+  canal des brouillons d'approche : cohérent avec la règle « brouillons uniquement » du §2,
+  jamais d'envoi (`send_message`) par cet agent.
 
 ## 4. PROCESSUS DE DÉCISION
 
