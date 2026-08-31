@@ -26,3 +26,4 @@ dist/
 
 # MS Office lock files
 ~$*
+graphify-out/cache/
