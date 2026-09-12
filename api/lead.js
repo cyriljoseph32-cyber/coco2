@@ -101,22 +101,44 @@ export default async function handler(req, res) {
     console.warn("[COCO LEAD] ⚠️ No KV store and no LEAD_NOTIFY_WEBHOOK set — lead only in console logs. Configure one ASAP.");
   }
 
-  // COCO COMMAND event — fire-and-forget, never blocks the response to the form.
-  if (persisted) {
-    notifyCommand({
-      venture: "COCO",
-      agent: "lead-capture",
-      type: "ACTION",
-      priority: "P2",
-      status: "DONE",
-      summary: `Nouveau lead hôtel capté — ${lead.hotel}`,
-      details: `id=${lead.id} name=${lead.name} email=${lead.email} phone=${lead.phone || "N/A"} lang=${lead.lang}`,
-      links: [],
-      next_action: "Qualifier le lead et relancer si besoin.",
-      needs_owner: false,
-      repo: "coco2",
-    }).catch(() => {});
+  // ─── COCO COMMAND — la base unique de leads ────────────────────────────────
+  // Corrigé (chantier 2.1) : l'événement partait AUTREFOIS uniquement si le KV
+  // avait accepté l'écriture. Sans KV configuré, le lead disparaissait donc
+  // deux fois — ni stocké, ni remonté. C'était la fuite n°2 de l'audit.
+  // Désormais l'ingestion est la destination principale et elle est TOUJOURS
+  // appelée ; le KV n'est plus qu'un cache local pour le dashboard hôtel.
+  //
+  // On attend la réponse ici (contrairement à chat.js) : ce chemin n'est pas
+  // face au client d'un hôtel, il est face à un formulaire — 300 ms de plus
+  // valent mieux qu'un lead perdu.
+  const ingested = await notifyCommand({
+    venture: "COCO",
+    agent: "lead-capture",
+    type: "ACTION",
+    priority: "P2",
+    status: "DONE",
+    summary: `Nouveau lead hôtel capté — ${lead.hotel}`,
+    details: `id=${lead.id} name=${lead.name} email=${lead.email} phone=${lead.phone || "N/A"} lang=${lead.lang}`,
+    links: [],
+    next_action: "Qualifier le lead et répondre sous 24 h.",
+    // Un lead entrant appelle une réponse rédigée puis validée : boucle B.
+    needs_owner: true,
+    category: "sales",
+    repo: "coco2",
+  }).catch(() => false);
+
+  const recorded = Boolean(ingested) || persisted;
+  if (!recorded) {
+    // Plus de disparition silencieuse : le lead complet est écrit en erreur
+    // pour être récupérable à la main dans les logs Vercel.
+    console.error("[COCO LEAD] ⚠️ NON ENREGISTRÉ (ni ingestion ni KV) —", JSON.stringify(lead));
   }
 
-  return res.status(201).json({ ok: true, id, persisted });
+  return res.status(recorded ? 201 : 502).json({
+    ok: recorded,
+    id,
+    persisted,
+    ingested: Boolean(ingested),
+    ...(recorded ? {} : { error: "Could not record the lead. Please email us instead." }),
+  });
 }
