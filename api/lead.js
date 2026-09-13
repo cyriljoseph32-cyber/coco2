@@ -125,6 +125,16 @@ export default async function handler(req, res) {
     needs_owner: true,
     category: "sales",
     repo: "coco2",
+
+    // Chantier 2 — coordonnées structurées pour la fiche unique. Non stockées
+    // dans le journal : elles servent au rattachement, puis sont oubliées.
+    contact: {
+      name: lead.name || undefined,
+      email: lead.email,
+      phone: lead.phone || undefined,
+    },
+    channel: "site_form",
+    source: lead.source,
   }).catch(() => false);
 
   const recorded = Boolean(ingested) || persisted;
