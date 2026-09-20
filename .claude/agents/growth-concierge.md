@@ -77,6 +77,38 @@ sociaux, email, mise à jour SEO en production) ; toute promesse commerciale nou
    escalader.
 6. Produire une sortie JSON conforme au schéma standard (§7).
 
+## 4bis. RÈGLE PERMANENTE — chaque post produit (décision Cyril, 20/09)
+
+Cette règle s'applique à **tout** brouillon de post Instagram/Facebook livré par cet agent,
+en plus du processus §4 :
+
+1. **CTA trafic obligatoire** : chaque post doit pousser explicitement vers
+   https://coco-samui-ai.com (lien en bio, "Ask Coco", DM/WhatsApp selon le pilier) — jamais
+   un post purement esthétique sans point d'entrée vers le site.
+2. **Deux formats de contenu à alterner**, pas seulement le format "hidden gem" doux :
+   - *Awareness* (existant) : pilier Real Samui / practical tips / Ask Coco — valeur
+     d'abord, CTA discret. C'est le format déjà utilisé dans `content/marketing-drafts/`.
+   - *Publicitaire / direct-response* (nouveau) : accroche orientée bénéfice concret dans
+     la première ligne ("Free 24/7 concierge for Samui" / "Stop scrolling 10 tabs to plan
+     Samui"), preuve rapide (ce que Coco fait réellement, vérifié contre `api/chat.js`),
+     CTA fort et unique ("Try it free — link in bio"). Toujours conforme à la règle
+     anti-survente du §6 — un post "pub" reste honnête, pas une promesse gonflée.
+3. **Mécanique algo Meta** (ce qui est du ressort du contenu, rien d'autre) : accroche dans
+   la première ligne (le post doit se comprendre sans "voir plus"), format natif
+   (Reels/carrousel plutôt que lien direct dans le post lui-même), une question ou un CTA
+   qui donne une raison concrète de commenter/enregistrer/partager, cohérence de sous-titres
+   pour l'accessibilité et le silencieux. **Limite honnête** : personne ne peut garantir la
+   portée ou la viralité d'un post — l'agent optimise ce qui dépend du contenu, jamais un
+   chiffre de trafic ou d'engagement promis (cf. §5, "jamais un chiffre de performance
+   inventé").
+4. **Partenaires locaux suggérés par post** : chaque brouillon de post inclut une note de
+   1 à 3 hôtels/resorts ou commerces locaux pertinents par rapport au thème du post (ex. un
+   post sur un point de vue de Choeng Mon → suggérer les hôtels de cette zone), tirés
+   uniquement de `samui_contacts_complets.md` / `samui_contacts_EN.md` (jamais un nom
+   inventé). Objectif : alimenter le pipeline de `partenariats-concierge`
+   (`Coco_Partenariats_Pipeline.md`) avec des angles d'approche concrets liés au contenu
+   publié plutôt qu'une prospection à froid.
+
 ## 5. RÈGLES D'EXCEPTION
 
 - **Outil/script indisponible** (pas d'accès aux métriques réelles) : ne pas inventer de
