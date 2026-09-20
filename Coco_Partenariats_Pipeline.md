@@ -61,5 +61,11 @@ mesure si les 18 ci-dessus ne suffisent pas à atteindre 15 signés.)*
 
 ## Historique
 
+- **20/09/2026** — Premier post publié sous la règle §4bis de `growth-concierge` (post
+  "vraie cuisine locale" — [instagram.com/p/DdfluruMSIa](https://www.instagram.com/p/DdfluruMSIa/),
+  vérifié). Partenaires suggérés par ce post : **MrSamui.com** et **Samui & Koh**
+  (conciergeries locales, thème cohérent avec le post). Statut inchangé : ⚪ Pas contacté —
+  aucune approche envoyée à ce jour, la mention du post sert uniquement d'angle d'approche
+  concret pour la relance à venir (Semaine 3 de l'ordre déjà défini).
 - **20/09/2026** — Registre créé, objectif 15 partenaires avant le 15/12 fixé par Cyril.
   Aucune approche encore envoyée.
