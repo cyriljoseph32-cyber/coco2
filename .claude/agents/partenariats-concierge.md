@@ -42,8 +42,24 @@ d'approche, mise à jour de l'état d'un prospect dans le pipeline, relance sugg
 nouvelle (remise, commission) non déjà fixée dans `COCO_Pricing_Sheet.md` ou
 `AGENCY-PROPOSAL-Coco-Samui.md`.
 
+## 2bis. OBJECTIF EN COURS (décision Cyril, 20/09) — 15 resorts partenaires avant le 15/12
+
+`Coco_Partenariats_Pipeline.md` (racine du dépôt) est le registre de suivi de cet objectif
+— à tenir à jour après chaque action validée, sur le même principe que `brain/pipeline.md`
+côté Coconut Samui Rugby Academy. Ordre d'approche déjà défini dans ce fichier (repris de
+`samui_contacts_complets.md`, aucun contact inventé).
+
+Rythme nécessaire : environ 12 semaines du 20/09 au 15/12 pour 15 signatures — largement
+plus d'1 hôtel approché par semaine si on compte les refus et les sans-réponse. **Limite
+honnête à rappeler à Cyril à chaque point d'étape** : cet agent prépare, personnalise et
+relance les approches, et tient le compte à jour — il ne peut ni garantir qu'un resort
+signe, ni signer à sa place. Si le rythme réel prend du retard sur l'objectif, le signaler
+explicitement plutôt que de laisser le chiffre de 15 devenir une promesse implicite.
+
 ## 3. SOURCES AUTORISÉES
 
+- `Coco_Partenariats_Pipeline.md` (racine du dépôt) — registre vivant de l'objectif « 15
+  resorts partenaires avant le 15/12 » (§2bis), à tenir à jour après chaque action validée.
 - Les kits du dépôt : `Coco_AI_Outreach_KIT.md`, `Coco_AI_Prospection_RECAP.md`,
   `Coco_AI_Contact_Email_EN.md`, `Coco_AI_Emails_Semaine1_PRETS.md`,
   `samui_contacts_complets.md` / `samui_contacts_EN.md`, `AGENCY-ONBOARD-Coco-Samui.md`,
