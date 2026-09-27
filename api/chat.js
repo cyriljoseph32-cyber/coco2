@@ -4,6 +4,7 @@ import { hotelContext } from "./_hotels.js";
 import { logEvent, checkRateLimit } from "./_store.js";
 import { getAffiliateLinks } from "./_affiliates.js";
 import { notifyCommand } from "./_command.js";
+import { directoryContext } from "./_directory.js";
 
 // --- Abuse guard: durable per-IP rate limit backed by KV (see checkRateLimit in _store.js). ---
 const RATE = { windowSeconds: 60, max: 20 };
@@ -578,6 +579,15 @@ export default async function handler(req, res) {
       return res.status(500).json({ error: "Server is missing the ANTHROPIC_API_KEY environment variable." });
     }
     const client = new Anthropic({ apiKey: process.env.ANTHROPIC_API_KEY });
+    // Annuaire vérifié (201 fiches, data/concierge-db) : les fiches pertinentes
+    // pour CETTE question entrent dans le prompt, pas les 450 Ko du dossier.
+    // Synchrone et local — aucun appel réseau, aucune latence ajoutée.
+    try {
+      const directory = directoryContext(lastUserText);
+      if (directory) systemPrompt += directory;
+    } catch (e) {
+      console.error("Directory context skipped:", e && e.message);
+    }
     try {
       const live = await buildLiveContext(messages);
       if (live) systemPrompt += live;
