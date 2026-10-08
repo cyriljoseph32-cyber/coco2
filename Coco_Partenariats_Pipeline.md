@@ -61,6 +61,12 @@ mesure si les 18 ci-dessus ne suffisent pas à atteindre 15 signés.)*
 
 ## Historique
 
+- **08/10/2026** — Post "prix des excursions avant de réserver" publié par Cyril
+  ([instagram.com/p/DeOnFuxMLQP](https://www.instagram.com/p/DeOnFuxMLQP/)). Partenaires
+  suggérés par ce post : **Santiburi Koh Samui**, **W Koh Samui**, **The COAST Adults Only**
+  (hôtels côte nord, proches des départs d'excursions). Statut : ⚪ Pas contacté — le post
+  sert d'angle d'approche concret pour une prochaine relance.
+
 - **20/09/2026** — Premier post publié sous la règle §4bis de `growth-concierge` (post
   "vraie cuisine locale" — [instagram.com/p/DdfluruMSIa](https://www.instagram.com/p/DdfluruMSIa/),
   vérifié). Partenaires suggérés par ce post : **MrSamui.com** et **Samui & Koh**
