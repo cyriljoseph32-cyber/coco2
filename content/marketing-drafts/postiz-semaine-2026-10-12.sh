@@ -8,7 +8,7 @@
 #   bash content/marketing-drafts/postiz-semaine-2026-10-12.sh
 #
 # Rythme 2×/semaine (lundi + jeudi). Les visuels sont les URLs Bloom
-# (content/marketing-drafts/semaine-2026-10-12.md) — télécharge-les et remplace les
+# (content/marketing-drafts/semaine-2026-10-12-version-cyril.md) — télécharge-les et remplace les
 # chemins ci-dessous si Postiz ne sait pas fetcher une URL trybloom.ai directement, ou
 # uploade-les d'abord avec `postiz upload <fichier>` et colle le chemin renvoyé.
 #
